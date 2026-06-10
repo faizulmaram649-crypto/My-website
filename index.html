@@ -1,108 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Faizul AI</title>
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#0f172a;
-color:white;
-text-align:center;
-}
-
-<header>
-<img src="logo.png" width="150" alt="Faizul AI Logo">
-
-<h1>Faizul AI</h1>
-
-<p>Smart AI Assistant for Chat, Learning and Creativity</p>
-
-<a class="btn" href="#">Get Started</a>
-</header>
-
-h1{
-font-size:50px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-background:#2563eb;
-color:white;
-text-decoration:none;
-border-radius:8px;
-}
-
-section{
-padding:40px 20px;
-}
-
-.feature{
-margin:15px;
-padding:15px;
-background:#1e293b;
-border-radius:10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizul AI - Smart Assistant</title>
+    <meta name="description" content="Faizul AI - Smart AI Assistant for Chat, Learning and Creativity">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header>
-<h1>Faizul AI</h1>
-<p>Smart AI Assistant for Chat, Learning and Creativity</p>
-<a class="btn" href="#">Get Started</a>
-</header>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <h2>Faizul AI</h2>
+        <p>Loading Intelligence...</p>
+    </div>
 
-<section id="features">
-<h2>Features</h2>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-brain"></i> Faizul <span>AI</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="active" onclick="router('home')"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#features" onclick="router('features')"><i class="fa-solid fa-wand-magic-sparkles"></i> Features</a>
+            <a href="#chat" onclick="router('chat')"><i class="fa-solid fa-comments"></i> AI Chat</a>
+            <a href="#image" onclick="router('image')"><i class="fa-solid fa-image"></i> Image Gen</a>
+            <a href="#admin" onclick="router('admin')"><i class="fa-solid fa-shield-halved"></i> Admin</a>
+        </div>
+        <div class="nav-actions">
+            <button id="themeToggle" onclick="toggleTheme()" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+            <div id="userMenu">
+                <!-- Dynamic User Menu -->
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
 
-<div class="feature">🤖 AI Chat</div>
-<div class="feature">🖼️ AI Image Generator</div>
-<div class="feature">🎤 Voice Assistant</div>
-<div class="feature">📚 Learning Support</div>
+    <!-- Main Content Area -->
+    <main id="main-content">
+        
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>The Future of <span class="highlight">Intelligence</span></h1>
+                    <p>Smart AI Assistant for Chat, Learning and Creativity. Experience the next generation of AI interaction.</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary" onclick="router('chat')">Start Chatting</button>
+                        <button class="btn-secondary" onclick="router('features')">Explore Features</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="glow-ball"></div>
+                </div>
+            </div>
+        </section>
 
-</section>
+        <!-- FEATURES PAGE -->
+        <section id="features" class="page">
+            <div class="container">
+                <h1>Our Features</h1>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h3>Smart Chat</h3>
+                        <p>Interactive AI chat with context awareness and history.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-image"></i>
+                        <h3>Image Gen</h3>
+                        <p>Generate stunning visuals from simple text prompts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-microphone"></i>
+                        <h3>Voice AI</h3>
+                        <p>Native voice input and output for hands-free experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <h3>Doc Analysis</h3>
+                        <p>Upload PDFs and Images for instant analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- CHAT PAGE -->
+        <section id="chat" class="page">
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <button class="new-chat-btn" onclick="startNewChat()"><i class="fa-solid fa-plus"></i> New Chat</button>
+                    <div class="chat-history-list" id="chatHistoryList">
+                        <!-- Chat History Items -->
+                    </div>
+                </div>
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <div class="chat-info">
+                            <h3 id="currentChatTitle">New Conversation</h3>
+                            <span id="chatModel">Model: Faizul-GPT-4</span>
+                        </div>
+                        <div class="chat-actions">
+                            <button onclick="downloadChat()" title="Download"><i class="fa-solid fa-download"></i></button>
+                            <button onclick="deleteCurrentChat()" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Messages go here -->
+                        <div class="message bot-message">
+                            <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="message-content">
+                                <p>Hello! I'm Faizul AI. How can I assist you today?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <button class="voice-input-btn" onclick="startVoiceInput()" title="Voice Input"><i class="fa-solid fa-microphone"></i></button>
+                        <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKey(event)">
+                        <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE GENERATOR PAGE -->
+        <section id="image" class="page">
+            <div class="container">
+                <h1>AI Image Generator</h1>
+                <div class="image-gen-interface">
+                    <div class="input-group">
+                        <textarea id="imagePrompt" placeholder="Describe what you want to see... e.g., 'A futuristic city at night with neon lights'"></textarea>
+                        <button class="btn-primary" onclick="generateImage()">Generate Image</button>
+                    </div>
+                    <div class="generation参数" id="genParams" style="display:none;">
+                        <label>Negative Prompt:</label>
+                        <input type="text" placeholder="What to avoid...">
+                        <label>Style:</label>
+                        <select><option>Realistic</option><option>Anime</option><option>3D Render</option></select>
+                    </div>
+                </div>
+                <div class="gallery-grid" id="imageGallery">
+                    <!-- Generated Images -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN PAGE -->
+        <section id="admin" class="page">
+            <div class="container admin-dashboard">
+                <h1>Admin Dashboard</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p class="stat-number" id="statUsers">1,240</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>API Requests</h3>
+                        <p class="stat-number" id="statRequests">45.2k</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Sessions</h3>
+                        <p class="stat-number">342</p>
+                    </div>
+                </div>
+                <div class="admin-table">
+                    <h3>Recent Activity</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>user_123</td><td>Image Gen Request</td><td>10:42 AM</td><td>Success</td></tr>
+                            <tr><td>admin_01</td><td>Login</td><td>10:30 AM</td><td>Success</td></tr>
+                            <tr><td>guest_445</td><td>Chat Message</td><td>10:15 AM</td><td>Pending</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SETTINGS/PROFILE (Hidden until clicked) -->
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSettings()">&times;</span>
+                <h2>Settings</h2>
+                <div class="settings-group">
+                    <label>Username</label>
+                    <input type="text" id="settingUsername" value="Guest User">
+                </div>
+                <div class="settings-group">
+                    <label>Language</label>
+                    <select id="settingLang">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+                <div class="settings-group">
+                    <label>Voice Output</label>
+                    <button class="btn-secondary" onclick="testVoice()">Test Voice</button>
+                </div>
+                <button class="btn-primary" onclick="saveSettings()">Save Changes</button>
+            </div>
+        </div>
+
+        <!-- LOGIN MODAL -->
+        <div id="authModal" class="modal">
+            <div class="modal-content auth-content">
+                <span class="close" onclick="closeAuth()">&times;</span>
+                <h2 id="authTitle">Login</h2>
+                <form id="authForm" onsubmit="handleAuth(event)">
+                    <input type="text" id="authEmail" placeholder="Email" required>
+                    <input type="password" id="authPass" placeholder="Password" required>
+                    <button type="submit" class="btn-primary" id="authBtn">Login</button>
+                </form>
+                <p class="toggle-auth" onclick="toggleAuthMode()">Don't have an account? <span>Sign up</span></p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
-<h2>Faizul AI Chat</h2>
-
-<input type="text" id="userInput" placeholder="Ask something..."
-style="width:70%;padding:10px;">
-
-<button onclick="chatAI()">
-Send
-</button>
-
-<p id="response"></p>
-
-<script>
-function chatAI() {
-  <section id="about">
-<h2>About Faizul AI</h2>
-<p>
-Faizul AI is a smart assistant website created to help users learn,
-chat and explore AI technology.
-</p>
-</section>
-let question =
-document.getElementById("userInput").value;
-
-document.getElementById("response")
-.innerHTML =
-"You asked: " + question +
-"<br><br>AI feature coming soon!";
+:root {
+    --bg-color: #0f0f13;
+    --bg-secondary: #1a1a20;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent: #06b6d4;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --glass: rgba(255, 255, 255, 0.05);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-</script>
-<nav style="background:#111827;padding:15px;">
-  <a href="#" style="color:white;margin:15px;text-decoration:none;">Home</a>
-  <a href="#features" style="color:white;margin:15px;text-decoration:none;">Features</a>
-  <a href="#about" style="color:white;margin:15px;text-decoration:none;">About</a>
-  <a href="#contact" style="color:white;margin:15px;text-decoration:none;">Contact</a>
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: faizulai@example.com</p>
-</section>
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
