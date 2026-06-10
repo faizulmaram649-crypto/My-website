@@ -1,166 +1,74 @@
-:root {
-  --bg-color: #0f172a;
-  --card-color: #1e293b;
-  --primary: #2563eb;
-  --accent: #06b6d4;
-  --text: #ffffff;
-}
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-  font-family: Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text);
+background:#0f172a;
+color:white;
+line-height:1.6;
 }
 
-#loader{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#0f172a;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
+nav{
+background:#111827;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
 }
 
-.spinner{
-  width:50px;
-  height:50px;
-  border:5px solid #333;
-  border-top:5px solid var(--accent);
-  border-radius:50%;
-  animation:spin 1s linear infinite;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
 }
 
-@keyframes spin{
-  100%{
-    transform:rotate(360deg);
-  }
+nav a:hover{
+color:#06b6d4;
 }
 
-#navbar{
-  background:#111827;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+header{
+text-align:center;
+padding:80px 20px;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:bold;
-}
-
-.logo span{
-  color:var(--accent);
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  margin:0 10px;
-}
-
-.page{
-  padding:40px 20px;
-}
-
-.hero{
-  text-align:center;
-  padding:80px 20px;
-}
-
-.hero h1{
-  font-size:50px;
-  margin-bottom:20px;
+h1{
+font-size:50px;
+margin-bottom:10px;
 }
 
 .highlight{
-  color:var(--accent);
+color:#06b6d4;
 }
 
-.btn-primary{
-  background:var(--primary);
-  color:white;
-  border:none;
-  padding:12px 20px;
-  border-radius:8px;
-  cursor:pointer;
+section{
+padding:50px 20px;
 }
 
-.btn-secondary{
-  background:#374151;
-  color:white;
-  border:none;
-  padding:12px 20px;
-  border-radius:8px;
-  cursor:pointer;
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
 }
 
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+text-align:center;
 }
 
-.feature-card{
-  background:var(--card-color);
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
+.card:hover{
+background:#2563eb;
+transform:translateY(-5px);
 }
 
-.chat-container{
-  background:var(--card-color);
-  padding:20px;
-  border-radius:12px;
-}
-
-#chatInput,
-textarea,
-input,
-select{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:none;
-}
-
-.send-btn{
-  background:var(--primary);
-  color:white;
-  border:none;
-  padding:10px 15px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.stat-card{
-  background:var(--card-color);
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-}
-
-.modal{
-  display:none;
-}
 .chat-container{
 max-width:800px;
 margin:auto;
@@ -169,34 +77,76 @@ padding:20px;
 border-radius:12px;
 }
 
-.chat-messages{
+#chatMessages{
 height:400px;
 overflow-y:auto;
-padding:10px;
-text-align:left;
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
 }
 
-.user-message{
+.user{
 background:#2563eb;
-padding:10px;
+padding:12px;
+border-radius:12px;
 margin:10px 0;
-border-radius:10px;
 text-align:right;
 }
 
-.bot-message{
+.bot{
 background:#334155;
-padding:10px;
+padding:12px;
+border-radius:12px;
 margin:10px 0;
-border-radius:10px;
 }
 
-.chat-input-area{
-display:flex;
-gap:10px;
-margin-top:15px;
+input{
+width:75%;
+padding:12px;
+border:none;
+border-radius:8px;
+outline:none;
 }
 
-.chat-input-area input{
-flex:1;
+button{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+footer{
+background:#111827;
+padding:20px;
+text-align:center;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:35px;
+}
+
+input{
+width:100%;
+margin-bottom:10px;
+}
+
+button{
+width:100%;
+}
+
+.chat-container{
+padding:15px;
+}
+
 }
