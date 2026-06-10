@@ -106,3 +106,6 @@ else if(message.includes("science")){
 else if(message.includes("history")){
     reply = "History manav sabhyata aur purani ghatnaon ka adhyayan hai. Aap kisi specific topic ke baare me puch sakte hain.";
 }
+function chatAI() {
+...
+}
