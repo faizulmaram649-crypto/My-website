@@ -1,107 +1,68 @@
-function chatAI(){
+const knowledge = {
 
-let input=document.getElementById("userInput");
-let message=input.value.trim();
+"hello":"Hello! Main Faizul AI hoon. Main aapki madad karne ke liye yahan hoon.",
+"hi":"Hi! Aap kaise hain? Main aapke sawaalon ka jawab dene ki koshish karunga.",
+"who are you":"Main Faizul AI hoon, ek browser-based assistant.",
+"your name":"Mera naam Faizul AI hai.",
 
-if(message==="") return;
+"india":"India South Asia me sthit ek desh hai. Iski rajdhani New Delhi hai.",
+"bihar":"Bihar Bharat ka ek rajya hai. Iski rajdhani Patna hai.",
+"delhi":"Delhi Bharat ki rajdhani hai.",
+"taj mahal":"Taj Mahal Agra me sthit hai aur Shah Jahan ne banwaya tha.",
+"qutub minar":"Qutub Minar Delhi me sthit ek prasiddh smarak hai.",
 
-let chat=document.getElementById("chatMessages");
+"earth":"Earth Surya se teesra grah hai aur yah jeevan wala gyaat grah hai.",
+"sun":"Sun ek tara hai aur Solar System ka kendra hai.",
+"moon":"Moon Prithvi ka prakritik upagrah hai.",
+"mars":"Mars ko Red Planet kaha jata hai.",
+"jupiter":"Jupiter Solar System ka sabse bada grah hai.",
 
-chat.innerHTML +=
-'<div class="user-message">'+message+'</div>';
+"science":"Science prakriti aur brahmand ka adhyayan hai.",
+"physics":"Physics urja, bal aur gati ka adhyayan hai.",
+"chemistry":"Chemistry padarth aur unke gunon ka adhyayan hai.",
+"biology":"Biology jeevit praniyon ka adhyayan hai.",
 
-setTimeout(() => {
+"computer":"Computer ek electronic device hai jo data process karta hai.",
+"internet":"Internet duniya bhar ke computers ka network hai.",
+"keyboard":"Keyboard input device hai.",
+"mouse":"Mouse computer ko control karne ke liye use hota hai.",
 
-chat.innerHTML +=
-'<div class="bot-message">You said: '+message+'</div>';
+"ai":"AI ka matlab Artificial Intelligence hai.",
+"chatgpt":"ChatGPT ek AI chatbot hai.",
+"robot":"Robot ek machine hai jo tasks perform kar sakti hai.",
 
-chat.scrollTop=chat.scrollHeight;
+"math":"Mathematics sankhyaon aur patterns ka adhyayan hai.",
+"algebra":"Algebra mathematics ki ek branch hai.",
+"geometry":"Geometry aakaron aur rekhaon ka adhyayan hai.",
 
-},500);
+"history":"History purani ghatnaon ka adhyayan hai.",
+"ashoka":"Ashoka Maurya vansh ke mahan samrat the.",
+"gandhi":"Mahatma Gandhi Bharat ke swatantrata andolan ke neta the.",
 
-input.value="";
-}
+"english":"English duniya ki sabse adhik prayukt bhashao me se ek hai.",
+"hindi":"Hindi Bharat ki pramukh bhashao me se ek hai.",
 
-let input =
-document.getElementById("userInput");
+"water":"Pani ka rasayanik sutra H2O hai.",
+"oxygen":"Oxygen jeevan ke liye avashyak gas hai.",
+"hydrogen":"Hydrogen brahmand ka sabse halka tatva hai.",
 
-let message = input.value.trim();
+"animal":"Animals jeevit prani hote hain.",
+"tiger":"Tiger Bharat ka rashtriya pashu hai.",
+"peacock":"Peacock Bharat ka rashtriya pakshi hai.",
 
-if(message==="") return;
+"cricket":"Cricket Bharat ka bahut lokpriya khel hai.",
+"football":"Football duniya ka sabse lokpriya khel mana jata hai.",
+"virat kohli":"Virat Kohli Bharat ke prasiddh cricketer hain.",
+"ms dhoni":"MS Dhoni Bharat ke safal kaptano me se ek hain.",
 
-let chat =
-document.getElementById("chatMessages");
+"youtube":"YouTube ek video sharing platform hai.",
+"google":"Google ek search engine company hai.",
+"github":"GitHub code hosting platform hai.",
 
-chat.innerHTML +=
-'<div class="user-message">' +
-message +
-'</div>';
+"motivation":"Mehnat aur lagatar prayas safalta ki kunji hai.",
+"study":"Rozana padhai aur revision safalta me madad karte hain.",
 
-setTimeout(() => {
+"time":"Main browser se real time nahi dekh sakta.",
+"date":"Main browser se real date nahi dekh sakta."
+};
 
-chat.innerHTML +=
-'<div class="bot-message">' +
-'You said: ' + message +
-'<br><br>Real AI response will come later.' +
-'</div>';
-
-chat.scrollTop =
-chat.scrollHeight;
-
-},500);
-
-input.value="";
-}
-if(message.includes("india")){
-    reply = "India South Asia me sthit ek desh hai. Iski rajdhani New Delhi hai aur yah duniya ka sabse adhik jansankhya wala desh hai.";
-}
-else if(message.includes("taj mahal")){
-    reply = "Taj Mahal Agra me sthit hai. Ise Mughal Badshah Shah Jahan ne apni patni Mumtaz Mahal ki yaad me banwaya tha.";
-}
-else if(message.includes("earth")){
-    reply = "Earth Surya se teesra grah hai aur yah ekmatra gyaat grah hai jahan jeevan maujood hai.";
-}
-else if(message.includes("sun")){
-    reply = "Sun ek tara (star) hai. Prithvi aur anya grah iske chakkar lagate hain.";
-}
-else if(message.includes("computer")){
-    reply = "Computer ek electronic device hai jo data ko process karta hai aur calculations, programming aur internet jaise kaam karta hai.";
-}
-else if(message.includes("ai")){
-    reply = "AI ka matlab Artificial Intelligence hai. Isme machines ko aise design kiya jata hai ki ve insano ki tarah sochne aur seekhne jaisa kaam kar saken.";
-}
-else if(message.includes("math")){
-    reply = "Maths me Algebra, Geometry, Trigonometry aur Statistics jaise vishay aate hain. Apna sawaal bhejiye.";
-}
-else if(message.includes("science")){
-    reply = "Science prakriti aur brahmand ka adhyayan hai. Isme Physics, Chemistry aur Biology shamil hain.";
-}
-else if(message.includes("history")){
-    reply = "History manav sabhyata aur purani ghatnaon ka adhyayan hai. Aap kisi specific topic ke baare me puch sakte hain.";
-}
-if(message.includes("india")){
-    reply = "India South Asia me sthit ek desh hai. Iski rajdhani New Delhi hai aur yah duniya ka sabse adhik jansankhya wala desh hai.";
-}
-else if(message.includes("taj mahal")){
-    reply = "Taj Mahal Agra me sthit hai. Ise Mughal Badshah Shah Jahan ne apni patni Mumtaz Mahal ki yaad me banwaya tha.";
-}
-else if(message.includes("earth")){
-    reply = "Earth Surya se teesra grah hai aur yah ekmatra gyaat grah hai jahan jeevan maujood hai.";
-}
-else if(message.includes("sun")){
-    reply = "Sun ek tara (star) hai. Prithvi aur anya grah iske chakkar lagate hain.";
-}
-else if(message.includes("computer")){
-    reply = "Computer ek electronic device hai jo data ko process karta hai aur calculations, programming aur internet jaise kaam karta hai.";
-}
-else if(message.includes("ai")){
-    reply = "AI ka matlab Artificial Intelligence hai. Isme machines ko aise design kiya jata hai ki ve insano ki tarah sochne aur seekhne jaisa kaam kar saken.";
-}
-else if(message.includes("math")){
-    reply = "Maths me Algebra, Geometry, Trigonometry aur Statistics jaise vishay aate hain. Apna sawaal bhejiye.";
-}
-else if(message.includes("science")){
-    reply = "Science prakriti aur brahmand ka adhyayan hai. Isme Physics, Chemistry aur Biology shamil hain.";
-}
-else if(message.includes("history")){
-    reply = "History manav sabhyata aur purani ghatnaon ka adhyayan hai. Aap kisi specific topic ke baare 
