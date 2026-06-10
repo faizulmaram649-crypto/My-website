@@ -104,8 +104,4 @@ else if(message.includes("science")){
     reply = "Science prakriti aur brahmand ka adhyayan hai. Isme Physics, Chemistry aur Biology shamil hain.";
 }
 else if(message.includes("history")){
-    reply = "History manav sabhyata aur purani ghatnaon ka adhyayan hai. Aap kisi specific topic ke baare me puch sakte hain.";
-}
-function chatAI() {
-...
-}
+    reply = "History manav sabhyata aur purani ghatnaon ka adhyayan hai. Aap kisi specific topic ke baare 
