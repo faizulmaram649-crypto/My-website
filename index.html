@@ -1,116 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faizul AI</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#0f172a;
-color:white;
-}
-
-nav{
-background:#111827;
-padding:15px;
-text-align:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:15px;
-font-weight:bold;
-}
-
-header{
-padding:80px 20px;
-text-align:center;
-}
-
-.logo{
-font-size:80px;
-}
-
-h1{
-font-size:55px;
-margin:15px 0;
-}
-
-.highlight{
-color:#06b6d4;
-}
-
-.btn{
-display:inline-block;
-background:#2563eb;
-padding:12px 25px;
-border-radius:8px;
-color:white;
-text-decoration:none;
-margin-top:20px;
-}
-
-section{
-padding:50px 20px;
-text-align:center;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:12px;
-}
-
-.chat-box{
-max-width:700px;
-margin:auto;
-}
-
-input{
-width:70%;
-padding:12px;
-border:none;
-border-radius:8px;
-}
-
-button{
-padding:12px 20px;
-border:none;
-border-radius:8px;
-background:#2563eb;
-color:white;
-cursor:pointer;
-}
-
-#response{
-margin-top:20px;
-font-size:18px;
-}
-
-footer{
-background:#111827;
-padding:20px;
-text-align:center;
-margin-top:40px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -128,6 +24,8 @@ margin-top:40px;
 <p>Smart AI Assistant for Chat, Learning and Creativity</p>
 <a href="#chat" class="btn">Start Chatting</a>
 </header>
+
+<section id="features">
 <div class="features">
 
 <div class="card">
@@ -171,6 +69,7 @@ margin-top:40px;
 </div>
 
 </div>
+</section>
 
 <section id="chat">
 <h2>Faizul AI Chat</h2>
@@ -179,9 +78,11 @@ margin-top:40px;
 <div class="chat-container">
 
 <div id="chatMessages" class="chat-messages">
+
 <div class="bot-message">
 👋 Hello! I am Faizul AI. How can I help you?
 </div>
+
 </div>
 
 <div class="chat-input-area">
@@ -191,6 +92,7 @@ id="userInput"
 placeholder="Type your message...">
 
 <button onclick="chatAI()">Send</button>
+
 </div>
 
 </div>
@@ -199,33 +101,20 @@ placeholder="Type your message...">
 <section id="about">
 <h2>About Faizul AI</h2>
 <br>
+
 <p>
 Faizul AI is a smart assistant website designed for learning,
 chatting and exploring AI technology.
 </p>
+
 </section>
 
 <footer>
 © 2026 Faizul AI
 </footer>
 
-<script>
-function chatAI(){
-
-let question =
-document.getElementById("userInput").value;
-
-if(question.trim()==""){
-return;
-}
-
-document.getElementById("response").innerHTML =
-"<b>You:</b> " + question +
-"<br><br><b>Faizul AI:</b> Thanks for your message. Real AI integration will be added later.";
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
-<div id="chatMessages">...</div>
-<div id="response"></div>
+
