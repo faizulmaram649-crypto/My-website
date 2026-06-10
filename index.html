@@ -1,76 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faizul AI</title>
 
-<link rel="stylesheet" href="style.css">
-</head><nav class="navbar">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
 
-<div class="nav-logo">
-🤖 Faizul AI
-</div>
+body{
+background:#0f172a;
+color:white;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111827;
+position:sticky;
+top:0;
+}
+
+.nav-logo{
+font-size:24px;
+font-weight:bold;
+color:#06b6d4;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.highlight{
+color:#06b6d4;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+color:#cbd5e1;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:#06b6d4;
+padding:12px 25px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+}
+
+section{
+padding:60px 8%;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+}
+
+.card:hover{
+transform:translateY(-5px);
+transition:.3s;
+}
+
+.chat-container{
+max-width:900px;
+margin:auto;
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+}
+
+.chat-messages{
+height:400px;
+overflow-y:auto;
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.user-message{
+background:#2563eb;
+padding:10px;
+margin:10px 0;
+border-radius:10px;
+text-align:right;
+margin-left:20%;
+}
+
+.bot-message{
+background:#334155;
+padding:10px;
+margin:10px 0;
+border-radius:10px;
+margin-right:20%;
+}
+
+.chat-input-area{
+display:flex;
+gap:10px;
+}
+
+.chat-input-area input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:8px;
+}
+
+.chat-input-area button{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:#06b6d4;
+color:white;
+cursor:pointer;
+}
+
+footer{
+background:#111827;
+padding:20px;
+text-align:center;
+margin-top:40px;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-logo">🤖 Faizul AI</div>
 
 <div class="nav-links">
 <a href="#features">Features</a>
 <a href="#chat">Chat</a>
 <a href="#about">About</a>
-<a href="#faq">FAQ</a>
 </div>
-
 </nav>
 
 <header class="hero">
-
-<div class="hero-content">
-
-<h1>
-Meet <span class="highlight">Faizul AI</span>
-</h1>
-
-<p>
-A powerful AI assistant designed to help you learn, solve problems,
-explore knowledge, write code and boost productivity.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#chat" class="btn">
-Start Chatting
-</a>
-
-<a href="#features" class="btn btn-secondary">
-Explore Features
-</a>
-
-</div>
-
-</div>
-
+<h1>Meet <span class="highlight">Faizul AI</span></h1>
+<p>Free AI Assistant Without API</p>
+<a href="#chat" class="btn">Start Chatting</a>
 </header>
 
-<section class="stats">
+<section id="features">
 
-<div class="stat-card">
-<h2>50+</h2>
-<p>Knowledge Topics</p>
+<h2>Features</h2>
+<br>
+
+<div class="features">
+
+<div class="card">
+<h3>🤖 AI Chat</h3>
+<p>Ask questions instantly.</p>
 </div>
 
-<div class="stat-card">
-<h2>24/7</h2>
-<p>Availability</p>
+<div class="card">
+<h3>📚 Learning</h3>
+<p>Learn new topics easily.</p>
 </div>
 
-<div class="stat-card">
-<h2>100%</h2>
-<p>Free Access</p>
+<div class="card">
+<h3>💻 Coding Help</h3>
+<p>Programming assistance.</p>
 </div>
 
-<div class="stat-card">
-<h2>Fast</h2>
-<p>Responses</p>
+<div class="card">
+<h3>🌍 General Knowledge</h3>
+<p>Basic knowledge answers.</p>
 </div>
-  <script src="script.js"></script>
-</body>
-</html>
+
+</div>
 
 </section>
+
+<section id="chat">
+
+<h2>Faizul AI Chat</h2>
+<br>
+
+<div class="chat-container">
+
+<div id="chatMessages" class="chat-messages">
+
+<div class="bot-message">
+👋 Hello! I am Faizul AI. Ask me anything.
+</div>
+
+</div>
+
+<div class="chat-input-area">
+
+<input
+type="text"
+id="userInput"
+placeholder="Type your message...">
+
+<button onclick="chatAI()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About Faizul AI</h2>
+<br>
+
+<p>
+Faizul AI is a free educational AI assistant built without API.
+</p>
+
+</section>
+
+<footer>
+© 2026 Faizul AI
+</footer>
+
+<script>
+
+const knowledge = {
+"hello":"👋 Hello! Main Faizul AI hoon.",
+"hi":"👋 Hi! Main Faizul AI hoon.",
+"india":"🇮🇳 India ki rajdhani New Delhi hai.",
+"bihar":"Bihar Bharat ka ek rajya hai.",
+"patna":"Patna Bihar ki rajdhani hai.",
+"taj mahal":"🕌 Taj Mahal Agra me sthit hai.",
+"earth":"🌍 Earth Surya se teesra grah hai.",
+"sun":"☀️ Sun ek tara hai.",
+"moon":"🌙 Moon Prithvi ka upagrah hai.",
+"science":"🔬 Science me Physics, Chemistry aur Biology shamil hain.",
+"computer":"💻 Computer ek electronic device hai.",
+"ai":"🤖 AI ka matlab Artificial Intelligence hai.",
+"dhoni":"🏏 MS Dhoni Bharat ke prasiddh cricketer hain.",
+"virat":"🏏 Virat Kohli Bharat ke star batsman hain."
+};
+
+function chatAI(){
+
+const input=document.getElementById("userInput");
+const chat=document.getElementById("chatMessages");
+
+const message=input.value.trim();
+
+if(message==="") return;
+
+const lower=message.toLowerCase();
+
+chat.innerHTML+=`
+<div class="user-message">
+${message}
+</div>
+`;
+
+let reply="";
+
+for(let key in knowledge){
+if(lower.includes(key)){
+reply=knowledge[key];
+break;
+}
+}
+
+if(!reply && lower.includes("time")){
+reply="⏰ "+new Date().toLocaleTimeString();
+}
+
+if(!reply && lower.includes("date")){
+reply="📅 "+new Date().toLocaleDateString();
+}
+
+if(!reply){
+try{
+if(/^[0-9+\-*/(). ]+$/.test(message)){
+reply="🧮 Answer = "+eval(message);
+}
+}catch{
+reply="❌ Invalid calculation";
+}
+}
+
+if(!reply){
+reply="🤔 Mujhe is topic ki jankari nahi hai.";
+}
+
+setTimeout(()=>{
+
+chat.innerHTML+=`
+<div class="bot-message">
+${reply}
+</div>
+`;
+
+chat.scrollTop=chat.scrollHeight;
+
+},300);
+
+input.value="";
+}
+
+document.getElementById("userInput").addEventListener("keypress",function(e){
+if(e.key==="Enter"){
+chatAI();
+}
+});
+
+</script>
+
+</body>
+</html>
