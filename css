@@ -37,3 +37,9 @@ margin-top:15px;
 .chat-input-area input{
 flex:1;
 }
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(6,182,212,0.5);
+cursor:pointer;
+transition:0.3s;
+}
