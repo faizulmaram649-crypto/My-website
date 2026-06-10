@@ -162,19 +162,24 @@ margin-top:40px;
 <h2>Faizul AI Chat</h2>
 <br>
 
-<div class="chat-box">
+<div class="chat-container">
+
+<div id="chatMessages" class="chat-messages">
+<div class="bot-message">
+👋 Hello! I am Faizul AI. How can I help you?
+</div>
+</div>
+
+<div class="chat-input-area">
 <input
 type="text"
 id="userInput"
-placeholder="Ask anything...">
+placeholder="Type your message...">
 
-<button onclick="chatAI()">
-Send
-</button>
-
-<p id="response"></p>
+<button onclick="chatAI()">Send</button>
 </div>
 
+</div>
 </section>
 
 <section id="about">
