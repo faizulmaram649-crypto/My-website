@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faizul AI - Ultimate Knowledge</title>
+<title>Faizul AI - Ultimate Chatbot</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -19,30 +19,29 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 .header { padding: 15px 20px; border-bottom: 1px solid #28282f; display: flex; justify-content: space-between; }
 .header h1 { font-size: 22px; background: linear-gradient(90deg, #00d48a, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .chat-area { flex: 1; overflow-y: auto; padding: 20px; }
-.welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 20px; }
+.welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
 .icon { width: 90px; height: 90px; background: linear-gradient(135deg, #00d48a, #8b5cf6); border-radius: 28px; display: flex; align-items: center; justify-content: center; font-size: 42px; margin-bottom: 20px; animation: float 3s ease infinite; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
 .welcome h2 { font-size: 30px; margin-bottom: 8px; }
 .welcome h3 { color: #00d48a; margin-bottom: 12px; }
 .welcome p { color: #9ca3af; margin-bottom: 20px; }
-.ql { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 450px; }
+.ql { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 400px; }
 .ql button { padding: 10px 14px; background: #1a1a22; border: 1px solid #28282f; border-radius: 8px; color: #f4f4f5; cursor: pointer; font-size: 13px; }
 .ql button:hover { background: #00d48a; color: #0a0a0f; }
-#msg { display: flex; flex-direction: column; gap: 15px; max-width: 750px; margin: 0 auto; width: 100%; }
+#msg { display: flex; flex-direction: column; gap: 15px; max-width: 700px; margin: 0 auto; }
 .m { display: flex; gap: 12px; }
 .m.user { flex-direction: row-reverse; }
-.av { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold; }
-.m.user .av { background: #00d48a; color: #0a0a0f; }
-.m.bot .av { background: linear-gradient(135deg, #8b5cf6, #00d48a); color: #fff; }
-.ct { max-width: 75%; padding: 14px 18px; border-radius: 18px; font-size: 14px; line-height: 1.7; }
+.av { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.m.user .av { background: #00d48a; }
+.m.bot .av { background: linear-gradient(135deg, #8b5cf6, #00d48a); }
+.ct { max-width: 70%; padding: 14px 18px; border-radius: 18px; font-size: 14px; line-height: 1.6; }
 .m.user .ct { background: #00d48a; color: #0a0a0f; }
 .m.bot .ct { background: #1a1a22; border: 1px solid #28282f; white-space: pre-line; }
 .input-area { padding: 15px 20px; background: #0a0a0f; }
-.input-box { max-width: 750px; margin: 0 auto; background: #1e1e28; border: 1px solid #28282f; border-radius: 14px; display: flex; padding: 8px 12px; align-items: center; }
+.input-box { max-width: 700px; margin: 0 auto; background: #1e1e28; border: 1px solid #28282f; border-radius: 14px; display: flex; padding: 8px 12px; }
 .input-box input { flex: 1; background: transparent; border: none; color: #f4f4f5; font-size: 14px; padding: 10px; outline: none; }
-.input-box button { width: 44px; height: 44px; background: #00d48a; border: none; border-radius: 10px; color: #0a0a0f; cursor: pointer; font-size: 18px; font-weight: bold; }
-.input-box button:hover { background: #00b878; }
-.info { max-width: 750px; margin: 8px auto 0; font-size: 11px; color: #6b7280; display: flex; justify-content: space-between; }
+.input-box button { width: 44px; height: 44px; background: #00d48a; border: none; border-radius: 10px; color: #0a0a0f; cursor: pointer; }
+.info { max-width: 700px; margin: 8px auto 0; font-size: 11px; color: #6b7280; display: flex; justify-content: space-between; }
 @media (max-width: 768px) { .sidebar { display: none; } }
 </style>
 </head>
@@ -50,17 +49,19 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <div class="app">
 <aside class="sidebar">
 <div class="logo">Faizul AI</div>
-<button class="btn" onclick="qa('math')">Math Formulas</button>
+<button class="btn" onclick="qa('math')">Math Topics</button>
 <button class="btn" onclick="qa('science')">Science</button>
 <button class="btn" onclick="qa('physics')">Physics</button>
 <button class="btn" onclick="qa('chemistry')">Chemistry</button>
 <button class="btn" onclick="qa('biology')">Biology</button>
-<button class="btn" onclick="qa('history')">Indian History</button>
+<button class="btn" onclick="qa('history')">History</button>
 <button class="btn" onclick="qa('geo')">Geography</button>
+<div class="h3">Lifestyle</div>
 <button class="btn" onclick="qa('food')">Indian Food</button>
 <button class="btn" onclick="qa('health')">Health Tips</button>
 <button class="btn" onclick="qa('fruit')">Fruits</button>
 <button class="btn" onclick="qa('veg')">Vegetables</button>
+<div class="h3">Knowledge</div>
 <button class="btn" onclick="qa('animal')">Animals</button>
 <button class="btn" onclick="qa('bird')">Birds</button>
 <button class="btn" onclick="qa('capital')">World Capitals</button>
@@ -70,8 +71,6 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <button class="btn" onclick="qa('sports')">Sports</button>
 <button class="btn" onclick="qa('jokes')">Jokes</button>
 <button class="btn" onclick="qa('facts')">Interesting Facts</button>
-<button class="btn" onclick="qa('movie')">Bollywood Movies</button>
-<button class="btn" onclick="qa('gk')">General Knowledge</button>
 </aside>
 <main class="main">
 <header class="header">
@@ -83,17 +82,12 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <div class="icon">AI</div>
 <h2>Hello!</h2>
 <h3>Welcome to Faizul AI</h3>
-<p>Your Ultimate Knowledge Assistant</p>
+<p>Your Complete Knowledge Assistant</p>
 <div class="ql">
 <button onclick="qa('hello')">Hello</button>
-<button onclick="qa('virat')">Virat Kohli</button>
-<button onclick="qa('dhoni')">MS Dhoni</button>
-<button onclick="qa('rohit')">Rohit Sharma</button>
 <button onclick="qa('math')">Math</button>
-<button onclick="qa('science')">Science</button>
 <button onclick="qa('food')">Food</button>
 <button onclick="qa('jokes')">Jokes</button>
-<button onclick="qa('facts')">Facts</button>
 </div>
 </div>
 <div id="msg"></div>
@@ -103,28 +97,26 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <input type="text" id="txt" placeholder="Ask anything...">
 <button onclick="send()">Send</button>
 </div>
-<div class="info"><span>500+ Topics Ready!</span><span>Enter se bhejein</span></div>
+<div class="info"><span>400+ Detailed Topics!</span><span>Press Enter</span></div>
 </div>
 </main>
 </div>
 
 <script>
 var db = {
-"hello": "Hello! Welcome to Faizul AI!\n\nI am your complete knowledge assistant with information on 500+ topics!\n\nYou can ask me about:\n\n🏏 CRICKET:\n- Virat Kohli (full details)\n- MS Dhoni (complete info)\n- Rohit Sharma (stats)\n- Other Indian players\n\n📚 EDUCATION:\n- Math formulas\n- Science (Physics, Chemistry, Biology)\n- History (India & World)\n- Geography\n\n🍔 LIFESTYLE:\n- Indian food\n- Health tips\n- Fruits & Vegetables\n- Benefits\n\n🌍 GENERAL KNOWLEDGE:\n- Countries & capitals\n- Languages\n- Animals & Birds\n- Festivals\n- Sports\n- Bollywood movies\n\nAnd much more!\n\nWhat would you like to know about?",
-"hi": "Hi! Welcome to Faizul AI!\n\nI have knowledge on 500+ topics!\n\nAsk me anything - cricket, education, food, health, geography, history, and more!",
-"hey": "Hey! Welcome to Faizul AI!\n\nI'm here to answer all your questions!\n\nWhat would you like to learn?",
-"how": "I am doing great, thank you for asking!\n\nI'm your friendly AI assistant, always ready to help you with any question!\n\nHow can I assist you today? What would you like to know?",
-"fine": "Great to hear that! I'm always here to help!\n\nWhat question do you have for me?",
-"good": "Good! I'm here to help!\n\nAsk your question!",
-"who": "I am Faizul AI - your ultimate knowledge assistant!\n\nI can answer questions on 500+ different topics!\n\nJust ask me anything!",
-"who is faizul": "FAIZUL MARAM - THE CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n📋 ABOUT:\n\nFaizul Maram is a multi-talented individual:\n\n🎬 YOUTUBE CREATOR:\n- Creates educational content\n- Tech tutorials\n- Coding videos\n- Editing guides\n- Helps students learn new things\n\n💻 DEVELOPER:\n- Website developer\n- AI chatbot creator\n- App developer\n- Software solutions\n\n✂️ VIDEO EDITOR:\n- Professional video editing\n- Visual effects\n- Music videos\n- YouTube content\n\n📱 CONTENT:\n- Educational tutorials\n- Tech tips\n- Learning videos\n- Student guidance\n\n🌟 WHAT HE DOES:\n- Teaches coding\n- Creates AI tools\n- Shares knowledge\n- Helps learners\n- Makes educational content\n\nHe is making a difference in education by helping people learn through his content!",
-"faizul": "FAIZUL MARAM:\n\nFaizul Maram is a popular:\n- YouTuber\n- Developer\n- Editor\n- Teacher\n\nHe created this chatbot to help people with knowledge!\n\nCheck his YouTube channel for helpful content!",
-"faizul maram": "FAIZUL MARAM - KNOWN AS:\n\nA popular:\n🎬 YouTube Creator\n💻 Developer\n✂️ Video Editor\n📚 Teacher\n\nHe creates content that helps students and learners understand various topics!\n\nHis YouTube channel has:\n- Coding tutorials\n- Tech tips\n- Educational videos\n- Helpful guides\n\nHe is making education accessible to everyone!",
-"thanks": "You're welcome! 😊\n\nI'm happy to help!\n\nAsk more questions anytime!",
-"thank": "Welcome! ❤️\n\nI'm always here to help!\n\nAsk anything!",
-"bye": "Goodbye! 👋\n\nCome back anytime for more questions!",
-"ok": "Great! What else would you like to know?",
-"yes": "Yes! I'm here to help!\n\nAsk your question!",
-"no": "No problem!\n\nJust ask me anything!",
-"maybe": "Maybe!\n\nBut why not ask and find out?",
-"virat": "VIRAT KOHLI - THE KING OF CRICKET\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n📋 PERSONAL DETAILS:\n\nFull Name: Virat Anushka Kohli\nBorn: 5 November 1988\nBirthplace: Delhi, India\nAge: 36 years (2024)\nHeight: 5 feet 6 inches (168 cm)\nWeight: 70 kg\nReligion: Hinduism\nCaste: Khatri\nZodiac: Scorpio\nMarital Status: Married\nWife: Anushka Sharma (actress)\nDaughter: Vamika (born December 2021)\nSon: Akaay (born February 2023)\n\n🏏 CRICKET CAREER:\nRole: Batsman (Top Order)\nBatting Style: Right Handed\nBowling Style: Right Arm Medium\nJersey Number: 18 (BCCI)\nField Position: Close to the wicket (slips)\n\n👕 INTERNATIONAL DEBUT:\nTest Debut: 22 June 2011 vs West Indies\nODI Debut: 18 August 2008 vs Sri Lanka\nT20I Debut: 10 June 2010 vs Zimbabwe\nIPL Debut: 2008 for Royal Challengers Bangalore\n\n📊 DETAILED STATISTICS:\n\nTEST CRICKET:\nTotal Matches: 113\nInnings: 191\nRuns Scored: 8848\nHighest Score: 254* (not out)\nAverage: 49.16\nCenturies: 29\nFifties: 29\nNot Outs: 10\nDucks: 7\n\nONE DAY INTERNATIONALS:\nTotal Matches: 295\nInnings: 280\nRuns Scored: 13893\nHighest Score: 166\nAverage: 57.64\nCenturies: 50\nFifties: 72\nNot Outs: 72\nDucks: 11\n\nTWENTY20 INTERNATIONALS:\nTotal Matches: 125\nInnings: 114\nRuns Scored: 4189\nHighest Score: 122* (not out)\nAverage: 52.36\nCenturies: 1\nFifties: 37\n\nINDIAN PREMIER LEAGUE (IPL):\nTotal Matches: 237\nInnings: 230\nRuns Scored: 7411\nHighest Score: 113\nAverage: 37.79\nCenturies: 7\nFifties: 50\n\n🏆 MAJOR ACHIEVEMENTS:\n\nINTERNATIONAL:\n✅ ICC Cricket World Cup: 2011 (India won!)\n✅ ICC Champions Trophy: 2013\n✅ ICC World T20: 2022 (Vice-Captain)\n✅ ICC Test Mace: 2014, 2015, 2017, 2018 (4 times)\n✅ ICC Cricketer of the Year: 2017, 2018\n✅ ICC Test Player of Year: 2018\n✅ ICC Men's T20I Player of Year: 2022\n✅ BCCI Cricketer of the Year: 2011-12, 2014-15, 2017-18, 2019-20\n\nRECORDS HELD:\n✅ Fastest to 8000 ODI runs\n✅ Fastest to 9000 ODI runs\n✅ Fastest to 10000 ODI runs\n✅ Fastest to 12000 ODI runs\n✅ Most runs in calendar year (2017, 2018)\n✅ Most centuries while chasing in ODIs\n✅ 50+ average in all formats (first Indian)\n✅ First Indian to win all 3 ICC awards in 1 year\n✅ 100 international matches as captain\n✅ 50+ ODI run-chases\n\n⭐ NICKNAMES:\n• King Kohli\n• Chase Master\n• Run Machine\n• King\n• The Run King\n• Virat\n• Runmachine\n\n💰 NET WORTH:\n$120+ Million USD\n(Approx INR 1000+ Crore)\n\n🏠 FAMILY DETAILS:\nFather: Prem Kohli (Businessman, passed away 2022)\nMother: Saroj Kohli (Housewife)\nBrother: Vikas Kohli (Elder brother, businessman)\nSister-in-Law: Ishita Kohli\nNiece: Vrinda (Vikas's daughter)\n\n📚 EDUCATION:\nSchool: St. Columba's School, Delhi (Class 1-6)\n         Rashtriya Indian Vidyalaya, Delhi\nCollege: Graduate from Delhi University\n\n🏏 CAPTAINCY RECORD:\nTest Captain: 68 matches, 40 wins (best for India!)\nODI Captain: 62 matches, 34 wins\nT20I Captain: 50 matches,
+"hello": "Hello! Welcome to Faizul AI!\n\nI'm your complete knowledge assistant!\n\nYou can ask me about:\n🏏 Cricket Players (Virat, Dhoni, Rohit)\n📚 Education (Math, Science, History)\n🍔 Food & Health\n🌍 Geography\n📜 History\n🐱 Animals\nAnd much more!\n\nWhat would you like to know?",
+"hi": "Hi! Welcome to Faizul AI!\n\nAsk me anything - I have 400+ topics!",
+"hey": "Hey! Welcome!\n\nWhat would you like to learn?",
+"how": "I'm doing great, thank you!\n\nI'm here to help you with any question!\n\nHow can I assist you today?",
+"fine": "Great to hear that!\n\nWhat question do you have?",
+"who": "I am Faizul AI - your smart AI assistant!\n\nI can answer questions on 400+ topics!\n\nAsk me anything!",
+"who is faizul": "FAIZUL MARAM - THE CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n📋 ABOUT:\n\nFaizul Maram is a popular:\n\n🎬 YouTube Creator\n💻 Developer\n✂️ Video Editor\n📱 Tech Enthusiast\n\nHe has created this AI chatbot to help people with knowledge on various topics!\n\n🔴 YOUTUBE:\n\nFaizul Maram is a popular YouTuber known for:\n\n• Tech tutorials\n• Coding videos\n• Editing tips\n• Educational content\n\nHe creates helpful content for students and learners!\n\n💻 DEVELOPMENT:\n\nAs a developer, he builds:\n\n• Websites\n• AI Chatbots\n• Mobile Apps\n• Software Solutions\n\n✂️ EDITING:\n\nExpert in video editing:\n\n• Professional editing\n• Visual effects\n• Music videos\n• Reels/Shorts\n\n🌟 WHAT HE DOES:\n\nFaizul Maram is a:\n• Content Creator\n• Teacher\n• Guide\n• Helper for students\n\nHe makes educational content that helps thousands of people learn new things!\n\n📱 SOCIAL MEDIA:\n\nCheck his YouTube channel for:\n• Coding tutorials\n• Tech tips\n• Educational videos\n• Helpful guides\n\nHe's making a difference in education! 💡",
+"what": "I'm Faizul AI - your complete knowledge assistant!",
+"name": "My name is Faizul AI!\n\nI was created by Faizul Maram - a popular YouTuber, developer and editor!",
+"thanks": "You're welcome! 😊\n\nAsk more anytime!",
+"bye": "Goodbye! 👋\n\nCome back anytime!",
+"ok": "Great! What else?",
+"good": "Good! Ask me anything!",
+"virat": "VIRAT KOHLI - THE KING OF CRICKET\n\n━━━━━━━━━━━━━━━━━━━━\n📋 BASIC INFO:\n\nFull Name: Virat Kohli\nBorn: 5 November 1988\nPlace: Delhi, India\nAge: 36 years\nHeight: 5'6\" (168 cm)\nReligion: Hinduism\n\n🏏 CRICKET CAREER:\nRole: Batsman\nBatting: Right Handed\nBowling: Right Arm Medium\nJersey: 18\n\n👕 DEBUT:\nTest: 2011 vs West Indies\nODI: 2008 vs Sri Lanka\nT20: 2010 vs Zimbabwe\n\n📊 DETAILED STATS:\n\nTEST:\nMatches: 113\nRuns: 8848\nAverage: 49.16\nCenturies: 29\nFifties: 29\nHighest: 254*\nBest Bowling: 0/31\n\nODI:\nMatches: 295\nRuns: 13893\nAverage: 57.64\nCenturies: 50\nFifties: 72\nHighest: 166\n\nT20I:\nMatches: 125\nRuns: 4189\nAverage: 52.36\nCenturies: 1\nHighest: 122*\n\n\nIPL:\nMatches: 237\nRuns: 7411\nAverage: 37.79\nCenturies: 7\nHighest: 113\n\n🏆 ACHIEVEMENTS:\n✅ Cricket World Cup: 2011\n✅ ICC Champions Trophy: 2013\n✅ ICC Test Mace: 4 times\n✅ ICC Cricketer of Year: 2017, 2018\n✅ Most run getter in 2012, 2013, 2014, 2017, 2018\n✅ Fastest to 8000, 9000, 10000, 12000 ODI runs\n\n⭐ NICKNAMES: King Kohli, Chase Master, Run Machine\n\n💰 NET WORTH: $120+ million\n\n🏠 FAMILY:\nFather: Prem Kohli (passed away)\nMother: Saroj Kohli\nBrother: Vikas Kohli\nWife: Anushka Sharma\nDaughter: Vamika (born 2021)\n\nSon: Akaay (born 2023)",
+"dhoni": "MS DHONI - LEGENDARY CAPTAIN\n\n━━━━━━━━━━━━━━━━━━━━\n📋 BASIC INFO:\n\nFull Name: Mahendra Singh Dhoni\nBorn: 7 July 1981\nPlace: Ranchi, Jharkhand\nAge: 43 years\nHeight: 6'0\" (183 cm)\nReligion: Hinduism\n\n🏏 CRICKET CAREER:\nRole: Wicket Keeper & Batsman\nBatting: Right Handed\nJersey: 7\n\n👕 DEBUT:\nODI: 2004 vs Sri Lanka\nTest: 2008 vs India\nT20: 2006 vs South Africa\n\n📊 DETAILED STATS:\n\nODI:\nMatches: 350\nRuns: 10768\nAverage: 50.23\nCenturies: 10\nFifties: 73\nHighest: 183*\nNot Outs: 74\n\nTEST:\nMatches: 90\nRuns: 4876\nAverage: 38.09\nCenturies: 6\nFifties: 33\nHighest: 224\n\nT20I:\nMatches: 98\nRuns: 1612\nAverage: 37.93\nFifties: 2\nHighest: 86\n\nCAPTAINCY RECORD:\nTest: 60 matches, 29 wins (best for India!)\nODI: 199 matches, 110 wins (most for India!)\nT20I: 72 matches, 41 wins\n\n🏆 WORLD CUP ACHIEVEMENTS:\n✅ ICC World T20: 2007 (as captain!)\n✅ ICC Cricket World Cup: 2011 (as CAPTAIN! 🏆)\n✅ ICC Champions Trophy: 2013 (as captain!)\n\n🏆 IPL ACHIEVEMENTS:\n✅ CSK: 3 times winner (2010, 2011, 2018)\n✅ Runners-up: 2012, 2019\n\n🏆 OTHER ACHIEVEMENTS:\n✅ Padma Bhushan: 2018\n✅ Padma Shri: 2009\n✅ Major Dhyan Chand Khel Ratna: 2009\n\n⭐ NICKNAMES: Captain Cool, Thala, MS Dhoni\n\n💰 NET WORTH: $110 million\n\n🏠 FAMILY:\nFather: Shailender Dhoni\nMother: Devaki Dhoni\nSister: Jayanti\nWife: Sakshi Dhoni\nDaughter: Ziva (born 2015)\n\n⚡ UNIQUE FACTS:\n• Famous for helicopter shot!\n• Keeps hair short always!\n• Loves bikes! (Royal Enfield fan)\n• Only captain to win all ICC trophies!\n• Most matches as captain in all formats!",
+"rohit": "ROHIT SHARMA - THE HITMAN\n\n━━━━━━━━━━━━━━━━━━━━\n📋 BASIC INFO:\n\nFull Name: Rohit Gurunath Sharma\nBorn: 30 April 1987\nPlace: Nagpur, Maharashtra\nAge: 37 years\nHeight: 5'11\" (180 cm)\n\n🏏 CRICKET CAREER:\nRole: Opening Batsman\nBatting: Right Handed\nBowling: Right Arm Off Spin\nJersey: 45\n\n👕 DEBUT:\nTest: 2013 vs West Indies\nODI: 2007 vs South Africa\nT20: 2007 vs Sri Lanka\n\n📊 DETAILED STATS:\n\nTEST:\nMatches: 59\nRuns: 3974\nAverage: 45.68\nCenturies: 10\nFifties: 14\nHighest: 212\n\nODI:\nMatches: 271\nRuns: 10256\nAverage: 48.83\nCenturies: 31\nFifties: 55\nHighest: 264 (WORLD RECORD!)\n\n
