@@ -1,103 +1,58 @@
-// ===============================
-// FAIZUL AI - PREMIUM SCRIPT
-// Gemini 2.5 Flash Integration
-// ===============================
+const API_KEY = "AQ.Ab8RN6KQLgpZLRtyWS0_AO6Lq9bPzBsccyGooFViT-jrmCLkQA";
 
-
-const API_KEY = "AQ.Ab8RN6Len8MwlhZklUHmIrmyXHLOFhppRzBMoKP_Q_MmyL7ObA";
-
-// Chat container
-const chatBox = document.getElementById("chatMessages");
-const inputBox = document.getElementById("userInput");
-
-// ===============================
-// SEND MESSAGE FUNCTION
-// ===============================
 async function chatAI() {
 
-    const message = inputBox.value.trim();
+const input = document.getElementById("userInput");
+const chat = document.getElementById("chatMessages");
 
-    if (!message) return;
+const message = input.value.trim();
+if (!message) return;
 
-    // User message show
-    chatBox.innerHTML += `
-        <div class="user-message">🧑 ${message}</div>
-    `;
+chat.innerHTML += `<div class="user-message">${message}</div>`;
 
-    inputBox.value = "";
+input.value = "";
 
-    // Loading message
-    const loadingId = "loading_" + Date.now();
-    chatBox.innerHTML += `
-        <div class="bot-message" id="${loadingId}">
-            🤖 Faizul AI is thinking...
-        </div>
-    `;
+chat.innerHTML += `<div class="bot-message">⏳ Thinking...</div>`;
 
-    chatBox.scrollTop = chatBox.scrollHeight;
+try {
 
-    try {
+const res = await fetch(
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+{
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+contents: [
+{
+parts: [{ text: message }]
+}
+]
+})
+}
+);
 
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    contents: [
-                        {
-                            parts: [
-                                {
-                                    text: message
-                                }
-                            ]
-                        }
-                    ]
-                })
-            }
-        );
+const data = await res.json();
 
-        const data = await response.json();
+console.log(data);
 
-        let reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+let reply =
+data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-        if (!reply) {
-            reply = "❌ Sorry, AI response nahi mil paya.";
-        }
-
-        // Remove loading
-        document.getElementById(loadingId).remove();
-
-        // Bot reply show
-        chatBox.innerHTML += `
-            <div class="bot-message">🤖 ${reply}</div>
-        `;
-
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-    } catch (error) {
-
-        document.getElementById(loadingId).remove();
-
-        chatBox.innerHTML += `
-            <div class="bot-message">❌ Error: API connect nahi ho raha</div>
-        `;
-
-        console.error(error);
-    }
+if (!reply) {
+reply = "⚠️ No response from AI. Please try again.";
 }
 
-// ===============================
-// ENTER KEY SUPPORT
-// ===============================
-document.addEventListener("DOMContentLoaded", () => {
+chat.innerHTML += `<div class="bot-message">${reply}</div>`;
 
-    inputBox.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-            chatAI();
-        }
-    });
+chat.scrollTop = chat.scrollHeight;
 
-});
+} catch (err) {
+
+console.error(err);
+
+chat.innerHTML += `<div class="bot-message">❌ Error connecting to AI</div>`;
+}
+
+}
