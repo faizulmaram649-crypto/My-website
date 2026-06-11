@@ -1,4 +1,4 @@
-const API_KEY = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY";
+const API_KEY = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AQ.Ab8RN6KQLgpZLRtyWS0_AO6Lq9bPzBsccyGooFViT-jrmCLkQA";
 
 async function chatAI() {
 
@@ -19,7 +19,7 @@ chat.appendChild(loading);
 try {
 
 const res = await fetch(
-`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${AQ.Ab8RN6KQLgpZLRtyWS0_AO6Lq9bPzBsccyGooFViT-jrmCLkQA}`,
 {
 method: "POST",
 headers: {"Content-Type": "application/json"},
