@@ -1,6 +1,6 @@
 // ===== CONFIG =====
-// Yahan apni API key daalno
-const API_KEY = 
+// Yahan apni ACTUAL API key daalno - ye bahut zaroori hai!
+const API_KEY = "PASTE_YOUR_REAL_API_KEY_HERE";
 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
 // ===== VARIABLES =====
 var mode = 'chat';
@@ -17,6 +17,15 @@ var imageInputGroup = document.getElementById('imageInputGroup');
 var chatModeBtn = document.getElementById('chatModeBtn');
 var imageModeBtn = document.getElementById('imageModeBtn');
 var sendBtn = document.getElementById('sendBtn');
+
+// ===== CHECK API KEY =====
+function checkApiKey() {
+    if (API_KEY === "PASTE_YOUR_REAL_API_KEY_HERE" || API_KEY === "") {
+        alert("Please add your OpenAI API key in script.js file!");
+        return false;
+    }
+    return true;
+}
 
 // ===== AUTO RESIZE =====
 chatInput.addEventListener('input', function() {
@@ -54,6 +63,9 @@ function setMode(newMode) {
 async function sendMessage() {
     if (isLoading) return;
     
+    // Check API key first
+    if (!checkApiKey()) return;
+    
     var text = "";
     
     if (mode === 'chat') {
@@ -64,13 +76,9 @@ async function sendMessage() {
     
     if (text === "") return;
     
-    // Hide welcome
     welcomeDiv.style.display = 'none';
-    
-    // Add user message
     addMessage(text, 'user');
     
-    // Clear input
     if (mode === 'chat') {
         chatInput.value = "";
         chatInput.style.height = "auto";
@@ -78,13 +86,11 @@ async function sendMessage() {
         imageInput.value = "";
     }
     
-    // Show loading
     isLoading = true;
     var loadingId = showLoading();
     
     try {
         if (mode === 'chat') {
-            // Chat API
             var response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
@@ -102,12 +108,11 @@ async function sendMessage() {
             removeLoading(loadingId);
             
             if (data.error) {
-                addMessage('Error: ' + data.error.message, 'bot');
+                addMessage("Error: " + data.error.message, 'bot');
             } else {
                 addMessage(data.choices[0].message.content, 'bot');
             }
         } else {
-            // Image API
             var response = await fetch('https://api.openai.com/v1/images/generations', {
                 method: 'POST',
                 headers: {
@@ -125,14 +130,14 @@ async function sendMessage() {
             removeLoading(loadingId);
             
             if (data.error) {
-                addMessage('Error: ' + data.error.message, 'bot');
+                addMessage("Error: " + data.error.message, 'bot');
             } else {
                 addImageMessage(data.data[0].url);
             }
         }
     } catch (error) {
         removeLoading(loadingId);
-        addMessage("Error: Failed to connect. Check API key.", 'bot');
+        addMessage("Error: " + error.message, 'bot');
         console.log(error);
     }
     
@@ -158,7 +163,7 @@ function addImageMessage(url) {
     var div = document.createElement('div');
     div.className = 'message bot';
     
-    div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-image"></i></div><div class="msg-content"><p>Generated Image:</p><img src="' + url + '" alt="AI Image" onclick="window.open(\'' + url + '\', \'_blank\')"></div>';
+    div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-image"></i></div><div class="msg-content"><p>Generated Image:</p><img src="' + url + '" alt="AI Image"></div>';
     
     messagesDiv.appendChild(div);
     scrollBottom();
@@ -189,6 +194,7 @@ function scrollBottom() {
 
 // ===== QUICK ACTIONS =====
 function quickSend(text) {
+    if (!checkApiKey()) return;
     chatInput.value = text;
     mode = 'chat';
     setMode('chat');
@@ -196,6 +202,7 @@ function quickSend(text) {
 }
 
 function quickImage(text) {
+    if (!checkApiKey()) return;
     imageInput.value = text;
     mode = 'image';
     setMode('image');
