@@ -1,70 +1,45 @@
-const API_KEY = "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";
+// ===== CONFIGURATION =====
+const API_KEY = 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""; // Replace with your actual OpenAI API Key
 
-async function chatAI() {
+// ===== DOM ELEMENTS =====
+const userInput = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
+const messagesList = document.getElementById("messagesList");
+const messagesContainer = document.getElementById("messagesContainer");
+const welcomeScreen = document.getElementById("welcomeScreen");
 
-const input = document.getElementById("userInput");
-const chat = document.getElementById("chatMessages");
-
-const message = input.value.trim();
-if (!message) return;
-
-chat.innerHTML += `<div class="user-message">🧑 ${message}</div>`;
-
-input.value = "";
-
-// loading
-const loading = document.createElement("div");
-loading.className = "bot-message";
-loading.innerText = "⏳ Thinking...";
-chat.appendChild(loading);
-
-chat.scrollTop = chat.scrollHeight;
-
-try {
-
-const res = await fetch("https://api.openai.com/v1/chat/completions", {
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-"Authorization": `Bearer ${API_KEY}`
-},
-body: JSON.stringify({
-model: "gpt-4o-mini",
-messages: [
-{ role: "system", content: "You are Faizul AI, a helpful assistant." },
-{ role: "user", content: message }
-]
-})
+// ===== AUTO-RESIZE TEXTAREA =====
+userInput.addEventListener("input", function() {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+    
+    // Limit max height
+    if (this.scrollHeight > 200) {
+        this.style.overflowY = "auto";
+    }
 });
 
-const data = await res.json();
-
-loading.remove();
-
-let reply = data?.choices?.[0]?.message?.content;
-
-if (!reply) {
-reply = "⚠️ No response from AI (check API key or billing)";
-}
-
-chat.innerHTML += `<div class="bot-message">${reply}</div>`;
-
-chat.scrollTop = chat.scrollHeight;
-
-} catch (err) {
-
-loading.remove();
-
-chat.innerHTML += `<div class="bot-message">❌ Error connecting to OpenAI</div>`;
-console.error(err);
-
-}
-
-}
-
-// ENTER KEY SUPPORT
-document.addEventListener("keydown", function(e){
-if(e.key === "Enter"){
-chatAI();
-}
-});
+// ===== SEND MESSAGE =====
+async function sendMessage() {
+    const messageText = userInput.value.trim();
+    
+    if (!messageText) return;
+    
+    // Hide welcome screen
+    welcomeScreen.style.display = "none";
+    
+    // Add user message
+    addMessage(messageText, "user");
+    
+    // Clear input
+    userInput.value = "";
+    userInput.style.height = "auto";
+    
+    // Show loading
+    const loadingId = showLoading();
+    
+    // Disable send button
+    sendBtn.disabled = true;
+    
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions",
