@@ -1,32 +1,22 @@
-// ===== CONFIG =====
 const API_KEY = "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";
 
-// ===== VARIABLES =====
 var mode = 'chat';
 var isLoading = false;
 
-// ===== DOM ELEMENTS =====
 var messagesDiv = document.getElementById('messages');
 var welcomeDiv = document.getElementById('welcome');
 var chatInput = document.getElementById('chatInput');
 var imageInput = document.getElementById('imageInput');
 var imageSizeSelect = document.getElementById('imageSize');
-var chatInputGroup = document.getElementById('chatInputGroup');
-var imageInputGroup = document.getElementById('imageInputGroup');
-var chatModeBtn = document.getElementById('chatModeBtn');
-var imageModeBtn = document.getElementById('imageModeBtn');
-var sendBtn = document.getElementById('sendBtn');
 
-// ===== CHECK API KEY =====
-function checkApiKey() {
-    if (API_KEY === "PASTE_YOUR_REAL_API_KEY_HERE" || API_KEY === "") {
-        alert("Please add your OpenAI API key in script.js file!");
+function checkKey() {
+    if (API_KEY === "" || API_KEY.length < 40) {
+        alert("Invalid API key!");
         return false;
     }
     return true;
 }
 
-// ===== AUTO RESIZE =====
 chatInput.addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
@@ -39,145 +29,82 @@ chatInput.addEventListener('keydown', function(e) {
     }
 });
 
-// ===== SET MODE =====
 function setMode(newMode) {
     mode = newMode;
-    
-    if (mode === 'chat') {
-        chatModeBtn.classList.add('active');
-        imageModeBtn.classList.remove('active');
-        chatInputGroup.classList.add('active');
-        imageInputGroup.classList.remove('active');
-        chatInput.focus();
-    } else {
-        imageModeBtn.classList.add('active');
-        chatModeBtn.classList.remove('active');
-        imageInputGroup.classList.add('active');
-        chatInputGroup.classList.remove('active');
-        imageInput.focus();
-    }
+    document.getElementById('chatModeBtn').classList.toggle('active', mode === 'chat');
+    document.getElementById('imageModeBtn').classList.toggle('active', mode === 'image');
+    document.getElementById('chatInputGroup').classList.toggle('active', mode === 'chat');
+    document.getElementById('imageInputGroup').classList.toggle('active', mode === 'image');
+    if (mode === 'chat') chatInput.focus();
+    else imageInput.focus();
 }
 
-// ===== SEND MESSAGE =====
 async function sendMessage() {
-    if (isLoading) return;
+    if (isLoading || !checkKey()) return;
     
-    // Check API key first
-    if (!checkApiKey()) return;
-    
-    var text = "";
-    
-    if (mode === 'chat') {
-        text = chatInput.value.trim();
-    } else {
-        text = imageInput.value.trim();
-    }
-    
+    var text = mode === 'chat' ? chatInput.value.trim() : imageInput.value.trim();
     if (text === "") return;
     
     welcomeDiv.style.display = 'none';
     addMessage(text, 'user');
     
-    if (mode === 'chat') {
-        chatInput.value = "";
-        chatInput.style.height = "auto";
-    } else {
-        imageInput.value = "";
-    }
+    if (mode === 'chat') chatInput.value = ""; 
+    else imageInput.value = "";
     
     isLoading = true;
     var loadingId = showLoading();
     
     try {
-        if (mode === 'chat') {
-            var response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + API_KEY
-                },
-                body: JSON.stringify({
-                    model: 'gpt-3.5-turbo',
-                    messages: [{ role: 'user', content: text }],
-                    temperature: 0.7
-                })
-            });
-            
-            var data = await response.json();
-            removeLoading(loadingId);
-            
-            if (data.error) {
-                addMessage("Error: " + data.error.message, 'bot');
-            } else {
-                addMessage(data.choices[0].message.content, 'bot');
-            }
-        } else {
-            var response = await fetch('https://api.openai.com/v1/images/generations', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + API_KEY
-                },
-                body: JSON.stringify({
-                    prompt: text,
-                    n: 1,
-                    size: imageSizeSelect.value
-                })
-            });
-            
-            var data = await response.json();
-            removeLoading(loadingId);
-            
-            if (data.error) {
-                addMessage("Error: " + data.error.message, 'bot');
-            } else {
-                addImageMessage(data.data[0].url);
-            }
-        }
+        var url = mode === 'chat' ? 'https://api.openai.com/v1/chat/completions' : 'https://api.openai.com/v1/images/generations';
+        var body = mode === 'chat' ? 
+            { model: 'gpt-3.5-turbo', messages: [{ role: 'user', content: text }] } :
+            { prompt: text, n: 1, size: imageSizeSelect.value };
+        
+        var response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY },
+            body: JSON.stringify(body)
+        });
+        
+        var data = await response.json();
+        removeLoading(loadingId);
+        
+        if (data.error) addMessage("Error: " + data.error.message, 'bot');
+        else if (mode === 'chat') addMessage(data.choices[0].message.content, 'bot');
+        else addImageMessage(data.data[0].url);
     } catch (error) {
         removeLoading(loadingId);
         addMessage("Error: " + error.message, 'bot');
-        console.log(error);
     }
     
     isLoading = false;
 }
 
-// ===== ADD MESSAGE =====
 function addMessage(text, sender) {
     var div = document.createElement('div');
     div.className = 'message ' + sender;
-    
-    var avatarIcon = sender === 'user' ? 'fa-user' : 'fa-robot';
-    var avatarColor = sender === 'user' ? 'var(--accent)' : 'var(--purple)';
-    
-    div.innerHTML = '<div class="msg-avatar" style="background:' + avatarColor + '"><i class="fa-solid ' + avatarIcon + '"></i></div><div class="msg-content">' + text + '</div>';
-    
+    var icon = sender === 'user' ? 'fa-user' : 'fa-robot';
+    var color = sender === 'user' ? 'var(--accent)' : 'var(--purple)';
+    div.innerHTML = '<div class="msg-avatar" style="background:' + color + '"><i class="fa-solid ' + icon + '"></i></div><div class="msg-content">' + text + '</div>';
     messagesDiv.appendChild(div);
     scrollBottom();
 }
 
-// ===== ADD IMAGE =====
 function addImageMessage(url) {
     var div = document.createElement('div');
     div.className = 'message bot';
-    
-    div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-image"></i></div><div class="msg-content"><p>Generated Image:</p><img src="' + url + '" alt="AI Image"></div>';
-    
+    div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-image"></i></div><div class="msg-content"><p>Generated:</p><img src="' + url + '"></div>';
     messagesDiv.appendChild(div);
     scrollBottom();
 }
 
-// ===== LOADING =====
 function showLoading() {
     var id = 'loading-' + Date.now();
     var div = document.createElement('div');
     div.id = id;
     div.className = 'message bot';
     div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-robot"></i></div><div class="loading"><span></span><span></span><span></span></div>';
-    
     messagesDiv.appendChild(div);
-    scrollBottom();
     return id;
 }
 
@@ -187,36 +114,10 @@ function removeLoading(id) {
 }
 
 function scrollBottom() {
-    var chatArea = document.getElementById('chatArea');
-    chatArea.scrollTop = chatArea.scrollHeight;
+    document.getElementById('chatArea').scrollTop = document.getElementById('chatArea').scrollHeight;
 }
 
-// ===== QUICK ACTIONS =====
-function quickSend(text) {
-    if (!checkApiKey()) return;
-    chatInput.value = text;
-    mode = 'chat';
-    setMode('chat');
-    sendMessage();
-}
-
-function quickImage(text) {
-    if (!checkApiKey()) return;
-    imageInput.value = text;
-    mode = 'image';
-    setMode('image');
-    sendMessage();
-}
-
-// ===== NEW CHAT =====
-function newChat() {
-    messagesDiv.innerHTML = '';
-    welcomeDiv.style.display = 'flex';
-}
-
-// ===== CLEAR =====
-function clearChat() {
-    if (confirm('Clear all chat?')) {
-        newChat();
-    }
-}
+function quickSend(text) { chatInput.value = text; sendMessage(); }
+function quickImage(text) { imageInput.value = text; mode = 'image'; sendMessage(); }
+function newChat() { messagesDiv.innerHTML = ''; welcomeDiv.style.display = 'flex'; }
+function clearChat() { if (confirm('Clear?')) newChat(); }
