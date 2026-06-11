@@ -1,4 +1,4 @@
-const API_KEY = "AQ.Ab8RN6KQLgpZLRtyWS0_AO6Lq9bPzBsccyGooFViT-jrmCLkQA";
+const API_KEY = "AQ.Ab8RN6Len8MwlhZklUHmIrmyXHLOFhppRzBMoKP_Q_MmyL7ObA";
 
 async function chatAI() {
 
