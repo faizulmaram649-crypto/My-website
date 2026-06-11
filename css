@@ -1,45 +1,76 @@
-.chat-container{
-max-width:800px;
-margin:auto;
-background:#1e293b;
-padding:20px;
-border-radius:12px;
+/* ===== FAIZUL AI EXTRA PREMIUM STYLES ===== */
+
+/* Smooth animation for messages */
+.user-message, .bot-message{
+animation: fadeIn 0.3s ease-in-out;
 }
 
-.chat-messages{
-height:400px;
-overflow-y:auto;
-padding:10px;
-text-align:left;
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-.user-message{
-background:#2563eb;
-padding:10px;
-margin:10px 0;
-border-radius:10px;
-text-align:right;
+/* Hover glow effect for chat bubbles */
+.user-message:hover{
+box-shadow:0 0 12px rgba(37,99,235,0.6);
 }
 
-.bot-message{
-background:#334155;
-padding:10px;
-margin:10px 0;
-border-radius:10px;
+.bot-message:hover{
+box-shadow:0 0 12px rgba(6,182,212,0.4);
 }
 
-.chat-input-area{
-display:flex;
-gap:10px;
-margin-top:15px;
+/* Button click effect */
+.input-area button:active{
+transform:scale(0.95);
 }
 
-.chat-input-area input{
-flex:1;
-}
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(6,182,212,0.5);
-cursor:pointer;
+/* Sidebar smooth animation */
+.sidebar{
 transition:0.3s;
+}
+
+/* Input focus glow */
+.input-area input:focus{
+border:1px solid #06b6d4;
+box-shadow:0 0 10px rgba(6,182,212,0.3);
+}
+
+/* Chat container smooth scroll */
+.chat-messages{
+scroll-behavior:smooth;
+}
+
+/* Typing indicator style (future use) */
+.typing{
+font-size:14px;
+color:#94a3b8;
+font-style:italic;
+padding-left:10px;
+}
+
+/* Responsive improvement */
+@media(max-width:768px){
+
+.sidebar{
+width:200px;
+}
+
+.user-message,
+.bot-message{
+max-width:85%;
+}
+
+.input-area{
+flex-direction:column;
+}
+
+.input-area button{
+width:100%;
+}
 }
