@@ -9,12 +9,13 @@ const message = input.value.trim();
 if (!message) return;
 
 chat.innerHTML += `<div class="user-message">🧑 ${message}</div>`;
+
 input.value = "";
 
-// loading message
+// loading
 const loading = document.createElement("div");
 loading.className = "bot-message";
-loading.innerText = "⏳ Faizul AI is thinking...";
+loading.innerText = "⏳ Thinking...";
 chat.appendChild(loading);
 
 chat.scrollTop = chat.scrollHeight;
@@ -30,40 +31,40 @@ headers: {
 body: JSON.stringify({
 model: "gpt-4o-mini",
 messages: [
-{
-role: "system",
-content: "You are Faizul AI, a helpful assistant that explains answers in simple Hindi + English mix."
-},
-{
-role: "user",
-content: message
-}
+{ role: "system", content: "You are Faizul AI, a helpful assistant." },
+{ role: "user", content: message }
 ]
 })
 });
 
 const data = await res.json();
 
-console.log("OpenAI Response:", data);
-
 loading.remove();
 
 let reply = data?.choices?.[0]?.message?.content;
 
 if (!reply) {
-reply = "⚠️ No response from AI. Check API key or billing.";
+reply = "⚠️ No response from AI (check API key or billing)";
 }
 
 chat.innerHTML += `<div class="bot-message">${reply}</div>`;
+
 chat.scrollTop = chat.scrollHeight;
 
-} catch (error) {
+} catch (err) {
 
 loading.remove();
 
-console.error(error);
-
-chat.innerHTML += `<div class="bot-message">❌ Network Error / API Failed</div>`;
-}
+chat.innerHTML += `<div class="bot-message">❌ Error connecting to OpenAI</div>`;
+console.error(err);
 
 }
+
+}
+
+// ENTER KEY SUPPORT
+document.addEventListener("keydown", function(e){
+if(e.key === "Enter"){
+chatAI();
+}
+});
