@@ -1,8 +1,11 @@
 // ===== SETTINGS =====
-const API_KEY = "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"; // Change this to your key
+const API_KEY = "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"; 
 
 // ===== VARS =====
 let mode = 'chat';
+let isLoading = false);
+
+// ===== DOM ELEMENTS =====
 const chatArea = document.getElementById('chatArea');
 const messages = document.getElementById('messages');
 const welcome = document.getElementById('welcome');
@@ -13,8 +16,9 @@ const chatInputGroup = document.getElementById('chatInputGroup');
 const imageInputGroup = document.getElementById('imageInputGroup');
 const chatModeBtn = document.getElementById('chatModeBtn');
 const imageModeBtn = document.getElementById('imageModeBtn');
+const sendBtn = document.getElementById('sendBtn');
 
-// ===== AUTO RESIZE =====
+// ===== AUTO RESIZE TEXTAREA =====
 chatInput.addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
@@ -27,9 +31,11 @@ chatInput.addEventListener('keydown', function(e) {
     }
 });
 
-// ===== SET MODE =====
+// ===== SET MODE FUNCTION =====
 function setMode(newMode) {
     mode = newMode;
+    
+    console.log("Mode changed to:", mode); // Debug
     
     if (mode === 'chat') {
         chatModeBtn.classList.add('active');
@@ -46,8 +52,11 @@ function setMode(newMode) {
     }
 }
 
-// ===== SEND MESSAGE =====
+// ===== SEND MESSAGE FUNCTION =====
 async function sendMessage() {
+    // Prevent multiple clicks
+    if (isLoading) return;
+    
     let text = '';
     
     if (mode === 'chat') {
@@ -58,28 +67,11 @@ async function sendMessage() {
     
     if (!text) return;
     
-    // Hide welcome
+    // Hide welcome screen
     welcome.style.display = 'none';
     
     // Add user message
     addMessage(text, 'user');
     
     // Clear input
-    if (mode === 'chat') {
-        chatInput.value = '';
-    } else {
-        imageInput.value = '';
-    }
-    
-    // Show loading
-    const loadingId = showLoading();
-    
-    try {
-        let response;
-        
-        if (mode === 'chat') {
-            // Chat API
-            response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+    if (mode
