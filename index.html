@@ -10,36 +10,33 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#0a0a0f;color:#fff;height:100vh}
 .app{display:flex;height:100%}
-.sidebar{width:210px;background:#121218;padding:12px;border-right:1px solid #333;overflow-y:auto}
+.sidebar{width:200px;background:#121218;padding:12px;border-right:1px solid #333}
 .logo{font-size:20px;font-weight:bold;color:#00d48a;margin-bottom:12px}
-.btn{width:100%;padding:8px;background:transparent;border:1px solid #333;border-radius:6px;color:#aaa;margin-bottom:4px;cursor:pointer;font-size:12px;text-align:left}
-.btn:hover{background:#222;color:#00d48a}
+.btn{width:100%;padding:8px;background:0 0;border:1px solid #333;border-radius:6px;color:#aaa;margin-bottom:4px;cursor:pointer;font-size:12px}
 .head{font-size:9px;color:#666;text-transform:uppercase;margin:10px 0 6px}
 .main{flex:1;display:flex;flex-direction:column}
 .header{padding:12px 16px;border-bottom:1px solid #333;display:flex;justify-content:space-between}
 .header h1{font-size:20px;background:linear-gradient(90deg,#00d48a,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.chat-area{flex:1;overflow-y:auto;padding:15px}
+.chat{flex:1;overflow-y:auto;padding:15px}
 .welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center}
-.icon{width:70px;height:70px;background:linear-gradient(135deg,#00d48a,#8b5cf6);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:12px}
+.icon{width:70px;height:70px;background:linear-gradient(135deg,#00d48a,#8b5cf6);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px}
 .welcome h2{font-size:24px;margin-bottom:4px}
 .welcome h3{color:#00d48a;margin-bottom:8px}
-.welcome p{color:#888;font-size:12px;margin-bottom:12px}
-.quick{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:260px}
+.quick{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:250px}
 .quick button{padding:7px 10px;background:#1a1a22;border:1px solid #333;border-radius:5px;color:#fff;cursor:pointer;font-size:11px}
 #msg{display:flex;flex-direction:column;gap:10px}
 .m{display:flex;gap:8px}
 .m.user{flex-direction:row-reverse}
-.av{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold}
+.av{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px}
 .m.user .av{background:#00d48a;color:#000}
-.m.bot .av{background:linear-gradient(135deg,#8b5cf6,#00d48a)}
-.ct{max-width:70%;padding:10px 12px;border-radius:12px;font-size:12px;line-height:1.4}
+.m.bot .av{background:#8b5cf6}
+.ct{max-width:70%;padding:10px 12px;border-radius:12px;font-size:12px}
 .m.user .ct{background:#00d48a;color:#000}
 .m.bot .ct{background:#1a1a22;border:1px solid #333;white-space:pre-line}
 .input-area{padding:12px 15px;background:#0a0a0f}
 .input-box{max-width:100%;margin:0 auto;background:#1e1e28;border:1px solid #333;border-radius:10px;display:flex;padding:6px}
-.input-box input{flex:1;background:transparent;border:none;color:#fff;font-size:13px;padding:8px;outline:none}
-.input-box button{width:36px;height:36px;background:#00d48a;border:none;border-radius:6px;color:#000;cursor:pointer;font-size:14px;font-weight:bold}
-.info{max-width:100%;margin:6px auto 0;font-size:10px;color:#666}
+.input-box input{flex:1;background:0 0;border:none;color:#fff;font-size:13px;padding:8px}
+.input-box button{width:36px;height:36px;background:#00d48a;border:none;border-radius:6px;color:#000;cursor:pointer;font-size:14px}
 @media (max-width:700px){.sidebar{display:none}}
 </style>
 </head>
@@ -65,20 +62,18 @@ body{font-family:'Poppins',sans-serif;background:#0a0a0f;color:#fff;height:100vh
 <main class="main">
 <header class="header">
 <h1>Faizul AI</h1>
-<button style="width:auto;padding:5px 10px;font-size:11px" onclick="clearChat()">Clear</button>
+<button style="width:auto;padding:5px 10px" onclick="clearChat()">Clear</button>
 </header>
-<div class="chat-area" id="chatArea">
+<div class="chat" id="chatArea">
 <div class="welcome" id="welcome">
 <div class="icon">AI</div>
 <h2>Hello!</h2>
 <h3>Welcome to Faizul AI</h3>
-<p>Your Knowledge Assistant</p>
 <div class="quick">
 <button onclick="ask('hello')">Hello</button>
 <button onclick="ask('who is faizul')">Creator</button>
 <button onclick="ask('bihar')">Bihar</button>
 <button onclick="ask('virat')">Virat</button>
-<button onclick="ask('jokes')">Jokes</button>
 </div>
 </div>
 <div id="msg"></div>
@@ -86,48 +81,47 @@ body{font-family:'Poppins',sans-serif;background:#0a0a0f;color:#fff;height:100vh
 <div class="input-area">
 <div class="input-box">
 <input type="text" id="txt" placeholder="Ask anything...">
-<button onclick="send()">Send</button>
+<button onclick="sendMessage()">Send</button>
 </div>
 </div>
 </main>
 </div>
 
 <script>
-var data = {
-"hello":"Hello! Welcome to Faizul AI!\n\nAsk about:\n- Who is Faizul\n- India States\n- Bihar\n- Countries\n- Cricket\n- Food\n- Jokes\n\nWhat?",
-"who is faizul":"FAIZUL MARAM\n\nYouTube: @faizulmaram17\n\nContent: Islamic videos\nReligious quotes\nDuas (Prayers)\n\nDeveloper:\nWebsites, AI Chatbots",
-"faizul":"FAIZUL MARAM - Creator\n\nYouTube: @faizulmaram17\nIslamic content & Developer",
-"india":"INDIA - 28 STATES\n\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWest: Rajasthan, Gujarat, Goa, Maharashtra\n\nEast: WB, Odisha, Bihar, Jharkhand\n\nSouth: Karnataka, TN, Kerala\n\nCentral: UP, MP\n\nNE: Assam, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
-"bihar":"BIHAR\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nCities: Patna, Gaya, Bhagalpur\n\nFamous: Litti Chokha, Litchi\n\nBuddha born in Gaya!",
-"countries":"COUNTRIES\n\nAsia:\nIndia-Delhi, China-Beijing, Japan-Tokyo\nPakistan-Islamabad, Bangladesh-Dhaka\n\nEurope:\nUK-London, France-Paris\nGermany-Berlin\n\nAmericas:\nUSA-Washington, Canada-Ottawa\nBrazil-Brasilia\n\nAfrica:\nEgypt-Cairo, Nigeria-Abuja\n\nAustralia: Canberra",
-"virat":"VIRAT KOHLI\n\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!\nRuns: 25000+",
-"dhoni":"MS DHONI\n\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011!",
-"math":"MATH\n(a+b)2 = a2+2ab+b2\na2-b2 = (a+b)(a-b)\nCircle = r2\na2+b2 = c2",
-"science":"SCIENCE\nWater = H2O\nLight = 3x108 m/s\nGravity = 9.8 m/s2\nHuman = 60% water",
-"food":"FOOD\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nBihar: Litti Chokha\nBiryani famous!",
-"health":"HEALTH\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies\n5. No junk",
-"jokes":"JOKES\n1. Why chicken?\nOther side!\n2. 2+2=4!\n3. Ball comes, out!",
-"facts":"FACTS\nSun 330000x Earth\nWater = H2O\nDiamond hardest"
+var db = {
+"hello":"Hello! Welcome to Faizul AI!\n\nAsk about:\n- Who is Faizul\n- India States\n- Bihar\n- Countries\n- Cricket\n- Food\n- Jokes",
+"who is faizul":"FAIZUL MARAM\n\nYouTube: @faizulmaram17\n\nContent: Islamic videos\nReligious quotes\nDuas\n\nDeveloper:\nWebsites, AI Chatbots",
+"faizul":"FAIZUL MARAM - Creator\nYouTube: @faizulmaram17",
+"india":"INDIA - 28 STATES\n\nNorth: Delhi, Haryana, Punjab\nWest: Rajasthan, Gujarat, Maharashtra\nEast: WB, Bihar, Odisha\nSouth: Karnataka, Tamil Nadu\nCentral: UP, MP\nNE: Assam, Sikkim\nCapital: New Delhi",
+"bihar":"BIHAR\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nCities: Patna, Gaya, Bhagalpur\nFamous: Litti Chokha, Litchi\nBuddha born in Gaya!",
+"countries":"COUNTRIES\nIndia-Delhi, China-Beijing\nUK-London, France-Paris\nUSA-Washington, Canada-Ottawa\nAustralia-Canberra",
+"virat":"VIRAT KOHLI\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!",
+"dhoni":"MS DHONI\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!",
+"math":"MATH\n(a+b)2 = a2+2ab+b2\na2-b2 = (a+b)(a-b)\nCircle = pi*r2",
+"science":"SCIENCE\nWater = H2O\nLight = 3x108 m/s\nGravity = 9.8 m/s2",
+"food":"FOOD\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nBihar: Litti Chokha",
+"health":"HEALTH\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies",
+"jokes":"JOKES\n1. Why chicken?\nOther side!\n2. 2+2=4!\n3. Ball comes, out!"
 };
 
 var msgDiv = document.getElementById("msg");
 var welDiv = document.getElementById("welcome");
-var txtBox = document.getElementById("txt");
+var txt = document.getElementById("txt");
 
-function send() {
-var t = txtBox.value.trim().toLowerCase();
+function sendMessage() {
+var t = txt.value.trim().toLowerCase();
 if(t=="") return;
 welDiv.style.display = "none";
 add(t, "user");
-txtBox.value = "";
-setTimeout(function(){ add(find(t), "bot"); }, 300);
+txt.value = "";
+setTimeout(function(){ add(get(t), "bot"); }, 300);
 }
 
-function find(x) {
-for(var k in data) {
-if(x.indexOf(k) != -1) return data[k];
+function get(x) {
+for(var k in db) {
+if(x.indexOf(k) != -1) return db[k];
 }
-return "Ask about Faizul, India, Bihar, cricket, food!";
+return "Ask about Faizul, India, Bihar, cricket!";
 }
 
 function add(t, s) {
@@ -138,9 +132,9 @@ msgDiv.appendChild(d);
 document.getElementById("chatArea").scrollTop = 100000;
 }
 
-function ask(x) { txtBox.value = x; send(); }
+function ask(x) { txt.value = x; sendMessage(); }
 function clearChat() { msgDiv.innerHTML = ""; welDiv.style.display = "flex"; }
-txtBox.onkeypress = function(e) { if(e.key=="Enter") send(); };
+txt.onkeypress = function(e) { if(e.key=="Enter") sendMessage(); };
 </script>
 </body>
 </html>
