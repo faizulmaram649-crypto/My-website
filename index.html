@@ -3,92 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat - Smart Assistant</title>
+    <title>Faizul AI - Smart Assistant</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <button class="new-chat-btn" onclick="startNewChat()">
-                    <i class="fa-solid fa-plus"></i> New Chat
-                </button>
+    <div class="main-wrapper">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">Faizul AI</span>
+                    <span class="model-name">Powered by OpenAI</span>
+                </div>
             </div>
             
-            <div class="sidebar-section">
-                <h3>Recent Chats</h3>
-                <ul class="chat-history" id="chatHistory">
-                    <li class="chat-item active">
-                        <i class="fa-regular fa-message"></i> Conversation 1
-                    </li>
-                    <li class="chat-item">
-                        <i class="fa-regular fa-message"></i> Project Help
-                    </li>
-                    <li class="chat-item">
-                        <i class="fa-regular fa-message"></i> Coding Questions
-                    </li>
-                </ul>
-            </div>
-
-            <div class="sidebar-footer">
-                <div class="user-info">
-                    <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
-                    <span>Guest User</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Chat Area -->
-        <main class="chat-main">
-            <!-- Chat Header -->
-            <header class="chat-header">
-                <div class="header-left">
-                    <h2>GPT-4 Assistant</h2>
-                    <span class="model-badge">GPT-3.5 Turbo</span>
-                </div>
-                <div class="header-right">
-                    <button class="header-btn" onclick="clearChat()" title="Clear Chat">
-                        <i class="fa-solid fa-trash"></i>
+            <div class="header-actions">
+                <button class="action-btn" onclick="newChat()" title="New Chat">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button class="action-btn" onclick="clearChat()" title="Clear">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+                <div class="mode-toggle">
+                    <button class="mode-tab active" id="chatTab" onclick="switchTab('chat')">
+                        <i class="fa-solid fa-comment-dots"></i> Chat
                     </button>
-                    <button class="header-btn" onclick="toggleSidebar()" title="Toggle Sidebar">
-                        <i class="fa-solid fa-bars"></i>
+                    <button class="mode-tab" id="imageTab" onclick="switchTab('image')">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Image
                     </button>
                 </div>
-            </header>
+            </div>
+        </header>
 
-            <!-- Messages Container -->
-            <div class="messages-container" id="messagesContainer">
-                <!-- Welcome Message -->
-                <div class="welcome-screen" id="welcomeScreen">
-                    <div class="welcome-logo">
-                        <i class="fa-brands fa-openai"></i>
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <!-- Welcome Screen -->
+            <div class="welcome-section" id="welcomeSection">
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h1>How can I help you today?</h1>
+                <p>I can help you with coding, writing, answering questions, and generating images.</p>
+                
+                <div class="suggestion-cards">
+                    <div class="suggestion-card" onclick="sendQuickMessage('Write a python calculator code')">
+                        <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="card-text">
+                            <span class="card-title">Calculator Code</span>
+                            <span class="card-desc">Python program</span>
+                        </div>
                     </div>
-                    <h1>How can I help you today?</h1>
-                    <p>I can help you with writing code, answering questions, and more.</p>
+                    <div class="suggestion-card" onclick="sendQuickMessage('What is artificial intelligence?')">
+                        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div class="card-text">
+                            <span class="card-title">What is AI?</span>
+                            <span class="card-desc">Simple explanation</span>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="sendQuickImage('A cute cat sitting on a window')">
+                        <div class="card-icon"><i class="fa-solid fa-cat"></i></div>
+                        <div class="card-text">
+                            <span class="card-title">Generate Image</span>
+                            <span class="card-desc">Cute cat art</span>
+                        </div>
+                    </div>
+                    <div class="suggestion-card" onclick="sendQuickMessage('Write a love letter')">
+                        <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+                        <div class="card-text">
+                            <span class="card-title">Love Letter</span>
+                            <span class="card-desc">Romantic letter</span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Messages will be added here -->
-                <div id="messagesList"></div>
             </div>
 
-            <!-- Input Area -->
-            <div class="input-container">
-                <div class="input-wrapper">
-                    <textarea id="userInput" placeholder="Send a message..." rows="1"></textarea>
-                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
+            <!-- Messages -->
+            <div class="messages-wrapper" id="messagesWrapper"></div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-section">
+            <div class="input-box">
+                <!-- Chat Input -->
+                <div class="input-field" id="chatInputField">
+                    <textarea id="messageInput" placeholder="Type your message..." rows="1"></textarea>
                 </div>
-                <p class="disclaimer">AI can make mistakes. Please check important information.</p>
+                
+                <!-- Image Input -->
+                <div class="input-field image-field" id="imageInputField">
+                    <input type="text" id="imagePromptInput" placeholder="Describe the image you want...">
+                    <select id="imageSizeSelect">
+                        <option value="1024x1024">1024×1024</option>
+                        <option value="1024x1792">1024×1792</option>
+                        <option value="1792x1024">1792×1024</option>
+                    </select>
+                </div>
+                
+                <button class="send-button" id="sendButton" onclick="handleSend()">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
             </div>
-        </main>
+            <p class="footer-text">AI can make mistakes. Please verify important information.</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
