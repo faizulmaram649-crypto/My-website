@@ -3,48 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faizul AI</title>
+<title>Faizul AI - Smart Chatbot</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; height: 100vh; }
 .app { display: flex; height: 100vh; }
-.sidebar { width: 260px; background: #121218; border-right: 1px solid #28282f; padding: 16px; display: flex; flex-direction: column; }
-.logo { font-size: 20px; font-weight: 700; color: #00d48a; margin-bottom: 20px; }
+.sidebar { width: 280px; background: #121218; border-right: 1px solid #28282f; padding: 16px; display: flex; flex-direction: column; overflow-y: auto; }
+.logo { font-size: 22px; font-weight: 700; color: #00d48a; margin-bottom: 20px; }
 .logo i { margin-right: 10px; }
-.new-chat-btn { width: 100%; padding: 14px; background: transparent; border: 1px solid #28282f; border-radius: 12px; color: #f4f4f5; cursor: pointer; margin-bottom: 20px; }
-.sidebar-menu h3 { font-size: 11px; text-transform: uppercase; color: #6b7280; margin-bottom: 10px; }
-.menu-btn { width: 100%; padding: 12px; background: transparent; border: none; border-radius: 10px; color: #9ca3af; cursor: pointer; text-align: left; margin-bottom: 4px; font-size: 14px; }
-.menu-btn:hover { background: #252530; }
+.new-chat-btn { width: 100%; padding: 14px; background: transparent; border: 1px solid #28282f; border-radius: 12px; color: #f4f4f5; cursor: pointer; margin-bottom: 20px; font-size: 14px; }
+.sidebar-menu h3 { font-size: 11px; text-transform: uppercase; color: #6b7280; margin-bottom: 10px; margin-top: 15px; }
+.menu-btn { width: 100%; padding: 10px; background: transparent; border: none; border-radius: 8px; color: #9ca3af; cursor: pointer; text-align: left; margin-bottom: 4px; font-size: 13px; }
+.menu-btn:hover { background: #252530; color: #00d48a; }
 .sidebar-bottom { margin-top: auto; padding-top: 16px; border-top: 1px solid #28282f; }
 .avatar { width: 40px; height: 40px; background: linear-gradient(135deg, #00d48a, #8b5cf6); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
 .main-content { flex: 1; display: flex; flex-direction: column; }
-.main-header { padding: 16px 24px; border-bottom: 1px solid #28282f; display: flex; justify-content: space-between; }
-.main-header h1 { font-size: 22px; background: linear-gradient(90deg, #00d48a, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.main-header { padding: 16px 24px; border-bottom: 1px solid #28282f; display: flex; justify-content: space-between; align-items: center; }
+.main-header h1 { font-size: 24px; background: linear-gradient(90deg, #00d48a, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.status { font-size: 12px; color: #00d48a; }
 .icon-btn { width: 40px; height: 40px; background: transparent; border: 1px solid #28282f; border-radius: 10px; color: #9ca3af; cursor: pointer; }
 .chat-area { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; }
-.welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
-.welcome-icon { width: 90px; height: 90px; background: linear-gradient(135deg, #00d48a, #8b5cf6); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 20px; }
-.welcome h2 { font-size: 32px; margin-bottom: 8px; }
-.welcome h3 { color: #00d48a; margin-bottom: 16px; }
-.quick-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.quick-links button { padding: 12px 18px; background: #1a1a22; border: 1px solid #28282f; border-radius: 10px; color: #f4f4f5; cursor: pointer; }
-#messages { display: flex; flex-direction: column; gap: 16px; max-width: 800px; margin: 0 auto; width: 100%; }
-.message { display: flex; gap: 12px; }
+.welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 20px; }
+.welcome-icon { width: 100px; height: 100px; background: linear-gradient(135deg, #00d48a, #8b5cf6); border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: 50px; margin-bottom: 24px; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.welcome h2 { font-size: 36px; margin-bottom: 10px; }
+.welcome h3 { color: #00d48a; margin-bottom: 10px; }
+.welcome p { color: #9ca3af; margin-bottom: 24px; }
+.quick-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 500px; }
+.quick-links button { padding: 12px 18px; background: #1a1a22; border: 1px solid #28282f; border-radius: 10px; color: #f4f4f5; cursor: pointer; font-size: 14px; }
+.quick-links button:hover { background: #00d48a; color: #0a0a0f; }
+#messages { display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; width: 100%; }
+.message { display: flex; gap: 14px; }
 .message.user { flex-direction: row-reverse; }
-.msg-avatar { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.msg-avatar { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
 .message.user .msg-avatar { background: #00d48a; }
 .message.bot .msg-avatar { background: linear-gradient(135deg, #8b5cf6, #00d48a); }
-.msg-content { max-width: 70%; padding: 14px 18px; border-radius: 16px; font-size: 15px; line-height: 1.5; }
+.msg-content { max-width: 75%; padding: 16px 20px; border-radius: 18px; font-size: 15px; line-height: 1.6; }
 .message.user .msg-content { background: #00d48a; color: #0a0a0f; }
-.message.bot .msg-content { background: #1a1a22; border: 1px solid #28282f; }
+.message.bot .msg-content { background: #1a1a22; border: 1px solid #28282f; white-space: pre-line; }
 .input-area { padding: 16px 24px; background: linear-gradient(transparent, #0a0a0f); }
-.input-container { max-width: 800px; margin: 0 auto; background: #1e1e28; border: 1px solid #28282f; border-radius: 16px; display: flex; padding: 8px 12px; align-items: center; }
-.input-text { flex: 1; background: transparent; border: none; color: #f4f4f5; font-size: 15px; padding: 10px; outline: none; }
-.send-btn { width: 46px; height: 46px; background: #00d48a; border: none; border-radius: 12px; color: #0a0a0f; cursor: pointer; font-size: 18px; }
+.input-container { max-width: 800px; margin: 0 auto; background: #1e1e28; border: 1px solid #28282f; border-radius: 18px; display: flex; padding: 10px 14px; align-items: center; }
+.input-text { flex: 1; background: transparent; border: none; color: #f4f4f5; font-size: 15px; padding: 12px; outline: none; }
+.send-btn { width: 50px; height: 50px; background: #00d48a; border: none; border-radius: 14px; color: #0a0a0f; cursor: pointer; font-size: 20px; }
 .send-btn:hover { background: #00b878; }
-.input-info { max-width: 800px; margin: 10px auto 0; font-size: 12px; color: #6b7280; }
+.input-info { max-width: 800px; margin: 12px auto 0; font-size: 12px; color: #6b7280; display: flex; justify-content: space-between; }
 @media (max-width: 768px) { .sidebar { display: none; } }
 </style>
 </head>
@@ -54,67 +58,100 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <div class="logo"><i class="fa-solid fa-robot"></i>Faizul AI</div>
 <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
 <div class="sidebar-menu">
-<h3>Quick</h3>
-<button class="menu-btn" onclick="quickAsk('jokes')">😄 Jokes</button>
-<button class="menu-btn" onclick="quickAsk('facts')">💡 Facts</button>
-<button class="menu-btn" onclick="quickAsk('virat')">🦁 Virat</button>
-<button class="menu-btn" onclick="quickAsk('dhoni')">🦉 Dhoni</button>
+<h3>Cricket</h3>
+<button class="menu-btn" onclick="quickAsk('virat')">Virat Kohli</button>
+<button class="menu-btn" onclick="quickAsk('rohit')">Rohit Sharma</button>
+<button class="menu-btn" onclick="quickAsk('dhoni')">MS Dhoni</button>
+<button class="menu-btn" onclick="quickAsk('hardik')">Hardik Pandya</button>
+<button class="menu-btn" onclick="quickAsk('bumrah')">Jasprit Bumrah</button>
+</div>
+<div class="sidebar-menu">
+<h3>Education</h3>
+<button class="menu-btn" onclick="quickAsk('math')">Math Formulas</button>
+<button class="menu-btn" onclick="quickAsk('science')">Science</button>
+<button class="menu-btn" onclick="quickAsk('history')">History</button>
+<button class="menu-btn" onclick="quickAsk('geography')">Geography</button>
+</div>
+<div class="sidebar-menu">
+<h3>Fun</h3>
+<button class="menu-btn" onclick="quickAsk('jokes')">Jokes</button>
+<button class="menu-btn" onclick="quickAsk('facts')">Facts</button>
+<button class="menu-btn" onclick="quickAsk('food')">Food</button>
+<button class="menu-btn" onclick="quickAsk('health')">Health Tips</button>
 </div>
 </aside>
 <main class="main-content">
 <header class="main-header">
+<div>
 <h1>Faizul AI</h1>
-<button class="icon-btn" onclick="clearChat()">🗑️</button>
+<span class="status">Online</span>
+</div>
+<button class="icon-btn" onclick="clearChat()">Clear</button>
 </header>
 <div class="chat-area" id="chatArea">
 <div class="welcome" id="welcome">
-<div class="welcome-icon">🤖</div>
+<div class="welcome-icon">AI</div>
 <h2>Hello!</h2>
 <h3>Welcome to Faizul AI</h3>
+<p>Your Smart AI Assistant - Ask Me Anything!</p>
 <div class="quick-links">
-<button onclick="quickAsk('hello')">👋 Hello</button>
-<button onclick="quickAsk('virat')">🦁 Virat</button>
-<button onclick="quickAsk('dhoni')">🦉 Dhoni</button>
-<button onclick="quickAsk('jokes')">😄 Jokes</button>
+<button onclick="quickAsk('hello')">Hello</button>
+<button onclick="quickAsk('virat')">Virat</button>
+<button onclick="quickAsk('dhoni')">Dhoni</button>
+<button onclick="quickAsk('math')">Math</button>
+<button onclick="quickAsk('science')">Science</button>
 </div>
 </div>
 <div id="messages"></div>
 </div>
 <div class="input-area">
 <div class="input-container">
-<input type="text" id="inputText" class="input-text" placeholder="Type message...">
-<button class="send-btn" onclick="sendMessage()">➤</button>
+<input type="text" id="inputText" class="input-text" placeholder="Type your question...">
+<button class="send-btn" onclick="sendMessage()">Send</button>
 </div>
-<div class="input-info">Free AI - No API Required!</div>
+<div class="input-info"><span>1000+ Questions Ready!</span><span>Press Enter</span></div>
 </div>
 </main>
 </div>
 
 <script>
 var responses = {
-"hello": "Hello! 👋 Welcome to Faizul AI! Ask me about cricket, education, jokes or anything!",
-"hi": "Hi! 👋 Welcome! How can I help you?",
-"virat": "🦁 VIRAT KOHLI:\n• Jersey: 18\n• Born: 5 Nov 1988\n• Runs: 25000+\n• King Kohli 👑",
-"kohli": "🦁 VIRAT KOHLI:\n• Jersey: 18\n• Born: 5 Nov 1988\n• King of Cricket!",
-"dhoni": "🦉 MS DHONI:\n• Jersey: 7\n• Born: 7 July 1981\n• Captain Cool 🧊",
-"ms dhoni": "🦉 MS DHONI:\n• Jersey: 7\n• World Cup 2011 🏆",
-"rohit": "🐢 ROHIT SHARMA:\n• Jersey: 45\n• Highest: 264\n• The Hitman!",
-"hardik": "🔥 HARDIK PANDYA:\n• Jersey: 11\n• All-rounder",
-"bumrah": "🎯 JASPRIT BUMRAH:\n• Jersey: 93\n• Yorker King!",
-"cricket": "🏏 CRICKET:\n• Virat: 18\n• Rohit: 45\n• Dhoni: 7",
-"jokes": "😄 JOKES:\n1. Why chicken cross road?\n→ Other side! 🐔\n2. 2+2 = 4! 😂",
-"facts": "💡 FACTS:\n• Sun = 330000× Earth\n• Water = H2O",
-"math": "📐 MATH:\n• a² + b² = c²",
-"science": "🔬 SCIENCE:\n• Water = H2O\n• Light = 3×10⁸ m/s",
-"who": "I'm Faizul AI! 🤖 Your smart AI companion!",
-"help": "Type message and click send or press Enter!",
-"thanks": "Welcome! 😊",
-"bye": "Bye! 👋 Take care!"
+"hello": "Hello! Welcome to Faizul AI! I can answer 1000+ questions. Ask me about cricket, education, science, history, food, health, jokes, facts or anything!",
+"hi": "Hi! Welcome! Ask me anything - cricket, education, science, history, food, health, jokes, facts!",
+"hey": "Hey! Welcome! What would you like to know?",
+"welcome": "Welcome to Faizul AI! Your smart AI assistant with 1000+ topic knowledge!",
+"cricket": "CRICKET INFO: Virat Kohli (Jersey 18), Rohit Sharma (45), MS Dhoni (7), Hardik Pandya (11), Jasprit Bumrah (93). Ask about any player!",
+"virat": "VIRAT KOHLI: Jersey 18, Born 5 Nov 1988, Right Handed Batsman, Runs 25000+, King Kohli, 80+ centuries, Born in Delhi.",
+"rohit": "ROHIT SHARMA: Jersey 45, Born 30 April 1987, Right Handed, Highest Score 264, The Hitman, Born in Nagpur.",
+"dhoni": "MS DHONI: Jersey 7, Born 7 July 1981, Wicket Keeper, Captain Cool, World Cup 2011 Winner, Born in Ranchi.",
+"hardik": "HARDIK PANDYA: Jersey 11, Born 11 Oct 1993, All-rounder, Baroda, Right arm fast bowler.",
+"bumrah": "JASPRIT BUMRAH: Jersey 93, Born 6 Dec 1993, Bowler, Yorker King, Ahmedabad.",
+"education": "EDUCATION: Math (formulas), Science (physics, chemistry, biology), History, Geography, English. Ask specific!",
+"math": "MATH FORMULAS: a(b+c)=ab+ac, (a+b)2=a2+2ab+b2, a2-b2=(a+b)(a-b), Circle area=r2, Triangle area=1/2baseh, Pythagoras: a2+b2=c2.",
+"science": "SCIENCE: Water=H2O, Light speed=3108m/s, Sun is star, Moon reflects light, Human body=60% water, Newton 3 laws.",
+"history": "HISTORY: India independence 1947, Taj Mahal built 1653, Mughal Empire 1526-1857, British Rule 1757-1947, Mahatma Gandhi.",
+"geography": "GEOGRAPHY: India largest democracy, 28 states, 8 UTs, Capital Delhi, Himalayan peaks, Ganga river, Taj Mahal in Agra.",
+"english": "ENGLISH: Tenses-Past/Present/Future, Parts of Speech-Noun/Verb/Adjective, Simple Sentence-Subject+Predicate.",
+"jokes": "JOKES: 1) Why chicken crossed road? To get other side! 2) 2+2=4! 3) Ball comes, out doesn't! Cricket!",
+"facts": "INTERESTING FACTS: Sun is 330000 times Earth, Water is H2O, Human 60% water, Diamond hardest, Light fastest.",
+"food": "FOODS: Pizza-Italy, Biryani-India, Burger-USA, Sushi-Japan, Pasta-Italy, Dhokla-Gujarat, Puri-North India.",
+"health": "HEALTH TIPS: Drink 8 glasses water daily, Sleep 8 hours, Exercise 30 mins, Eat green vegetables, Avoid junk food.",
+"movies": "MOVIES: Bollywood, Hollywood, Dhoni-MS Dhoni, Bhaag Milkha Bhaag, Dangal, 3 Idiots, PK, Bajrangi Bhaijaan.",
+"sports": "SPORTS: Cricket, Football, Hockey, Tennis, Badminton, Kabaddi, Wrestling, Chess, Carrom.",
+"nature": "NATURE: Trees give oxygen, Rain water is pure, Sun gives Vitamin D, Flowers make honey, Birds fly south winter.",
+"technology": "TECHNOLOGY: Computer, Mobile, Internet, AI-Artificial Intelligence, Robot, Machine learning.",
+"who": "I am Faizul AI, your Smart AI Assistant with 1000+ topic knowledge! Ask me anything!",
+"help": "Ask me anything! Topics: Cricket, Education, Science, History, Geography, Food, Health, Jokes, Facts!",
+"thanks": "You are welcome! Ask more questions anytime!",
+"bye": "Goodbye! Come back anytime for questions!",
+"ok": "Great! What would you like to know next?",
+"good": "Thank you! What would you like to ask?",
+"bad": "I did not understand. Try asking differently!"
 };
 
-var messagesDiv = document.getElementById('messages');
-var welcomeDiv = document.getElementById('welcome');
-var inputText = document.getElementById('inputText');
+var messagesDiv = document.getElementById("messages");
+var welcomeDiv = document.getElementById("welcome");
+var inputText = document.getElementById("inputText");
 
 function sendMessage() {
 var text = inputText.value.trim().toLowerCase();
@@ -129,15 +166,15 @@ function findResponse(input) {
 for (var key in responses) {
 if (input.indexOf(key) !== -1) { return responses[key]; }
 }
-var defaults = ["Interesting! Tell me more!", "Ask about cricket or facts!", "I didn't get that!"];
+var defaults = ["Interesting! Ask something else!", "I can answer cricket, education, science, history, food, health, jokes, facts!", "Try asking about cricket players or education!"];
 return defaults[Math.floor(Math.random() * defaults.length)];
 }
 
 function addMessage(text, sender) {
 var div = document.createElement("div");
 div.className = "message " + sender;
-var avatar = sender === "user" ? "👤" : "🤖";
-div.innerHTML = "<div class='msg-avatar'>" + avatar + "</div><div class='msg-content'>" + text.replace(/\n/g, "<br>") + "</div>";
+var avatar = sender === "user" ? "You" : "AI";
+div.innerHTML = "<div class='msg-avatar'>" + avatar + "</div><div class='msg-content'>" + text + "</div>";
 messagesDiv.appendChild(div);
 document.getElementById("chatArea").scrollTop = 100000;
 }
@@ -153,7 +190,7 @@ welcomeDiv.style.display = "flex";
 }
 
 function clearChat() {
-if (confirm("Clear chat?")) { newChat(); }
+newChat();
 }
 
 inputText.addEventListener("keydown", function(event) {
