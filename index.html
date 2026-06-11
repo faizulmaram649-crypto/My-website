@@ -3,43 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faizul AI - OpenAI Chat</title>
-
+<title>Faizul AI Pro</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
+<div class="app">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
 <h2>🤖 Faizul AI</h2>
-</nav>
 
-<header>
-<h1>Meet <span>Faizul AI</span></h1>
-<p>Powered by OpenAI GPT API</p>
-</header>
+<button onclick="clearChat()">🧹 New Chat</button>
+<button>💡 Ideas</button>
+<button>📜 History</button>
 
-<section class="chat-container">
+</div>
 
-<div id="chatMessages" class="chat-box">
+<!-- MAIN -->
+<div class="main">
+
+<div class="topbar">
+Faizul AI Pro (Powered by OpenAI)
+</div>
+
+<!-- CHAT -->
+<div id="chatMessages" class="chat-messages">
 
 <div class="bot-message">
-👋 Hello! Ask me anything...
+👋 Hello! I am Faizul AI Pro. Ask me anything.
 </div>
 
 </div>
 
+<!-- INPUT -->
 <div class="input-area">
 
-<input type="text" id="userInput" placeholder="Type your message...">
+<input type="text" id="userInput" placeholder="Message Faizul AI...">
 
 <button onclick="chatAI()">Send</button>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
