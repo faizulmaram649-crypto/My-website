@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faizul AI Pro</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat - Smart Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="app">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" onclick="startNewChat()">
+                    <i class="fa-solid fa-plus"></i> New Chat
+                </button>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Recent Chats</h3>
+                <ul class="chat-history" id="chatHistory">
+                    <li class="chat-item active">
+                        <i class="fa-regular fa-message"></i> Conversation 1
+                    </li>
+                    <li class="chat-item">
+                        <i class="fa-regular fa-message"></i> Project Help
+                    </li>
+                    <li class="chat-item">
+                        <i class="fa-regular fa-message"></i> Coding Questions
+                    </li>
+                </ul>
+            </div>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-<h2>🤖 Faizul AI</h2>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                    <span>Guest User</span>
+                </div>
+            </div>
+        </aside>
 
-<button onclick="clearChat()">🧹 New Chat</button>
-<button>💡 Ideas</button>
-<button>📜 History</button>
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <h2>GPT-4 Assistant</h2>
+                    <span class="model-badge">GPT-3.5 Turbo</span>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn" onclick="clearChat()" title="Clear Chat">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <button class="header-btn" onclick="toggleSidebar()" title="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </header>
 
-</div>
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Welcome Message -->
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-logo">
+                        <i class="fa-brands fa-openai"></i>
+                    </div>
+                    <h1>How can I help you today?</h1>
+                    <p>I can help you with writing code, answering questions, and more.</p>
+                </div>
 
-<!-- MAIN -->
-<div class="main">
+                <!-- Messages will be added here -->
+                <div id="messagesList"></div>
+            </div>
 
-<div class="topbar">
-Faizul AI Pro (Powered by OpenAI)
-</div>
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="Send a message..." rows="1"></textarea>
+                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="disclaimer">AI can make mistakes. Please check important information.</p>
+            </div>
+        </main>
+    </div>
 
-<!-- CHAT -->
-<div id="chatMessages" class="chat-messages">
-
-<div class="bot-message">
-👋 Hello! I am Faizul AI Pro. Ask me anything.
-</div>
-
-</div>
-
-<!-- INPUT -->
-<div class="input-area">
-
-<input type="text" id="userInput" placeholder="Message Faizul AI...">
-
-<button onclick="chatAI()">Send</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
