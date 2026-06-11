@@ -5,13 +5,19 @@ async function chatAI() {
 const input = document.getElementById("userInput");
 const chat = document.getElementById("chatMessages");
 
+if (!input || !chat) {
+console.log("Missing elements");
+return;
+}
+
 const message = input.value.trim();
 if (!message) return;
 
-chat.innerHTML += `<div class="user-message">${message}</div>`;
-
+// show user
+chat.innerHTML += `<div class="user-message">🧑 ${message}</div>`;
 input.value = "";
 
+// loading
 chat.innerHTML += `<div class="bot-message">⏳ Thinking...</div>`;
 
 try {
@@ -20,29 +26,27 @@ const res = await fetch(
 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
 {
 method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
+headers: { "Content-Type": "application/json" },
 body: JSON.stringify({
-contents: [
-{
+contents: [{
 parts: [{ text: message }]
-}
-]
+}]
 })
 }
 );
 
 const data = await res.json();
 
-console.log(data);
+console.log("API RESPONSE:", data);
 
-let reply =
-data?.candidates?.[0]?.content?.parts?.[0]?.text;
+let reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
 if (!reply) {
-reply = "⚠️ No response from AI. Please try again.";
+reply = "⚠️ No response from AI";
 }
+
+// remove loading last message
+chat.lastElementChild.remove();
 
 chat.innerHTML += `<div class="bot-message">${reply}</div>`;
 
@@ -52,7 +56,7 @@ chat.scrollTop = chat.scrollHeight;
 
 console.error(err);
 
-chat.innerHTML += `<div class="bot-message">❌ Error connecting to AI</div>`;
+chat.innerHTML += `<div class="bot-message">❌ API Error</div>`;
 }
 
 }
