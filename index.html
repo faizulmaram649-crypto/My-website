@@ -42,11 +42,11 @@ margin-left:20px;
 
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:70px 20px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:55px;
 }
 
 .highlight{
@@ -54,8 +54,7 @@ color:#06b6d4;
 }
 
 .hero p{
-margin-top:15px;
-font-size:20px;
+margin-top:10px;
 color:#cbd5e1;
 }
 
@@ -83,11 +82,6 @@ gap:20px;
 background:#1e293b;
 padding:20px;
 border-radius:12px;
-}
-
-.card:hover{
-transform:translateY(-5px);
-transition:.3s;
 }
 
 .chat-container{
@@ -152,8 +146,8 @@ text-align:center;
 margin-top:40px;
 }
 </style>
-
 </head>
+
 <body>
 
 <nav class="navbar">
@@ -168,7 +162,7 @@ margin-top:40px;
 
 <header class="hero">
 <h1>Meet <span class="highlight">Faizul AI</span></h1>
-<p>Free AI Assistant Without API</p>
+<p>Chat with real AI powered by Gemini 2.5 Flash</p>
 <a href="#chat" class="btn">Start Chatting</a>
 </header>
 
@@ -179,25 +173,10 @@ margin-top:40px;
 
 <div class="features">
 
-<div class="card">
-<h3>🤖 AI Chat</h3>
-<p>Ask questions instantly.</p>
-</div>
-
-<div class="card">
-<h3>📚 Learning</h3>
-<p>Learn new topics easily.</p>
-</div>
-
-<div class="card">
-<h3>💻 Coding Help</h3>
-<p>Programming assistance.</p>
-</div>
-
-<div class="card">
-<h3>🌍 General Knowledge</h3>
-<p>Basic knowledge answers.</p>
-</div>
+<div class="card">🤖 AI Chat</div>
+<div class="card">📚 Learning Help</div>
+<div class="card">💻 Code Assistant</div>
+<div class="card">🌍 Translator</div>
 
 </div>
 
@@ -205,7 +184,7 @@ margin-top:40px;
 
 <section id="chat">
 
-<h2>Faizul AI Chat</h2>
+<h2>Chat with Faizul AI</h2>
 <br>
 
 <div class="chat-container">
@@ -220,14 +199,9 @@ margin-top:40px;
 
 <div class="chat-input-area">
 
-<input
-type="text"
-id="userInput"
-placeholder="Type your message...">
+<input type="text" id="userInput" placeholder="Type your message...">
 
-<button onclick="chatAI()">
-Send
-</button>
+<button onclick="chatAI()">Send</button>
 
 </div>
 
@@ -237,11 +211,11 @@ Send
 
 <section id="about">
 
-<h2>About Faizul AI</h2>
+<h2>About</h2>
 <br>
 
 <p>
-Faizul AI is a free educational AI assistant built without API.
+Faizul AI is powered by Gemini 2.5 Flash API.
 </p>
 
 </section>
@@ -251,93 +225,51 @@ Faizul AI is a free educational AI assistant built without API.
 </footer>
 
 <script>
+const API_KEY = "YOUR_GEMINI_API_KEY";
 
-const knowledge = {
-"hello":"👋 Hello! Main Faizul AI hoon.",
-"hi":"👋 Hi! Main Faizul AI hoon.",
-"india":"🇮🇳 India ki rajdhani New Delhi hai.",
-"bihar":"Bihar Bharat ka ek rajya hai.",
-"patna":"Patna Bihar ki rajdhani hai.",
-"taj mahal":"🕌 Taj Mahal Agra me sthit hai.",
-"earth":"🌍 Earth Surya se teesra grah hai.",
-"sun":"☀️ Sun ek tara hai.",
-"moon":"🌙 Moon Prithvi ka upagrah hai.",
-"science":"🔬 Science me Physics, Chemistry aur Biology shamil hain.",
-"computer":"💻 Computer ek electronic device hai.",
-"ai":"🤖 AI ka matlab Artificial Intelligence hai.",
-"dhoni":"🏏 MS Dhoni Bharat ke prasiddh cricketer hain.",
-"virat":"🏏 Virat Kohli Bharat ke star batsman hain."
-};
+async function chatAI(){
 
-function chatAI(){
+const input = document.getElementById("userInput");
+const chat = document.getElementById("chatMessages");
 
-const input=document.getElementById("userInput");
-const chat=document.getElementById("chatMessages");
+let message = input.value.trim();
+if(!message) return;
 
-const message=input.value.trim();
+chat.innerHTML += `<div class="user-message">${message}</div>`;
+input.value = "";
 
-if(message==="") return;
+const loadingId = "id-" + Date.now();
 
-const lower=message.toLowerCase();
+chat.innerHTML += `<div class="bot-message" id="${loadingId}">⏳ Thinking...</div>`;
 
-chat.innerHTML+=`
-<div class="user-message">
-${message}
-</div>
-`;
-
-let reply="";
-
-for(let key in knowledge){
-if(lower.includes(key)){
-reply=knowledge[key];
-break;
-}
-}
-
-if(!reply && lower.includes("time")){
-reply="⏰ "+new Date().toLocaleTimeString();
-}
-
-if(!reply && lower.includes("date")){
-reply="📅 "+new Date().toLocaleDateString();
-}
-
-if(!reply){
 try{
-if(/^[0-9+\-*/(). ]+$/.test(message)){
-reply="🧮 Answer = "+eval(message);
+
+const res = await fetch(
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+contents:[{parts:[{text:message}]}]
+})
 }
-}catch{
-reply="❌ Invalid calculation";
-}
-}
+);
 
-if(!reply){
-reply="🤔 Mujhe is topic ki jankari nahi hai.";
-}
+const data = await res.json();
 
-setTimeout(()=>{
+let reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
 
-chat.innerHTML+=`
-<div class="bot-message">
-${reply}
-</div>
-`;
+document.getElementById(loadingId).innerHTML = reply;
 
-chat.scrollTop=chat.scrollHeight;
+chat.scrollTop = chat.scrollHeight;
 
-},300);
+}catch(err){
 
-input.value="";
+document.getElementById(loadingId).innerHTML = "❌ Error connecting AI";
+
 }
 
-document.getElementById("userInput").addEventListener("keypress",function(e){
-if(e.key==="Enter"){
-chatAI();
 }
-});
-
 </script>
 
 </body>
