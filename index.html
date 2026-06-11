@@ -49,18 +49,16 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <div class="logo">Faizul AI</div>
 <button class="btn" onclick="ask('who are you')">Who are you</button>
 <button class="btn" onclick="ask('faizul')">About Creator</button>
+<button class="btn" onclick="ask('india states')">India States</button>
+<button class="btn" onclick="ask('bihar')">Bihar Info</button>
+<button class="btn" onclick="ask('countries')">Countries</button>
 <button class="btn" onclick="ask('virat')">Virat Kohli</button>
 <button class="btn" onclick="ask('dhoni')">MS Dhoni</button>
-<button class="btn" onclick="ask('rohit')">Rohit Sharma</button>
-<div class="h3">Education</div>
 <button class="btn" onclick="ask('math')">Math</button>
 <button class="btn" onclick="ask('science')">Science</button>
-<button class="btn" onclick="ask('history')">History</button>
-<div class="h3">Lifestyle</div>
 <button class="btn" onclick="ask('food')">Food</button>
 <button class="btn" onclick="ask('health')">Health</button>
 <button class="btn" onclick="ask('jokes')">Jokes</button>
-<button class="btn" onclick="ask('facts')">Facts</button>
 </aside>
 <main class="main">
 <header class="header">
@@ -75,9 +73,10 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 <p>Your Complete Knowledge Assistant</p>
 <div class="ql">
 <button onclick="ask('hello')">Hello</button>
-<button onclick="ask('faizul')">About Creator</button>
-<button onclick="ask('virat')">Virat</button>
-<button onclick="ask('math')">Math</button>
+<button onclick="ask('faizul')">Creator</button>
+<button onclick="ask('india states')">India States</button>
+<button onclick="ask('bihar')">Bihar</button>
+<button onclick="ask('countries')">Countries</button>
 </div>
 </div>
 <div id="msg"></div>
@@ -94,38 +93,26 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 
 <script>
 var db = {
-"hello": "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul (Creator info)\n- Cricket players\n- Education (Math, Science)\n- Food, Health\n- Jokes, Facts\n\nWhat would you like to know?",
+"hello": "Hello! Welcome to Faizul AI!\n\nAsk about:\n- Who is Faizul (Creator)\n- India States & Bihar\n- Countries\n- Cricket\n- Education\n- Food, Health\n- Jokes\n\nWhat would you like to know?",
 "hi": "Hi! Welcome to Faizul AI!",
-"hey": "Hey! Ask me anything!",
-"how are you": "I'm doing great! Thanks for asking!",
-"who are you": "I am Faizul AI - a smart chatbot created by Faizul Maram! I can answer questions on many topics!",
-"what is your name": "My name is Faizul AI! Created by Faizul Maram!",
-"faizul": "FAIZUL MARAM - CREATOR INFO\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel Name: Faizul Maram\nChannel ID: @faizulmaram17\n\n📹 CONTENT TYPE:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational religious clips\n• Islamic shorts\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor\n\n🌟 ABOUT:\nFaizul Maram is a popular Indian YouTuber and content creator who primarily focuses on Islamic status videos, religious quotes, and shorts. He also develops websites and AI chatbots!\n\n📱 SOCIAL MEDIA:\nYouTube: @faizulmaram17\n\nHe creates content to inspire and motivate people through Islamic teachings!",
-"who is faizul": "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel: Faizul Maram (@faizulmaram17)\n\n📹 CONTENT:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Duas (Prayers)\n• Motivational clips\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor\n\n🌟 ABOUT:\nFaizul Maram is a popular YouTuber and developer who creates Islamic content and develops websites/AI solutions!\n\nHe is known for:\n• Islamic videos\n• Religious quotes\n• Motivational content\n• Tech tutorials\n\nYouTube: @faizulmaram17",
-"faizul maram": "FAIZUL MARAM\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE CHANNEL:\nName: Faizul Maram\nID: @faizulmaram17\n\n📹 CONTENT:\n• Islamic status videos\n• Religious quotes\n• Shorts & Reels\n• Duas & Prayers\n• Motivational clips\n\n💻 DEVELOPER:\n• Website Development\n• AI Chatbots\n• App Development\n• Video Editing\n\n🌟 ABOUT HIM:\nFaizul Maram is an Indian content creator and developer. He creates Islamic/religious content on YouTube and also develops websites and AI chatbots!\n\n📱 Connect:\nYouTube: @faizulmaram17",
-"faizulmaram": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos, religious quotes, Duas\nDeveloper: Websites, AI Chatbots",
-"your creator": "FAIZUL MARAM - MY CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\nHe is the one who created me!\n\n🎬 YouTube: @faizulmaram17\n\n📹 Creates Islamic content\n💻 Builds websites & AI\n\nThank you Faizul Maram! 🙏",
-"virat": "VIRAT KOHLI:\n\nJersey: 18\nBorn: 5 Nov 1988\nPlace: Delhi\nAge: 36\nRole: Batsman\nRuns: 25000+\nCenturies: 80+\n\nKing Kohli! World Cup 2011!",
-"dhoni": "MS DHONI:\n\nJersey: 7\nBorn: 7 July 1981\nPlace: Ranchi\nAge: 43\nRole: Wicket Keeper\n\nCaptain Cool! World Cup 2011 Winner!",
-"rohit": "ROHIT SHARMA:\n\nJersey: 45\nBorn: 30 April 1987\nPlace: Nagpur\nAge: 37\nHighest: 264 (World Record)\n\nThe Hitman!",
-"kohli": "VIRAT KOHLI:\nKing of Cricket! Jersey 18!",
-"hardik": "HARDIK PANDYA:\nJersey: 11\nAll-rounder!",
-"bumrah": "JASPRIT BUMRAH:\nJersey: 93\nYorker King!",
-"math": "MATH FORMULAS:\n\n(a+b)2 = a2+2ab+b2\na2-b2 = (a+b)(a-b)\nCircle = pi*r2\na2+b2 = c2 (Pythagoras)",
-"science": "SCIENCE FACTS:\n\nWater = H2O\nLight = 3x108 m/s\nGravity = 9.8 m/s2\nHuman body = 60% water\nSun = star\nMoon = satellite",
-"history": "INDIAN HISTORY:\n\nIndus Valley: 3300 BCE\nMughal Empire: 1526-1857\nTaj Mahal: 1653\nBritish Rule: 1757-1947\nIndependence: 1947",
-"geo": "GEOGRAPHY:\n\nIndia:\nCapital: New Delhi\nStates: 28\nUTs: 8\nHighest: Kanchenjunga\nRiver: Ganga",
-"food": "INDIAN FOOD:\n\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nWest: Dhokla\nBiryani famous!",
-"health": "HEALTH TIPS:\n\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Green veggies\n5. No junk\n6. Fruits",
-"fruit": "FRUITS:\nApple, Mango, Banana, Orange, Papaya, Pomegranate",
-"animal": "ANIMALS:\nTiger, Lion, Elephant, Snake, Monkey, Dog",
-"capital": "CAPITALS:\nIndia-Delhi, USA-Washington, UK-London, France-Paris, Japan-Tokyo",
-"festival": "FESTIVALS:\nDiwali, Holi, Navratri, Pongal, Eid, Christmas",
-"jokes": "JOKES:\n1. Why chicken? Other side! 🐔\n2. 2+2=4! 😂\n3. Ball comes, out! 🏏",
-"facts": "FACTS:\nSun 330000x Earth\nWater = H2O\nDiamond hardest\nLight fastest",
-"thanks": "Welcome! 😊",
-"thank": "Welcome! 🙏",
-"bye": "Goodbye! Come back! 👋"
+"who are you": "I am Faizul AI - smart chatbot created by Faizul Maram!",
+"faizul": "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel: Faizul Maram\nID: @faizulmaram17\n\n📹 CONTENT:\n• Islamic status videos\n• Religious quotes\n• Duas (Prayers)\n• Motivational clips\n\n💻 DEVELOPER:\n• Websites\n• AI Chatbots\n• Apps\n\n🌟 ABOUT:\nFaizul Maram is a popular Indian YouTuber and developer who creates Islamic content and develops tech solutions!\n\nYouTube: @faizulmaram17",
+"who is faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\n\nIslamic content creator & Developer\n\nCreates:\n• Islamic videos\n• Religious quotes\n• Duas & Prayers\n• Motivational clips\n\nDeveloper:\n• Websites\n• AI Chatbots\n• Apps",
+"india states": "INDIA - 28 STATES + 8 UNION TERRITORIES\n\n━━━━━━━━━━━━━━━━━━━━\n\n🟡 NORTH:\n1. Delhi (UT)\n2. Haryana\n3. Punjab\n4. Himachal Pradesh\n5. Uttarakhand\n6. Jammu & Kashmir (UT)\n7. Chandigarh (UT)\n\n🟠 WEST:\n8. Rajasthan\n9. Gujarat\n10. Goa\n11. Maharashtra\n12. Dadra & Nagar Haveli (UT)\n\n🟢 EAST:\n13. West Bengal\n14. Odisha\n15. Bihar\n16. Jharkhand\n\n🔵 SOUTH:\n17. Karnataka\n18. Telangana\n19. Andhra Pradesh\n20. Tamil Nadu\n21. Kerala\n22. Puducherry (UT)\n23. Lakshadweep (UT)\n24. Andaman (UT)\n\n🟣 CENTRAL:\n25. Madhya Pradesh\n26. Chhattisgarh\n27. Uttar Pradesh\n\n🟤 NORTHEAST:\n28. Assam\n29. Meghalaya\n30. Manipur\n31. Mizoram\n32. Tripura\n33. Nagaland\n34. Arunachal Pradesh\n35. Sikkim\n\n📍 CAPITAL: New Delhi\n💰 POPULATION: 140 Crore+",
+"bihar": "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━━\n\n📍 CAPITAL: Patna\n📍 STATE ANIMAL: Gaur\n📍 STATE BIRD: House Sparrow\n📍 STATE TREE: Sacred Bamboo\n📍 STATE FLOWER: Flower of Palash\n\n📊 BASIC INFO:\n• State: Bihar\n• CM: Nitish Kumar\n• Governor: Arif Mohammad Khan\n• Population: 12.4 Crore\n• Area: 94,163 sq km\n• Language: Hindi, Bhojpuri, Maithili\n• Literacy: 70.9%\n\n🏛️ IMPORTANT CITIES:\n1. Patna (Capital)\n2. Gaya\n3. Bhagalpur\n4. Muzaffarpur\n5. Darbhanga\n6. Katihar\n7. Purnia\n8. Arrah\n9. Begusarai\n10. Motihari\n\n🛕 FAMOUS PLACES:\n1. Mahabodhi Temple (Gaya)\n2. Nalanda University\n3. Vishwa Shanti Stupa\n4. Takht Sri Patna Sahib\n5. Bihar Museum\n6. Frozpur Lake\n7. Kanher Lake\n8. Ashokan Pillar\n\n🎭 FAMOUS FOR:\n• Litchi (Famous fruit!)\n• Maithili culture\n• S不接受an scripts\n• Buddhist pilgrimage\n• Education (Nalanda)\n\n🍛 FAMOUS FOOD:\n• Litti Chokha\n• Sattu\n• Bhuna Khaja\n• Doodh Colla\n\n👨 FAMOUS PEOPLE:\n• Dr. Rajendra Prasad (1st President)\n• Jayaprakash Narayan\n• Lord Buddha (Born in Gaya)\n\n💼 ECONOMY:\n• Agriculture (Litchi, Rice)\n• IT Services\n• Education sector",
+" Bihar": "BIahar is beautiful!\n\nCapital: Patna\nFamous: Litti Chokha, Litchi, Buddha birthplace!",
+"countries": "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━━━━━\n\n🌏 ASIA:\n1. India - New Delhi\n2. China - Beijing\n3. Japan - Tokyo\n4. Pakistan - Islamabad\n5. Bangladesh - Dhaka\n6. Sri Lanka - Colombo\n7. Nepal - Kathmandu\n8. Bhutan - Thimphu\n9. Myanmar - Naypyidaw\n10. Thailand - Bangkok\n11. Indonesia - Jakarta\n12. Malaysia - Kuala Lumpur\n13. Singapore - Singapore\n14. Vietnam - Hanoi\n15. Philippines - Manila\n16. South Korea - Seoul\n17. Saudi Arabia - Riyadh\n18. UAE - Abu Dhabi\n19. Qatar - Doha\n20. Turkey - Ankara\n\n🌍 EUROPE:\n1. UK - London\n2. France - Paris\n3. Germany - Berlin\n4. Italy - Rome\n5. Spain - Madrid\n6. Russia - Moscow\n7. Poland - Warsaw\n8. Ukraine - Kyiv\n9. Netherlands - Amsterdam\n10. Belgium - Brussels\n\n🌎 AMERICAS:\n1. USA - Washington DC\n2. Canada - Ottawa\n3. Mexico - Mexico City\n4. Brazil - Brasilia\n5. Argentina - Buenos Aires\n6. Peru - Lima\n7. Colombia - Bogota\n8. Chile - Santiago\n\n🌍 AFRICA:\n1. Egypt - Cairo\n2. Nigeria - Abuja\n3. South Africa - Pretoria\n4. Kenya - Nairobi\n5. Ethiopia - Addis Ababa\n6. Morocco - Rabat\n\n🌏 OCEANIA:\n1. Australia - Canberra\n2. New Zealand - Wellington\n\nWorld ke sabhi countries ke capital janne ke liye poochho!",
+"capital": "COUNTRIES & CAPITALS:\n\nIndia - New Delhi\nUSA - Washington\nUK - London\nFrance - Paris\nJapan - Tokyo\nChina - Beijing\nRussia - Moscow\nAustralia - Canberra\nCanada - Ottawa\nPakistan - Islamabad\nBangladesh - Dhaka\nNepal - Kathmandu\nBhutan - Thimphu\nSri Lanka - Colombo",
+"virat": "VIRAT KOHLI:\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!\nRuns: 25000+",
+"dhoni": "MS DHONI:\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011!",
+"math": "MATH:\n(a+b)2 = a2+2ab+b2\na2-b2 = (a+b)(a-b)\nCircle = pi*r2\na2+b2 = c2",
+"science": "SCIENCE:\nWater = H2O\nLight = 3x108 m/s\nGravity = 9.8 m/s2\nHuman = 60% water",
+"food": "INDIAN FOOD:\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nWest: Dhokla\nBihar: Litti Chokha!",
+"health": "HEALTH:\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies",
+"jokes": "JOKES:\n1. Chicken? Other side!\n2. 2+2=4!\n3. Ball comes, out!",
+"facts": "FACTS:\nSun 330000x Earth\nWater = H2O",
+"thanks": "Welcome!",
+"bye": "Goodbye!"
 };
 
 var msgDiv = document.getElementById("msg");
@@ -145,7 +132,7 @@ function getAnswer(input) {
 for (var key in db) {
 if (input.indexOf(key) !== -1) return db[key];
 }
-return "Ask about Faizul, cricket, math, science, food, health, jokes, facts!";
+return "Ask about Faizul, India states, Bihar, countries, cricket, math, food!";
 }
 
 function addMessage(text, sender) {
