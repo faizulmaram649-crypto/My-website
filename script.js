@@ -1,24 +1,24 @@
-// ===== CONFIGURATION =====
-// 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
-const API_KEY = "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";
-
+// ===== CONFIG =====
+// Yahan apni API key daalno
+const API_KEY = "sk-YOUR-API-KEY-HERE";
+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
 // ===== VARIABLES =====
-let mode = 'chat';
-let isLoading = false;
+var mode = 'chat';
+var isLoading = false;
 
 // ===== DOM ELEMENTS =====
-const messagesDiv = document.getElementById('messages');
-const welcomeDiv = document.getElementById('welcome');
-const chatInput = document.getElementById('chatInput');
-const imageInput = document.getElementById('imageInput');
-const imageSizeSelect = document.getElementById('imageSize');
-const chatInputGroup = document.getElementById('chatInputGroup');
-const imageInputGroup = document.getElementById('imageInputGroup');
-const chatModeBtn = document.getElementById('chatModeBtn');
-const imageModeBtn = document.getElementById('imageModeBtn');
-const sendBtn = document.getElementById('sendBtn');
+var messagesDiv = document.getElementById('messages');
+var welcomeDiv = document.getElementById('welcome');
+var chatInput = document.getElementById('chatInput');
+var imageInput = document.getElementById('imageInput');
+var imageSizeSelect = document.getElementById('imageSize');
+var chatInputGroup = document.getElementById('chatInputGroup');
+var imageInputGroup = document.getElementById('imageInputGroup');
+var chatModeBtn = document.getElementById('chatModeBtn');
+var imageModeBtn = document.getElementById('imageModeBtn');
+var sendBtn = document.getElementById('sendBtn');
 
-// ===== AUTO RESIZE TEXTAREA =====
+// ===== AUTO RESIZE =====
 chatInput.addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
@@ -31,7 +31,7 @@ chatInput.addEventListener('keydown', function(e) {
     }
 });
 
-// ===== SET MODE FUNCTION =====
+// ===== SET MODE =====
 function setMode(newMode) {
     mode = newMode;
     
@@ -50,11 +50,11 @@ function setMode(newMode) {
     }
 }
 
-// ===== SEND MESSAGE FUNCTION =====
+// ===== SEND MESSAGE =====
 async function sendMessage() {
     if (isLoading) return;
     
-    let text = '';
+    var text = "";
     
     if (mode === 'chat') {
         text = chatInput.value.trim();
@@ -62,7 +62,7 @@ async function sendMessage() {
         text = imageInput.value.trim();
     }
     
-    if (!text) return;
+    if (text === "") return;
     
     // Hide welcome
     welcomeDiv.style.display = 'none';
@@ -72,20 +72,20 @@ async function sendMessage() {
     
     // Clear input
     if (mode === 'chat') {
-        chatInput.value = '';
-        chatInput.style.height = 'auto';
+        chatInput.value = "";
+        chatInput.style.height = "auto";
     } else {
-        imageInput.value = '';
+        imageInput.value = "";
     }
     
     // Show loading
     isLoading = true;
-    const loadingId = showLoading();
+    var loadingId = showLoading();
     
     try {
         if (mode === 'chat') {
-            // Chat API Call
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            // Chat API
+            var response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -98,9 +98,7 @@ async function sendMessage() {
                 })
             });
             
-            const data = await response.json();
-            
-            // Remove loading
+            var data = await response.json();
             removeLoading(loadingId);
             
             if (data.error) {
@@ -109,8 +107,8 @@ async function sendMessage() {
                 addMessage(data.choices[0].message.content, 'bot');
             }
         } else {
-            // Image Generation API Call
-            const response = await fetch('https://api.openai.com/v1/images/generations', {
+            // Image API
+            var response = await fetch('https://api.openai.com/v1/images/generations', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,9 +121,7 @@ async function sendMessage() {
                 })
             });
             
-            const data = await response.json();
-            
-            // Remove loading
+            var data = await response.json();
             removeLoading(loadingId);
             
             if (data.error) {
@@ -136,92 +132,62 @@ async function sendMessage() {
         }
     } catch (error) {
         removeLoading(loadingId);
-        addMessage('Error: Failed to connect. Please check your API key.', 'bot');
-        console.error(error);
+        addMessage("Error: Failed to connect. Check API key.", 'bot');
+        console.log(error);
     }
     
     isLoading = false;
 }
 
-// ===== ADD MESSAGE TO UI =====
+// ===== ADD MESSAGE =====
 function addMessage(text, sender) {
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.className = 'message ' + sender;
     
-    const avatarIcon = sender === 'user' ? 'fa-user' : 'fa-robot';
-    const avatarClass = sender === 'user' ? 'var(--accent)' : 'var(--purple)';
+    var avatarIcon = sender === 'user' ? 'fa-user' : 'fa-robot';
+    var avatarColor = sender === 'user' ? 'var(--accent)' : 'var(--purple)';
     
-    div.innerHTML = `
-        <div class="msg-avatar" style="background: ${avatarClass}">
-            <i class="fa-solid ${avatarIcon}"></i>
-        </div>
-        <div class="msg-content">${escapeHtml(text)}</div>
-    `;
+    div.innerHTML = '<div class="msg-avatar" style="background:' + avatarColor + '"><i class="fa-solid ' + avatarIcon + '"></i></div><div class="msg-content">' + text + '</div>';
     
     messagesDiv.appendChild(div);
-    scrollToBottom();
+    scrollBottom();
 }
 
-// ===== ADD IMAGE TO UI =====
+// ===== ADD IMAGE =====
 function addImageMessage(url) {
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.className = 'message bot';
     
-    div.innerHTML = `
-        <div class="msg-avatar" style="background: var(--purple)">
-            <i class="fa-solid fa-image"></i>
-        </div>
-        <div class="msg-content">
-            <p>Here's your generated image:</p>
-            <img src="${url}" alt="Generated Image" onclick="window.open('${url}', '_blank')">
-        </div>
-    `;
+    div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-image"></i></div><div class="msg-content"><p>Generated Image:</p><img src="' + url + '" alt="AI Image" onclick="window.open(\'' + url + '\', \'_blank\')"></div>';
     
     messagesDiv.appendChild(div);
-    scrollToBottom();
+    scrollBottom();
 }
 
-// ===== SHOW LOADING =====
+// ===== LOADING =====
 function showLoading() {
-    const id = 'loading-' + Date.now();
-    const div = document.createElement('div');
+    var id = 'loading-' + Date.now();
+    var div = document.createElement('div');
     div.id = id;
     div.className = 'message bot';
-    div.innerHTML = `
-        <div class="msg-avatar" style="background: var(--purple)">
-            <i class="fa-solid fa-robot"></i>
-        </div>
-        <div class="loading">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    `;
+    div.innerHTML = '<div class="msg-avatar" style="background:var(--purple)"><i class="fa-solid fa-robot"></i></div><div class="loading"><span></span><span></span><span></span></div>';
     
     messagesDiv.appendChild(div);
-    scrollToBottom();
+    scrollBottom();
     return id;
 }
 
-// ===== REMOVE LOADING =====
 function removeLoading(id) {
-    const el = document.getElementById(id);
+    var el = document.getElementById(id);
     if (el) el.remove();
 }
 
-// ===== UTILITY FUNCTIONS =====
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML.replace(/\n/g, '<br>');
-}
-
-function scrollToBottom() {
-    const chatArea = document.getElementById('chatArea');
+function scrollBottom() {
+    var chatArea = document.getElementById('chatArea');
     chatArea.scrollTop = chatArea.scrollHeight;
 }
 
-// ===== QUICK SEND =====
+// ===== QUICK ACTIONS =====
 function quickSend(text) {
     chatInput.value = text;
     mode = 'chat';
@@ -242,9 +208,9 @@ function newChat() {
     welcomeDiv.style.display = 'flex';
 }
 
-// ===== CLEAR CHAT =====
+// ===== CLEAR =====
 function clearChat() {
-    if (confirm('Clear all messages?')) {
+    if (confirm('Clear all chat?')) {
         newChat();
     }
 }
