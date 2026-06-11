@@ -1,18 +1,22 @@
-// ===== FAIZUL AI - EXTENDED CHATBOT (No API Required!) =====
+// ===== FAIZUL AI - SMART CHATBOT (No API Required!) =====
 
-// DOM Elements
-var messagesDiv = document.getElementById('messages');
-var welcomeDiv = document.getElementById('welcome');
-var userInput = document.getElementById('userInput');
-
-// ===== EXTENDED RESPONSES DATABASE =====
-
+// ===== RESPONSES DATABASE =====
 var responses = {
-    // ========== GREETINGS ==========
-    "hello": "Namaste! 👋 Kaise ho aap? Main Faizul AI hu! Khushi ho rahi hai aapse baat karke!",
-    "hi": "Namaste! 👋 Hello! Kaise ho?",
-    "hey": "Hey! 👋 What's up dude! 😄",
-    "namaste": "Namaste! 🙏🙏 Kaise ho aap?",
-    "kya haal hai": "Sab mast hai yaar! 🎉 Aur tum batao?",
-    "apna batao": "Main Faizul AI hu! 🤖 Tumhara AI Friend jo har cheez ke baare mein jaanta hai!",
-    "kaisa hai": "Main toh mast hu yaar!
+    // ===== GREETINGS =====
+    "hello": "Hello! 👋 Welcome to Faizul AI! I'm your smart AI companion. Ask me about cricket players, education, jokes, or anything!",
+    "hi": "Hi! 👋 Welcome! How can I help you today?",
+    "hey": "Hey! 👋 What's up! 😄",
+    "welcome": "Welcome to Faizul AI! 🎉 Your AI companion is ready to help!",
+
+    // ===== CRICKET PLAYERS - VIRAT =====
+    "virat": "🦁 VIRAT KOHLI:\n\n• Jersey No: 18\n• Role: Batsman\n• Batting: Right Handed\n• Born: 5 November 1988\n• City: Delhi\n• Runs: 25000+\n• Centuries: 80+\n• Nickname: King Kohli, Chase Master 👑",
+    "virat kohli": "🦁 VIRAT KOHLI:\n\n• Jersey No: 18\n• Role: Batsman\n• Born: 5 November 1988\n• City: Delhi\n• Runs: 25000+\n• King of Cricket! 👑",
+    "kohli": "🦁 VIRAT KOHLI:\n\n• Jersey No: 18\n• Role: Batsman\n• Born: 5 November 1988\n• The King! 👑",
+
+    // ===== CRICKET PLAYERS - DHONI =====
+    "dhoni": "🦉 MS DHONI:\n\n• Jersey No: 7\n• Role: Wicket Keeper\n• Batting: Right Handed\n• Born: 7 July 1981\n• City: Ranchi, Jharkhand\n• Trophies: 3 IPL, 2 World Cup\n• Nickname: Captain Cool 🧊",
+    "ms dhoni": "🦉 MS DHONI:\n\n• Jersey No: 7\n• Role: Wicket Keeper\n• Born: 7 July 1981\n• Captain Cool! 🧊\n• World Cup Winner 2011! 🏆",
+    "mahendra singh dhoni": "🦉 MS DHONI:\n\n• Jersey No: 7\n• Born: 7 July 1981\n• Captain Cool 🧊",
+
+    // ===== CRICKET PLAYERS - ROHIT =====
+    "rohit": "🐢 ROHIT SHARMA:\n\n• Jersey No: 45\n• Role:
