@@ -1,14 +1,13 @@
-// ===== SETTINGS =====
+// ===== CONFIGURATION =====
 const API_KEY = "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"; 
 
-// ===== VARS =====
+// ===== VARIABLES =====
 let mode = 'chat';
-let isLoading = false);
+let isLoading = false;
 
 // ===== DOM ELEMENTS =====
-const chatArea = document.getElementById('chatArea');
-const messages = document.getElementById('messages');
-const welcome = document.getElementById('welcome');
+const messagesDiv = document.getElementById('messages');
+const welcomeDiv = document.getElementById('welcome');
 const chatInput = document.getElementById('chatInput');
 const imageInput = document.getElementById('imageInput');
 const imageSize = document.getElementById('imageSize');
@@ -35,8 +34,6 @@ chatInput.addEventListener('keydown', function(e) {
 function setMode(newMode) {
     mode = newMode;
     
-    console.log("Mode changed to:", mode); // Debug
-    
     if (mode === 'chat') {
         chatModeBtn.classList.add('active');
         imageModeBtn.classList.remove('active');
@@ -47,14 +44,13 @@ function setMode(newMode) {
         imageModeBtn.classList.add('active');
         chatModeBtn.classList.remove('active');
         imageInputGroup.classList.add('active');
-        chatInputGroup.classList.remove('active');
+        imageInputGroup.classList.remove('active');
         imageInput.focus();
     }
 }
 
 // ===== SEND MESSAGE FUNCTION =====
 async function sendMessage() {
-    // Prevent multiple clicks
     if (isLoading) return;
     
     let text = '';
@@ -67,11 +63,11 @@ async function sendMessage() {
     
     if (!text) return;
     
-    // Hide welcome screen
-    welcome.style.display = 'none';
+    // Hide welcome
+    welcomeDiv.style.display = 'none';
     
     // Add user message
     addMessage(text, 'user');
     
     // Clear input
-    if (mode
+    if (mode === 'chat
