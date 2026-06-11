@@ -91,7 +91,6 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 </div>
 
 <script>
-// ===== RESPONSES =====
 var responses = {
 "hello": "Hello! 👋 Welcome to Faizul AI! Ask me about cricket, education, jokes or anything!",
 "hi": "Hi! 👋 Welcome! How can I help you?",
@@ -102,45 +101,45 @@ var responses = {
 "rohit": "🐢 ROHIT SHARMA:\n• Jersey: 45\n• Highest: 264\n• The Hitman!",
 "hardik": "🔥 HARDIK PANDYA:\n• Jersey: 11\n• All-rounder",
 "bumrah": "🎯 JASPRIT BUMRAH:\n• Jersey: 93\n• Yorker King!",
-"cricket": "🏏 CRICKET:\n• Virat: 18\n• Rohit: 45\n• Dhoni: 7\n• Hardik: 11\n• Bumrah: 93",
-"jokes": "😄 JOKES:\n1. Why chicken cross road?\n→ Other side! 🐔\n\n2. 2+2 = 4! 😂\n\n3. Ball aata hai, out nahi! 🏏",
-"facts": "💡 FACTS:\n• Sun = 330000× Earth\n• Water = H2O\n• Human = 60% water",
-"math": "📐 MATH:\n• a² + b² = c²\n• (a+b)² = a²+2ab+b²",
+"cricket": "🏏 CRICKET:\n• Virat: 18\n• Rohit: 45\n• Dhoni: 7",
+"jokes": "😄 JOKES:\n1. Why chicken cross road?\n→ Other side! 🐔\n2. 2+2 = 4! 😂",
+"facts": "💡 FACTS:\n• Sun = 330000× Earth\n• Water = H2O",
+"math": "📐 MATH:\n• a² + b² = c²",
 "science": "🔬 SCIENCE:\n• Water = H2O\n• Light = 3×10⁸ m/s",
 "who": "I'm Faizul AI! 🤖 Your smart AI companion!",
-"help": "Type message and click send! Or press Enter!",
+"help": "Type message and click send or press Enter!",
 "thanks": "Welcome! 😊",
 "bye": "Bye! 👋 Take care!"
 };
 
-// ===== FUNCTIONS =====
 var messagesDiv = document.getElementById('messages');
 var welcomeDiv = document.getElementById('welcome');
 var inputText = document.getElementById('inputText');
 
 function sendMessage() {
 var text = inputText.value.trim().toLowerCase();
-if (text === "") return;
-welcomeDiv.style.display = 'none';
-addMessage(text, 'user');
-inputText.value = '';
-setTimeout(function() { addMessage(findResponse(text), 'bot'); }, 500);
+if (text === "") { return; }
+welcomeDiv.style.display = "none";
+addMessage(text, "user");
+inputText.value = "";
+setTimeout(function() { addMessage(findResponse(text), "bot"); }, 500);
 }
 
 function findResponse(input) {
 for (var key in responses) {
-if (input.includes(key)) return responses[key];
+if (input.indexOf(key) !== -1) { return responses[key]; }
 }
-var defaults = ["Interesting! Tell me more!", "Ask about cricket or facts!", "I didn't get that! Try something else!"];
+var defaults = ["Interesting! Tell me more!", "Ask about cricket or facts!", "I didn't get that!"];
 return defaults[Math.floor(Math.random() * defaults.length)];
 }
 
 function addMessage(text, sender) {
-var div = document.createElement('div');
-div.className = 'message ' + sender;
-div.innerHTML = '<div class="msg-avatar">' + (sender === 'user' ? '👤' : '🤖') + '</div><div class="msg-content">' + text.replace(/\n/g, '<br>') + '</div>';
+var div = document.createElement("div");
+div.className = "message " + sender;
+var avatar = sender === "user" ? "👤" : "🤖";
+div.innerHTML = "<div class='msg-avatar'>" + avatar + "</div><div class='msg-content'>" + text.replace(/\n/g, "<br>") + "</div>";
 messagesDiv.appendChild(div);
-document.getElementById('chatArea').scrollTop = 100000;
+document.getElementById("chatArea").scrollTop = 100000;
 }
 
 function quickAsk(text) {
@@ -149,23 +148,17 @@ sendMessage();
 }
 
 function newChat() {
-messagesDiv.innerHTML = '';
-welcomeDiv.style.display = 'flex';
+messagesDiv.innerHTML = "";
+welcomeDiv.style.display = "flex";
 }
 
 function clearChat() {
-if (confirm('Clear chat?')) newChat();
+if (confirm("Clear chat?")) { newChat(); }
 }
 
-// ===== EVENT LISTENERS =====
-inputText.addEventListener('keydown', function(event) {
-if (event.key === 'Enter') {
-sendMessage();
-}
+inputText.addEventListener("keydown", function(event) {
+if (event.key === "Enter") { sendMessage(); }
 });
-
-var sendBtn = document.querySelector('.send-btn');
-sendBtn.addEventListener('click', sendMessage);
 </script>
 </body>
 </html>
