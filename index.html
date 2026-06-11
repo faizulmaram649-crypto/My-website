@@ -105,15 +105,14 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #f4f4f5; 
 
 <script>
 var db = {
-"hello": "Hello! Welcome to Faizul AI!\n\nI can answer questions on many topics!\n\nAsk about:\n- Cricket players\n- Education\n- Food, Health\n- Geography, History\n- Jokes, Facts\n\nWhat would you like to know?",
+"hello": "Hello! Welcome to Faizul AI!\n\nI can answer questions on many topics!\n\nAsk about:\n- Cricket players\n- Education\n- Food, Health\n- Geography, History\n- Who is Faizul\n- Jokes, Facts\n\nWhat would you like to know?",
 "hi": "Hi! Welcome!\nAsk me anything!",
 "hey": "Hey! What's up!",
 "how": "I'm doing great! How can I help you?",
 "fine": "Good! Ask your question!",
 "who": "I am Faizul AI - your knowledge assistant!",
-"faizul": "FAIZUL MARAM - THE CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel Name: Faizul Maram\nUsername: faizulmaram17\n\n📹 CONTENT TYPE:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational religious clips\n• Islamic shorts\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Software Solutions\n\n🌟 ABOUT:\nFaizul Maram is a popular content creator who creates Islamic and religious content to inspire and motivate people! He also develops websites and AI chatbots!\n\n📱 SOCIAL MEDIA:\nYouTube: faizulmaram17\n\nHe is making a difference in education and religious content!",
-"who is faizul": "FAIZUL MARAM - THE CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel Name: Faizul Maram\nUsername: faizulmaram17\n\n📹 CONTENT TYPE:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational religious clips\n• Islamic shorts\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Software Solutions\n\n🌟 ABOUT:\nFaizul Maram is a popular content creator who creates Islamic and religious content to inspire and motivate people! He also develops websites and AI chatbots!\n\n📱 SOCIAL MEDIA:\nYouTube: faizulmaram17\n\nHe is making a difference in education and religious content!",
-"faizul maram": "FAIZUL MARAM - THE CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel Name: Faizul Maram\nUsername: faizulmaram17\n\n📹 CONTENT TYPE:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational religious clips\n• Islamic shorts\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Software Solutions\n\n🌟 ABOUT:\nFaizul Maram is a popular content creator who creates Islamic and religious content to inspire and motivate people! He also develops websites and AI chatbots!\n\n📱 SOCIAL MEDIA:\nYouTube: faizulmaram17\n\nHe is making a difference in education and religious content!",
+"faizul": "FAIZUL MARAM - THE CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel: Faizul Maram\nID: faizulmaram17\n\n📹 CONTENT:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n\n🌟 ABOUT:\nFaizul Maram is a popular YouTuber and developer who creates Islamic content and develops websites/AI chatbots!\n\nSubcribe: youtube.com/@faizulmaram17",
+"who is faizul": "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\n🎬 YOUTUBE:\nChannel: Faizul Maram\nUsername: faizulmaram17\n\n📹 CONTENT TYPE:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational religious clips\n\n💻 DEVELOPER:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Software Solutions\n\n🌟 ABOUT:\nFaizul Maram is a popular content creator who creates Islamic and religious content to inspire and motivate people! He also develops websites and AI chatbots!\n\n📱 SOCIAL:\nYouTube: faizulmaram17",
 "virat": "VIRAT KOHLI:\n\nJersey: 18\nBorn: 5 Nov 1988\nPlace: Delhi\nAge: 36\nRole: Batsman\nBatting: Right Handed\nRuns: 25000+\nCenturies: 80+\nNickname: King Kohli\n\nWorld Cup 2011 winner!\nOne of the best batsmen ever!",
 "dhoni": "MS DHONI:\n\nJersey: 7\nBorn: 7 July 1981\nPlace: Ranchi\nAge: 43\nRole: Wicket Keeper\nNickname: Captain Cool\n\nWorld Cup 2011 winner (Captain)!\n3x IPL champion!\n\nThe legend!",
 "rohit": "ROHIT SHARMA:\n\nJersey: 45\nBorn: 30 April 1987\nPlace: Nagpur\nAge: 37\nRole: Batsman\nHighest: 264 (World Record)\n\nThe Hitman!",
@@ -168,3 +167,18 @@ document.getElementById("chatArea").scrollTop = 100000;
 }
 
 function ask(x) {
+txtBox.value = x;
+send();
+}
+
+function newChat() {
+msgDiv.innerHTML = "";
+welDiv.style.display = "flex";
+}
+
+txtBox.addEventListener("keypress", function(e) {
+if (e.key == "Enter") send();
+});
+</script>
+</body>
+</html>
