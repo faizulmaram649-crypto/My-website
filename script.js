@@ -50,5 +50,20 @@ chat.innerHTML += `<div class="bot-message">❌ API Error</div>`;
 
 console.error(err);
 }
-
 }
+const res = await fetch(
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${AQ.Ab8RN6KQLgpZLRtyWS0_AO6Lq9bPzBsccyGooFViT-jrmCLkQA}`,
+{
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+contents: [
+{
+parts: [{ text: message }]
+}
+]
+})
+}
+);
