@@ -3,41 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faizul AI - Free Chatbot</title>
+    <title>Faizul AI - Your AI Companion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app">
         <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-robot"></i>
+                <span>Faizul AI</span>
+            </div>
+            
             <button class="new-chat-btn" onclick="newChat()">
                 <i class="fa-solid fa-plus"></i> New Chat
             </button>
+            
             <div class="sidebar-menu">
-                <h3>Features</h3>
+                <h3>Categories</h3>
                 <button class="menu-btn" onclick="quickAsk('cricket')">
-                    <i class="fa-solid fa-cricket"></i> Cricket
+                    <i class="fa-solid fa-cricket-ball"></i> Cricket
                 </button>
                 <button class="menu-btn" onclick="quickAsk('education')">
-                    <i class="fa-solid fa-book"></i> Education
+                    <i class="fa-solid fa-graduation-cap"></i> Education
                 </button>
-                <button class="menu-btn" onclick="quickAsk('jokes')">
-                    <i class="fa-solid fa-face-laugh"></i> Fun
+                <button class="menu-btn" onclick="quickAsk('entertainment')">
+                    <i class="fa-solid fa-film"></i> Entertainment
+                </button>
+                <button class="menu-btn" onclick="quickAsk('sports')">
+                    <i class="fa-solid fa-football"></i> Sports
+                </button>
+                <button class="menu-btn" onclick="quickAsk('gaming')">
+                    <i class="fa-solid fa-gamepad"></i> Gaming
                 </button>
             </div>
+            
+            <div class="sidebar-menu">
+                <h3>Quick Actions</h3>
+                <button class="menu-btn" onclick="quickAsk('jokes')">😄 Jokes</button>
+                <button class="menu-btn" onclick="quickAsk('facts')">💡 Facts</button>
+                <button class="menu-btn" onclick="quickAsk('quotes')">📜 Quotes</button>
+                <button class="menu-btn" onclick="quickAsk('riddles')">🎯 Riddles</button>
+            </div>
+            
             <div class="sidebar-bottom">
-                <div class="avatar"><i class="fa-solid fa-robot"></i></div>
-                <span>Faizul AI</span>
+                <div class="user-profile">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="user-info">
+                        <span>Faizul AI</span>
+                        <small>Always Active</small>
+                    </div>
+                </div>
             </div>
         </aside>
         
         <main class="main-content">
             <header class="main-header">
-                <h1>Faizul AI</h1>
-                <button class="icon-btn" onclick="clearChat()">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
+                <div class="header-left">
+                    <h1>Faizul AI</h1>
+                    <span class="status">● Online</span>
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn" onclick="clearChat()" title="Clear Chat">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
             </header>
             
             <div class="chat-area" id="chatArea">
@@ -45,26 +76,69 @@
                     <div class="welcome-icon">
                         <i class="fa-solid fa-robot"></i>
                     </div>
-                    <h2>Namaste! Main Faizul AI hu</h2>
-                    <p>Muqadha se baat karo!</p>
+                    <h2>Namaste! 🙏</h2>
+                    <h3>Main Faizul AI hu</h3>
+                    <p>Your Smart AI Companion!</p>
+                    
                     <div class="quick-links">
                         <button onclick="quickAsk('hello')">👋 Hello</button>
                         <button onclick="quickAsk('cricket')">🏏 Cricket</button>
                         <button onclick="quickAsk('education')">📚 Education</button>
                         <button onclick="quickAsk('jokes')">😄 Jokes</button>
+                        <button onclick="quickAsk('facts')">💡 Facts</button>
+                        <button onclick="quickAsk('who')">❓ Who Are You</button>
+                    </div>
+                    
+                    <div class="welcome-features">
+                        <div class="feature-box" onclick="quickAsk('virat')">
+                            <i class="fa-solid fa-cricket-ball"></i>
+                            <span>Virat</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('rohit')">
+                            <i class="fa-solid fa-cricket-ball"></i>
+                            <span>Rohit</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('dhoni')">
+                            <i class="fa-solid fa-cricket-ball"></i>
+                            <span>Dhoni</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('hardik')">
+                            <i class="fa-solid fa-cricket-ball"></i>
+                            <span>Hardik</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('bumrah')">
+                            <i class="fa-solid fa-cricket-ball"></i>
+                            <span>Bumrah</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('math')">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Math</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('science')">
+                            <i class="fa-solid fa-flask"></i>
+                            <span>Science</span>
+                        </div>
+                        <div class="feature-box" onclick="quickAsk('history')">
+                            <i class="fa-solid fa-landmark"></i>
+                            <span>History</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div id="messages"></div>
             </div>
             
             <div class="input-area">
                 <div class="input-container">
-                    <input type="text" id="userInput" placeholder="Type message..." onkeydown="if(event.key==='Enter')sendMessage()">
+                    <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendMessage()">
                     <button class="send-btn" onclick="sendMessage()">
                         <i class="fa-solid fa-paper-plane"></i>
                     </button>
                 </div>
-                <p class="disclaimer">Free AI - No API Required! 🎉</p>
+                <div class="input-info">
+                    <span><i class="fa-solid fa-robot"></i> Free AI - No API Required!</span>
+                    <span>Press Enter to send</span>
+                </div>
             </div>
         </main>
     </div>
