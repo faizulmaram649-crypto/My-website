@@ -1,129 +1,103 @@
-console.log("Faizul AI Script Loaded");
+// ===============================
+// FAIZUL AI - PREMIUM SCRIPT
+// Gemini 2.5 Flash Integration
+// ===============================
 
-const knowledge = {
-"hello":"👋 Hello! Main Faizul AI hoon.",
-"hi":"👋 Hi! Main Faizul AI hoon.",
-"india":"🇮🇳 India South Asia me sthit ek desh hai. Rajdhani New Delhi hai.",
-"bihar":"Bihar Bharat ka ek rajya hai. Rajdhani Patna hai.",
-"patna":"Patna Bihar ki rajdhani hai.",
-"taj mahal":"🕌 Taj Mahal Agra me sthit hai.",
-"earth":"🌍 Earth Surya se teesra grah hai.",
-"sun":"☀️ Sun ek tara hai.",
-"moon":"🌙 Moon Prithvi ka upagrah hai.",
-"mars":"🔴 Mars ko Red Planet kaha jata hai.",
-"science":"🔬 Science me Physics, Chemistry aur Biology shamil hain.",
-"physics":"⚛️ Physics urja aur gati ka adhyayan hai.",
-"chemistry":"🧪 Chemistry padarth aur unke gunon ka adhyayan hai.",
-"biology":"🧬 Biology jeevit praniyon ka adhyayan hai.",
-"computer":"💻 Computer ek electronic device hai.",
-"internet":"🌐 Internet duniya bhar ke computers ka network hai.",
-"history":"📚 History manav sabhyata ka adhyayan hai.",
-"ai":"🤖 AI ka matlab Artificial Intelligence hai.",
-"chatgpt":"ChatGPT ek AI chatbot hai.",
-"virat kohli":"🏏 Virat Kohli Bharat ke prasiddh cricketer hain.",
-"dhoni":"🏏 MS Dhoni Bharat ke safal kaptano me se ek hain."
-};
 
-function chatAI() {
+const API_KEY = "AQ.Ab8RN6Len8MwlhZklUHmIrmyXHLOFhppRzBMoKP_Q_MmyL7ObA";
 
-const input = document.getElementById("userInput");
-const chat = document.getElementById("chatMessages");
+// Chat container
+const chatBox = document.getElementById("chatMessages");
+const inputBox = document.getElementById("userInput");
 
-if (!input || !chat) {
-console.error("HTML IDs not found");
-return;
+// ===============================
+// SEND MESSAGE FUNCTION
+// ===============================
+async function chatAI() {
+
+    const message = inputBox.value.trim();
+
+    if (!message) return;
+
+    // User message show
+    chatBox.innerHTML += `
+        <div class="user-message">🧑 ${message}</div>
+    `;
+
+    inputBox.value = "";
+
+    // Loading message
+    const loadingId = "loading_" + Date.now();
+    chatBox.innerHTML += `
+        <div class="bot-message" id="${loadingId}">
+            🤖 Faizul AI is thinking...
+        </div>
+    `;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    try {
+
+        const response = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    contents: [
+                        {
+                            parts: [
+                                {
+                                    text: message
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        let reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (!reply) {
+            reply = "❌ Sorry, AI response nahi mil paya.";
+        }
+
+        // Remove loading
+        document.getElementById(loadingId).remove();
+
+        // Bot reply show
+        chatBox.innerHTML += `
+            <div class="bot-message">🤖 ${reply}</div>
+        `;
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    } catch (error) {
+
+        document.getElementById(loadingId).remove();
+
+        chatBox.innerHTML += `
+            <div class="bot-message">❌ Error: API connect nahi ho raha</div>
+        `;
+
+        console.error(error);
+    }
 }
 
-const message = input.value.trim();
-
-if (message === "") return;
-
-const lower = message.toLowerCase();
-
-chat.innerHTML += `
-
-  <div class="user-message">
-    🧑 ${message}
-  </div>
-  `;
-
-let reply = "";
-
-for (let key in knowledge) {
-if (lower.includes(key)) {
-reply = knowledge[key];
-break;
-}
-}
-
-if (!reply && lower.includes("date")) {
-reply = "📅 " + new Date().toLocaleDateString();
-}
-
-if (!reply && lower.includes("time")) {
-reply = "⏰ " + new Date().toLocaleTimeString();
-}
-
-if (!reply && lower.includes("joke")) {
-reply = "😂 Teacher: Homework kahan hai? Student: Sir network issue tha.";
-}
-
-if (!reply && lower.includes("motivation")) {
-reply = "💪 Roz thoda behtar bano, safalta zaroor milegi.";
-}
-
-if (!reply) {
-try {
-
-```
-  if (/^[0-9+\-*/(). ]+$/.test(message)) {
-    reply = "🧮 Answer = " + eval(message);
-  }
-
-} catch {
-  reply = "❌ Invalid calculation.";
-}
-```
-
-}
-
-if (!reply) {
-reply = "🤔 Maaf kijiye, mujhe is topic ki jankari nahi hai.";
-}
-
-setTimeout(() => {
-
-```
-chat.innerHTML += `
-<div class="bot-message">
-  ${reply}
-</div>
-`;
-
-chat.scrollTop = chat.scrollHeight;
-```
-
-}, 400);
-
-input.value = "";
-}
-
+// ===============================
+// ENTER KEY SUPPORT
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-const input = document.getElementById("userInput");
-
-if (input) {
-
-```
-input.addEventListener("keypress", function(e) {
-
-  if (e.key === "Enter") {
-    chatAI();
-  }
-
-});
-```
-
-}
+    inputBox.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            chatAI();
+        }
+    });
 
 });
