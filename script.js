@@ -1,91 +1,95 @@
-// ============================================
-// FAIZUL AI - Complete Working Script
-// ============================================
+// ========================================
+// FAIZUL AI - COMPLETE DATABASE
+// ========================================
 
-// ---- DATA ----
-const data = {
-    "hello": "Hello! Welcome to Faizul AI!\n\nAsk about:\n- Who is Faizul\n- India States & Bihar\n- Countries\n- Cricket Players\n- Education\n- Food & Health\n- Jokes & Facts\n\nWhat would you like to know?",
-    "hi": "Hi! Welcome to Faizul AI!",
-    "hey": "Hey! What's up!",
-    "who is faizul": "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n\nFollow:\nYouTube: @faizulmaram17",
-    "faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos",
-    "india": "INDIA - 28 STATES + 8 UT\n\n━━━━━━━━━━━━━━━━━━━\n\nNORTH:\nDelhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWEST:\nRajasthan, Gujarat, Goa, Maharashtra\n\nEAST:\nWB, Odisha, Bihar, Jharkhand\n\nSOUTH:\nKarnataka, TN, Kerala, Telangana\n\nCENTRAL:\nMP, Chhattisgarh, UP\n\nNORTHEAST:\nAssam, Meghalaya, Manipur, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
-    "bihar": "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nGovernor: Arif Mohammad Khan\n\nPop: 12.4 Crore\nArea: 94,163 sq km\n\nCities:\n1. Patna\n2. Gaya\n3. Bhagalpur\n4. Muzaffarpur\n5. Darbhanga\n\nFamous Places:\n• Mahabodhi Temple\n• Nalanda University\n• Takht Sri Patna Sahib\n\nFamous Food:\n• Litti Chokha\n• Sattu\n• Bhuna Khaja\n\nFamous: Litchi (World famous!)\nLord Buddha born in Gaya!",
-    "countries": "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━━━━\n\nASIA:\nIndia - Delhi\nChina - Beijing\nJapan - Tokyo\nPakistan - Islamabad\nBangladesh - Dhaka\nNepal - Kathmandu\nThailand - Bangkok\n\nEUROPE:\nUK - London\nFrance - Paris\nGermany - Berlin\nItaly - Rome\nSpain - Madrid\n\nAMERICAS:\nUSA - Washington\nCanada - Ottawa\nBrazil - Brasilia\nMexico - Mexico City\n\nAFRICA:\nEgypt - Cairo\nNigeria - Abuja\n\nAUSTRALIA:\nCanberra",
-    "virat": "VIRAT KOHLI - KING KOHLI\n\n━━━━━━━━━━━━━━━━━━━\n\nJersey: 18\nBorn: 5 November 1988\nPlace: Delhi\nAge: 36\n\nRole: Batsman\nRuns: 25000+\nCenturies: 80+\n\nAchievements:\n✅ ICC World Cup: 2011\n✅ ICC Champions Trophy: 2013\n✅ ICC Cricketer of Year: 2017, 2018\n✅ Fastest to 10000 ODI runs",
-    "dhoni": "MS DHONI - CAPTAIN COOL\n\n━━━━━━━━━━━━━━━━━━━\n\nJersey: 7\nBorn: 7 July 1981\nPlace: Ranchi, Jharkhand\nAge: 43\n\nRole: Wicket Keeper\nRuns: 10000+\n\nAchievements:\n✅ ICC World T20: 2007 (CAPTAIN!)\n✅ ICC World Cup: 2011 (CAPTAIN! 🏆)\n✅ IPL: 3 times\n\nNickname: Captain Cool!",
-    "rohit": "ROHIT SHARMA - THE HITMAN\n\n━━━━━━━━━━━━━━━━━━━\n\nJersey: 45\nBorn: 30 April 1987\nPlace: Nagpur\nAge: 37\n\nRole: Opening Batsman\nHighest: 264 (World Record!)\n\nAchievements:\n✅ World Cup: 2019\n✅ 2 Double Centuries in ODIs",
-    "math": "MATH FORMULAS\n\n━━━━━━━━━━━━━━━━━━━\n\nAlgebra:\n(a+b)² = a² + 2ab + b²\n(a-b)² = a² - 2ab + b²\na² - b² = (a+b)(a-b)\n\nGeometry:\nCircle = πr²\nTriangle = ½bh\nRectangle = lw\n\nPythagoras:\na² + b² = c²",
-    "science": "SCIENCE FACTS\n\n━━━━━━━━━━━━━━━━━━━\n\nPhysics:\n• Light: 3×10⁸ m/s\n• Sound: 343 m/s\n• Gravity: 9.8 m/s²\n\nChemistry:\n• Water: H₂O\n• Oxygen: O₂\n• CO₂\n\nBiology:\n• Human: 60% water\n• DNA: Genetic code\n• Cell: Basic unit",
-    "history": "INDIAN HISTORY\n\n━━━━━━━━━━━━━━━━━━━\n\nAncient:\n• Indus Valley: 3300 BCE\n• Maurya, Gupta\n\nMedieval:\n• Delhi Sultanate\n• Mughal Empire\n• Taj Mahal: 1653\n\nModern:\n• British: 1757-1947\n• Independence: 1947",
-    "food": "INDIAN FOOD\n\n━━━━━━━━━━━━━━━━━━━\n\nNorth:\n• Paneer Tikka\n• Butter Naan\n• Biryani\n\nSouth:\n• Dosa\n• Idli\n• Sambar\n\nWest:\n• Dhokla\n• Pav Bhaji\n\nEast:\n• Rasgulla\n• Litti Chokha (Bihar!)",
-    "health": "HEALTH TIPS\n\n━━━━━━━━━━━━━━━━━━━\n\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise 30 min\n4. Green vegetables\n5. Avoid junk food\n6. Fresh fruits\n7. Morning walk\n8. Stay happy!",
-    "fruit": "FRUITS\nApple, Mango, Banana, Orange, Papaya, Pomegranate, Grapes",
-    "jokes": "JOKES\n\n━━━━━━━━━━━━━━━━━━━\n\n1. Why chicken cross road?\n→ To get other side! 🐔\n\n2. Teacher: 2+2=?\nStudent: 4!\nTeacher: Think! 😂\n\n3. Ball comes...\n→ OUT doesn't come! 🏏",
-    "facts": "INTERESTING FACTS\n\n━━━━━━━━━━━━━━━━━━━\n\n• Sun 330,000× Earth\n• Water = H₂O\n• Diamond hardest\n• Light fastest\n• Ocean 71% of Earth\n• Honey never spoils\n• Octopus 3 hearts",
-    "thanks": "Welcome! 😊",
-    "thank": "You're welcome! 🙏",
-    "bye": "Goodbye! 👋 Come back anytime!",
-    "ok": "Great! Ask more!",
-    "who are you": "I am Faizul AI - smart chatbot created by Faizul Maram!"
-};
+var db = {};
 
-// ---- ELEMENTS ----
-const msgDiv = document.getElementById("msg");
-const welDiv = document.getElementById("welcome");
-const txtBox = document.getElementById("txt");
+// ====================
+// GREETINGS (greetings.json)
+// ====================
+db["hello"] = "Hello! Welcome to Faizul AI!\n\nI can answer about:\n✅ Who is Faizul (Creator)\n✅ India, Bihar, Countries\n✅ Cricket (Virat, Dhoni, Rohit)\n✅ Education (Math, Science, History)\n✅ Mobile, Technology, Coding\n✅ Urdu, Hindi, English\n✅ Islam, Quran, Hadith, Duas\n✅ Food, Health, Fitness\n✅ Animals, Plants, Space\n✅ Movies, Books, Jokes & Facts\n✅ Travel, Careers, Business\n✅ Festivals, Daily Life\n\nWhat would you like to know?";
+db["hi"] = "Hi! Welcome to Faizul AI!";
+db["hey"] = "Hey! What's up!";
+db["namaste"] = "Namaste! Welcome to Faizul AI!";
+db["salam"] = "Salam! Asalamu Alaikum!";
+db["good morning"] = "Good Morning! Have a great day!";
+db["good night"] = "Good Night! Sweet dreams!";
+db["thanks"] = "You're welcome!";
+db["thank"] = "Welcome! 😊";
+db["bye"] = "Goodbye! Come back anytime! 👋";
+db["how are you"] = "I'm fine! Thanks for asking!";
 
-// ---- FUNCTIONS ----
+// ====================
+// COMMON CHAT (common_chat.json)
+// ====================
+db["help"] = "I can help you with any question! Just ask me!";
+db["sad"] = "Don't be sad! Stay positive! 💪";
+db["happy"] = "I'm happy too! 😊";
+db["bored"] = "Here's a joke: Why did the chicken cross the road? To get to the other side! 😂";
+db["angry"] = "Stay calm! Take a deep breath! 😌";
+db["tired"] = "Take rest! Sleep 8 hours! 😴";
+db["hungry"] = "Eat something! Don't skip meals! 🍽️";
+db["alone"] = "I'm always here for you!";
 
-// Send message
-function send() {
-    const text = txtBox.value.trim().toLowerCase();
-    if (!text) return;
-    
-    welDiv.style.display = "none";
-    addMessage(text, "user");
-    txtBox.value = "";
-    
-    setTimeout(() => {
-        addMessage(getResponse(text), "bot");
-    }, 300);
-}
+// ====================
+// CREATOR (gk.json)
+// ====================
+db["who is faizul"] = "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━━\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Prayers (Duas)\n• Motivational clips\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator";
+db["faizul"] = "FAIZUL MARAM\n\nYouTube: @faizulmaram17";
+db["your creator"] = "FAIZUL MARAM created me!";
+db["about"] = "I am Faizul AI!";
 
-// Get response from data
-function getResponse(input) {
-    for (let key in data) {
-        if (input.includes(key)) {
-            return data[key];
-        }
-    }
-    return "Ask about Faizul, India, Bihar, countries, cricket, food, health, jokes!";
-}
+// ====================
+// INDIA (india.json)
+// ====================
+db["india"] = "INDIA - 28 STATES + 8 UT\n\n━━━━━━━━━━━━━━━━━━━━━\n\nNORTH: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWEST: Rajasthan, Gujarat, Goa, Maharashtra\nEAST: WB, Odisha, Bihar, Jharkhand\nSOUTH: Karnataka, Telangana, TN, Kerala\nCENTRAL: MP, UP\nNORTHEAST: Assam, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+";
+db["delhi"] = "DELHI - CAPITAL\n\nPop: 2 crore+\nFamous: Red Fort, India Gate";
+db["mumbai"] = "MUMBAI\n\nPop: 2 crore+\nFamous: Gateway of India, Bollywood";
+db["kolkata"] = "KOLKATA\n\nPop: 1.5 crore+\nFamous: Victoria Memorial";
+db["countries"] = "COUNTRIES\n\n━━━━━━━━━━━━━━━━━━━━━\n\nASIA: India-Delhi, China-Beijing, Japan-Tokyo\nEUROPE: UK-London, France-Paris\nAMERICAS: USA-Washington, Canada-Ottawa\nAUSTRALIA: Canberra";
 
-// Add message to chat
-function addMessage(text, sender) {
-    const div = document.createElement("div");
-    div.className = "m " + sender;
-    div.innerHTML = "<div class='av'>" + (sender === "user" ? "You" : "AI") + "</div><div class='ct'>" + text + "</div>";
-    msgDiv.appendChild(div);
-    document.getElementById("chatArea").scrollTop = 100000;
-}
+// ====================
+// BIHAR (india.json)
+// ====================
+db["bihar"] = "BIHAR\n\n━━━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nFamous: Litti Chokha, Litchi\nSpecial: Lord Buddha in Gaya!";
+db["patna"] = "PATNA\n\nCapital of Bihar\nPop: 20 lakh+";
+db["gaya"] = "GAYA\n\nMahabodhi Temple\nLord Buddha enlightenment!";
+db["litti chokha"] = "LITTI CHOKHA\n\nBihar's famous food";
+db["litchi"] = "LITCHI\n\nBihar's famous fruit";
 
-// Quick ask from button
-function ask(topic) {
-    txtBox.value = topic;
-    send();
-}
+// ====================
+// LANGUAGES (english.json + hindi.json + urdu.json)
+// ====================
+db["urdu"] = "URDU\n\n━━━━━━━━━━━━━━━━━━━━━\n\n• Poetical language\n• Nastaliq script\n• Famous ghazals";
+db["urdu poetry"] = "URDU POETS\n\nMirza Ghalib, Allama Iqbal";
+db["hindi"] = "HINDI\n\n━━━━━━━━━━━━━━━━━━━━━\n\n• India's language\n• 600M speakers\n• Bollywood";
+db["english"] = "ENGLISH\n\n━━━━━━━━━━━━━━━━━━━━━\n\n• World's language\n• 1.5B speakers";
+db["tamil"] = "TAMIL\n\nSouth Indian classical";
+db["bengali"] = "BENGALI\n\n230M speakers";
 
-// Clear chat
-function clearChat() {
-    msgDiv.innerHTML = "";
-    welDiv.style.style.display = "flex";
-}
+// ====================
+// CRICKET (cricket.json)
+// ====================
+db["virat"] = "VIRAT KOHLI\n\n━━━━━━━━━━━━━━━━━━━━━\n\nJersey: 18\nBorn: 5 Nov 1988\nRuns: 25000+\nKing Kohli!";
+db["dhoni"] = "MS DHONI\n\n━━━━━━━━━━━━━━━━━━━━━\n\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011!";
+db["rohit"] = "ROHIT SHARMA\n\n━━━━━━━━━━━━━━━━━━━━━\n\nJersey: 45\nHighest: 264\nWorld Cup 2019!";
+db["cricket"] = "CRICKET\n\nFormats: Test, ODI, T20";
 
-// ---- EVENTS ----
-txtBox.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") send();
-});
+// ====================
+// EDUCATION (education.json + math.json + science.json)
+// ====================
+db["math"] = "MATH\n\n━━━━━━━━━━━━━━━━━━━━━\n\n(a+b)² = a²+2ab+b²\na²-b² = (a+b)(a-b)\nCircle = πr²\na²+b² = c²";
+db["science"] = "SCIENCE\n\n━━━━━━━━━━━━━━━━━━━━━\n\nPhysics: Light, Gravity\nChemistry: Water-H₂O\nBiology: Human-60% water";
+db["physics"] = "PHYSICS\n\nF = ma, v = d/t";
+db["chemistry"] = "CHEMISTRY\n\nElements: 118\nH₂O, O₂";
+db["biology"] = "BIOLOGY\n\n60% water\nDNA";
+db["history"] = "HISTORY\n\n━━━━━━━━━━━━━━━━━━━━━\n\nAncient: Indus Valley\nMedieval: Mughal\nModern: British 1757-1947";
+db["geography"] = "GEOGRAPHY\n\nIndia: 3.28M km²";
 
-// ---- INIT ----
-console.log("Faizul AI Ready! 🚀");
+// ====================
+// ISLAMIC (islamic.json + quran.json + hadith.json)
+// ====================
+db["islam"] = "ISLAM\n\n━━━━━━━━━━━━━━━━━━━━━\n\nPillars:\n1. Shahada\n2. Salat (5 times)\n3. Zakat (2.5%)\n4. Sawm (Ramadan)\n5. Hajj";
+db["quran"] = "QURAN\n\n━━━━━━━━━━━━━━━━━━━━━\n\nVerses: 6236\nSurahs: 114\nLanguage: Arabic";
+db["hadith"] = "HADITH\n\n━━━━━━━━━━━━━━━━━━━━━\n\nSayings of Prophet (PBUH)\nCollections:\nBukhari, Muslim";
+db["dua"] = "DUA\n\n━━━━━━━━━━━━━━━━━━━━━\n\nMorning: Subhanallaz\nNight: Astagh
