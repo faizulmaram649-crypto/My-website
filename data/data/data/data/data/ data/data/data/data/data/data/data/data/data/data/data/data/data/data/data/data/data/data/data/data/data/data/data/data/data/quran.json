@@ -1,0 +1,53 @@
+{
+    "quran": {
+        "revelation": {
+            "prophet": "Muhammad (PBUH)",
+            "period": "610-632 CE",
+            "verses": "6236",
+            "chapters": "114",
+            "language": "Arabic"
+        },
+        
+        "surahs": [
+            {"name": "Al-Fatiha", "verses": 7, "meaning": "The Opening"},
+            {"name": "Al-Baqarah", "verses": 286, "meaning": "The Cow"},
+            {"name": "Al-Imran", "verses": 200, "meaning": "The Family of Imran"},
+            {"name": "An-Nisa", "verses": 176, "meaning": "The Women"},
+            {"name": "Al-Ma'idah", "verses": 120, "meaning": "The Table"},
+            {"name": "Al-Kahf", "verses": 110, "meaning": "The Cave"},
+            {"name": "Ar-Rahman", "verses": 78, "meaning": "The Most Merciful"},
+            {"name": "Al-Waqi'ah", "verses": 96, "meaning": "The Inevitable"},
+            {"name": "Al-Mulk", "verses": 30, "meaning": "The Dominion"},
+            {"name": "Al-Ikhlas", "verses": 4, "meaning": "The Sincerity"}
+        ],
+        
+        "pillars": [
+            {"num": 1, "shahada": "There is no god but Allah"},
+            {"num": 2, "salat": "Prayer 5 times daily"},
+            {"num": 3, "zakat": "Charity 2.5%"},
+            {"num": 4, "sawm": "Ramadan fasting"},
+            {"num": 5, "hajj": "Pilgrimage to Mecca"
+        ]
+    },
+    
+    "99_names": {
+        "ar_rahman": "The Most Merciful",
+        "ar_rahim": "The Most Merciful",
+        "al_malik": "The King",
+        "al_quddus": "The Most Holy",
+        "as_salam": "The Peace",
+        "al_mumin": "The Trustworthy",
+        "al_muhaymin": "The Guardian",
+        "al_aziz": "The Mighty",
+        "al_jabbar": "The Compeller",
+        "al_mutakabbir": "The Proud"
+    },
+    
+    "verses": {
+        "1:1": "Bismillah hir rahman nir raheem",
+        "2:255": "Allah - La ilaha illa Hu",
+        "3:18": "He is the First and the Last",
+        "57:3": "He is the First and the Last",
+        "112:1": "Say, He is Allah, the One"
+    }
+}
