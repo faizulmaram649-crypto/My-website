@@ -1,0 +1,94 @@
+{
+    "grammar": {
+        "parts_of_speech": {
+            "noun": ["Person", "Place", "Thing", "Idea"],
+            "pronoun": ["I", "You", "He", "She", "It", "They"],
+            "verb": ["Action words", "States", "Occurrences"],
+            "adjective": ["Describes noun", "Quality", "Quantity"],
+            "adverb": ["Describes verb", "How", "When", "Where"],
+            "preposition": ["Position", "Time", "Direction"],
+            "conjunction": ["Joins words", "And", "But", "Or"],
+            "interjection": ["Emotion", "Wow!", "Oops!"]
+        },
+        
+        "tenses": {
+            "present": {
+                "simple": "I play",
+                "continuous": "I am playing",
+                "perfect": "I have played",
+                "perfect_continuous": "I have been playing"
+            },
+            "past": {
+                "simple": "I played",
+                "continuous": "I was playing",
+                "perfect": "I had played",
+                "perfect_continuous": "I had been playing"
+            },
+            "future": {
+                "simple": "I will play",
+                "continuous": "I will be playing",
+                "perfect": "I will have played"
+            }
+        },
+        
+        "voice": {
+            "active": "Subject does action",
+            "passive": "Action done on subject"
+        },
+        
+        "speech": {
+            "direct": "Quote exact words",
+            "indirect": "Report words"
+        }
+    },
+    
+    "vocabulary": {
+        "synonyms": {
+            "happy": ["joyful", "cheerful", "delighted"],
+            "sad": ["unhappy", "sorrowful", "gloomy"],
+            "big": ["large", "huge", "enormous"],
+            "fast": ["quick", "rapid", "swift"],
+            "good": ["great", "excellent", "wonderful"]
+        },
+        
+        "antonyms": {
+            "happy": "sad",
+            "big": "small",
+            "fast": "slow",
+            "good": "bad",
+            "light": "dark"
+        },
+        
+        "idioms": {
+            "break_a_leg": "Good luck",
+            "piece_of_cake": "Easy task",
+            "under_the_weather": "Sick",
+            "spill_the_beans": "Reveal secret",
+            "hit_the_nail": "Be exact"
+        },
+        
+        "phrasal_verbs": {
+            "get_up": "Wake up",
+            "give_up": "Stop trying",
+            "look_after": "Take care",
+            "come_across": "Find",
+            "put_off": "Postpone"
+        }
+    },
+    
+    "writing": {
+        "formal": ["Application", "Letter", "Essay"],
+        "informal": ["Email", "Message", "Story"],
+        "paragraph": ["Topic sentence", "Details", "Conclusion"],
+        "essay": ["Introduction", "Body", "Conclusion"]
+    },
+    
+    "comprehension": {
+        "steps": [
+            "Read question first",
+            "Read passage",
+            "Find answer",
+            "Write in own words"
+        ]
+    }
+}
