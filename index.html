@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faizul AI</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500:600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; height: 100vh; overflow: hidden; }
@@ -24,7 +24,6 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 .icon { width: 70px; height: 70px; background: linear-gradient(135deg, #00d48a, #8b5cf6); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
 .welcome h2 { font-size: 24px; margin: 10px 0 4px; }
 .welcome h3 { color: #00d48a; margin-bottom: 8px; }
-.welcome p { color: #888; font-size: 12px; margin-bottom: 12px; }
 .quick { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 240px; }
 .quick button { padding: 7px 10px; background: #1a1a22; border: 1px solid #28282f; border-radius: 6px; color: #fff; cursor: pointer; font-size: 11px; }
 .quick button:hover { background: #00d48a; color: #000; }
@@ -50,40 +49,39 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="app">
 <aside class="sidebar">
 <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
-<button class="btn" onclick="ask('hello')"><i class="fa-solid fa-hand-wave"></i> Hello</button>
-<button class="btn" onclick="ask('who is faizul')"><i class="fa-solid fa-user"></i> About Creator</button>
-<button class="btn" onclick="ask('india')"><i class="fa-solid fa-flag"></i> India</button>
-<button class="btn" onclick="ask('bihar')"><i class="fa-solid fa-map"></i> Bihar</button>
-<button class="btn" onclick="ask('english')"><i class="fa-solid fa-language"></i> English</button>
-<button class="btn" onclick="ask('urdu')"><i class="fa-solid fa-language"></i> Urdu</button>
-<button class="btn" onclick="ask('hindi')"><i class="fa-solid fa-language"></i> Hindi</button>
+<button class="btn" data-ask="who is faizul"><i class="fa-solid fa-user"></i> About Creator</button>
+<button class="btn" data-ask="india"><i class="fa-solid fa-flag"></i> India</button>
+<button class="btn" data-ask="bihar"><i class="fa-solid fa-map"></i> Bihar</button>
+<button class="btn" data-ask="countries"><i class="fa-solid fa-globe"></i> Countries</button>
+<button class="btn" data-ask="urdu"><i class="fa-solid fa-language"></i> Urdu</button>
+<button class="btn" data-ask="hindi"><i class="fa-solid fa-language"></i> Hindi</button>
+<button class="btn" data-ask="english"><i class="fa-solid fa-language"></i> English</button>
 <div class="head">Cricket</div>
-<button class="btn" onclick="ask('virat')">Virat Kohli</button>
-<button class="btn" onclick="ask('dhoni')">MS Dhoni</button>
-<button class="btn" onclick="ask('rohit')">Rohit Sharma</button>
+<button class="btn" data-ask="virat">Virat</button>
+<button class="btn" data-ask="dhoni">Dhoni</button>
+<button class="btn" data-ask="rohit">Rohit</button>
 <div class="head">Education</div>
-<button class="btn" onclick="ask('math')">Math</button>
-<button class="btn" onclick="ask('science')">Science</button>
-<button class="btn" onclick="ask('history')">History</button>
+<button class="btn" data-ask="math">Math</button>
+<button class="btn" data-ask="science">Science</button>
 <div class="head">Mobile</div>
-<button class="btn" onclick="ask('mobile')">Mobile</button>
-<button class="btn" onclick="ask('whatsapp')">WhatsApp</button>
-<button class="btn" onclick="ask('instagram')">Instagram</button>
+<button class="btn" data-ask="mobile">Mobile</button>
+<button class="btn" data-ask="whatsapp">WhatsApp</button>
+<button class="btn" data-ask="instagram">Instagram</button>
 <div class="head">Islamic</div>
-<button class="btn" onclick="ask('islam')">Islam</button>
-<button class="btn" onclick="ask('quran')">Quran</button>
-<button class="btn" onclick="ask('dua')">Dua</button>
+<button class="btn" data-ask="islam">Islam</button>
+<button class="btn" data-ask="quran">Quran</button>
+<button class="btn" data-ask="dua">Dua</button>
 <div class="head">Lifestyle</div>
-<button class="btn" onclick="ask('food')">Food</button>
-<button class="btn" onclick="ask('health')">Health</button>
+<button class="btn" data-ask="food">Food</button>
+<button class="btn" data-ask="health">Health</button>
 <div class="head">Fun</div>
-<button class="btn" onclick="ask('jokes')">Jokes</button>
-<button class="btn" onclick="ask('facts')">Facts</button>
+<button class="btn" data-ask="jokes">Jokes</button>
+<button class="btn" data-ask="facts">Facts</button>
 </aside>
 <main class="main">
 <header class="header">
 <h1>Faizul AI</h1>
-<button class="clear-btn" onclick="clearChat()"><i class="fa-solid fa-trash"></i> Clear</button>
+<button class="clear-btn" id="clearBtn"><i class="fa-solid fa-trash"></i> Clear</button>
 </header>
 <div class="chat" id="chatArea">
 <div class="welcome" id="welcome">
@@ -92,12 +90,12 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <h3>Welcome to Faizul AI</h3>
 <p>Your Knowledge Assistant</p>
 <div class="quick">
-<button onclick="ask('hello')">Hello</button>
-<button onclick="ask('who is faizul')">Creator</button>
-<button onclick="ask('bihar')">Bihar</button>
-<button onclick="ask('urdu')">Urdu</button>
-<button onclick="ask('hindi')">Hindi</button>
-<button onclick="ask('jokes')">Jokes</button>
+<button data-ask="hello">Hello</button>
+<button data-ask="who is faizul">Creator</button>
+<button data-ask="bihar">Bihar</button>
+<button data-ask="urdu">Urdu</button>
+<button data-ask="hindi">Hindi</button>
+<button data-ask="jokes">Jokes</button>
 </div>
 </div>
 <div id="msg"></div>
@@ -105,7 +103,7 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="input-area">
 <div class="input-box">
 <input type="text" id="txt" placeholder="Ask anything..." autocomplete="off">
-<button onclick="send()"><i class="fa-solid fa-paper-plane"></i></button>
+<button id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
 </div>
 <div class="info">Press Enter to send</div>
 </div>
@@ -113,56 +111,91 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 </div>
 
 <script>
-// ========================================
-// FAIZUL AI - COMPLETE DATABASE
-// ========================================
+// Complete Database
+var db = {
+"hello": "Hello! Welcome to Faizul AI!\n\nI can answer in English, Hindi, Urdu!\n\nAsk about:\n- Who is Faizul (Creator)\n- India, Bihar, Countries\n- Cricket Players\n- Education, Science\n- Mobile, WhatsApp\n- English, Hindi, Urdu\n- Islam, Quran\n- Food, Health\n- Jokes & Facts\n\nWhat would you like to know?",
+"hi": "Hi! Welcome to Faizul AI!",
+"who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent: Islamic status videos, Religious quotes, Duas, Motivational clips\n\nDeveloper: Website, AI Chatbot, App Developer",
+"faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos",
+"india": "INDIA - 28 STATES + 8 UT\n\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWest: Rajasthan, Gujarat, Goa, Maharashtra\nEast: WB, Odisha, Bihar, Jharkhand\nSouth: Karnataka, TN, Kerala\nCentral: MP, UP\nNE: Assam, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
+"bihar": "BIHAR\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nCities: Patna, Gaya, Bhagalpur, Muzaffarpur\n\nFamous: Litti Chokha, Litchi\nLord Buddha born in Gaya!",
+"countries": "COUNTRIES\n\nAsia: India-Delhi, China-Beijing, Japan-Tokyo, Pakistan-Islamabad, Bangladesh-Dhaka\nEurope: UK-London, France-Paris, Germany-Berlin\nAmericas: USA-Washington, Canada-Ottawa\nAfrica: Egypt-Cairo\nAustralia: Canberra",
+"virat": "VIRAT KOHLI\n\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!\nRuns: 25000+\nWorld Cup 2011!",
+"dhoni": "MS DHONI\n\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011 (Captain)!",
+"rohit": "ROHIT SHARMA\n\nJersey: 45\nBorn: 30 April 1987\nHighest: 264 (Record!)",
+"math": "MATH\n(a+b)2 = a2+2ab+b2\na2-b2 = (a+b)(a-b)\nCircle = pr2\na2+b2 = c2",
+"science": "SCIENCE\n\nLight: 3x108 m/s\nGravity: 9.8 m/s2\nWater: H2O\nHuman: 60% water",
+"history": "HISTORY\n\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nBritish: 1757-1947\nIndependence: 1947",
+"english": "ENGLISH\n\nWorld's most spoken language\n1.5 billion speakers\nUsed in business globally",
+"hindi": "HINDI\n\nIndia's most spoken language\n600 million speakers\nBollywood language\nDevanagari script",
+"urdu": "URDU\n\nPoetical language\nNastaliq script\nUsed in India, Pakistan\nFamous ghazals",
+"mobile": "MOBILE\n\nBrands: Apple, Samsung, OnePlus, Realme, Redmi\nOS: iOS, Android",
+"whatsapp": "WHATSAPP\n\nPopular messaging app\n2 billion users\nText, voice, video calls\nStatus updates",
+"instagram": "INSTAGRAM\n\nPhoto sharing app\n1 billion users\nReels, Stories\nSocial media platform",
+"islam": "ISLAM\n\nPillars: Shahada, Salat, Zakat, Sawm, Hajj\nHoly: Quran\nProphet: Muhammad (PBUH)",
+"quran": "QURAN\n\nVerses: 6236\nSurahs: 114\nLanguage: Arabic\nHoly book of Islam",
+"dua": "DUA / PRAYER\n\nMorning: Subhanallaz\nNight: Astaghfirullah\nGeneral: La ilaha illallah",
+"food": "FOOD\n\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nBihar: Litti Chokha",
+"health": "HEALTH\n\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies\n5. No junk",
+"jokes": "JOKES\n\n1. Why chicken? Other side!\n2. 2+2=4!\n3. Ball comes, out!",
+"facts": "FACTS\n\nSun 330000x Earth\nWater = H2O\nDiamond hardest\nOctopus 3 hearts"
+};
 
-(function() {
-    // === ALL DATA (English, Hindi, Urdu) ===
-    var db = {
-        // === GREETINGS ===
-        "hello": "Hello! Welcome to Faizul AI!\n\nI can answer in English, Hindi, and Urdu!\n\nAsk about:\n• Who is Faizul (Creator)\n• India, Bihar, Countries\n• Cricket Players\n• Education, Science, Math\n• Mobile, WhatsApp, Instagram\n• English, Hindi, Urdu\n• Islam, Quran, Duas\n• Food, Health\n• Jokes & Facts\n\nWhat would you like to know?",
-        "hi": "Hi! Welcome to Faizul AI! How can I help you?",
-        "hey": "Hey! What's up!",
-        "namaste": "Namaste! Welcome to Faizul AI!",
-        "salam": "Salam! Asalamu Alaikum! Welcome!",
-        "good morning": "Good Morning! 🌅 Have a great day!",
-        "good night": "Good Night! 🌙 Sweet dreams!",
-        
-        // === FAIUL MARAM ===
-        "who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Duas & Prayers\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor\n\nHe creates Islamic content and develops tech!",
-        "faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos\nDeveloper: Websites, AI",
-        
-        // === INDIA & BIHAR ===
-        "india": "INDIA - 28 STATES + 8 UT\n\n━━━━━━━━━━━━━━━\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWest: Rajasthan, Gujarat, Goa, Maharashtra\nEast: WB, Odisha, Bihar, Jharkhand\nSouth: Karnataka, TN, Kerala, Telangana\nCentral: MP, UP\nNE: Assam, Sikkim\n\nCapital: New Delhi\nPopulation: 140 Crore+",
-        "bihar": "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\nArea: 94,163 sq km\n\nCities: Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga\n\nFamous Places: Mahabodhi Temple (Gaya), Nalanda University\n\nFamous Food: Litti Chokha, Sattu\n\nFamous Fruit: Litchi (World famous!)\n\nSpecial: Lord Buddha born in Gaya!",
-        "patna": "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━\nPopulation: 20 lakh+\nFamous: Takht Sri Patna Sahib, Bihar Museum, Golghar",
-        "litti chokha": "BITTER CHOKHA - BIHAR DISH\n\n━━━━━━━━━━━━━━━\nIngredients: Wheat flour, Sattu, Brinjal, Potato\nFamous dish of Bihar!",
-        "litchi": "LITCHI - BIHAR FRUIT\n\n━━━━━━━━━━━━━━━\nFamous in: Muzaffarpur\nSeason: May-June\nWorld's best litchi!",
-        
-        // === COUNTRIES ===
-        "countries": "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━\nASIA:\nIndia, China, Japan, Pakistan, Bangladesh, Nepal, Sri Lanka\n\nEUROPE:\nUK, France, Germany, Italy, Spain, Russia\n\nAMERICAS:\nUSA, Canada, Brazil, Mexico\n\nAFRICA:\nEgypt, Nigeria, South Africa\n\nAUSTRALIA:\nAustralia, New Zealand",
-        "capital": "CAPITALS\n\nIndia - New Delhi\nUSA - Washington\nUK - London\nFrance - Paris\nJapan - Tokyo\nChina - Beijing\nRussia - Moscow\nAustralia - Canberra",
-        
-        // === ENGLISH ===
-        "english": "ENGLISH LANGUAGE\n\n━━━━━━━━━━━━━━━\n• World's most spoken language\n• Used in business globally\n• Official language of many countries\n• 1.5 billion speakers",
-        "learn english": "LEARN ENGLISH\n\n━━━━━━━━━━━━━━━\n• Read English books\n• Watch English movies\n• Practice daily\n• Make English friends\n• Don't be afraid to speak",
-        
-        // === HINDI ===
-        "hindi": "HINDI BHASHA\n\n━━━━━━━━━━━━━━━\n• India's most spoken language\n• Devanagari script\n• 600 million speakers\n• Bollywood language\n\nHindi is our national language!",
-        "hindi song": "HINDI SONGS\n\n━━━━━━━━━━━━━━━\nBollywood songs are famous!\nSing along and enjoy!",
-        
-        // === URDU ===
-        "urdu": "URDU ZABAN\n\n━━━━━━━━━━━━━━━\n• Beautiful poetical language\n• Nastaliq script (Arabic)\n• Used in India, Pakistan\n• Famous ghazals\n• Poetry language",
-        "urdu poetry": "URDU POETRY\n\n━━━━━━━━━━━━━━━\n• Famous poets:\n - Mirza Ghalib\n - Allama Iqbal\n - Faiz Ahmed Faiz\n\nUrdu is language of poetry!",
-        "urdu quotes": "URDU QUOTES\n\n━━━━━━━━━━━━━━━\n• Zindagi ek safar hai suhana\n• Dil ki awaaz suno\n• Urdu hamari pehchan hai",
-        
-        // === CRICKET ===
-        "virat": "VIRAT KOHLI - KING KOHLI\n\n━━━━━━━━━━━━━━━\nJersey: 18\nBorn: 5 Nov 1988\nRuns: 25000+\nWorld Cup: 2011\nKing of Cricket!",
-        "dhoni": "MS DHONI - CAPTAIN COOL\n\n━━━━━━━━━━━━━━━\nJersey: 7\nBorn: 7 July 1981\nRuns: 10000+\nWorld Cup 2011 (Captain)!",
-        "rohit": "ROHIT SHARMA\n\n━━━━━━━━━━━━━━━\nJersey: 45\nBorn: 30 April 1987\nHighest: 264 (Record!)",
-        
-        // === EDUCATION ===
-        "math": "MATH\n\n(a+b)² = a²+2ab+b²\na²-b² = (a+b)(a-b)\nCircle = πr²\na²+b² = c²",
-        "science": "SCIENCE\n\n━━━━━━━━━━━━━━━\n• Light: 3×10⁸ m/s\n• Gravity: 9.8 m/s²\n• Water: H₂O\n• Human: 60% water",
-        "history": "HISTORY\n\n━━━━━━━━━━━━━━━\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nModern: British 1757-1947\nIndependence: 1947",
+// Get elements
+var msgDiv = document.getElementById("msg");
+var welDiv = document.getElementById("welcome");
+var txtBox = document.getElementById("txt");
+
+// Send message
+function send() {
+var text = txtBox.value.trim().toLowerCase();
+if (!text) return;
+welDiv.style.display = "none";
+addMessage(text, "user");
+txtBox.value = "";
+setTimeout(function() { addMessage(getReply(text), "bot"); }, 300);
+}
+
+// Get reply
+function getReply(input) {
+for (var key in db) {
+if (input.indexOf(key) !== -1) return db[key];
+}
+return "Ask about Faizul, India, Bihar, countries, cricket, food!";
+}
+
+// Add message
+function addMessage(text, sender) {
+var div = document.createElement("div");
+div.className = "m " + sender;
+div.innerHTML = "<div class='av'>" + (sender === "user" ? "You" : "AI") + "</div><div class='ct'>" + text + "</div>";
+msgDiv.appendChild(div);
+document.getElementById("chatArea").scrollTop = 100000;
+}
+
+// Clear chat
+function clearChat() {
+msgDiv.innerHTML = "";
+welDiv.style.display = "flex";
+}
+
+// Event listeners
+document.getElementById("sendBtn").addEventListener("click", send);
+document.getElementById("clearBtn").addEventListener("click", clearChat);
+
+txtBox.addEventListener("keypress", function(e) {
+if (e.key === "Enter") send();
+});
+
+// Button clicks using data-ask attribute
+document.querySelectorAll("[data-ask]").forEach(function(btn) {
+btn.addEventListener("click", function() {
+txtBox.value = this.getAttribute("data-ask");
+send();
+});
+});
+
+console.log("Faizul AI Ready!");
+</script>
+</body>
+</html>
