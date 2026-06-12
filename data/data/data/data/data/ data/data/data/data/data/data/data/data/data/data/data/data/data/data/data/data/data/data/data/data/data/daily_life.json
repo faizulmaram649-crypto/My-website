@@ -1,0 +1,99 @@
+{
+    "morning_routine": {
+        "wake_up": "5:00 - 6:00 AM",
+        "water": "Drink 2 glasses water",
+        "exercise": "30 minutes workout",
+        "breakfast": "Healthy breakfast",
+        "bath": "Fresh shower",
+        "leave": "Ready to go"
+    },
+    
+    "office_routine": {
+        "meeting": "Attend meetings",
+        "work": "Complete tasks",
+        "break": "Short breaks every 2 hours",
+        "lunch": "Healthy lunch",
+        "wrap": "Wrap up work"
+    },
+    
+    "night_routine": {
+        "dinner": "Light dinner",
+        "study": "Study/Read",
+        "relax": "Relax time",
+        "sleep": "10:00 PM"
+    },
+    
+    "time_management": {
+        "pomodoro": "25 min work, 5 min break",
+        "weekly": "Plan every Sunday",
+        "daily": "3 important tasks",
+        "prioritize": "Important vs Urgent"
+    },
+    
+    "productivity": {
+        "tips": [
+            "Start your day early",
+            "Focus on one task at a time",
+            "Avoid distractions",
+            "Take breaks",
+            "Review your day"
+        ],
+        
+        "avoid": [
+            "Procrastination",
+            "Multitasking",
+            "Social media",
+            "Unnecessary meetings"
+        ]
+    },
+    
+    "social_life": {
+        "friends": "Meet friends regularly",
+        "family": "Spend time with family",
+        "hobby": "Pursue a hobby",
+        "volunteer": "Help others"
+    },
+    
+    "self_care": {
+        "mental": {
+            "meditate": "10 minutes daily",
+            "journal": "Write thoughts",
+            "read": "Read books",
+            "nature": "Spend time in nature"
+        },
+        
+        "physical": {
+            "exercise": "Daily workout",
+            "sleep": "8 hours",
+            "stretch": "Stretch regularly",
+            "walk": "Walk after meals"
+        },
+        
+        "emotional": {
+            "express": "Share feelings",
+            "forgive": "Let go of grudges",
+            "grateful": "Practice gratitude",
+            "positive": "Positive thoughts"
+        }
+    },
+    
+    "conversation": {
+        "introduction": [
+            "Hello, I'm [name]!",
+            "Nice to meet you!",
+            "Where are you from?"
+        ],
+        
+        "questions": [
+            "What do you do?",
+            "How's your day?",
+            "Any plans for weekend?"
+        ],
+        
+        "responses": [
+            "Great, thanks!",
+            "Working on [project]",
+            "Same here!"
+        ]
+    }
+}
