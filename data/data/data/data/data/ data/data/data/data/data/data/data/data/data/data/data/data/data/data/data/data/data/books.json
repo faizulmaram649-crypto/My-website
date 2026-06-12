@@ -1,0 +1,78 @@
+{
+    "indian_books": {
+        "religious": [
+            {"name": " Bhagavad Gita", "author": "Vyasa", "language": "Sanskrit", "verse": "700"},
+            {"name": "Ramayana", "author": "Valmiki", "language": "Sanskrit", "verses": "24000"},
+            {"name": "Mahabharata", "author": "Vyasa", "language": "Sanskrit", "verses": "100000"},
+            {"name": "Guru Granth Sahib", "author": "Various Gurus", "language": "Punjabi"},
+            {"name": "Quran", "prophet": "Muhammad", "language": "Arabic", "verses": "6236"}
+        ],
+        
+        "literary": [
+            {"name": "Gitanjali", "author": "Rabindranath Tagore", "nobel": true},
+            {"name": "Madhushala", "author": "Harivansh Rai Bachchan"},
+            {"name": "Raag Darbari", "author": "Dharamvir Bharati"},
+            {"name": "Kadambini", "author": "Premchand"}
+        ],
+        
+        "modern": [
+            {"name": "Five Point Someone", "author": "Chetan Bhagat"},
+            {"name": "2 States", "author": "Chetan Bhagat"},
+            {"name": "The White Tiger", "author": "Aravind Adiga", "booker": true},
+            {"name": "Shiva Trilogy", "author": "Amish Tripathi"},
+            {"name": "Wings of Fire", "author": "APJ Abdul Kalam"}
+        ]
+    },
+    
+    "world_books": {
+        "bible_stories": [
+            "Creation",
+            "Noah's Ark",
+            "Moses",
+            "David and Goliath",
+            "Jonah",
+            "Jesus Birth",
+            "Easter"
+        ],
+        
+        "famous": [
+            {"name": "Harry Potter", "author": "J.K. Rowling", "books": 7},
+            {"name": "Lord of the Rings", "author": "J.R.R. Tolkien", "books": 3},
+            {"name": "The Hobbit", "author": "J.R.R. Tolkien"},
+            {"name": "To Kill a Mockingbird", "author": "Harper Lee"},
+            {"name": "1984", "author": "George Orwell"},
+            {"name": "The Alchemist", "author": "Paulo Coelho"},
+            {"name": "Charlotte's Web", "author": "E.B. White"}
+        ],
+        
+        "educational": [
+            {"name": "NCERT Books", "subjects": ["Math", "Science", "English", "Hindi"]},
+            {"name": "RD Sharma", "subject": "Math"},
+            {"name": "HC Verma", "subject": "Physics"},
+            {"name": "Arihant", "subjects": "Various"}
+        ]
+    },
+    
+    "authors": {
+        "indian": [
+            {"name": "Rabindranath Tagore", "nobel": "Literature 1913"},
+            {"name": "Premchand", "known_for": "Dastan"},
+            {"name": "Kalidas", "period": "Ancient", "works": ["Meghdoot", "Shakuntalam"]},
+            {"name": "Tulsidas", "period": "Medieval", "works": "Ramcharitmanas"}
+        ],
+        
+        "world": [
+            {"name": "Shakespeare", "plays": 37},
+            {"name": "Charles Dickens", "novels": 15},
+            {"name": "Leo Tolstoy", "novels": ["War and Peace", "Anna Karenina"]},
+            {"name": "Mark Twain", "novels": ["Tom Sawyer", "Huckleberry Finn"]}
+        ]
+    },
+    
+    "reading_tips": {
+        "speed": "300-500 words per minute",
+        "types": ["Skimming", "Scanning", "Detailed"],
+        "comprehension": "Ask questions while reading",
+        "retention": "5R method - Record, Recite, Relate, Review"
+    }
+}
