@@ -1,0 +1,16 @@
+{
+    "conversations": [
+        {
+            "id": 1,
+            "timestamp": "",
+            "user_query": "",
+            "bot_response": ""
+        }
+    ],
+    
+    "stats": {
+        "total_conversations": 0,
+        "favorite_topic": "",
+        "last_visit": ""
+    }
+}
