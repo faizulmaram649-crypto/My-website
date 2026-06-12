@@ -1,22 +1,58 @@
-// ===== FAIZUL AI - SMART CHATBOT (No API Required!) =====
+// Faizul AI - Main Script
 
-// ===== RESPONSES DATABASE =====
-var responses = {
-    // ===== GREETINGS =====
-    "hello": "Hello! 👋 Welcome to Faizul AI! I'm your smart AI companion. Ask me about cricket players, education, jokes, or anything!",
-    "hi": "Hi! 👋 Welcome! How can I help you today?",
-    "hey": "Hey! 👋 What's up! 😄",
-    "welcome": "Welcome to Faizul AI! 🎉 Your AI companion is ready to help!",
+// Load all data files
+const dataFiles = [
+    'greetings', 'common_chat', 'education', 'math', 'science',
+    'english', 'hindi', 'geography', 'history', 'gk',
+    'technology', 'coding', 'cricket', 'sports', 'islamic',
+    'health', 'fitness', 'food', 'motivation', 'jokes',
+    'facts', 'festivals'
+];
 
-    // ===== CRICKET PLAYERS - VIRAT =====
-    "virat": "🦁 VIRAT KOHLI:\n\n• Jersey No: 18\n• Role: Batsman\n• Batting: Right Handed\n• Born: 5 November 1988\n• City: Delhi\n• Runs: 25000+\n• Centuries: 80+\n• Nickname: King Kohli, Chase Master 👑",
-    "virat kohli": "🦁 VIRAT KOHLI:\n\n• Jersey No: 18\n• Role: Batsman\n• Born: 5 November 1988\n• City: Delhi\n• Runs: 25000+\n• King of Cricket! 👑",
-    "kohli": "🦁 VIRAT KOHLI:\n\n• Jersey No: 18\n• Role: Batsman\n• Born: 5 November 1988\n• The King! 👑",
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Faizul AI Loading...');
+    
+    // Load all data
+    responseLoader.load();
+    
+    // Set up event listeners
+    setupEventListeners();
+    
+    console.log('Faizul AI Ready!');
+});
 
-    // ===== CRICKET PLAYERS - DHONI =====
-    "dhoni": "🦉 MS DHONI:\n\n• Jersey No: 7\n• Role: Wicket Keeper\n• Batting: Right Handed\n• Born: 7 July 1981\n• City: Ranchi, Jharkhand\n• Trophies: 3 IPL, 2 World Cup\n• Nickname: Captain Cool 🧊",
-    "ms dhoni": "🦉 MS DHONI:\n\n• Jersey No: 7\n• Role: Wicket Keeper\n• Born: 7 July 1981\n• Captain Cool! 🧊\n• World Cup Winner 2011! 🏆",
-    "mahendra singh dhoni": "🦉 MS DHONI:\n\n• Jersey No: 7\n• Born: 7 July 1981\n• Captain Cool 🧊",
+function setupEventListeners() {
+    // Input Enter key
+    const input = document.getElementById('userInput');
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            conversation.send();
+        }
+    });
+    
+    // Sidebar buttons
+    document.querySelectorAll('.btn[data-topic]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+            conversation.sendQuick(topic);
+        });
+    });
+    
+    // Quick buttons
+    document.querySelectorAll('.quick button[data-topic]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const topic = this.getAttribute('data-topic');
+            conversation.sendQuick(topic);
+        });
+    });
+}
 
-    // ===== CRICKET PLAYERS - ROHIT =====
-    "rohit": "🐢 ROHIT SHARMA:\n\n• Jersey No: 45\n• Role:
+// Global functions for onclick
+function ask(topic) {
+    conversation.sendQuick(topic);
+}
+
+function clearChat() {
+    conversation.clear();
+}
