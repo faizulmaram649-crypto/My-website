@@ -1,0 +1,93 @@
+{
+    "indian_tourism": {
+        "top_places": [
+            {"place": "Taj Mahal", "city": "Agra", "state": "Uttar Pradesh"},
+            {"place": "Jaipur", "city": "Jaipur", "state": "Rajasthan"},
+            {"place": "Kerala", "city": "Kochi", "state": "Kerala"},
+            {"place": "Goa", "city": "Panaji", "state": "Goa"},
+            {"place": "Leh-Ladakh", "city": "Leh", "state": "Ladakh"},
+            {"place": "Varanasi", "city": "Varanasi", "state": "Uttar Pradesh"},
+            {"place": "Shimla", "city": "Shimla", "state": "Himachal"},
+            {"place": "Mysore", "city": "Mysore", "state": "Karnataka"},
+            {"place": "Sunderbans", "city": "Kolkata", "state": "West Bengal"},
+            {"place": "Bodh Gaya", "city": "Gaya", "state": "Bihar"}
+        ],
+        
+        "beaches": [
+            {"name": "Goa beaches", "famous": ["Baga", "Calangute", "Anjuna"]},
+            {"name": "Pondicherry", "famous": ["Promenade"]},
+            {"name": "Kerala", "famous": ["Kovalam"]}
+        ],
+        
+        "hills": [
+            {"name": "Darjeeling", "tea": true},
+            {"name": "Shimla", "queen": true},
+            {"name": "Mussoorie", "queen": true},
+            {"name": "Nainital", "lake": true},
+            {"name": "Manali", "adventure": true}
+        ],
+        
+        "religious": [
+            {"place": "Varanasi", "religion": "Hindu"},
+            {"place": "Tirupati", "religion": "Hindu"},
+            {"place": "Golden Temple", "religion": "Sikh"},
+            {"place": "Bodh Gaya", "religion": "Buddhist"},
+            {"place": "St. Thomas Mount", "religion": "Christian"}
+        ]
+    },
+    
+    "world_tourism": {
+        "wonders": [
+            {"name": "Taj Mahal", "country": "India"},
+            {"name": "Great Wall", "country": "China"},
+            {"name": "Colosseum", "country": "Italy"},
+            {"name": "Machu Picchu", "country": "Peru"},
+            {"name": "Christ the Redeemer", "country": "Brazil"},
+            {"name": "Petra", "country": "Jordan"},
+            {"name": "Chichén Itzá", "country": "Mexico"}
+        ],
+        
+        "top_countries": [
+            {"country": "France", "visitors": "90 million"},
+            {"country": "USA", "visitors": "80 million"},
+            {"country": "Spain", "visitors": "75 million"},
+            {"country": "China", "visitors": "60 million"},
+            {"country": "Italy", "visitors": "60 million"},
+            {"country": "Turkey", "visitors": "50 million"}
+        ],
+        
+        "beaches": [
+            {"name": "Maldives", "type": "Island paradise"},
+            {"name": "Bali", "country": "Indonesia"},
+            {"name": "Phuket", "country": "Thailand"},
+            {"name": "Dubai", "country": "UAE"}
+        ]
+    },
+    
+    "travel_tips": {
+        "before": [
+            "Book flights early",
+            "Check visa requirements",
+            "Get travel insurance",
+            "Learn basic local language"
+        ],
+        "packing": [
+            "Clothes as per weather",
+            "Medications",
+            "Power bank",
+            "Copies of documents"
+        ],
+        "safety": [
+            "Don't show expensive items",
+            "Stay aware",
+            "Keep numbers saved",
+            "Trust your instincts"
+        ],
+        "budget": [
+            "Stay in hostels",
+            "Street food",
+            "Public transport",
+            "Free attractions"
+        ]
+    }
+}
