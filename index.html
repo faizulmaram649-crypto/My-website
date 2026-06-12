@@ -10,39 +10,39 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; height: 100vh; overflow: hidden; }
 .app { display: flex; height: 100%; }
-.sidebar { width: 210px; background: #121218; padding: 12px; border-right: 1px solid #28282f; overflow-y: auto; flex-shrink: 0; }
+.sidebar { width: 200px; background: #121218; padding: 12px; border-right: 1px solid #28282f; overflow-y: auto; flex-shrink: 0; }
 .logo { font-size: 20px; font-weight: 700; color: #00d48a; margin-bottom: 12px; }
-.btn { width: 100%; padding: 8px 10px; background: transparent; border: 1px solid #28282f; border-radius: 6px; color: #9ca3af; margin-bottom: 4px; cursor: pointer; font-size: 12px; text-align: left; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
+.btn { width: 100%; padding: 9px 10px; background: transparent; border: 1px solid #28282f; border-radius: 6px; color: #9ca3af; margin-bottom: 4px; cursor: pointer; font-size: 11px; text-align: left; display: flex; align-items: center; gap: 8px; }
 .btn:hover { background: #252530; color: #00d48a; }
-.btn:active { background: #00d48a; color: #000; }
-.head { font-size: 10px; text-transform: uppercase; color: #6b7280; margin: 10px 0 6px; letter-spacing: 1px; }
+.head { font-size: 10px; text-transform: uppercase; color: #6b7280; margin: 10px 0 5px; }
 .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .header { padding: 12px 16px; border-bottom: 1px solid #28282f; display: flex; justify-content: space-between; align-items: center; }
 .header h1 { font-size: 20px; background: linear-gradient(90deg, #00d48a, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .clear-btn { padding: 6px 12px; background: transparent; border: 1px solid #28282f; border-radius: 6px; color: #9ca3af; cursor: pointer; font-size: 11px; }
 .chat { flex: 1; overflow-y: auto; padding: 15px; }
-.welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
+.welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
 .icon { width: 70px; height: 70px; background: linear-gradient(135deg, #00d48a, #8b5cf6); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
 .welcome h2 { font-size: 24px; margin: 10px 0 4px; }
 .welcome h3 { color: #00d48a; margin-bottom: 8px; }
-.quick { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 240px; }
-.quick button { padding: 7px 10px; background: #1a1a22; border: 1px solid #28282f; border-radius: 6px; color: #fff; cursor: pointer; font-size: 11px; }
+.welcome p { font-size: 12px; color: #888; margin-bottom: 12px; }
+.quick { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 220px; }
+.quick button { padding: 7px 10px; background: #1a1a22; border: 1px solid #28282f; border-radius: 6px; color: #fff; cursor: pointer; font-size: 10px; }
 .quick button:hover { background: #00d48a; color: #000; }
 #msg { display: flex; flex-direction: column; gap: 10px; }
 .m { display: flex; gap: 8px; }
 .m.user { flex-direction: row-reverse; }
-.av { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.av { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; flex-shrink: 0; }
 .m.user .av { background: #00d48a; color: #000; }
 .m.bot .av { background: linear-gradient(135deg, #8b5cf6, #00d48a); color: #fff; }
-.ct { max-width: 72%; padding: 10px 12px; border-radius: 12px; font-size: 12px; line-height: 1.4; }
-.m.user .ct { background: #00d48a; color: #000; border-bottom-right-radius: 3px; }
+.ct { max-width: 72%; padding: 9px 11px; border-radius: 10px; font-size: 11px; line-height: 1.4; }
+.m.user .ct { background: #00d48a; color: #000; border-bottom-right-radius: 2px; }
 .m.bot .ct { background: #1a1a22; border: 1px solid #28282f; white-space: pre-line; }
 .input-area { padding: 12px 16px; background: #0a0a0f; }
-.input-box { max-width: 100%; margin: 0 auto; background: #1e1e28; border: 1px solid #28282f; border-radius: 12px; display: flex; padding: 6px; }
-.input-box input { flex: 1; background: transparent; border: none; color: #fff; font-size: 13px; padding: 8px; outline: none; font-family: 'Poppins', sans-serif; }
+.input-box { max-width: 100%; margin: 0 auto; background: #1e1e28; border: 1px solid #28282f; border-radius: 10px; display: flex; padding: 5px; }
+.input-box input { flex: 1; background: transparent; border: none; color: #fff; font-size: 12px; padding: 8px; outline: none; font-family: 'Poppins'; }
 .input-box input::placeholder { color: #6b7280; }
-.input-box button { width: 36px; height: 36px; background: #00d48a; border: none; border-radius: 6px; color: #000; cursor: pointer; font-size: 14px; font-weight: 600; }
-.info { max-width: 100%; margin: 6px auto 0; font-size: 10px; color: #6b7280; }
+.input-box button { width: 34px; height: 34px; background: #00d48a; border: none; border-radius: 6px; color: #000; cursor: pointer; font-size: 13px; font-weight: 600; }
+.info { max-width: 100%; margin: 5px auto 0; font-size: 9px; color: #6b7280; }
 @media (max-width: 768px) { .sidebar { display: none; } }
 </style>
 </head>
@@ -50,60 +50,47 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="app">
 <aside class="sidebar">
 <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
-<button class="btn" onclick="btnClick('who is faizul')"><i class="fa-solid fa-user"></i> About Creator</button>
-<button class="btn" onclick="btnClick('india')"><i class="fa-solid fa-flag"></i> India</button>
-<button class="btn" onclick="btnClick('bihar')"><i class="fa-solid fa-map"></i> Bihar</button>
-<button class="btn" onclick="btnClick('countries')"><i class="fa-solid fa-globe"></i> Countries</button>
-<button class="btn" onclick="btnClick('urdu')"><i class="fa-solid fa-language"></i> Urdu</button>
-<button class="btn" onclick="btnClick('hindi')"><i class="fa-solid fa-language"></i> Hindi</button>
-<button class="btn" onclick="btnClick('english')"><i class="fa-solid fa-language"></i> English</button>
+<button class="btn" data="who is faizul"><i class="fa-solid fa-user"></i> Creator</button>
+<button class="btn" data="hello"><i class="fa-solid fa-hand-wave"></i> Hello</button>
+<div class="head">India</div>
+<button class="btn" data="india">India</button>
+<button class="btn" data="bihar">Bihar</button>
+<button class="btn" data="countries">Countries</button>
+<div class="head">Language</div>
+<button class="btn" data="urdu">Urdu</button>
+<button class="btn" data="hindi">Hindi</button>
+<button class="btn" data="english">English</button>
 <div class="head">Cricket</div>
-<button class="btn" onclick="btnClick('virat')">Virat Kohli</button>
-<button class="btn" onclick="btnClick('dhoni')">MS Dhoni</button>
-<button class="btn" onclick="btnClick('rohit')">Rohit Sharma</button>
-<button class="btn" onclick="btnClick('cricket')">Cricket</button>
-<div class="head">Education</div>
-<button class="btn" onclick="btnClick('math')">Math</button>
-<button class="btn" onclick="btnClick('science')">Science</button>
-<button class="btn" onclick="btnClick('history')">History</button>
-<button class="btn" onclick="btnClick('geography')">Geography</button>
-<div class="head">Mobile</div>
-<button class="btn" onclick="btnClick('mobile')">Mobile</button>
-<button class="btn" onclick="btnClick('whatsapp')">WhatsApp</button>
-<button class="btn" onclick="btnClick('instagram')">Instagram</button>
-<button class="btn" onclick="btnClick('youtube')">YouTube</button>
+<button class="btn" data="virat">Virat</button>
+<button class="btn" data="dhoni">Dhoni</button>
+<button class="btn" data="rohit">Rohit</button>
+<div class="head">Study</div>
+<button class="btn" data="math">Math</button>
+<button class="btn" data="science">Science</button>
+<button class="btn" data="history">History</button>
 <div class="head">Islamic</div>
-<button class="btn" onclick="btnClick('islam')">Islam</button>
-<button class="btn" onclick="btnClick('quran')">Quran</button>
-<button class="btn" onclick="btnClick('hadith')">Hadith</button>
-<button class="btn" onclick="btnClick('dua')">Dua</button>
+<button class="btn" data="islam">Islam</button>
+<button class="btn" data="quran">Quran</button>
+<button class="btn" data="hadith">Hadith</button>
+<button class="btn" data="dua">Dua</button>
 <div class="head">Lifestyle</div>
-<button class="btn" onclick="btnClick('food')">Food</button>
-<button class="btn" onclick="btnClick('health')">Health</button>
-<button class="btn" onclick="btnClick('fitness')">Fitness</button>
-<button class="btn" onclick="btnClick('fruit')">Fruits</button>
-<button class="btn" onclick="btnClick('vegetables')">Vegetables</button>
-<div class="head">Sports</div>
-<button class="btn" onclick="btnClick('football')">Football</button>
-<button class="btn" onclick="btnClick('hockey')">Hockey</button>
-<button class="btn" onclick="btnClick('olympics')">Olympics</button>
-<div class="head">Animals & Nature</div>
-<button class="btn" onclick="btnClick('animals')">Animals</button>
-<button class="btn" onclick="btnClick('plants')">Plants</button>
-<div class="head">Space & Tech</div>
-<button class="btn" onclick="btnClick('space')">Space</button>
-<button class="btn" onclick="btnClick('technology')">Technology</button>
-<button class="btn" onclick="btnClick('coding')">Coding</button>
+<button class="btn" data="food">Food</button>
+<button class="btn" data="health">Health</button>
+<button class="btn" data="fitness">Fitness</button>
+<div class="head">Tech</div>
+<button class="btn" data="technology">Technology</button>
+<button class="btn" data="coding">Coding</button>
+<button class="btn" data="mobile">Mobile</button>
 <div class="head">Fun</div>
-<button class="btn" onclick="btnClick('jokes')">Jokes</button>
-<button class="btn" onclick="btnClick('facts')">Facts</button>
-<button class="btn" onclick="btnClick('movies')">Movies</button>
-<button class="btn" onclick="btnClick('books')">Books</button>
+<button class="btn" data="jokes">Jokes</button>
+<button class="btn" data="facts">Facts</button>
+<button class="btn" data="movies">Movies</button>
+<button class="btn" data="books">Books</button>
 </aside>
 <main class="main">
 <header class="header">
 <h1>Faizul AI</h1>
-<button class="clear-btn" onclick="clearChat()"><i class="fa-solid fa-trash"></i> Clear</button>
+<button class="clear-btn" id="clearChat"><i class="fa-solid fa-trash"></i> Clear</button>
 </header>
 <div class="chat" id="chatArea">
 <div class="welcome" id="welcome">
@@ -112,19 +99,20 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <h3>Welcome to Faizul AI</h3>
 <p>Your Knowledge Assistant</p>
 <div class="quick">
-<button onclick="btnClick('hello')">Hello</button>
-<button onclick="btnClick('who is faizul')">Creator</button>
-<button onclick="btnClick('bihar')">Bihar</button>
-<button onclick="btnClick('virat')">Virat</button>
-<button onclick="btnClick('jokes')">Jokes</button>
+<button data="hello">Hello</button>
+<button data="who is faizul">Creator</button>
+<button data="bihar">Bihar</button>
+<button data="urdu">Urdu</button>
+<button data="virat">Virat</button>
+<button data="jokes">Jokes</button>
 </div>
 </div>
 <div id="msg"></div>
 </div>
 <div class="input-area">
 <div class="input-box">
-<input type="text" id="txt" placeholder="Ask anything..." autocomplete="off">
-<button onclick="sendMsg()"><i class="fa-solid fa-paper-plane"></i></button>
+<input type="text" id="txt" placeholder="Ask anything...">
+<button id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
 </div>
 <div class="info">Press Enter to send</div>
 </div>
@@ -139,43 +127,81 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 
 var db = {};
 
-// ========================================
-// GREETINGS & COMMON CHAT (greetings.json + common_chat.json)
-// ========================================
-db["hello"] = "Hello! Welcome to Faizul AI!\n\nI can answer about:\n✅ Who is Faizul (Creator)\n✅ India, Bihar, Countries\n✅ Cricket Players\n✅ Education (Math, Science, History)\n✅ Mobile, WhatsApp, Instagram\n✅ English, Hindi, Urdu\n✅ Islam, Quran, Hadith\n✅ Food, Health, Fitness\n✅ Animals, Plants, Space\n✅ Technology, Coding\n✅ Movies, Books, Jokes & Facts\n\nWhat would you like to know?";
-db["hi"] = "Hi! Welcome to Faizul AI! How can I help you?";
-db["hey"] = "Hey! What's up! Ask me anything!";
+// ====================
+// GREETINGS (greetings.json)
+// ====================
+db["hello"] = "Hello! Welcome to Faizul AI!\n\nI can answer about:\n✅ Who is Faizul (Creator)\n✅ India, Bihar, Countries\n✅ Cricket (Virat, Dhoni, Rohit)\n✅ Education (Math, Science, History)\n✅ Mobile, Technology, Coding\n✅ Urdu, Hindi, English\n✅ Islam, Quran, Hadith, Duas\n✅ Food, Health, Fitness\n✅ Animals, Plants, Space\n✅ Movies, Books, Jokes & Facts\n✅ Travel, Careers, Business\n✅ Festivals, Daily Life\n\nWhat would you like to know?";
+db["hi"] = "Hi! Welcome to Faizul AI!";
+db["hey"] = "Hey! What's up!";
 db["namaste"] = "Namaste! Welcome to Faizul AI!";
-db["salam"] = "Salam! Asalamu Alaikum! Welcome!";
+db["salam"] = "Salam! Asalamu Alaikum!";
 db["good morning"] = "Good Morning! Have a great day!";
 db["good night"] = "Good Night! Sweet dreams!";
-db["thanks"] = "You're welcome! Happy to help!";
-db["thank"] = "You're welcome! 😊";
+db["thanks"] = "You're welcome!";
+db["thank"] = "Welcome! 😊";
 db["ok"] = "Great! Ask more!";
 db["bye"] = "Goodbye! Come back anytime! 👋";
+db["how are you"] = "I'm fine! Thanks for asking!";
+db["who are you"] = "I am Faizul AI!";
 
-// ========================================
-// CREATOR (gk.json)
-// ========================================
-db["who is faizul"] = "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nYouTube: @faizulmaram17\n\nContent Type:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor";
-db["faizul"] = "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos";
-db["your creator"] = "FAIZUL MARAM created me!\n\nYouTube: @faizulmaram17";
-db["about"] = "I am Faizul AI - created by Faizul Maram";
+// ====================
+// COMMON CHAT (common_chat.json)
+// ====================
+db["help"] = "I can help you with any question! Just ask me!";
+db["sad"] = "Don't be sad! Stay positive! 💪";
+db["happy"] = "I'm happy too! 😊";
+db["bored"] = "Here's a joke: Why did the chicken cross the road? To get to the other side! 😂";
+db["angry"] = "Stay calm! Take a deep breath! 😌";
+db["tired"] = "Take rest! Sleep 8 hours! 😴";
+db["hungry"] = "Eat something! Don't skip meals! 🍽️";
+db["thirsty"] = "Drink water! 💧";
+db["alone"] = "I'm always here for you!";
+db["love you"] = "Love you too! 💕";
 
-// ========================================
-// INDIA & GEOGRAPHY (india.json + geography.json + gk.json)
-// ========================================
-db["india"] = "INDIA - 28 STATES + 8 UNION TERRITORIES\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nNORTH: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWEST: Rajasthan, Gujarat, Goa, Maharashtra\nEAST: WB, Odisha, Bihar, Jharkhand\nSOUTH: Karnataka, Telangana, Andhra, TN, Kerala\nCENTRAL: MP, Chhattisgarh, UP\nNORTHEAST: Assam, Meghalaya, Manipur, Sikkim\n\nCapital: New Delhi\nPopulation: 140 Crore+\nCurrency: Indian Rupee (₹)";
-db["indian states"] = db["india"];
-db["delhi"] = "DELHI - CAPITAL OF INDIA\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nType: Union Territory\nPopulation: 2 crore+\n\nFamous Places:\n• Red Fort\n• India Gate\n• Qutub Minar\n• Lotus Temple";
-db["mumbai"] = "MUMBAI - FINANCIAL CAPITAL\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nState: Maharashtra\nPopulation: 2 crore+\n\nFamous:\n• Gateway of India\n• Marine Drive\n• Juhu Beach\n• Film City\n• Bollywood";
-db["kolkata"] = "KOLKATA - CITY OF JOY\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nState: West Bengal\nPopulation: 1.5 crore+\n\nFamous:\n• Victoria Memorial\n• Howrah Bridge\n• Fort William";
-db["countries"] = "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nASIA:\nIndia - New Delhi, China - Beijing, Japan - Tokyo\nPakistan - Islamabad, Bangladesh - Dhaka\nSri Lanka - Colombo, Nepal - Kathmandu\nThailand - Bangkok, Singapore - Singapore\n\nEUROPE:\nUK - London, France - Paris, Germany - Berlin\nItaly - Rome, Spain - Madrid, Russia - Moscow\n\nAMERICAS:\nUSA - Washington DC, Canada - Ottawa\nBrazil - Brasilia, Mexico - Mexico City\n\nAFRICA:\nEgypt - Cairo, Nigeria - Abuja\n\nAUSTRALIA:\nCanberra";
+// ====================
+// CREATOR & GK (gk.json)
+// ====================
+db["who is faizul"] = "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator";
+db["faizul"] = "FAIZUL MARAM\n\nYouTube: @faizulmaram17";
+db["your creator"] = "FAIZUL MARAM created me!";
+db["about"] = "I am Faizul AI - smart chatbot";
+db["gk"] = "GENERAL KNOWLEDGE\n\n• India: 140 Crore+\n• Delhi: Capital\n• Currency: Rupee (₹)\n• Independence: 1947";
 
-// ========================================
+// ====================
+// INDIA (india.json)
+// ====================
+db["india"] = "INDIA - 28 STATES + 8 UT\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nNORTH: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWEST: Rajasthan, Gujarat, Goa, Maharashtra\nEAST: WB, Odisha, Bihar, Jharkhand\nSOUTH: Karnataka, Telangana, TN, Kerala\nCENTRAL: MP, UP\nNORTHEAST: Assam, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+";
+db["delhi"] = "DELHI\n\nCapital of India\nPop: 2 crore+\nFamous: Red Fort, India Gate";
+db["mumbai"] = "MUMBAI\n\nFinancial Capital\nPop: 2 crore+\nGateway of India, Bollywood";
+db["kolkata"] = "KOLKATA\n\nCity of Joy\nPop: 1.5 crore+\nVictoria Memorial";
+db["countries"] = "COUNTRIES\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nASIA: India-Delhi, China-Beijing, Japan-Tokyo\nPakistan-Islamabad, Bangladesh-Dhaka\n\nEUROPE: UK-London, France-Paris\n\nAMERICAS: USA-Washington, Canada-Ottawa\n\nAUSTRALIA: Canberra";
+
+// ====================
 // BIHAR (india.json)
-// ========================================
-db["bihar"] = "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nGovernor: Arif Mohammad Khan\n\nPopulation: 12.4 Crore\nArea: 94,163 sq km\n\nMajor Cities: Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga\n\nFamous Places:\n1. Mahabodhi Temple (Gaya)\n2. Nalanda University\n3. Vishwa Shanti Stupa\n4. Takht Sri Patna Sahib\n\nFamous Food: Litti Chokha, Sattu\nFamous Fruit: Litchi (World famous!)\n\nSpecial: Lord Buddha born in Gaya!";
-db["patna"] = "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nPopulation: 20 lakh+\n\nFamous Places:\n• Takht Sri Patna Sahib\n• Bihar Museum\n• Golghar\n• Ferozeshah Kotli";
-db["gaya"] = "GAYA - BIHAR\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nFamous:\n• Mahabodhi Temple (UNESCO World Heritage)\n• Vishwa Shanti Stupa\n\nSpecial: Lord Buddha attained enlightenment here!";
-db["litti chokha"] = "LITTI CHOKHA - BIHAR FAMOUS FOOD\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nMain Ingredients:\n• Wheat flour (atta)\n• Sattu (roasted gram flour)\n• Brinjal (baingan)\n• Potato\n\nRecipe:\n1. Make dough from wheat flour\n2. Fill with s
+// ====================
+db["bihar"] = "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nCities: Patna, Gaya, Bhagalpur, Muzaffarpur\n\nFamous: Litti Chokha, Litchi\nSpecial: Lord Buddha born in Gaya!";
+db["patna"] = "PATNA\n\nCapital of Bihar\nPop: 20 lakh+\nFamous: Takht Sri Patna Sahib";
+db["gaya"] = "GAYA\n\nMahabodhi Temple (UNESCO)\nLord Buddha enlightenment!";
+db["litti chokha"] = "LITTI CHOKHA\n\nBihar's famous food\nWheat flour + Sattu + Brinjal";
+db["litchi"] = "LITCHI\n\nBihar's famous fruit\nMuzaffarpur best!";
+
+// ====================
+// LANGUAGES (english.json + hindi.json + urdu.json)
+// ====================
+db["urdu"] = "URDU\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n• Poetical language\n• Nastaliq script\n• Used in India, Pakistan\n• Famous ghazals";
+db["urdu poetry"] = "URDU POETS\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n• Mirza Ghalib\n• Allama Iqbal\n• Faiz Ahmed Faiz";
+db["hindi"] = "HINDI\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n• India's language\n• 600M speakers\n• Devanagari script\n• Bollywood";
+db["english"] = "ENGLISH\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n• World's language\n• 1.5B speakers\n• Business language";
+db["tamil"] = "TAMIL\n\nSouth Indian classical language";
+db["bengali"] = "BENGALI\n\n230M speakers";
+
+// ====================
+// EDUCATION (education.json + math.json + science.json)
+// ====================
+db["math"] = "MATH FORMULAS\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n(a+b)² = a²+2ab+b²\na²-b² = (a+b)(a-b)\nCircle = πr²\na²+b² = c²";
+db["science"] = "SCIENCE\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nPhysics: Light-3×10⁸ m/s\nGravity: 9.8 m/s²\n\nChemistry: Water-H₂O\nOxygen-O₂\n\nBiology: Human-60% water";
+db["physics"] = "PHYSICS\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nForce: F = ma\nVelocity: v = d/t\nEnergy: E = mc²";
+db["chemistry"] = "CHEMISTRY\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nElements: 118\nH, O, C, N\n\nCompounds: H₂O, NaCl";
+db["biology"] = "BIOLOGY\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n• Human: 60% water\n• Cell: basic unit\n• DNA: genetic code\n• Heart: 72 bpm";
+db["history"] = "INDIAN HISTORY\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nModern: British 1757-1947\nIndependence: 1947";
+db["geography"] = "GEOGRAPHY\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\nIndia: 3
