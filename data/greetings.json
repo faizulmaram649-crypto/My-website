@@ -1,0 +1,32 @@
+{
+    "greetings": [
+        {
+            "keywords": ["hello", "hi", "hey", "namaste", "salam", "asalam"],
+            "responses": [
+                "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul\n- India States & Bihar\n- Countries\n- Cricket\n- Education\n- Food & Health\n- Jokes & Facts\n\nWhat would you like to know?",
+                "Hi! Welcome to Faizul AI!\nHow can I help you today?",
+                "Namaste! Welcome to Faizul AI!"
+            ]
+        }
+    ],
+    "farewells": [
+        {
+            "keywords": ["bye", "goodbye", "see you", "later"],
+            "responses": [
+                "Goodbye! Come back anytime! 👋",
+                "See you later! Take care!",
+                "Bye! Thanks for chatting!"
+            ]
+        }
+    ],
+    "thanks": [
+        {
+            "keywords": ["thanks", "thank you", "thx", "tqq"],
+            "responses": [
+                "You're welcome! 😊",
+                "Welcome! Happy to help!",
+                "No problem! Ask more anytime!"
+            ]
+        }
+    ]
+}
