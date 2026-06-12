@@ -1,0 +1,99 @@
+{
+    "pollution": {
+        "air": {
+            "causes": ["Vehicles", "Industry", "Stubble burning", "Dust", "Construction"],
+            "effects": ["Respiratory problems", "Heart disease", "Cancer"],
+            "major_cities": ["Delhi", "Mumbai", "Kolkata", "Bangalore"],
+            "solutions": ["Electric vehicles", "Public transport", "Green energy"]
+        },
+        "water": {
+            "causes": ["Sewage", "Industrial waste", "Plastics", "Agricultural runoff"],
+            "effects": ["Disease", "Marine life death", "Toxic fish"],
+            "solutions": ["Treatment plants", "Less plastic", "Awareness"]
+        },
+        "soil": {
+            "causes": ["Chemicals", "Deforestation", "Waste", "Erosion"],
+            "effects": ["Less harvest", "Food quality", "Drought"],
+            "solutions": ["Organic farming", "Tree plantation", "Composting"]
+        },
+        "noise": {
+            "causes": ["Traffic", "Industry", "Construction", "Festivals"],
+            "effects": ["Hearing loss", "Stress", "Sleep problems"],
+            "limit": "55 dB (day), 45 dB (night)"
+        }
+    },
+    
+    "climate_change": {
+        "causes": {
+            "co2": "Fossil fuels, Deforestation",
+            "methane": "Cows, Landfills",
+            "nitrous": "Fertilizers"
+        },
+        "effects": [
+            "Rising temperature",
+            "Melting glaciers",
+            "Sea level rise",
+            "Extreme weather",
+            "Less rainfall"
+        ],
+        "solutions": [
+            "Less fossil fuel",
+            "More trees",
+            "Solar energy",
+            "Electric vehicles"
+        ],
+        "india_targets": {
+            "renewable": "500 GW by 2030",
+            "carbon_neutral": "2070"
+        }
+    },
+    
+    "wildlife": {
+        "endangered": [
+            {"animal": "Bengal Tiger", "count": "3000", "status": "Endangered"},
+            {"animal": "Asiatic Lion", "count": "700", "status": "Endangered"},
+            {"animal": "Great Indian Rhinoceros", "count": "3600", "status": "Vulnerable"},
+            {"animal": "Snow Leopard", "count": "500", "status": "Vulnerable"},
+            {"animal": "Ganges Dolphin", "count": "2000", "status": "Endangered"}
+        ],
+        "conservation": {
+            "project_tiger": "Started 1973",
+            "project_elephant": "1992",
+            "sanctuaries": "500+"
+        }
+    },
+    
+    "renewable_energy": {
+        "solar": {
+            "benefit": "Abundant, clean",
+            "india": "World's 3rd largest solar producer",
+            "locations": ["Gujarat", "Rajasthan", "Tamil Nadu"]
+        },
+        "wind": {
+            "locations": ["Tamil Nadu", "Gujarat", "Maharashtra"],
+            "benefit": "No pollution"
+        },
+        "hydro": {
+            "oldest": "Clean energy",
+            "india": "Large hydro potential"
+        },
+        "nuclear": {
+            "plants": "Kaiga, Kudankulam",
+            "clean": true
+        }
+    },
+    
+    "save_earth": {
+        "tips": [
+            "Use cloth bag",
+            "Don't waste water",
+            "Plant trees",
+            "Use public transport",
+            "Separate waste",
+            "Compost organic",
+            "Less plastic",
+            "Save electricity"
+        ],
+        "3r": ["Reduce", "Reuse", "Recycle"]
+    }
+}
