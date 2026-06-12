@@ -1,0 +1,24 @@
+{
+    "countries": [
+        {"name": "India", "capital": "New Delhi", "currency": "Rupee", "language": "Hindi, English"},
+        {"name": "China", "capital": "Beijing", "currency": "Yuan", "language": "Mandarin"},
+        {"name": "USA", "capital": "Washington D.C.", "currency": "Dollar", "language": "English"},
+        {"name": "UK", "capital": "London", "currency": "Pound", "language": "English"},
+        {"name": "France", "capital": "Paris", "currency": "Euro", "language": "French"},
+        {"name": "Germany", "capital": "Berlin", "currency": "Euro", "language": "German"},
+        {"name": "Japan", "capital": "Tokyo", "currency": "Yen", "language": "Japanese"},
+        {"name": "Russia", "capital": "Moscow", "currency": "Ruble", "language": "Russian"},
+        {"name": "Canada", "capital": "Ottawa", "currency": "Dollar", "language": "English, French"},
+        {"name": "Australia", "capital": "Canberra", "currency": "Dollar", "language": "English"},
+        {"name": "Brazil", "capital": "Brasilia", "currency": "Real", "language": "Portuguese"},
+        {"name": "Pakistan", "capital": "Islamabad", "currency": "Rupee", "language": "Urdu"},
+        {"name": "Bangladesh", "capital": "Dhaka", "currency": "Taka", "language": "Bengali"},
+        {"name": "Nepal", "capital": "Kathmandu", "currency": "Rupee", "language": "Nepali"},
+        {"name": "Sri Lanka", "capital": "Colombo", "currency": "Rupee", "language": "Sinhala, Tamil"},
+        {"name": "Thailand", "capital": "Bangkok", "currency": "Baht", "language": "Thai"},
+        {"name": "Indonesia", "capital": "Jakarta", "currency": "Rupiah", "language": "Indonesian"},
+        {"name": "Saudi Arabia", "capital": "Riyadh", "currency": "Riyal", "language": "Arabic"},
+        {"name": "UAE", "capital": "Abu Dhabi", "currency": "Dirham", "language": "Arabic"},
+        {"name": "Egypt", "capital": "Cairo", "currency": "Pound", "language": "Arabic"}
+    ]
+}
