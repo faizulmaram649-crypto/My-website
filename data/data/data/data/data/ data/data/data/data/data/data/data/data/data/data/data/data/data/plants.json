@@ -1,0 +1,211 @@
+{
+    "trees": {
+        "banyan": {
+            "national_tree": true,
+            "scientific": "Ficus benghalensis",
+            "location": "All India",
+            "features": "India's largest tree, can spread acres",
+            "religious": "Worshipped in Hindu culture"
+        },
+        "neem": {
+            "scientific": "Azadirachta indica",
+            "uses": ["Medicine", "Skin care", "Dental"],
+            "location": "All India",
+            "medicinal": true
+        },
+        "peepal": {
+            "scientific": "Ficus religiosa",
+            "religious": "Worshipped, Buddha achieved enlightenment",
+            "location": "All India"
+        },
+        "mango": {
+            "fruit": "King of fruits",
+            "scientific": "Mangifera indica",
+            "height": "100 feet",
+            "varieties": "1500+"
+        },
+        "coconut": {
+            "uses": "100+ different products",
+            "location": "Coastal India",
+            "called": "Tree of life"
+        },
+        "rubber": {"scientific": "Hevea brasiliensis", "use": "Tyres, gloves"},
+        "sal": {"location": "Central India", "wood": "Furniture"},
+        "teak": {"wood": "Best for furniture", "scientific": "Tectona grandis"}
+    },
+    
+    "flowering": {
+        "lotus": {
+            "national_flower": true,
+            "location": "Water bodies",
+            "meaning": "Purity, divine",
+            "colors": ["Pink", "White", "Red"]
+        },
+        "marigold": {
+            "uses": "Worship, decoration",
+            "colors": ["Orange", "Yellow"],
+            "location": "All India"
+        },
+        "rose": {
+            "varieties": "30000+",
+            "colors": "Many colors",
+            "meaning": "Love"
+        },
+        "hibiscus": {
+            "location": "All India",
+            "uses": "Worship, medicine",
+            "size": "Large flower"
+        },
+        "jasmine": {
+            "fragrant": true,
+            "uses": "Perfume, worship",
+            "types": ["Mogra", "Chameli"]
+        }
+    },
+    
+    "fruits": {
+        "mango": {
+            "king": "Alphonso, Dasheri, Langra",
+            "season": "Summer",
+            "states": ["Uttar Pradesh", "Andhra Pradesh"],
+            "vitamins": ["A", "C", "E"]
+        },
+        "banana": {
+            "energy": true,
+            "types": ["Cavendish", "Robusta"],
+            "use": "Raw and ripe"
+        },
+        "apple": {
+            "kashmir": true,
+            "types": ["Red Delicious", "Golden Delicious"],
+            "season": "Autumn"
+        },
+        "orange": {
+            "nagpur": "Famous for Nagpur Orange",
+            "vitamin": "C"
+        },
+        "grapes": {
+            "nashik": "Wine capital of India",
+            "types": ["Green", "Black"],
+            "export": true
+        },
+        "pomegranate": {
+            "seeds": "Many seeds",
+            "benefits": ["Heart", "Digestion"],
+            "location": "Maharashtra"
+        },
+        "papaya": {
+            "tree": true,
+            "uses": "Fruit, medicine for piles",
+            "location": "All India"
+        },
+        "guava": {
+            "vitamin": "C",
+            "winter": "Famous in winter",
+            "location": "All India"
+        },
+        "lichi": {
+            "bihar": "World's best produce",
+            "season": "May-June",
+            "variety": "Shahi, China"
+        }
+    },
+    
+    "vegetables": {
+        "spinach": {
+            "name": "Palak",
+            "iron": true,
+            "types": ["Leafy", "Blooming"]
+        },
+        "potato": {
+            "english": "Aloo",
+            "base": "Most used vegetable",
+            "origin": "South America"
+        },
+        "tomato": {
+            "uses": "Curry base, salad",
+            "types": ["Desi", "Hybrid"]
+        },
+        "onion": {
+            "essential": true,
+            "types": ["Red", "White"],
+            "exports": true
+        },
+        "carrot": {
+            "vitamin": "A",
+            "colors": ["Orange", "Purple"]
+        },
+        "cauliflower": {
+            "hindi": "Gobhi",
+            "season": "Winter"
+        },
+        "cabbage": {
+            "english": "Patta Gobhi",
+            "salad": true
+        },
+        "brinjal": {
+            "name": "Baingan",
+            "varieties": "Long, round"
+        },
+        "ladyfinger": {
+            "name": "Okra, Bhindi",
+            "uses": "Curry, fry"
+        }
+    },
+    
+    "herbs": {
+        "tulsi": {
+            "sacred": true,
+            "medicinal": ["Cold", "Cough", "Immunity"],
+            "types": ["Krishna", "Rama"]
+        },
+        "ginger": {
+            "medicinal": ["Digestion", "Cold"],
+            "name": "Adrak",
+            "use": "Spice, medicine"
+        },
+        "turmeric": {
+            "name": "Haldi",
+            "medicinal": ["Wound", "Skin", "Inflammation"],
+            "curcumin": true
+        },
+        "garlic": {
+            "name": "Lahsun",
+            "medicinal": ["BP", "Heart"],
+            "use": "Spice"
+        },
+        "cilantro": {
+            "name": "Coriander, Dhania",
+            "leaves": true,
+            "seeds": true
+        },
+        "mint": {
+            "name": "Pudina",
+            "uses": "Chutney, tea"
+        }
+    },
+    
+    "medicinal_plants": {
+        "ashwagandha": {
+            "sanskrit": "Smell of horse",
+            "use": "Stress, energy",
+            "scientific": "Withania somnifera"
+        },
+        "brahmi": {
+            "use": "Brain, memory",
+            "scientific": "Bacopa monnieri"
+        },
+        "arjun": {
+            "use": "Heart, BP",
+            "scientific": "Terminalia arjuna"
+        },
+        "giloy": {
+            "use": "Immunity, fever",
+            "scientific": "Tinospora cordifolia"
+        },
+        "shatavari": {
+            "use": "Women's health",
+            "scientific": "Asparagus racemosus"
+        }
+    }
+}
