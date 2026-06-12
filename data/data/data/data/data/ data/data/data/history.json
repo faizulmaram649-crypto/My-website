@@ -1,0 +1,101 @@
+{
+    "ancient_india": {
+        "indus_valley": {
+            "period": "3300 BCE - 1300 BCE",
+            "cities": ["Harappa", "Mohenjo-daro"],
+            "main_creations": ["Great Bath", "Granary", "Planned cities"],
+            "script": "Undeciphered"
+        },
+        "vedic_period": {
+            "period": "1500 BCE - 500 BCE",
+            "vedas": ["Rigveda", "Samaveda", "Yajurveda", "Atharvaveda"],
+            "society": "Caste system began"
+        },
+        "maurya": {
+            "founder": "Chandragupta Maurya",
+            "period": "322 BCE - 185 BCE",
+            "capital": "Pataliputra",
+            "famous_king": "Ashoka the Great",
+            "achievements": ["First pan-Indian empire", "Spread of Buddhism"]
+        },
+        "gupta": {
+            "period": "320 CE - 550 CE",
+            "founder": "Chandragupta I",
+            "called": "Golden Age of India",
+            "achievements": ["Kalidasa", "Aryabhata", "Nalanda University"]
+        }
+    },
+    
+    "medieval_india": {
+        "delhi_sultanate": {
+            "period": "1206 - 1526",
+            "dynasties": ["Slave", "Tughlaq", "Sayyid", "Lodhi"],
+            "capital": "Delhi"
+        },
+        "mughal_empire": {
+            "period": "1526 - 1857",
+            "founders": ["Babur", "Humayun", "Akbar", "Shah Jahan", "Aurangzeb"],
+            "achievements": [
+                {"name": "Taj Mahal", "built": "1632"},
+                {"name": "Red Fort", "built": "1648"},
+                {"name": "Mughal Miniature"},
+                {"name": "Mughal Architecture"}
+            ]
+        },
+        "mughal_emperors": {
+            "babur": {"reign": "1526-1530", "found": "Mughal Empire"},
+            "akbar": {"reign": "1556-1605", "policy": "Din-i-Ilahi"},
+            "shahjahan": {"reign": "1628-1658", "known_for": "Taj Mahal"},
+            "aurangzeb": {"reign": "1658-1707", "known_for": "Maximum expansion"}
+        }
+    },
+    
+    "modern_india": {
+        "british_rule": {
+            "start": "1757 (Battle of Plassey)",
+            "end": "1947",
+            "governors": [
+                {"name": "Lord Curzon", "action": "Partition of Bengal"},
+                {"name": "Lord Mountbatten", "action": "Partition"}
+            ]
+        },
+        "freedom_fighters": [
+            {"name": "Mahatma Gandhi", "methods": ["Non-violence", "Satyagraha"]},
+            {"name": "Jawaharlal Nehru", "role": "First PM"},
+            {"name": "Subhas Chandra Bose", "head": "Indian National Army"},
+            {"name": "Bhagat Singh", "sacrifice": "Revolutionary"},
+            {"name": " Sardar Patel", "role": "Unifier of India"}
+        ],
+        "independence": {
+            "date": "15 August 1947",
+            "time": "Midnight",
+            "tricolor": "Saffron, White, Green"
+        },
+        "partition": {
+            "date": "1947",
+            "countries": ["India", "Pakistan"],
+            "migrated": "10 million"
+        }
+    },
+    
+    "world_history": {
+        "world_war": {
+            "ww1": {"period": "1914-1918", "cause": "Assassination of Archduke"},
+            "ww2": {"period": "1939-1945", "cause": "Hitler's aggression"}
+        },
+        "renaissance": {
+            "period": "14th-17th century",
+            "place": "Europe",
+            "achievements": ["Art", "Science", "Literature"]
+        },
+        "french_revolution": {
+            "date": "14 July 1789",
+            "place": "Paris",
+            "motto": "Liberty, Equality, Fraternity"
+        },
+        "american_independence": {
+            "date": "4 July 1776",
+            "place": "America"
+        }
+    }
+}
