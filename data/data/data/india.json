@@ -1,0 +1,69 @@
+{
+    "india": {
+        "general": {
+            "name": "India",
+            "capital": "New Delhi",
+            "population": "140 Crore+",
+            "area": "3.28 million sq km",
+            "currency": "Indian Rupee (₹)",
+            "language": "Hindi, English",
+            "national_bird": "Peacock",
+            "national_animal": "Bengal Tiger",
+            "national_flower": "Lotus"
+        },
+        "states": [
+            {"name": "Andhra Pradesh", "capital": "Amaravati"},
+            {"name": "Arunachal Pradesh", "capital": "Itanagar"},
+            {"name": "Assam", "capital": "Dispur"},
+            {"name": "Bihar", "capital": "Patna"},
+            {"name": "Chhattisgarh", "capital": "Raipur"},
+            {"name": "Goa", "capital": "Panaji"},
+            {"name": "Gujarat", "capital": "Gandhinagar"},
+            {"name": "Haryana", "capital": "Chandigarh"},
+            {"name": "Himachal Pradesh", "capital": "Shimla"},
+            {"name": "Jharkhand", "capital": "Ranchi"},
+            {"name": "Karnataka", "capital": "Bengaluru"},
+            {"name": "Kerala", "capital": "Thiruvananthapuram"},
+            {"name": "Madhya Pradesh", "capital": "Bhopal"},
+            {"name": "Maharashtra", "capital": "Mumbai"},
+            {"name": "Manipur", "capital": "Imphal"},
+            {"name": "Meghalaya", "capital": "Shillong"},
+            {"name": "Mizoram", "capital": "Aizawl"},
+            {"name": "Nagaland", "capital": "Kohima"},
+            {"name": "Odisha", "capital": "Bhubaneswar"},
+            {"name": "Punjab", "capital": "Chandigarh"},
+            {"name": "Rajasthan", "capital": "Jaipur"},
+            {"name": "Sikkim", "capital": "Gangtok"},
+            {"name": "Tamil Nadu", "capital": "Chennai"},
+            {"name": "Telangana", "capital": "Hyderabad"},
+            {"name": "Tripura", "capital": "Agartala"},
+            {"name": "Uttar Pradesh", "capital": "Lucknow"},
+            {"name": "Uttarakhand", "capital": "Dehradun"},
+            {"name": "West Bengal", "capital": "Kolkata"}
+        ],
+        "union_territories": [
+            {"name": "Delhi", "capital": "New Delhi"},
+            {"name": "Jammu & Kashmir", "capital": "Srinagar"},
+            {"name": "Ladakh", "capital": "Leh"},
+            {"name": "Puducherry", "capital": "Puducherry"},
+            {"name": "Chandigarh", "capital": "Chandigarh"},
+            {"name": "Dadra & Nagar Haveli", "capital": "Silvassa"},
+            {"name": "Lakshadweep", "capital": "Kavaratti"},
+            {"name": "Andaman & Nicobar", "capital": "Port Blair"}
+        ]
+    },
+    "bihar": {
+        "name": "Bihar",
+        "capital": "Patna",
+        "cm": "Nitish Kumar",
+        "governor": "Arif Mohammad Khan",
+        "population": "12.4 Crore",
+        "area": "94,163 sq km",
+        "language": "Hindi, Bhojpuri, Maithili",
+        "cities": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Darbhanga", "Katihar", "Purnia", "Arrah", "Begusarai", "Motihari"],
+        "famous_food": ["Litti Chokha", "Sattu", "Bhuna Khaja", "Doodh Colla"],
+        "famous_fruit": "Litchi",
+        "tourist_places": ["Mahabodhi Temple", "Nalanda University", "Vishwa Shanti Stupa", "Takht Sri Patna Sahib"],
+        "famous_people": ["Dr. Rajendra Prasad", "Jayaprakash Narayan", "Lord Buddha"]
+    }
+}
