@@ -1,0 +1,40 @@
+{
+    "basics": {
+        "www": "World Wide Web - Tim Berners-Lee 1989",
+        "http": "HyperText Transfer Protocol",
+        "https": "Secure HTTP",
+        "dns": "Domain Name System",
+        "ip": "Internet Protocol",
+        "url": "Uniform Resource Locator"
+    },
+    
+    "social_media": {
+        "global": ["Facebook", "Instagram", "Twitter", "LinkedIn", "YouTube", "TikTok"],
+        "india": ["ShareChat", "Koo", "Roposo"],
+        "messaging": ["WhatsApp", "Telegram", "Signal"]
+    },
+    
+    "apps": {
+        "communication": ["WhatsApp", "Zoom", "Google Meet"],
+        "entertainment": ["YouTube", "Netflix", "Spotify"],
+        "shopping": ["Amazon", "Flipkart", "Myntra"],
+        "food": ["Zomato", "Swiggy"],
+        "travel": ["IRCTC", "MakeMyTrip", "Ola", "Uber"]
+    },
+    
+    "safety": {
+        "password": "Strong & unique",
+        "privacy": "Check settings",
+        "scams": "Don't click suspicious",
+        "phishing": "Verify links",
+        "2fa": "Two factor auth"
+    },
+    
+    "terms": {
+        "spam": "Unwanted messages",
+        "virus": "Harmful software",
+        "malware": "Malicious code",
+        "ransomware": "Encrypts files",
+        "phishing": "Fake websites"
+    }
+}
