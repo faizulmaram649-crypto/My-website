@@ -1,0 +1,110 @@
+{
+    "india": {
+        "states": 28,
+        "union_territories": 8,
+        "total_states": 36,
+        "area": "3.287 million sq km",
+        "population": "140 crore",
+        "coastline": "7517 km",
+        "borders": ["Pakistan", "China", "Nepal", "Bhutan", "Bangladesh", "Myanmar"],
+        "caps": {
+            "delhi": "North",
+            "mumbai": "West",
+            "kolkata": "East",
+            "chennai": "South",
+            "bangalore": "South"
+        },
+        "regions": {
+            "north": ["Jammu Kashmir", "Himachal", "Punjab", "Haryana", "Uttarakhand", "Delhi"],
+            "south": ["Karnataka", "Kerala", "Tamil Nadu", "Telangana", "Andhra Pradesh"],
+            "east": ["West Bengal", "Odisha", "Bihar", "Jharkhand"],
+            "west": ["Gujarat", "Maharashtra", "Goa", "Rajasthan"],
+            "central": ["Madhya Pradesh", "Chhattisgarh", "Uttar Pradesh"],
+            "northeast": ["Assam", "Meghalaya", "Manipur", "Nagaland", "Tripura", "Mizoram", "Arunachal Pradesh", "Sikkim"]
+        }
+    },
+    
+    "continents": {
+        "asia": {
+            "area": "44.58 million sq km",
+            "population": "4.7 billion",
+            "countries": 48,
+            "largest": "Russia",
+            "highest": "Mount Everest (8848 m)"
+        },
+        "africa": {
+            "area": "30.37 million sq km",
+            "population": "1.4 billion",
+            "countries": 54,
+            "largest": "Algeria",
+            "desert": "Sahara"
+        },
+        "north_america": {
+            "area": "24.71 million sq km",
+            "population": "592 million",
+            "countries": 23,
+            "largest": "Canada",
+            "lake": "Lake Superior"
+        },
+        "south_america": {
+            "area": "17.84 million sq km",
+            "population": "430 million",
+            "countries": 12,
+            "largest": "Brazil",
+            "forest": "Amazon"
+        },
+        "europe": {
+            "area": "10.18 million sq km",
+            "population": "748 million",
+            "countries": 44,
+            "largest": "Russia",
+            "river": "Volga"
+        },
+        "australia": {
+            "area": "8.6 million sq km",
+            "population": "43 million",
+            "countries": 14,
+            "largest": "Australia",
+            "reef": "Great Barrier Reef"
+        },
+        "antarctica": {
+            "area": "14.2 million sq km",
+            "population": "0 (research only)",
+            "research_stations": "70+"
+        }
+    },
+    
+    "oceans": {
+        "pacific": {"area": "165 million sq km", "deepest": "Mariana Trench (11034 m)"},
+        "atlantic": {"area": "106 million sq km", "deepest": "Puerto Rico Trench"},
+        "indian": {"area": "70 million sq km", "deepest": "Java Trench"},
+        "arctic": {"area": "14 million sq km", "deepest": "Litke Deep"}
+    },
+    
+    "mountains": {
+        "highest": {"name": "Mount Everest", "height": "8848 m", "location": "Nepal-Tibet"},
+        "k2": {"name": "K2", "height": "8611 m", "location": "Pakistan-China"},
+        "kangchenjunga": {"name": "Kangchenjunga", "height": "8586 m", "location": "India-Nepal"},
+        "india_highest": {"name": "Kangchenjunga", "location": "Sikkim"}
+    },
+    
+    "rivers": {
+        "ganga": {"length": "2525 km", "origin": "Gangotri, Uttarakhand", "flows": "Bay of Bengal"},
+        "yamuna": {"length": "1376 km", "origin": "Yamunotri", "tributary": true},
+        "brahmaputra": {"length": "2900 km", "origin": "Tibet", "flows": "Bay of Bengal"},
+        "godavari": {"length": "1465 km", "origin": "Maharashtra", "flows": "Bay of Bengal"},
+        "krishna": {"length": "1300 km", "origin": "Maharashtra", "flows": "Bay of Bengal"},
+        "narmada": {"length": "1312 km", "origin": "Madhya Pradesh", "flows": "Arabian Sea"},
+        "kaveri": {"length": "800 km", "origin": "Karnataka", "flows": "Bay of Bengal"}
+    },
+    
+    "deserts": {
+        "thar": {"location": "Rajasthan", "area": "200,000 sq km"},
+        "ahara": {"location": "Gujarat", "area": "5000 sq km"}
+    },
+    
+    "islands": {
+        "andaman": {"location": "Bay of Bengal", "islands": 572},
+        "lakshadweep": {"location": "Arabian Sea", "islands": 36}
+    }
+}
