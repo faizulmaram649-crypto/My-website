@@ -1,53 +1,87 @@
 {
     "bollywood": {
         "top_movies": [
-            {"name": "Dangal", "year": 2016, "actor": "Aamir Khan", "collection": "2150 crore"},
-            {"name": "3 Idiots", "year": 2009, "actor": "Aamir Khan", "collection": "750 crore"},
-            {"name": "PK", "year": 2014, "actor": "Aamir Khan", "collection": "792 crore"},
-            {"name": "Bajrangi Bhaijaan", "year": 2015, "actor": "Salman Khan", "collection": "630 crore"},
-            {"name": "Secret Superstar", "year": 2017, "actor": "Aamir Khan", "collection": "976 crore"},
-            {"name": "Sanju", "year": 2018, "actor": "Ranbir Kapoor", "collection": "445 crore"},
-            {"name": "War", "year": 2019, "actor": "Hrithik", "collection": "200+ crore"},
-            {"name": "Tangl", "year": 2014, "actor": "Aamir Khan", "collection": "340 crore"},
-            {"name": "Bhaag Milkha Bhaag", "year": 2013, "actor": "Farhan Akhtar", "collection": "216 crore"},
-            {"name": "MS Dhoni: The Untold Story", "year": 2016, "actor": "Sushant Singh Rajput", "collection": "227 crore"}
+            {"name": "Dangal", "year": 2016, "actor": "Aamir Khan", "collection": "2150 crore", "genre": "Sports, Drama"},
+            {"name": "3 Idiots", "year": 2009, "actor": "Aamir Khan", "collection": "750 crore", "genre": "Comedy, Drama"},
+            {"name": "PK", "year": 2014, "actor": "Aamir Khan", "collection": "792 crore", "genre": "Comedy, Sci-Fi"},
+            {"name": "Bajrangi Bhaijaan", "year": 2015, "actor": "Salman Khan", "collection": "630 crore", "genre": "Drama, Comedy"},
+            {"name": "Secret Superstar", "year": 2017, "actor": "Zaira Wasim", "collection": "976 crore", "genre": "Drama, Music"},
+            {"name": "Sanju", "year": 2018, "actor": "Ranbir Kapoor", "collection": "445 crore", "genre": "Biography"},
+            {"name": "War", "year": 2019, "actor": "Hrithik Roshan", "collection": "200+ crore", "genre": "Action"},
+            {"name": "Dhoom 3", "year": 2013, "actor": "Aamir Khan", "collection": "685 crore", "genre": "Action, Thriller"},
+            {"name": "Bhaag Milkha Bhaag", "year": 2013, "actor": "Farhan Akhtar", "collection": "216 crore", "genre": "Sports, Biography"},
+            {"name": "MS Dhoni: The Untold Story", "year": 2016, "actor": "Sushant Singh Rajput", "collection": "227 crore", "genre": "Sports, Biography"}
         ],
         
-        "biopic_movies": [
-            {"name": "MS Dhoni", "actor": "Sushant"},
-            {"name": "Bhaag Milkha Bhaag", "actor": "Farhan"},
-            {"name": "Sanju", "actor": "Ranbir"},
-            {"name": "Mary Kom", "actor": "Priyanka"},
-            {"name": "Paan Singh Tomar", "actor": "Irrfan"},
-            {"name": "M.S. Dhoni", "actor": "Sushant"}
+        "biopic": [
+            {"name": "MS Dhoni", "actor": "Sushant Singh Rajput", "sport": "Cricket"},
+            {"name": "Bhaag Milkha Bhaag", "actor": "Farhan Akhtar", "sport": "Athletics"},
+            {"name": "Sanju", "actor": "Ranbir Kapoor", "person": "Sanjay Dutt"},
+            {"name": "Mary Kom", "actor": "Priyanka Chopra", "sport": "Boxing"},
+            {"name": "Paan Singh Tomar", "actor": "Irrfan Khan", "sport": "Athletics"},
+            {"name": "Dangal", "actor": "Aamir Khan", "sport": "Wrestling"}
         ],
         
-        "classic_movies": [
-            {"name": "Sholay", "year": 1975},
-            {"name": "Devdas", "year": 1955},
-            {"name": "Mughal-e-Azam", "year": 1960},
-            {"name": "Amar Akbar Anthony", "year": 1977},
-            {"name": "Deewar", "year": 1975}
-        ]
+        "classic": [
+            {"name": "Sholay", "year": 1975, "actor": "Amitabh Bachchan"},
+            {"name": "Mughal-e-Azam", "year": 1960, "actor": "Dilip Kumar"},
+            {"name": "Deewar", "year": 1975, "actor": "Amitabh Bachchan"},
+            {"name": "Amar Akbar Anthony", "year": 1977, "actor": "Amitabh Bachchan"},
+            {"name": "Devdas", "year": 1955, "actor": "Dilip Kumar"}
+        ],
+        
+        "actors": {
+            "amir_khan": {"movies": "300+", "hits": "50+"},
+            "salman_khan": {"movies": "100+", "hits": "30+"},
+            "shahrukh_khan": {"movies": "80+", "hits": "40+"},
+            "akkineni": {"movies": "250+", "hits": "50+"}
+        }
     },
     
     "hollywood": {
         "top_movies": [
-            {"name": "Avatar", "collection": "$2.9 billion"},
-            {"name": "Avengers: Endgame", "collection": "$2.8 billion"},
-            {"name": "Titanic", "collection": "$2.2 billion"},
-            {"name": "Star Wars", "collection": "$2.1 billion"},
-            {"name": "Jurassic World", "collection": "$1.6 billion"}
+            {"name": "Avatar", "year": 2009, "collection": "$2.9B", "genre": "Sci-Fi"},
+            {"name": "Avengers: Endgame", "year": 2019, "collection": "$2.8B", "genre": "Superhero"},
+            {"name": "Titanic", "year": 1997, "collection": "$2.2B", "genre": "Romance, Drama"},
+            {"name": "Star Wars", "year": 2015, "collection": "$2.1B", "genre": "Sci-Fi"},
+            {"name": "Jurassic World", "year": 2015, "collection": "$1.7B", "genre": "Adventure"}
         ],
         
         "franchises": [
-            "Marvel Cinematic Universe",
-            "Star Wars",
+            "Marvel Cinematic Universe (MCU)",
             "Harry Potter",
+            "Star Wars",
+            "James Bond",
             "Fast & Furious",
-            "James Bond"
+            "DC Extended Universe"
         ]
+    },
+    
+    "south": {
+        "tollywood": {
+            "baahubali": {"collection": "2500 crore", "parts": 2},
+            "rrr": {"collection": "2400 crore", "oscar": true},
+            "pushpa": {"collection": "3500 crore"},
+            "kgf": {"collection": "2500 crore"}
+        },
+        "kollywood": {
+            "endrum": {"collection": "250 crore"},
+            "jigarthanda": {"collection": "150 crore"}
+        }
     },
     
     "web_series": {
         "indian": [
+            {"name": "Sacred Games", "platform": "Netflix"},
+            {"name": "Mirzapur", "platform": "Amazon Prime"},
+            {"name": "Scam 1992", "platform": "SonyLIV"},
+            {"name": "Delhi Crime", "platform": "Netflix"}
+        ],
+        "hollywood": [
+            {"name": "Game of Thrones", "platform": "HBO"},
+            {"name": "Breaking Bad", "platform": "Netflix"},
+            {"name": "Stranger Things", "platform": "Netflix"},
+            {"name": "Money Heist", "platform": "Netflix"}
+        ]
+    }
+}
