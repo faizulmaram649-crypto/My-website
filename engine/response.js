@@ -88,3 +88,26 @@ const response = {
         return this.responses[keyword] || null;
     }
 };
+function flattenObject(obj, result = {}) {
+
+    for (const key in obj) {
+
+        if (
+            typeof obj[key] === "object" &&
+            obj[key] !== null &&
+            !Array.isArray(obj[key])
+        ) {
+
+            flattenObject(obj[key], result);
+
+        } else {
+
+            result[key.toLowerCase()] =
+                JSON.stringify(obj[key])
+                    .replace(/[\[\]"]/g, "");
+
+        }
+    }
+
+    return result;
+}
