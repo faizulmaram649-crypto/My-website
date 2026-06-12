@@ -1,0 +1,74 @@
+{
+    "hadith": {
+        "collections": [
+            {"name": "Sahih Bukhari", "compiler": "Imam Bukhari", "hadiths": 7563},
+            {"name": "Sahih Muslim", "compiler": "Imam Muslim", "hadiths": 7275},
+            {"name": "Abu Dawud", "compiler": "Abu Dawud", "hadiths": 5274},
+            {"name": "Tirmidhi", "compiler": "Tirmidhi", "hadiths": 3895},
+            {"name": "Ibn Majah", "compiler": "Ibn Majah", "hadiths": 4342},
+            {"name": "An-Nasai", "compiler": "An-Nasai", "hadiths": 5758}
+        ]
+    },
+    
+    "famous_hadiths": [
+        {
+            "source": "Bukhari & Muslim",
+            "text": "Intentions matter. The reward depends on the intention."
+        },
+        
+        {
+            "source": "Bukhari",
+            "text": "Whoever believes in Allah and His Messenger, establishes prayer and fasts in Ramadan, will enter Paradise."
+        },
+        
+        {
+            "source": "Tirmidhi",
+            "text": "Religion is sincere counsel (Nasiha). Give counsel to the people."
+        },
+        
+        {
+            "source": "Muslim",
+            "text": "The best among you are those who have best manners and character."
+        },
+        
+        {
+            "source": "Bukhari",
+            "text": "Help your brother whether he is oppressor or being oppressed."
+        },
+        
+        {
+            "source": "Abu Dawud",
+            "text": "The most beloved deeds to Allah are those done regularly."
+        },
+        
+        {
+            "source": "Bukhari",
+            "text": "No one is a true believer until he loves for his brother what he loves for himself."
+        },
+        
+        {
+            "source": "Tirmidhi",
+            "text": "Modesty is part of faith."
+        }
+    ],
+    
+    "prophet_sayings": [
+        "Seek knowledge from the cradle to the grave.",
+        "The strong is not the one who overcomes others, but the one who controls himself.",
+        "Smile is a charity.",
+        "Helping others is a great act of worship.",
+        "Be kind to parents.",
+        "Speak good or stay silent.",
+        "Keep promises.",
+        "Control your anger."
+    ],
+    
+    "prophet_teachings": {
+        "worship": "Pray 5 times daily",
+        "character": "Best character",
+        "knowledge": "Seek knowledge",
+        "charity": "Give to poor",
+        "family": "Respect parents",
+        "truth": "Speak truth"
+    }
+}
