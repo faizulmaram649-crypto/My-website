@@ -1,0 +1,102 @@
+{
+    "solar_system": {
+        "sun": {
+            "name": "Sun (Surya)",
+            "type": "Yellow Dwarf Star",
+            "age": "4.6 billion years",
+            "diameter": "1.39 million km",
+            "temperature": "5500°C surface, 15 million°C core",
+            "distance": "149.6 million km from Earth",
+            "fuel": "Hydrogen to Helium"
+        },
+        
+        "planets": {
+            "mercury": {"position": 1, "size": "Smallest", "temp": "430°C day, -180°C night"},
+            "venus": {"position": 2, "hot": "Hottest planet", "temp": "465°C"},
+            "earth": {"position": 3, "life": true, "moons": 1},
+            "mars": {"position": 4, "red": true, "moons": 2},
+            "jupiter": {"position": 5, "largest": true, "moons": 95},
+            "saturn": {"position": 6, "rings": true, "moons": 146},
+            "uranus": {"position": 7, "sideways": true, "moons": 27},
+            "neptune": {"position": 8, "windy": true, "moons": 16}
+        },
+        
+        "dwarf_planets": {
+            "pluto": {"position": 9, "heart": true, "moons": 5},
+            "ceres": {"position": 10, "asteroid belt": true},
+            "eris": {"position": 11, "far": true}
+        }
+    },
+    
+    "earth_moon": {
+        "moon": {
+            "distance": "384,400 km",
+            "size": "1/81 of Earth",
+            "age": "4.5 billion years",
+            "gravity": "1/6 of Earth",
+            "phases": ["New", "Waxing", "Full", "Waning"],
+            "missions": ["Apollo 11 (1969)", "Chandrayaan-3 (2023)"]
+        }
+    },
+    
+    "space_missions": {
+        "india": {
+            "isro": {
+                "established": "1969",
+                "chairman": "S. Somanath",
+                "achievements": [
+                    "Mangalyaan (2014)",
+                    "Chandrayaan-1 (2008)",
+                    "Chandrayaan-3 (2023)",
+                    "Aditya-L1 (2023)"
+                ]
+            },
+            "mangalyaan": {
+                "name": "Mars Orbiter Mission",
+                "year": "2014",
+                "cost": "Lowest ever ($74M)",
+                "success": "First attempt success!"
+            },
+            "chandrayaan": {
+                "ch1": "2008, Moon impact",
+                "ch2": "2019, Orbiter",
+                "ch3": "2023, South pole landing"
+            }
+        },
+        
+        "world": {
+            "apollo_11": "First human on moon (1969)",
+            "voyager_1": "Farthest object (1977)",
+            "hubble": "Space telescope (1990)",
+            "james_webb": "Next gen telescope (2021)"
+        }
+    },
+    
+    "astronomy": {
+        "constellations": [
+            "Orion (Hunter)",
+            "Ursa Major (Big Bear)",
+            "Cassiopeia (Queen)",
+            "Leo (Lion)"
+        ],
+        "stars": {
+            "polaris": "North Star",
+            "sirius": "Brightest star",
+            "betelgeuse": "Red supergiant"
+        }
+    },
+    
+    "universe": {
+        "galaxy": "Milky Way",
+        "age": "13.8 billion years",
+        "diameter": "100,000 light years",
+        "stars": "100-400 billion",
+        "black_hole": "Sagittarius A*"
+    },
+    
+    "useful_info": {
+        "light_year": "9.46 trillion km",
+        "astronomical_unit": "150 million km",
+        "parsec": "3.26 light years"
+    }
+}
