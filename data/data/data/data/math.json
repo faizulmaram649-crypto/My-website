@@ -1,0 +1,38 @@
+{
+    "algebra": {
+        "formulas": [
+            {"formula": "(a + b)²", "expansion": "a² + 2ab + b²"},
+            {"formula": "(a - b)²", "expansion": "a² - 2ab + b²"},
+            {"formula": "a² - b²", "expansion": "(a + b)(a - b)"},
+            {"formula": "(a + b)³", "expansion": "a³ + 3a²b + 3ab² + b³"},
+            {"formula": "(a - b)³", "expansion": "a³ - 3a²b + 3ab² - b³"},
+            {"formula": "a³ + b³", "expansion": "(a + b)(a² - ab + b²)"},
+            {"formula": "a³ - b³", "expansion": "(a - b)(a² + ab + b²)"}
+        ]
+    },
+    "geometry": {
+        "circle": {"area": "πr²", "perimeter": "2πr"},
+        "triangle": {"area": "½ × base × height"},
+        "rectangle": {"area": "length × width", "perimeter": "2(l + w)"},
+        "square": {"area": "side²", "perimeter": "4 × side"},
+        "sphere": {"volume": "⁴⁄₃πr³", "surface_area": "4πr²"},
+        "cylinder": {"volume": "πr²h", "surface_area": "2πr(h + r)"}
+    },
+    "trigonometry": {
+        "identities": [
+            {"formula": "sin²θ + cos²θ", "equals": "1"},
+            {"formula": "tanθ", "equals": "sinθ/cosθ"},
+            {"formula": "sec²θ", "equals": "1 + tan²θ"},
+            {"formula": "cosec²θ", "equals": "1 + cot²θ"}
+        ],
+        "values": {
+            "sin0": 0, "sin30": 0.5, "sin60": 0.866, "sin90": 1,
+            "cos0": 1, "cos30": 0.866, "cos60": 0.5, "cos90": 0,
+            "tan0": 0, "tan30": 0.577, "tan60": 1.732, "tan90": "undefined"
+        }
+    },
+    "pythagoras": {
+        "formula": "a² + b² = c²",
+        "description": "In a right triangle, square of hypotenuse equals sum of squares of other two sides"
+    }
+}
