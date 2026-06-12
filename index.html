@@ -50,16 +50,17 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="app">
 <aside class="sidebar">
 <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
+<button class="btn" onclick="ask('hello')"><i class="fa-solid fa-hand-wave"></i> Hello</button>
 <button class="btn" onclick="ask('who is faizul')"><i class="fa-solid fa-user"></i> About Creator</button>
 <button class="btn" onclick="ask('india')"><i class="fa-solid fa-flag"></i> India</button>
 <button class="btn" onclick="ask('bihar')"><i class="fa-solid fa-map"></i> Bihar</button>
-<button class="btn" onclick="ask('countries')"><i class="fa-solid fa-globe"></i> Countries</button>
+<button class="btn" onclick="ask('english')"><i class="fa-solid fa-language"></i> English</button>
 <button class="btn" onclick="ask('urdu')"><i class="fa-solid fa-language"></i> Urdu</button>
 <button class="btn" onclick="ask('hindi')"><i class="fa-solid fa-language"></i> Hindi</button>
 <div class="head">Cricket</div>
-<button class="btn" onclick="ask('virat')">Virat</button>
-<button class="btn" onclick="ask('dhoni')">Dhoni</button>
-<button class="btn" onclick="ask('rohit')">Rohit</button>
+<button class="btn" onclick="ask('virat')">Virat Kohli</button>
+<button class="btn" onclick="ask('dhoni')">MS Dhoni</button>
+<button class="btn" onclick="ask('rohit')">Rohit Sharma</button>
 <div class="head">Education</div>
 <button class="btn" onclick="ask('math')">Math</button>
 <button class="btn" onclick="ask('science')">Science</button>
@@ -68,13 +69,13 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <button class="btn" onclick="ask('mobile')">Mobile</button>
 <button class="btn" onclick="ask('whatsapp')">WhatsApp</button>
 <button class="btn" onclick="ask('instagram')">Instagram</button>
-<div class="head">Lifestyle</div>
-<button class="btn" onclick="ask('food')">Food</button>
-<button class="btn" onclick="ask('health')">Health</button>
 <div class="head">Islamic</div>
 <button class="btn" onclick="ask('islam')">Islam</button>
 <button class="btn" onclick="ask('quran')">Quran</button>
 <button class="btn" onclick="ask('dua')">Dua</button>
+<div class="head">Lifestyle</div>
+<button class="btn" onclick="ask('food')">Food</button>
+<button class="btn" onclick="ask('health')">Health</button>
 <div class="head">Fun</div>
 <button class="btn" onclick="ask('jokes')">Jokes</button>
 <button class="btn" onclick="ask('facts')">Facts</button>
@@ -95,7 +96,7 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <button onclick="ask('who is faizul')">Creator</button>
 <button onclick="ask('bihar')">Bihar</button>
 <button onclick="ask('urdu')">Urdu</button>
-<button onclick="ask('virat')">Virat</button>
+<button onclick="ask('hindi')">Hindi</button>
 <button onclick="ask('jokes')">Jokes</button>
 </div>
 </div>
@@ -113,42 +114,55 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 
 <script>
 // ========================================
-// FAIZUL AI - COMPLETE DATA
+// FAIZUL AI - COMPLETE DATABASE
 // ========================================
 
 (function() {
-    // === COMPLETE DATABASE ===
+    // === ALL DATA (English, Hindi, Urdu) ===
     var db = {
         // === GREETINGS ===
-        "hello": "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul (Creator)\n- India, Bihar, Countries\n- Cricket Players\n- Education, Science, Math\n- Mobile, WhatsApp, Instagram\n- Urdu, Hindi, English\n- Islam, Quran, Duas\n- Food, Health\n- Jokes & Facts\n\nWhat would you like to know?",
-        "hi": "Hi! Welcome to Faizul AI!",
+        "hello": "Hello! Welcome to Faizul AI!\n\nI can answer in English, Hindi, and Urdu!\n\nAsk about:\n• Who is Faizul (Creator)\n• India, Bihar, Countries\n• Cricket Players\n• Education, Science, Math\n• Mobile, WhatsApp, Instagram\n• English, Hindi, Urdu\n• Islam, Quran, Duas\n• Food, Health\n• Jokes & Facts\n\nWhat would you like to know?",
+        "hi": "Hi! Welcome to Faizul AI! How can I help you?",
         "hey": "Hey! What's up!",
         "namaste": "Namaste! Welcome to Faizul AI!",
-        "salam": "Salam! Welcome! Asalamu Alaikum!",
+        "salam": "Salam! Asalamu Alaikum! Welcome!",
+        "good morning": "Good Morning! 🌅 Have a great day!",
+        "good night": "Good Night! 🌙 Sweet dreams!",
         
         // === FAIUL MARAM ===
-        "who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Duas & Prayers\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor\n\nHe creates Islamic content and develops tech solutions!",
-        "faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos, Religious quotes\nDeveloper: Websites, AI",
+        "who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Duas & Prayers\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor\n\nHe creates Islamic content and develops tech!",
+        "faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos\nDeveloper: Websites, AI",
         
         // === INDIA & BIHAR ===
-        "india": "INDIA - 28 STATES + 8 UT\n\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWest: Rajasthan, Gujarat, Goa, Maharashtra\n\nEast: WB, Odisha, Bihar, Jharkhand\n\nSouth: Karnataka, TN, Kerala, Telangana\n\nCentral: MP, Chhattisgarh, UP\n\nNE: Assam, Meghalaya, Manipur, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
-        "bihar": "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\nArea: 94,163 sq km\n\nMajor Cities:\n1. Patna\n2. Gaya\n3. Bhagalpur\n4. Muzaffarpur\n5. Darbhanga\n\nFamous Places:\n• Mahabodhi Temple (Gaya)\n• Nalanda University\n• Takht Sri Patna Sahib\n\nFamous Food: Litti Chokha, Sattu\n\nFamous Fruit: Litchi (World famous!)\n\nSpecial: Lord Buddha born in Gaya!",
-        "patna": "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━━━━━━\n\nPopulation: 20 lakh+\nFamous Places:\n• Takht Sri Patna Sahib\n• Bihar Museum\n• Golghar\n• Ferozeshah Kotli",
-        "litti chokha": "BITTER CHOKHA - BIHAR FAMOUS FOOD\n\n━━━━━━━━━━━━━━━━━━━━\n\nIngredients:\n• Wheat flour\n• Sattu (roasted gram)\n• Brinjal (baingan)\n• Potato\n\nServe with:\n• Chhha (mashed)\n• Ghee\n\nFamous dish of Bihar!",
-        "litchi": "LITCHI - BIHAR FAMOUS FRUIT\n\n━━━━━━━━━━━━━━━━━━━━\n\nFamous in: Muzaffarpur\nSeason: May-June\n\nVarieties:\n• Shahi\n• China\n• Bedana\n\nWorld's best litchi from Bihar!",
+        "india": "INDIA - 28 STATES + 8 UT\n\n━━━━━━━━━━━━━━━\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWest: Rajasthan, Gujarat, Goa, Maharashtra\nEast: WB, Odisha, Bihar, Jharkhand\nSouth: Karnataka, TN, Kerala, Telangana\nCentral: MP, UP\nNE: Assam, Sikkim\n\nCapital: New Delhi\nPopulation: 140 Crore+",
+        "bihar": "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\nArea: 94,163 sq km\n\nCities: Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga\n\nFamous Places: Mahabodhi Temple (Gaya), Nalanda University\n\nFamous Food: Litti Chokha, Sattu\n\nFamous Fruit: Litchi (World famous!)\n\nSpecial: Lord Buddha born in Gaya!",
+        "patna": "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━\nPopulation: 20 lakh+\nFamous: Takht Sri Patna Sahib, Bihar Museum, Golghar",
+        "litti chokha": "BITTER CHOKHA - BIHAR DISH\n\n━━━━━━━━━━━━━━━\nIngredients: Wheat flour, Sattu, Brinjal, Potato\nFamous dish of Bihar!",
+        "litchi": "LITCHI - BIHAR FRUIT\n\n━━━━━━━━━━━━━━━\nFamous in: Muzaffarpur\nSeason: May-June\nWorld's best litchi!",
         
         // === COUNTRIES ===
-        "countries": "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━━━━━\n\nASIA:\nIndia - New Delhi\nChina - Beijing\nJapan - Tokyo\nPakistan - Islamabad\nBangladesh - Dhaka\nSri Lanka - Colombo\nNepal - Kathmandu\nThailand - Bangkok\nIndonesia - Jakarta\nMalaysia - Kuala Lumpur\nSingapore - Singapore\n\nEUROPE:\nUK - London\nFrance - Paris\nGermany - Berlin\nItaly - Rome\nSpain - Madrid\nRussia - Moscow\n\nAMERICAS:\nUSA - Washington DC\nCanada - Ottawa\nBrazil - Brasilia\nMexico - Mexico City\n\nAFRICA:\nEgypt - Cairo\nNigeria - Abuja\nSouth Africa - Pretoria\n\nAUSTRALIA:\nAustralia - Canberra\nNew Zealand - Wellington",
-        "capital": "CAPITALS\n\nIndia - New Delhi\nUSA - Washington\nUK - London\nFrance - Paris\nJapan - Tokyo\nChina - Beijing\nRussia - Moscow\nAustralia - Canberra\nCanada - Ottawa",
+        "countries": "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━\nASIA:\nIndia, China, Japan, Pakistan, Bangladesh, Nepal, Sri Lanka\n\nEUROPE:\nUK, France, Germany, Italy, Spain, Russia\n\nAMERICAS:\nUSA, Canada, Brazil, Mexico\n\nAFRICA:\nEgypt, Nigeria, South Africa\n\nAUSTRALIA:\nAustralia, New Zealand",
+        "capital": "CAPITALS\n\nIndia - New Delhi\nUSA - Washington\nUK - London\nFrance - Paris\nJapan - Tokyo\nChina - Beijing\nRussia - Moscow\nAustralia - Canberra",
+        
+        // === ENGLISH ===
+        "english": "ENGLISH LANGUAGE\n\n━━━━━━━━━━━━━━━\n• World's most spoken language\n• Used in business globally\n• Official language of many countries\n• 1.5 billion speakers",
+        "learn english": "LEARN ENGLISH\n\n━━━━━━━━━━━━━━━\n• Read English books\n• Watch English movies\n• Practice daily\n• Make English friends\n• Don't be afraid to speak",
+        
+        // === HINDI ===
+        "hindi": "HINDI BHASHA\n\n━━━━━━━━━━━━━━━\n• India's most spoken language\n• Devanagari script\n• 600 million speakers\n• Bollywood language\n\nHindi is our national language!",
+        "hindi song": "HINDI SONGS\n\n━━━━━━━━━━━━━━━\nBollywood songs are famous!\nSing along and enjoy!",
+        
+        // === URDU ===
+        "urdu": "URDU ZABAN\n\n━━━━━━━━━━━━━━━\n• Beautiful poetical language\n• Nastaliq script (Arabic)\n• Used in India, Pakistan\n• Famous ghazals\n• Poetry language",
+        "urdu poetry": "URDU POETRY\n\n━━━━━━━━━━━━━━━\n• Famous poets:\n - Mirza Ghalib\n - Allama Iqbal\n - Faiz Ahmed Faiz\n\nUrdu is language of poetry!",
+        "urdu quotes": "URDU QUOTES\n\n━━━━━━━━━━━━━━━\n• Zindagi ek safar hai suhana\n• Dil ki awaaz suno\n• Urdu hamari pehchan hai",
         
         // === CRICKET ===
-        "virat": "VIRAT KOHLI - KING KOHLI\n\n━━━━━━━━━━━━━━━━━━━━\n\nJersey: 18\nBorn: 5 Nov 1988\nPlace: Delhi\nAge: 36\n\nRole: Batsman\nRuns: 25000+\nCenturies: 80+\n\nAchievements:\n✅ ICC World Cup: 2011\n✅ ICC Champions Trophy: 2013\n✅ ICC Cricketer of Year: 2017, 2018\n✅ Fastest to 10000 ODI runs\n\nNickname: King Kohli",
-        "kohli": "VIRAT KOHLI\nKing of Cricket! Jersey 18!",
-        "dhoni": "MS DHONI - CAPTAIN COOL\n\n━━━━━━━━━━━━━━━━━━━━\n\nJersey: 7\nBorn: 7 July 1981\nPlace: Ranchi, Jharkhand\nAge: 43\n\nRole: Wicket Keeper\n\nRuns: 10000+\n\nAchievements:\n✅ ICC World T20: 2007 (CAPTAIN!)\n✅ ICC World Cup: 2011 (CAPTAIN! 🏆)\n✅ IPL: 3 times\n\nNickname: Captain Cool!",
-        "rohit": "ROHIT SHARMA - THE HITMAN\n\n━━━━━━━━━━━━━━━━━━━━\n\nJersey: 45\nBorn: 30 April 1987\nPlace: Nagpur\nAge: 37\n\nRole: Opening Batsman\nRuns: 10000+\nHighest: 264 (World Record!)\n\nAchievements:\n✅ World Cup: 2019\n✅ 2 Double Centuries in ODIs",
-        "cricket": "CRICKET IN INDIA\n\n━━━━━━━━━━━━━━━━━━━━\n\nFormats: Test, ODI, T20\n\nTeam: Indian Cricket Team\nCaptain: Rohit Sharma\n\nTop Players:\n• Virat Kohli\n• MS Dhoni\n• Rohit Sharma",
+        "virat": "VIRAT KOHLI - KING KOHLI\n\n━━━━━━━━━━━━━━━\nJersey: 18\nBorn: 5 Nov 1988\nRuns: 25000+\nWorld Cup: 2011\nKing of Cricket!",
+        "dhoni": "MS DHONI - CAPTAIN COOL\n\n━━━━━━━━━━━━━━━\nJersey: 7\nBorn: 7 July 1981\nRuns: 10000+\nWorld Cup 2011 (Captain)!",
+        "rohit": "ROHIT SHARMA\n\n━━━━━━━━━━━━━━━\nJersey: 45\nBorn: 30 April 1987\nHighest: 264 (Record!)",
         
         // === EDUCATION ===
-        "math": "MATH FORMULAS\n\n━━━━━━━━━━━━━━━━━━━━\n\nAlgebra:\n(a+b)² = a² + 2ab + b²\n(a-b)² = a² - 2ab + b²\na² - b² = (a+b)(a-b)\n(a+b)³ = a³ + 3a²b + 3ab² + b³\n\nGeometry:\nCircle = πr²\nTriangle = ½bh\nRectangle = lw\n\nPythagoras:\na² + b² = c²",
-        "science": "SCIENCE FACTS\n\n━━━━━━━━━━━━━━━━━━━━\n\nPhysics:\n• Light: 3×10⁸ m/s\n• Sound: 343 m/s\n• Gravity: 9.8 m/s²\n• Newton's 3 Laws\n\nChemistry:\n• Water: H₂O\n• Oxygen: O₂\n• CO₂\n• Periodic: 118 elements\n\nBiology:\n• Human: 60% water\n• Cell: Basic unit\n• DNA: Genetic code",
-        "physics": "PHYSICS\n\n━━━━━━━━━━━━━━━━━━━━\n\n• Force: F = ma\n• Velocity
+        "math": "MATH\n\n(a+b)² = a²+2ab+b²\na²-b² = (a+b)(a-b)\nCircle = πr²\na²+b² = c²",
+        "science": "SCIENCE\n\n━━━━━━━━━━━━━━━\n• Light: 3×10⁸ m/s\n• Gravity: 9.8 m/s²\n• Water: H₂O\n• Human: 60% water",
+        "history": "HISTORY\n\n━━━━━━━━━━━━━━━\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nModern: British 1757-1947\nIndependence: 1947",
