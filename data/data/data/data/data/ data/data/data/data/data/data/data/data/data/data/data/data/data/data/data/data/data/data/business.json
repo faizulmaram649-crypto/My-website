@@ -1,0 +1,73 @@
+{
+    "startup": {
+        "types": [
+            {"name": "E-commerce", "examples": ["Amazon", "Flipkart", "Myntra"]},
+            {"name": "Fintech", "examples": ["Paytm", "PhonePe"]},
+            {"name": "Edtech", "examples": ["Byju's", "Unacademy"]},
+            {"name": "Healthtech", "examples": ["Practo", "1MG"]},
+            {"name": "Food tech", "examples": ["Zomato", "Swiggy"]}
+        ],
+        
+        "tips": [
+            "Start small",
+            "Solve real problem",
+            "Know your customer",
+            "Keep cash flow",
+            "Build team"
+        ],
+        
+        "funding": [
+            "Seed Round: ₹50 lakh - 5 crore",
+            "Series A: ₹5-50 crore",
+            "Series B: ₹50-500 crore",
+            "IPO: Public issue"
+        ]
+    },
+    
+    "companies": {
+        "indian_titan": [
+            {"name": "Reliance Industries", "ceo": "Mukesh Ambani", "turnover": "₹10 lakh crore"},
+            {"name": "TCS", "ceo": "N Chandrasekaran", "turnover": "₹2 lakh crore"},
+            {"name": "HDFC Bank", "ceo": "Ashish Khanna", "turnover": "₹2 lakh crore"},
+            {"name": "Infosys", "ceo": "Salil Parekh", "turnover": "₹1.5 lakh crore"}
+        ],
+        
+        "new_tech": [
+            {"name": "Flipkart", "acquired": "Walmart"},
+            {"name": "Paytm", "ipo": true},
+            {"name": "Zomato", "ipo": true},
+            {"name": "Policybazaar", "ipo": true}
+        ]
+    },
+    
+    "marketing": {
+        "digital": [
+            {"name": "Social Media Marketing", "platforms": ["Facebook", "Instagram", "LinkedIn"]},
+            {"name": "SEO", "full": "Search Engine Optimization"},
+            {"name": "Content Marketing", "type": "Blogs, Videos"},
+            {"name": "Email Marketing", "type": "Newsletters"},
+            {"name": "Influencer Marketing", "type": "Brand deals"}
+        ],
+        
+        "traditional": [
+            "TV Ads",
+            "Print: Newspaper, Magazine",
+            "Outdoor: Hoardings",
+            "Radio"
+        ]
+    },
+    
+    "investment": {
+        "stocks": {
+            "nse": "National Stock Exchange",
+            "bse": "Bombay Stock Exchange",
+            "indices": ["Nifty 50", "Sensex"]
+        },
+        
+        "mutual_funds": {
+            "types": ["ELSS", "Large Cap", "Mid Cap", "Small Cap", "Index"],
+            "sip": "Systematic Investment Plan"
+        },
+        
+        "gold": {
+            "forms": ["Physical", "Sovereign Gold Bond", "Gold
