@@ -1,0 +1,73 @@
+{
+    "daily_tips": {
+        "water": "8-10 glasses daily",
+        "sleep": "7-8 hours",
+        "exercise": "30 minutes minimum",
+        "food": "5 servings vegetables/fruits",
+        "walking": "10,000 steps"
+    },
+    
+    "nutrition": {
+        "vitamins": {
+            "A": {"sources": ["Carrot", "Spinach"], "benefit": "Vision"},
+            "B": {"sources": ["Eggs", "Milk"], "benefit": "Energy"},
+            "C": {"sources": ["Orange", "Lemon"], "benefit": "Immunity"},
+            "D": {"sources": ["Sunlight", "Fish"], "benefit": "Bones"},
+            "E": {"sources": ["Nuts", "Seeds"], "benefit": "Skin"},
+            "K": {"sources": ["Leafy greens"], "benefit": "Blood clotting"}
+        },
+        "minerals": {
+            "calcium": {"sources": ["Milk", "Cheese"], "benefit": "Bones"},
+            "iron": {"sources": ["Spinach", "Red meat"], "benefit": "Blood"},
+            "zinc": {"sources": ["Nuts", "Seeds"], "benefit": "Immunity"},
+            "potassium": {"sources": ["Bananas"], "benefit": "Heart"}
+        },
+        "macros": {
+            "carbohydrates": {"sources": ["Rice", "Wheat"], "calories": "4/g"},
+            "proteins": {"sources": ["Egg", "Meat"], "calories": "4/g"},
+            "fats": {"sources": ["Oil", "Ghee"], "calories": "9/g"}
+        }
+    },
+    
+    "diseases": {
+        "viral": ["Cold", "Flu", "Covid-19", "HIV"],
+        "bacterial": ["TB", "Cholera", "Typhoid"],
+        "lifestyle": ["Diabetes", "BP", "Heart disease", "Cancer"],
+        "deficiency": ["Anemia", "Goiter", "Rickets"]
+    },
+    
+    "exercise": {
+        "cardio": ["Running", "Cycling", "Swimming", "Walking"],
+        "strength": ["Weights", "Push-ups", "Squats"],
+        "flexibility": ["Yoga", "Stretching"],
+        "daily": ["10,000 steps", "30 min workout"]
+    },
+    
+    "mental_health": {
+        "stress_busters": ["Meditation", "Exercise", "Sleep", "Hobby"],
+        "depression_signs": ["Sadness", "No interest", "Tiredness"],
+        "happy_habits": ["Gratitude", "社交", "Help others"]
+    },
+    
+    "first_aid": {
+        "cuts": "Clean and bandage",
+        "burns": "Cold water 10 min",
+        "nosebleed": "Lean forward, pinch nose",
+        "choking": "Heimlich maneuver",
+        "heart attack": "Aspirin, call ambulance"
+    },
+    
+    "sleep": {
+        "adults": "7-9 hours",
+        "teenagers": "8-10 hours",
+        "children": "9-11 hours",
+        "tips": ["Fixed time", "Dark room", "No phone"]
+    },
+    
+    "weight_loss": {
+        "calorie_deficit": "500/day = 1kg/week",
+        "exercise": "Cardio + Strength",
+        "diet": "More protein, less carbs",
+        "tips": ["Drink water", "Eat slowly", "Sleep well"]
+    }
+}
