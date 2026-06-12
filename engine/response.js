@@ -61,19 +61,16 @@ const response = {
 
                 const data = await res.json();
 
-                Object.assign(
-                    this.responses,
-                    data
-                );
+                const flatData = flattenObject(data);
+
+                Object.assign(this.responses, flatData);
 
             } catch (err) {
 
-                console.error(
-                    `Error loading ${file}.json`,
-                    err
-                );
+                console.error(`Error loading ${file}.json`, err);
 
             }
+
         }
 
         this.loaded = true;
@@ -85,27 +82,46 @@ const response = {
     },
 
     get(keyword) {
-        return this.responses[keyword] || null;
+        return this.responses[keyword.toLowerCase()] || null;
     }
 };
+
+// FLATTEN NESTED JSON
 function flattenObject(obj, result = {}) {
 
     for (const key in obj) {
 
+        const value = obj[key];
+
         if (
-            typeof obj[key] === "object" &&
-            obj[key] !== null &&
-            !Array.isArray(obj[key])
+            typeof value === "object" &&
+            value !== null &&
+            !Array.isArray(value)
         ) {
 
-            flattenObject(obj[key], result);
+            flattenObject(value, result);
 
         } else {
 
-            result[key.toLowerCase()] =
-                JSON.stringify(obj[key])
-                    .replace(/[\[\]"]/g, "");
+            if (Array.isArray(value)) {
 
+                result[key.toLowerCase()] =
+                    value.map(v =>
+                        typeof v === "object"
+                            ? JSON.stringify(v)
+                            : v
+                    ).join("\n");
+
+            } else if (typeof value === "object") {
+
+                result[key.toLowerCase()] =
+                    JSON.stringify(value, null, 2);
+
+            } else {
+
+                result[key.toLowerCase()] = value;
+
+            }
         }
     }
 
