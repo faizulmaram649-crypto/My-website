@@ -1,58 +1,89 @@
-// Faizul AI - Main Script
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizul AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
+            
+            <button class="btn" data-topic="who is faizul"><i class="fa-solid fa-user"></i> About Creator</button>
+            <button class="btn" data-topic="india"><i class="fa-solid fa-flag"></i> India</button>
+            <button class="btn" data-topic="bihar"><i class="fa-solid fa-map"></i> Bihar</button>
+            <button class="btn" data-topic="countries"><i class="fa-solid fa-globe"></i> Countries</button>
+            
+            <div class="head">Cricket</div>
+            <button class="btn" data-topic="virat">Virat Kohli</button>
+            <button class="btn" data-topic="dhoni">MS Dhoni</button>
+            <button class="btn" data-topic="rohit">Rohit Sharma</button>
+            
+            <div class="head">Education</div>
+            <button class="btn" data-topic="math">Math</button>
+            <button class="btn" data-topic="science">Science</button>
+            <button class="btn" data-topic="history">History</button>
+            <button class="btn" data-topic="geography">Geography</button>
+            
+            <div class="head">Lifestyle</div>
+            <button class="btn" data-topic="food">Food</button>
+            <button class="btn" data-topic="health">Health</button>
+            <button class="btn" data-topic="fitness">Fitness</button>
+            
+            <div class="head">Fun</div>
+            <button class="btn" data-topic="jokes">Jokes</button>
+            <button class="btn" data-topic="facts">Facts</button>
+        </aside>
 
-// Load all data files
-const dataFiles = [
-    'greetings', 'common_chat', 'education', 'math', 'science',
-    'english', 'hindi', 'geography', 'history', 'gk',
-    'technology', 'coding', 'cricket', 'sports', 'islamic',
-    'health', 'fitness', 'food', 'motivation', 'jokes',
-    'facts', 'festivals'
-];
+        <!-- Main -->
+        <main class="main">
+            <header class="header">
+                <h1>Faizul AI</h1>
+                <button class="clear-btn" onclick="conversation.clear()"><i class="fa-solid fa-trash"></i> Clear</button>
+            </header>
 
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Faizul AI Loading...');
-    
-    // Load all data
-    responseLoader.load();
-    
-    // Set up event listeners
-    setupEventListeners();
-    
-    console.log('Faizul AI Ready!');
-});
+            <div class="chat" id="chatArea">
+                <!-- Welcome -->
+                <div class="welcome" id="welcome">
+                    <div class="icon"><i class="fa-solid fa-robot"></i></div>
+                    <h2>Hello!</h2>
+                    <h3>Welcome to Faizul AI</h3>
+                    <p>Your Knowledge Assistant</p>
+                    <div class="quick">
+                        <button data-topic="hello">Hello</button>
+                        <button data-topic="who is faizul">Creator</button>
+                        <button data-topic="bihar">Bihar</button>
+                        <button data-topic="virat">Virat</button>
+                        <button data-topic="jokes">Jokes</button>
+                    </div>
+                </div>
 
-function setupEventListeners() {
-    // Input Enter key
-    const input = document.getElementById('userInput');
-    input.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            conversation.send();
-        }
-    });
-    
-    // Sidebar buttons
-    document.querySelectorAll('.btn[data-topic]').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const topic = this.getAttribute('data-topic');
-            conversation.sendQuick(topic);
-        });
-    });
-    
-    // Quick buttons
-    document.querySelectorAll('.quick button[data-topic]').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const topic = this.getAttribute('data-topic');
-            conversation.sendQuick(topic);
-        });
-    });
-}
+                <!-- Messages -->
+                <div id="messages"></div>
+            </div>
 
-// Global functions for onclick
-function ask(topic) {
-    conversation.sendQuick(topic);
-}
+            <!-- Input -->
+            <div class="input-area">
+                <div class="input-box">
+                    <input type="text" id="userInput" placeholder="Ask anything..." autocomplete="off">
+                    <button onclick="conversation.send()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+                <div class="info"><span>Press Enter to send</span></div>
+            </div>
+        </main>
+    </div>
 
-function clearChat() {
-    conversation.clear();
-}
+    <script src="engine/memory.js"></script>
+    <script src="engine/intent.js"></script>
+    <script src="engine/response.js"></script>
+    <script src="engine/formatter.js"></script>
+    <script src="engine/personality.js"></script>
+    <script src="engine/conversation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
