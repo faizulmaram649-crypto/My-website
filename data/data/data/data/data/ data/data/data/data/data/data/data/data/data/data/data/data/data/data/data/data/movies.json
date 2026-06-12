@@ -1,0 +1,53 @@
+{
+    "bollywood": {
+        "top_movies": [
+            {"name": "Dangal", "year": 2016, "actor": "Aamir Khan", "collection": "2150 crore"},
+            {"name": "3 Idiots", "year": 2009, "actor": "Aamir Khan", "collection": "750 crore"},
+            {"name": "PK", "year": 2014, "actor": "Aamir Khan", "collection": "792 crore"},
+            {"name": "Bajrangi Bhaijaan", "year": 2015, "actor": "Salman Khan", "collection": "630 crore"},
+            {"name": "Secret Superstar", "year": 2017, "actor": "Aamir Khan", "collection": "976 crore"},
+            {"name": "Sanju", "year": 2018, "actor": "Ranbir Kapoor", "collection": "445 crore"},
+            {"name": "War", "year": 2019, "actor": "Hrithik", "collection": "200+ crore"},
+            {"name": "Tangl", "year": 2014, "actor": "Aamir Khan", "collection": "340 crore"},
+            {"name": "Bhaag Milkha Bhaag", "year": 2013, "actor": "Farhan Akhtar", "collection": "216 crore"},
+            {"name": "MS Dhoni: The Untold Story", "year": 2016, "actor": "Sushant Singh Rajput", "collection": "227 crore"}
+        ],
+        
+        "biopic_movies": [
+            {"name": "MS Dhoni", "actor": "Sushant"},
+            {"name": "Bhaag Milkha Bhaag", "actor": "Farhan"},
+            {"name": "Sanju", "actor": "Ranbir"},
+            {"name": "Mary Kom", "actor": "Priyanka"},
+            {"name": "Paan Singh Tomar", "actor": "Irrfan"},
+            {"name": "M.S. Dhoni", "actor": "Sushant"}
+        ],
+        
+        "classic_movies": [
+            {"name": "Sholay", "year": 1975},
+            {"name": "Devdas", "year": 1955},
+            {"name": "Mughal-e-Azam", "year": 1960},
+            {"name": "Amar Akbar Anthony", "year": 1977},
+            {"name": "Deewar", "year": 1975}
+        ]
+    },
+    
+    "hollywood": {
+        "top_movies": [
+            {"name": "Avatar", "collection": "$2.9 billion"},
+            {"name": "Avengers: Endgame", "collection": "$2.8 billion"},
+            {"name": "Titanic", "collection": "$2.2 billion"},
+            {"name": "Star Wars", "collection": "$2.1 billion"},
+            {"name": "Jurassic World", "collection": "$1.6 billion"}
+        ],
+        
+        "franchises": [
+            "Marvel Cinematic Universe",
+            "Star Wars",
+            "Harry Potter",
+            "Fast & Furious",
+            "James Bond"
+        ]
+    },
+    
+    "web_series": {
+        "indian": [
