@@ -1,0 +1,60 @@
+{
+    "islam": {
+        "meaning": "Peace, Submission",
+        "prophet": "Muhammad (PBUH)",
+        "holy_book": "Quran",
+        "scripture": "Hadith",
+        "god": "Allah (SWT)",
+        "pillars": [
+            {"number": 1, "name": "Shahada", "meaning": "Declaration of faith"},
+            {"number": 2, "name": "Salat", "meaning": "Prayer 5 times daily"},
+            {"number": 3, "name": "Zakat", "meaning": "Charity 2.5%"},
+            {"number": 4, "name": "Sawm", "meaning": "Fasting in Ramadan"},
+            {"number": 5, "name": "Hajj", "meaning": "Pilgrimage to Mecca"}
+        ]
+    },
+    
+    "prophets": {
+        "muhammad": {
+            "born": "570 CE",
+            "place": "Mecca",
+            "died": "632 CE",
+            "mission": "Final Messenger of Allah",
+            "last_prophet": true
+        },
+        "ibrahim": {"known_as": "Abraham", "founder": "Kaaba"},
+        "moosa": {"known_as": "Moses", "revelation": "Torah"},
+        "isa": {"known_as": "Jesus", "revelation": "Bible"}
+    },
+    
+    " holy_places": {
+        "mecca": {"country": "Saudi Arabia", "importance": "First Qibla, Hajj"},
+        "madinah": {"country": "Saudi Arabia", "importance": "Prophet's city"},
+        "jerusalem": {"country": "Israel/Palestine", "importance": "Third holiest"}
+    },
+    
+    "prayers": {
+        "fajr": {"time": "Before sunrise", "rakat": 2},
+        "dhuhr": {"time": "After noon", "rakat": 4},
+        "asr": {"time": "Afternoon", "rakat": 4},
+        "maghrib": {"time": "After sunset", "rakat": 3},
+        "isha": {"time": "Night", "rakat": 4},
+        "jummah": {"time": "Friday noon", "name": "Friday Prayer"}
+    },
+    
+    "ramadan": {
+        "month": "9th of Islamic calendar",
+        "fasting": "Sunrise to sunset",
+        "suhoor": "Meal before fajr",
+        "iftar": "Meal after maghrib",
+        "nights": "Laylatul Qadr (Night of Power)"
+    },
+    
+    "dua": {
+        "morning": ["Subhanallaz wa behamdih", "Subhanallah"],
+        "night": ["Allahumma amsina roh", "Astaghfirullah"],
+        "travel": ["Allahumma hazini", "Rabbana atina"],
+        "food": ["Bismillah", "Alhumdulillah"],
+        "general": ["Rabbana ghfir li", "La ilaha illallah"]
+    }
+}
