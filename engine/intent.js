@@ -1,51 +1,116 @@
 // Intent Recognition Module
 const intent = {
-    // Analyze user's message and find best match
+
     analyze(text) {
-        text = text.toLowerCase();
-        
-        // Check each keyword
-        for(let keyword in response.responses) {
-            if(text.includes(keyword)) {
-                return {
-                    found: true,
-                    keyword: keyword,
-                    response: response.responses[keyword]
-                };
-            }
+
+        text = text.toLowerCase().trim();
+
+        if (!text) {
+            return {
+                found: false,
+                keyword: null,
+                response: "Please type something."
+            };
         }
-        
-        // No match found
+
+        // Direct Search
+        const result = search.find(text);
+
+        if (result) {
+
+            return {
+                found: true,
+                keyword: result.keyword,
+                response: result.data
+            };
+
+        }
+
+        // Fuzzy Search
+        const fuzzy =
+            search.fuzzyFind(text, 2);
+
+        if (
+            fuzzy &&
+            fuzzy.length > 0
+        ) {
+
+            return {
+                found: true,
+                keyword:
+                    fuzzy[0].keyword,
+                response:
+                    fuzzy[0].data
+            };
+
+        }
+
         return {
             found: false,
             keyword: null,
-            response: this.getDefault()
+            response:
+                this.getDefault()
         };
+
     },
-    
-    // Default responses
+
     getDefault() {
+
         const defaults = [
-            "Interesting! Tell me more about that.",
-            "I know many topics! Try asking about cricket, education, food, or health.",
-            "I didn't get that. Can you ask differently?",
-            "Ask me about Faizul, India, Bihar, countries, cricket, or any topic you want!"
+
+            "🤔 Mujhe is topic ki jankari nahi mili.",
+
+            "📚 Main apne knowledge database me iska answer nahi dhoond paaya.",
+
+            "🔍 Thoda aur clearly puchiye.",
+
+            "💡 Try: physics, chemistry, biology, india, cricket, food, health."
+
         ];
-        return defaults[Math.floor(Math.random() * defaults.length)];
+
+        return defaults[
+            Math.floor(
+                Math.random() *
+                defaults.length
+            )
+        ];
+
     },
-    
-    // Check for greetings
+
     isGreeting(text) {
-        const greetings = ['hello', 'hi', 'hey', 'namaste', 'salam'];
-        return greetings.some(g => text.includes(g));
+
+        const greetings = [
+            "hello",
+            "hi",
+            "hey",
+            "namaste",
+            "salam"
+        ];
+
+        return greetings.some(
+            g =>
+                text
+                    .toLowerCase()
+                    .includes(g)
+        );
+
     },
-    
-    // Check for questions
+
     isQuestion(text) {
-        return text.includes('?') || 
-               text.includes('what') || 
-               text.includes('how') ||
-               text.includes('why') ||
-               text.includes('who');
+
+        text =
+            text.toLowerCase();
+
+        return (
+            text.includes("?") ||
+            text.includes("what") ||
+            text.includes("who") ||
+            text.includes("why") ||
+            text.includes("how") ||
+            text.includes("when") ||
+            text.includes("where")
+        );
+
     }
+
 };
