@@ -1,0 +1,32 @@
+{
+    "phones": {
+        "brands": {
+            "apple": ["iPhone", "iOS"],
+            "samsung": ["Galaxy S", "Galaxy A", "Galaxy M"],
+            "oneplus": ["Nord", "T", "12"],
+            "realme": ["Narzo", "C", "GT"],
+            "redmi": ["Note", "K", "POCO"],
+            "oppo": ["Reno", "F", "A"],
+            "vivo": ["V25", "Y", "T"],
+            "moto": ["Edge", "G", "E"]
+        },
+        
+        "os": {
+            "ios": {"maker": "Apple", "versions": ["14", "15", "16", "17"]},
+            "android": {"maker": "Google", "versions": ["12", "13", "14"]}
+        }
+    },
+    
+    "specs": {
+        "storage": ["64GB", "128GB", "256GB", "512GB", "1TB"],
+        "ram": ["4GB", "6GB", "8GB", "12GB", "16GB"],
+        "camera": ["12MP", "48MP", "50MP", "64MP", "108MP", "200MP"],
+        "battery": ["4000mAh", "5000mAh", "6000mAh"]
+    },
+    
+    "tips": {
+        "battery": ["Avoid 0-100%", "Use original charger", "No overnight charging"],
+        "performance": ["Clear cache", "Update apps", "Restart regularly"],
+        "security": ["Lock screen", "Find my phone", "Encrypt"]
+    }
+}
