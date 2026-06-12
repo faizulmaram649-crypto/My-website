@@ -1,0 +1,114 @@
+{
+    "physics": {
+        "motion": {
+            "velocity": "Rate of change of displacement",
+            "acceleration": "Rate of change of velocity",
+            "force": "Mass × Acceleration (F = ma)",
+            "momentum": "Mass × Velocity",
+            "newton_laws": [
+                "Object at rest stays at rest, object in motion stays in motion",
+                "F = ma (Force equals mass times acceleration)",
+                "Every action has equal and opposite reaction"
+            ]
+        },
+        "gravity": {
+            "formula": "F = G(m1×m2)/r²",
+            "earth": "9.8 m/s²",
+            "moon": "1.6 m/s²",
+            "mars": "3.7 m/s²"
+        },
+        "light": {
+            "speed": "3 × 10⁸ m/s",
+            "year": "9.46 × 10¹⁵ meters",
+            "behavior": "Particle and Wave"
+        },
+        "sound": {
+            "speed": "343 m/s (at 20°C)",
+            "medium": "Air, Water, Solid",
+            "frequency": "20Hz - 20,000Hz"
+        },
+        "heat": {
+            "absolute_zero": "-273.15°C",
+            "water_boil": "100°C",
+            "water_freeze": "0°C"
+        },
+        "electricity": {
+            "ohm_law": "V = IR",
+            "power": "P = VI",
+            "ac": "Alternating Current",
+            "dc": "Direct Current"
+        }
+    },
+    
+    "chemistry": {
+        "elements": {
+            "periodic_groups": {
+                "1": "Alkali Metals",
+                "2": "Alkaline Earth",
+                "17": "Halogens",
+                "18": "Noble Gases"
+            },
+            "common": {
+                "hydrogen": {"symbol": "H", "number": 1, "property": "Lightest"},
+                "oxygen": {"symbol": "O", "number": 8, "property": "Supports life"},
+                "carbon": {"symbol": "C", "number": 6, "property": "Basis of life"},
+                "nitrogen": {"symbol": "N", "number": 7, "property": "78% of air"},
+                "iron": {"symbol": "Fe", "number": 26, "property": "Most common metal"}
+            }
+        },
+        "compounds": {
+            "water": {"formula": "H₂O", "property": "Universal solvent"},
+            "salt": {"formula": "NaCl", "property": "Preservative"},
+            "alcohol": {"formula": "C₂H₅OH", "property": "Drinking alcohol"},
+            "sugar": {"formula": "C₁₂H₂₂O₁₁", "property": "Sweet"},
+            "baking_soda": {"formula": "NaHCO₃", "property": "Used in baking"},
+            "vinegar": {"formula": "CH₃COOH", "property": "Acidic"}
+        },
+        "acids_bases": {
+            "acid": "Donates H⁺ ions, pH < 7",
+            "base": "Accepts H⁺ ions, pH > 7",
+            "neutral": "pH = 7",
+            "strong_acids": ["HCl", "H₂SO₄", "HNO₃"],
+            "strong_bases": ["NaOH", "KOH"]
+        },
+        "reactions": {
+            "combination": "A + B → AB",
+            "decomposition": "AB → A + B",
+            "single_replacement": "A + BC → AC + B",
+            "double_replacement": "AB + CD → AD + CB"
+        }
+    },
+    
+    "biology": {
+        "human_body": {
+            "water": "60%",
+            "bones": 206,
+            "muscles": 650,
+            "cells": "37.2 trillion",
+            "organs": [
+                {"name": "Brain", "function": "Control center", "weight": "1.4 kg"},
+                {"name": "Heart", "function": "Pump blood", "beats": "100,000/day"},
+                {"name": "Lungs", "function": "Breathing", "breaths": "20,000/day"},
+                {"name": "Liver", "function": "Detox", "weight": "1.5 kg"},
+                {"name": "Kidneys", "function": "Filter blood", "filters": "180L/day"}
+            ]
+        },
+        "dna": {
+            "full_form": "Deoxyribonucleic Acid",
+            "shape": "Double helix",
+            "base_pairs": "3 billion",
+            "genes": "20,000-25,000"
+        },
+        "cell": {
+            "parts": ["Nucleus", "Mitochondria", "Ribosome", "Cell Membrane"],
+            "function": "Basic unit of life"
+        },
+        "systems": {
+            "digestive": "Break down food",
+            "circulatory": "Transport blood",
+            "respiratory": "Breathing",
+            "nervous": "Control body",
+            "immune": "Fight disease"
+        }
+    }
+}
