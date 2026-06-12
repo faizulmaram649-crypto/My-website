@@ -1,0 +1,65 @@
+{
+    "indian_food": {
+        "north": {
+            "punjab": ["Sarson da Saag", "Makki di Roti", "Chicken", "Lassi"],
+            "delhi": ["Chole Bhature", "Paranthas", "Kebab", "Butter Chicken"],
+            "rajasthan": ["Dal Baati Churma", "Ghevar", "Laal Maas"],
+            "uttar_pradesh": ["Tunday Kebab", "Awadhi Biryani", "Kofta"]
+        },
+        "south": {
+            "kerala": ["Appam", "Sadya", "Puttu", "Idiyappam"],
+            "tamil_nadu": ["Dosa", "Idli", "Sambar", "Rasam"],
+            "karnataka": ["Dosa", "Bisi Bele Bath", "Mamsa"],
+            "andhra": ["Biryani", "Gongura", "Pachadi"]
+        },
+        "east": {
+            "bengal": ["Rosogolla", "Fish Curry", "Pitha"],
+            "bihar": ["Litti Chokha", "Sattu", "Doodh Colla"],
+            "odisha": ["Pakhala", "Rasgulla", "Pitha"]
+        },
+        "west": {
+            "maharashtra": ["Pav Bhaji", "Vada Pav", "Puran Poli"],
+            "gujarat": ["Dhokla", "Khandvi", "Thepla", "Fafda"],
+            "goa": ["Fish Curry", "Chorizo", "Feijoada"]
+        }
+    },
+    
+    "world_cuisine": {
+        "italian": ["Pizza", "Pasta", "Risotto", "Lasagna"],
+        "chinese": ["Fried Rice", "Noodles", "Dim Sum", "Dumpling"],
+        "japanese": ["Sushi", "Ramen", "Tempura", "Miso"],
+        "mexican": ["Taco", "Burrito", "Quesadilla", "Nachos"],
+        "american": ["Burger", "Hot Dog", "Pizza", "Fries"],
+        "thai": ["Pad Thai", "Green Curry", "Tom Yum"],
+        "french": ["Croissant", "Baguette", "Coq au Vin"],
+        "korean": ["Kimchi", "BBQ", "Bibimbap"]
+    },
+    
+    "fast_food": {
+        "indian": ["Vada Pav", "Pav Bhaji", "Pani Puri", "Bhel Puri", "Sev Puri", "Dabeli"],
+        "chinese": ["Fried Rice", "Manchurian", "Noodles"],
+        "western": ["Burgers", "Pizza", "Fries", "Sandwich"]
+    },
+    
+    "sweet_dishes": {
+        "indian": ["Gulab Jamun", "Rasgulla", "Jalebi", "Ladoo", "Barfi", "Halwa"],
+        "western": ["Cake", "Ice Cream", "Chocolate", "Pastry"]
+    },
+    
+    "drinks": {
+        "hot": ["Tea", "Coffee", "Hot Chocolate"],
+        "cold": ["Lassi", "Buttermilk", "Shake", "Juice"],
+        "water": ["RO", "Mineral", "Spring"]
+    },
+    
+    "famous_foods": {
+        "bihar": "Litti Chokha",
+        "punjab": "Sarson da Saag",
+        "gujarat": "Dhokla",
+        "maharashtra": "Pav Bhaji",
+        "kerala": "Appam",
+        "mumbai": "Vada Pav",
+        "kolkata": "Rosogolla",
+        "delhi": "Chole Bhature"
+    }
+}
