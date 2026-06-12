@@ -1,0 +1,51 @@
+{
+    "jokes": [
+        {
+            "question": "Why did the chicken cross the road?",
+            "answer": "To get to the other side! 🐔"
+        },
+        {
+            "question": "Teacher: What is 2 + 2?",
+            "answer": "Student: 4!\nTeacher: Think harder!"
+        },
+        {
+            "question": "In cricket, when does the ball come?",
+            "answer": "But OUT doesn't come! 🏏"
+        },
+        {
+            "question": "What do you call a lazy kangaroo?",
+            "answer": "Pouch potato! 🦘"
+        },
+        {
+            "question": "Why don't scientists trust atoms?",
+            "answer": "Because they make up everything! ⚛️"
+        },
+        {
+            "question": "What did the ocean say to the beach?",
+            "answer": "Nothing, it just waved! 🌊"
+        },
+        {
+            "question": "Why is the moon so broke?",
+            "answer": "It's down to its last quarter! 🌙"
+        },
+        {
+            "question": "What do you call a bear with no teeth?",
+            "answer": "A gummy bear! 🐻"
+        },
+        {
+            "question": "Why did the math book look so sad?",
+            "answer": "Because it had too many problems! 📚"
+        },
+        {
+            "question": "What do you call a smart dinosaur?",
+            "answer": "A dino-saur! 🦖"
+        }
+    ],
+    "funny_facts": [
+        "Octopus has 3 hearts! 🐙",
+        "Bananas are berries! 🍌",
+        "Honey never spoils! 🍯",
+        "Queen ants have 1,500 muscles! 🐜",
+        "Sloths can hold their breath longer than dolphins! 🦥"
+    ]
+}
