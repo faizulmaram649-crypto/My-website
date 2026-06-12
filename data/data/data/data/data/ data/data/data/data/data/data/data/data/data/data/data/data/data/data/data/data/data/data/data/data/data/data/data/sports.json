@@ -1,0 +1,70 @@
+{
+    "olympics": {
+        "summer": [
+            {"sports": "Athletics", "events": "48"},
+            {"sports": "Swimming", "events": "37"},
+            {"sports": "Cycling", "events": "22"},
+            {"sports": "Gymnastics", "events": "18"},
+            {"sports": "Boxing", "events": "13"},
+            {"sports": "Wrestling", "events": "12"}
+        ],
+        
+        "winter": [
+            {"sports": "Skiing", "events": "11"},
+            {"sports": "Snowboarding", "events": "11"},
+            {"sports": "Skating", "events": "6"},
+            {"sports": "Bobsleigh", "events": "3"}
+        ],
+        
+        "india_medals": {
+            "total": 10,
+            "gold": 2,
+            "silver": 3,
+            "bronze": 5,
+            "first_gold": "Norman Pritchard (1900)"
+        }
+    },
+    
+    "indian_sports": {
+        "cricket": {
+            "popularity": "1",
+            "players": "1000+",
+            "matches": "International"
+        },
+        
+        "hockey": {
+            "old": true,
+            "olympic_gold": "8 times",
+            "world_cup": "1975"
+        },
+        
+        "kabaddi": {
+            "origin": "India",
+            "pro_kabaddi": true,
+            "ipl": "Like popularity"
+        },
+        
+        "badminton": {
+            "star": "PV Sindhu",
+            "big_tournaments": ["All England", "Olympics"]
+        },
+        
+        "boxing": {
+            "star": "Vijender Singh",
+            "olympic": "Bronze 2008"
+        },
+        
+        "wrestling": {
+            "star": "Sakshi Malik",
+            "vinesh": "Phogat"
+        }
+    },
+    
+    "famous_tournaments": {
+        "cricket": ["World Cup", "IPL", "Ashes", "T20 World Cup"],
+        "football": ["World Cup", "Euro", "Champions League"],
+        "tennis": ["Grand Slam", "Wimbledon", "US Open"],
+        "badminton": ["All England", "Olympics"],
+        "kabaddi": ["PKL", "World Cup"]
+    }
+}
