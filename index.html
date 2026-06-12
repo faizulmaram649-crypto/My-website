@@ -12,47 +12,39 @@
 <div class="app">
 <aside class="sidebar">
 <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
-<button class="btn" data="who is faizul"><i class="fa-solid fa-user"></i> Creator</button>
-<button class="btn" data="hello"><i class="fa-solid fa-hand-wave"></i> Hello</button>
+<button class="btn" onclick="doClick('who is faizul')"><i class="fa-solid fa-user"></i> Creator</button>
+<button class="btn" onclick="doClick('hello')"><i class="fa-solid fa-hand-wave"></i> Hello</button>
 <div class="head">India</div>
-<button class="btn" data="india">India</button>
-<button class="btn" data="bihar">Bihar</button>
-<button class="btn" data="countries">Countries</button>
+<button class="btn" onclick="doClick('india')">India</button>
+<button class="btn" onclick="doClick('bihar')">Bihar</button>
+<button class="btn" onclick="doClick('countries')">Countries</button>
 <div class="head">Language</div>
-<button class="btn" data="urdu">Urdu</button>
-<button class="btn" data="hindi">Hindi</button>
-<button class="btn" data="english">English</button>
+<button class="btn" onclick="doClick('urdu')">Urdu</button>
+<button class="btn" onclick="doClick('hindi')">Hindi</button>
+<button class="btn" onclick="doClick('english')">English</button>
 <div class="head">Cricket</div>
-<button class="btn" data="virat">Virat</button>
-<button class="btn" data="dhoni">Dhoni</button>
-<button class="btn" data="rohit">Rohit</button>
+<button class="btn" onclick="doClick('virat')">Virat</button>
+<button class="btn" onclick="doClick('dhoni')">Dhoni</button>
+<button class="btn" onclick="doClick('rohit')">Rohit</button>
 <div class="head">Study</div>
-<button class="btn" data="math">Math</button>
-<button class="btn" data="science">Science</button>
-<button class="btn" data="history">History</button>
+<button class="btn" onclick="doClick('math')">Math</button>
+<button class="btn" onclick="doClick('science')">Science</button>
+<button class="btn" onclick="doClick('history')">History</button>
 <div class="head">Islamic</div>
-<button class="btn" data="islam">Islam</button>
-<button class="btn" data="quran">Quran</button>
-<button class="btn" data="hadith">Hadith</button>
-<button class="btn" data="dua">Dua</button>
-<div class="head">Lifestyle</div>
-<button class="btn" data="food">Food</button>
-<button class="btn" data="health">Health</button>
-<button class="btn" data="fitness">Fitness</button>
-<div class="head">Tech</div>
-<button class="btn" data="technology">Technology</button>
-<button class="btn" data="coding">Coding</button>
-<button class="btn" data="mobile">Mobile</button>
+<button class="btn" onclick="doClick('islam')">Islam</button>
+<button class="btn" onclick="doClick('quran')">Quran</button>
+<button class="btn" onclick="doClick('dua')">Dua</button>
+<div class="head">Food</div>
+<button class="btn" onclick="doClick('food')">Food</button>
+<button class="btn" onclick="doClick('health')">Health</button>
 <div class="head">Fun</div>
-<button class="btn" data="jokes">Jokes</button>
-<button class="btn" data="facts">Facts</button>
-<button class="btn" data="movies">Movies</button>
-<button class="btn" data="books">Books</button>
+<button class="btn" onclick="doClick('jokes')">Jokes</button>
+<button class="btn" onclick="doClick('facts')">Facts</button>
 </aside>
 <main class="main">
 <header class="header">
 <h1>Faizul AI</h1>
-<button class="clear-btn" id="clearChat"><i class="fa-solid fa-trash"></i> Clear</button>
+<button class="clear-btn" onclick="clearChat()">Clear</button>
 </header>
 <div class="chat" id="chatArea">
 <div class="welcome" id="welcome">
@@ -61,12 +53,12 @@
 <h3>Welcome to Faizul AI</h3>
 <p>Your Knowledge Assistant</p>
 <div class="quick">
-<button data="hello">Hello</button>
-<button data="who is faizul">Creator</button>
-<button data="bihar">Bihar</button>
-<button data="urdu">Urdu</button>
-<button data="virat">Virat</button>
-<button data="jokes">Jokes</button>
+<button onclick="doClick('hello')">Hello</button>
+<button onclick="doClick('who is faizul')">Creator</button>
+<button onclick="doClick('bihar')">Bihar</button>
+<button onclick="doClick('urdu')">Urdu</button>
+<button onclick="doClick('virat')">Virat</button>
+<button onclick="doClick('jokes')">Jokes</button>
 </div>
 </div>
 <div id="msg"></div>
@@ -74,7 +66,7 @@
 <div class="input-area">
 <div class="input-box">
 <input type="text" id="txt" placeholder="Ask anything...">
-<button id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+<button onclick="sendMsg()">Send</button>
 </div>
 <div class="info">Press Enter to send</div>
 </div>
