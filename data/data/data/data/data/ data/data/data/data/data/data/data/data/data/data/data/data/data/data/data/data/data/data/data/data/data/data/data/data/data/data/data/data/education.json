@@ -1,0 +1,52 @@
+{
+    "subjects": {
+        "science": {
+            "physics": ["Motion", "Force", "Light", "Sound", "Heat", "Magnetism", "Electricity"],
+            "chemistry": ["Matter", "Elements", "Reactions", "Acids", "Salts", "Carbon"],
+            "biology": ["Cell", "Plants", "Animals", "Human Body", "Food", "Health"]
+        },
+        "math": {
+            "arithmetic": ["Number System", "BODMAS", "Fractions", "Decimals", "Percentage"],
+            "algebra": ["Expressions", "Equations", "Inequalities", "Polynomials"],
+            "geometry": ["Lines", "Angles", "Triangles", "Circles", "Quadrilaterals"],
+            "measurement": ["Length", "Mass", "Volume", "Time", "Temperature"]
+        },
+        "social": {
+            "history": ["Ancient", "Medieval", "Modern", "World History"],
+            "geography": ["Physical", "Resources", "Agriculture", "Industry"],
+            "civics": ["Constitution", "Government", "Rights", "Duties"]
+        },
+        "language": {
+            "english": ["Grammar", "Writing", "Reading", "Vocabulary"],
+            "hindi": ["Grammar", "Writing", "Reading"],
+            "literature": ["Poems", "Stories", "Essays"]
+        }
+    },
+    
+    "classes": {
+        "1": ["ABC", "Numbers", "Colors", "Shapes"],
+        "2": ["Addition", "Subtraction", "Reading"],
+        "3": ["Multiplication", "Division", "Tables"],
+        "4": ["Fractions", "Decimals", "Geography"],
+        "5": ["Factors", "Multiples", "History"],
+        "6": ["Integers", "Algebra Basics", "Biology"],
+        "7": ["Linear Equations", "Physics Basics", "History"],
+        "8": ["Square Root", "Chemical Reactions", "Indian Constitution"],
+        "9": ["Polynomials", "Matter", "French Revolution"],
+        "10": ["Trigonometry", "Heredity", "Globalization"],
+        "11": ["Calculus", "Organic Chemistry", "Cell Biology"],
+        "12": ["Integration", "Polymers", "Reproduction"]
+    },
+    
+    "exams": {
+        "school": ["Half Yearly", "Annual", "Unit Tests"],
+        "board": ["Class 10", "Class 12"],
+        "competitive": ["JEE", "NEET", "UPSC", "CAT", "GRE"]
+    },
+    
+    "study_tips": {
+        "daily": ["1 hour each subject", "Practice daily", "Make notes"],
+        "exam": ["Revise twice", "Practice papers", "Time management"],
+        "concentration": ["No phone", "Music", "Short breaks"]
+    }
+}
