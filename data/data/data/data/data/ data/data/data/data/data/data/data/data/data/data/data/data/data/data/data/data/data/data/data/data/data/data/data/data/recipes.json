@@ -1,0 +1,65 @@
+{
+    "quick_recipes": {
+        "poha": {
+            "time": "15 min",
+            "ingredients": ["Poha", "Onion", "Mustard", "Curry leaves", "Green chili"],
+            "state": "Madhya Pradesh, Maharashtra"
+        },
+        
+        "poha_aloo": {
+            "time": "20 min",
+            "ingredients": ["Poha", "Potato", "Onion", "Spices"],
+            "state": "Madhya Pradesh"
+        },
+        
+        "sandwich": {
+            "time": "10 min",
+            "ingredients": ["Bread", "Butter", "Cheese", "Vegetable"],
+            "type": "Quick snacks"
+        },
+        
+        "maggi": {
+            "time": "5 min",
+            "ingredients": ["Maggi", "Water", "Masala"],
+            "type": "Quick noodles"
+        },
+        
+        "paratha_roll": {
+            "time": "20 min",
+            "ingredients": ["Paratha", "Aloo", "Dhania", "Chutney"],
+            "type": "Breakfast"
+        }
+    },
+    
+    "breakfast": {
+        "north": ["Paratha", "Poha", "Idli", "Dosa", "Puri Sabzi"],
+        "south": ["Idli", "Dosa", "Pongal", "Upma", "Appam"],
+        "east": ["Rasgulla", "Pitha", "Pakhala"],
+        "west": ["Pav Bhaji", "Misal Pav", "Poha"]
+    },
+    
+    "lunch": {
+        "rice": ["Dal Chawal", "Rajma Chawal", "Kadhi Chawal", "Biryani"],
+        "roti": ["Sabzi Roti", "Dal Roti", "Paneer Roti", "Mix Roti"]
+    },
+    
+    "dinner": {
+        "light": ["Dal Tadka", "Roti", "Salad", "Buttermilk"],
+        "special": ["Paneer", "Kofta", "Biryani", "Seekh Kebab"]
+    },
+    
+    "street_food": {
+        "delhi": ["Chole Bhature", "Paranthas", "Kebab"],
+        "mumbai": ["Vada Pav", "Pav Bhaji", "Bhelpuri"],
+        "lucknow": ["Tunday Kebab", "Galouti Kebab"],
+        "jaipur": ["Pyaaz Kachori", "Mirchi Vada"],
+        "kolkata": ["Roll", "Macher Jhol", "Rosogolla"]
+    },
+    
+    "sweets": {
+        "north": ["Gulab Jamun", "Rasgulla", "Barfi"],
+        "south": ["Mysore Pak", "Badusha"],
+        "east": ["Rasgulla", "Sandesh"],
+        "west": ["Mohanthal", "Shrikhand"]
+    }
+}
