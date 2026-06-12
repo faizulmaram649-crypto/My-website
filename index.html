@@ -13,7 +13,7 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 .sidebar { width: 210px; background: #121218; padding: 12px; border-right: 1px solid #28282f; overflow-y: auto; flex-shrink: 0; }
 .logo { font-size: 20px; font-weight: 700; color: #00d48a; margin-bottom: 12px; }
 .btn { width: 100%; padding: 8px 10px; background: transparent; border: 1px solid #28282f; border-radius: 6px; color: #9ca3af; margin-bottom: 4px; cursor: pointer; font-size: 12px; text-align: left; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
-.btn:hover { background: #252530; color: #00d48a; border-color: #00d48a; }
+.btn:hover { background: #252530; color: #00d48a; }
 .btn:active { background: #00d48a; color: #000; }
 .head { font-size: 10px; text-transform: uppercase; color: #6b7280; margin: 10px 0 6px; letter-spacing: 1px; }
 .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
@@ -50,46 +50,60 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="app">
 <aside class="sidebar">
 <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
-<button class="btn" id="btn-about"><i class="fa-solid fa-user"></i> About Creator</button>
-<button class="btn" id="btn-india"><i class="fa-solid fa-flag"></i> India</button>
-<button class="btn" id="btn-bihar"><i class="fa-solid fa-map"></i> Bihar</button>
-<button class="btn" id="btn-countries"><i class="fa-solid fa-globe"></i> Countries</button>
-<button class="btn" id="btn-urdu"><i class="fa-solid fa-language"></i> Urdu</button>
-<button class="btn" id="btn-hindi"><i class="fa-solid fa-language"></i> Hindi</button>
-<button class="btn" id="btn-english"><i class="fa-solid fa-language"></i> English</button>
+<button class="btn" onclick="btnClick('who is faizul')"><i class="fa-solid fa-user"></i> About Creator</button>
+<button class="btn" onclick="btnClick('india')"><i class="fa-solid fa-flag"></i> India</button>
+<button class="btn" onclick="btnClick('bihar')"><i class="fa-solid fa-map"></i> Bihar</button>
+<button class="btn" onclick="btnClick('countries')"><i class="fa-solid fa-globe"></i> Countries</button>
+<button class="btn" onclick="btnClick('urdu')"><i class="fa-solid fa-language"></i> Urdu</button>
+<button class="btn" onclick="btnClick('hindi')"><i class="fa-solid fa-language"></i> Hindi</button>
+<button class="btn" onclick="btnClick('english')"><i class="fa-solid fa-language"></i> English</button>
 <div class="head">Cricket</div>
-<button class="btn" id="btn-virat">Virat Kohli</button>
-<button class="btn" id="btn-dhoni">MS Dhoni</button>
-<button class="btn" id="btn-rohit">Rohit Sharma</button>
-<button class="btn" id="btn-cricket">Cricket</button>
+<button class="btn" onclick="btnClick('virat')">Virat Kohli</button>
+<button class="btn" onclick="btnClick('dhoni')">MS Dhoni</button>
+<button class="btn" onclick="btnClick('rohit')">Rohit Sharma</button>
+<button class="btn" onclick="btnClick('cricket')">Cricket</button>
 <div class="head">Education</div>
-<button class="btn" id="btn-math">Math</button>
-<button class="btn" id="btn-science">Science</button>
-<button class="btn" id="btn-history">History</button>
-<button class="btn" id="btn-geography">Geography</button>
+<button class="btn" onclick="btnClick('math')">Math</button>
+<button class="btn" onclick="btnClick('science')">Science</button>
+<button class="btn" onclick="btnClick('history')">History</button>
+<button class="btn" onclick="btnClick('geography')">Geography</button>
 <div class="head">Mobile</div>
-<button class="btn" id="btn-mobile">Mobile</button>
-<button class="btn" id="btn-whatsapp">WhatsApp</button>
-<button class="btn" id="btn-instagram">Instagram</button>
-<button class="btn" id="btn-youtube">YouTube</button>
+<button class="btn" onclick="btnClick('mobile')">Mobile</button>
+<button class="btn" onclick="btnClick('whatsapp')">WhatsApp</button>
+<button class="btn" onclick="btnClick('instagram')">Instagram</button>
+<button class="btn" onclick="btnClick('youtube')">YouTube</button>
 <div class="head">Islamic</div>
-<button class="btn" id="btn-islam">Islam</button>
-<button class="btn" id="btn-quran">Quran</button>
-<button class="btn" id="btn-hadith">Hadith</button>
-<button class="btn" id="btn-dua">Dua</button>
+<button class="btn" onclick="btnClick('islam')">Islam</button>
+<button class="btn" onclick="btnClick('quran')">Quran</button>
+<button class="btn" onclick="btnClick('hadith')">Hadith</button>
+<button class="btn" onclick="btnClick('dua')">Dua</button>
 <div class="head">Lifestyle</div>
-<button class="btn" id="btn-food">Food</button>
-<button class="btn" id="btn-health">Health</button>
-<button class="btn" id="btn-fitness">Fitness</button>
+<button class="btn" onclick="btnClick('food')">Food</button>
+<button class="btn" onclick="btnClick('health')">Health</button>
+<button class="btn" onclick="btnClick('fitness')">Fitness</button>
+<button class="btn" onclick="btnClick('fruit')">Fruits</button>
+<button class="btn" onclick="btnClick('vegetables')">Vegetables</button>
+<div class="head">Sports</div>
+<button class="btn" onclick="btnClick('football')">Football</button>
+<button class="btn" onclick="btnClick('hockey')">Hockey</button>
+<button class="btn" onclick="btnClick('olympics')">Olympics</button>
+<div class="head">Animals & Nature</div>
+<button class="btn" onclick="btnClick('animals')">Animals</button>
+<button class="btn" onclick="btnClick('plants')">Plants</button>
+<div class="head">Space & Tech</div>
+<button class="btn" onclick="btnClick('space')">Space</button>
+<button class="btn" onclick="btnClick('technology')">Technology</button>
+<button class="btn" onclick="btnClick('coding')">Coding</button>
 <div class="head">Fun</div>
-<button class="btn" id="btn-jokes">Jokes</button>
-<button class="btn" id="btn-facts">Facts</button>
-<button class="btn" id="btn-movies">Movies</button>
+<button class="btn" onclick="btnClick('jokes')">Jokes</button>
+<button class="btn" onclick="btnClick('facts')">Facts</button>
+<button class="btn" onclick="btnClick('movies')">Movies</button>
+<button class="btn" onclick="btnClick('books')">Books</button>
 </aside>
 <main class="main">
 <header class="header">
 <h1>Faizul AI</h1>
-<button class="clear-btn" id="clearChat"><i class="fa-solid fa-trash"></i> Clear</button>
+<button class="clear-btn" onclick="clearChat()"><i class="fa-solid fa-trash"></i> Clear</button>
 </header>
 <div class="chat" id="chatArea">
 <div class="welcome" id="welcome">
@@ -98,11 +112,11 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <h3>Welcome to Faizul AI</h3>
 <p>Your Knowledge Assistant</p>
 <div class="quick">
-<button onclick="sayHello()">Hello</button>
-<button onclick="sayCreator()">Creator</button>
-<button onclick="sayBihar()">Bihar</button>
-<button onclick="sayVirat()">Virat</button>
-<button onclick="sayJokes()">Jokes</button>
+<button onclick="btnClick('hello')">Hello</button>
+<button onclick="btnClick('who is faizul')">Creator</button>
+<button onclick="btnClick('bihar')">Bihar</button>
+<button onclick="btnClick('virat')">Virat</button>
+<button onclick="btnClick('jokes')">Jokes</button>
 </div>
 </div>
 <div id="msg"></div>
@@ -110,7 +124,7 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="input-area">
 <div class="input-box">
 <input type="text" id="txt" placeholder="Ask anything..." autocomplete="off">
-<button id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+<button onclick="sendMsg()"><i class="fa-solid fa-paper-plane"></i></button>
 </div>
 <div class="info">Press Enter to send</div>
 </div>
@@ -119,61 +133,49 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 
 <script>
 // ========================================
-// COMPLETE DATABASE (All Topics)
+// FAIZUL AI - COMPLETE DATABASE
+// All data from your data/ folder
 // ========================================
 
 var db = {};
 
 // ========================================
-// GREETINGS
+// GREETINGS & COMMON CHAT (greetings.json + common_chat.json)
 // ========================================
-db["hello"] = "Hello! Welcome to Faizul AI!\n\nI can answer about:\n✅ Who is Faizul (Creator)\n✅ India, Bihar, Countries\n✅ Cricket Players\n✅ Education (Math, Science, History)\n✅ Mobile, WhatsApp, Instagram\n✅ English, Hindi, Urdu\n✅ Islam, Quran, Hadith\n✅ Food, Health, Fitness\n✅ Jokes & Facts\n\nWhat would you like to know?";
+db["hello"] = "Hello! Welcome to Faizul AI!\n\nI can answer about:\n✅ Who is Faizul (Creator)\n✅ India, Bihar, Countries\n✅ Cricket Players\n✅ Education (Math, Science, History)\n✅ Mobile, WhatsApp, Instagram\n✅ English, Hindi, Urdu\n✅ Islam, Quran, Hadith\n✅ Food, Health, Fitness\n✅ Animals, Plants, Space\n✅ Technology, Coding\n✅ Movies, Books, Jokes & Facts\n\nWhat would you like to know?";
 db["hi"] = "Hi! Welcome to Faizul AI! How can I help you?";
 db["hey"] = "Hey! What's up! Ask me anything!";
 db["namaste"] = "Namaste! Welcome to Faizul AI!";
 db["salam"] = "Salam! Asalamu Alaikum! Welcome!";
 db["good morning"] = "Good Morning! Have a great day!";
 db["good night"] = "Good Night! Sweet dreams!";
+db["thanks"] = "You're welcome! Happy to help!";
+db["thank"] = "You're welcome! 😊";
+db["ok"] = "Great! Ask more!";
+db["bye"] = "Goodbye! Come back anytime! 👋";
 
 // ========================================
-// FAIUL MARAM CREATOR
+// CREATOR (gk.json)
 // ========================================
-db["who is faizul"] = "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━\n\nYouTube: @faizulmaram17\n\nContent Type:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor";
-db["about creator"] = db["who is faizul"];
-db["faizul maram"] = db["who is faizul"];
+db["who is faizul"] = "FAIZUL MARAM - CREATOR\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nYouTube: @faizulmaram17\n\nContent Type:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor";
+db["faizul"] = "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos";
 db["your creator"] = "FAIZUL MARAM created me!\n\nYouTube: @faizulmaram17";
 db["about"] = "I am Faizul AI - created by Faizul Maram";
 
 // ========================================
-// INDIA
+// INDIA & GEOGRAPHY (india.json + geography.json + gk.json)
 // ========================================
-db["india"] = "INDIA - 28 STATES + 8 UNION TERRITORIES\n\n━━━━━━━━━━━━━━━━\n\nNORTH:\n1. Delhi (UT)\n2. Haryana\n3. Punjab\n4. Himachal Pradesh\n5. Uttarakhand\n6. Jammu & Kashmir (UT)\n\nWEST:\n7. Rajasthan\n8. Gujarat\n9. Goa\n10. Maharashtra\n\nEAST:\n11. West Bengal\n12. Odisha\n13. Bihar\n14. Jharkhand\n\nSOUTH:\n15. Karnataka\n16. Telangana\n17. Andhra Pradesh\n18. Tamil Nadu\n19. Kerala\n20. Puducherry (UT)\n\nCENTRAL:\n21. Madhya Pradesh\n22. Chhattisgarh\n23. Uttar Pradesh\n\nNORTHEAST:\n24. Assam - 31. Sikkim\n\nCapital: New Delhi\nPopulation: 140 Crore+";
+db["india"] = "INDIA - 28 STATES + 8 UNION TERRITORIES\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nNORTH: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\nWEST: Rajasthan, Gujarat, Goa, Maharashtra\nEAST: WB, Odisha, Bihar, Jharkhand\nSOUTH: Karnataka, Telangana, Andhra, TN, Kerala\nCENTRAL: MP, Chhattisgarh, UP\nNORTHEAST: Assam, Meghalaya, Manipur, Sikkim\n\nCapital: New Delhi\nPopulation: 140 Crore+\nCurrency: Indian Rupee (₹)";
 db["indian states"] = db["india"];
-db["delhi"] = "DELHI - CAPITAL OF INDIA\n\n━━━━━━━━━━━━━━━━\n\nType: Union Territory\nPopulation: 2 crore+\n\nFamous Places:\n• Red Fort\n• India Gate\n• Qutub Minar\n• Lotus Temple\n• Akshardham";
-db["mumbai"] = "MUMBAI - FINANCIAL CAPITAL\n\n━━━━━━━━━━━━━━━━\n\nState: Maharashtra\nPopulation: 2 crore+\n\nFamous:\n• Gateway of India\n• Marine Drive\n• Juhu Beach\n• Film City\n• Bollywood";
-db["kolkata"] = "KOLKATA - CITY OF JOY\n\n━━━━━━━━━━━━━━━━\n\nState: West Bengal\nPopulation: 1.5 crore+\n\nFamous:\n• Victoria Memorial\n• Howrah Bridge\n• Fort William\n• Eden Gardens";
+db["delhi"] = "DELHI - CAPITAL OF INDIA\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nType: Union Territory\nPopulation: 2 crore+\n\nFamous Places:\n• Red Fort\n• India Gate\n• Qutub Minar\n• Lotus Temple";
+db["mumbai"] = "MUMBAI - FINANCIAL CAPITAL\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nState: Maharashtra\nPopulation: 2 crore+\n\nFamous:\n• Gateway of India\n• Marine Drive\n• Juhu Beach\n• Film City\n• Bollywood";
+db["kolkata"] = "KOLKATA - CITY OF JOY\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nState: West Bengal\nPopulation: 1.5 crore+\n\nFamous:\n• Victoria Memorial\n• Howrah Bridge\n• Fort William";
+db["countries"] = "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nASIA:\nIndia - New Delhi, China - Beijing, Japan - Tokyo\nPakistan - Islamabad, Bangladesh - Dhaka\nSri Lanka - Colombo, Nepal - Kathmandu\nThailand - Bangkok, Singapore - Singapore\n\nEUROPE:\nUK - London, France - Paris, Germany - Berlin\nItaly - Rome, Spain - Madrid, Russia - Moscow\n\nAMERICAS:\nUSA - Washington DC, Canada - Ottawa\nBrazil - Brasilia, Mexico - Mexico City\n\nAFRICA:\nEgypt - Cairo, Nigeria - Abuja\n\nAUSTRALIA:\nCanberra";
 
 // ========================================
-// BIHAR
+// BIHAR (india.json)
 // ========================================
-db["bihar"] = "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nGovernor: Arif Mohammad Khan\n\nPopulation: 12.4 Crore\nArea: 94,163 sq km\n\nMajor Cities:\n1. Patna\n2. Gaya\n3. Bhagalpur\n4. Muzaffarpur\n5. Darbhanga\n\nFamous Places:\n• Mahabodhi Temple (Gaya)\n• Nalanda University\n• Vishwa Shanti Stupa\n• Takht Sri Patna Sahib\n\nFamous Food: Litti Chokha\nFamous Fruit: Litchi\n\nSpecial: Lord Buddha born in Gaya!";
-db["patna"] = "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━━\n\nPopulation: 20 lakh+\n\nFamous:\n• Takht Sri Patna Sahib\n• Bihar Museum\n• Golghar\n• Ferozeshah Kotli";
-db["gaya"] = "GAYA - BIHAR\n\n━━━━━━━━━━━━━━━━\n\nFamous:\n• Mahabodhi Temple (UNESCO)\n• Vishwa Shanti Stupa\n\nSpecial: Lord Buddha attained enlightenment here!";
-db["litti chokha"] = "BITTER CHOKHA - BIHAR FOOD\n\n━━━━━━━━━━━━━━━━\n\nIngredients:\n• Wheat flour\n• Sattu\n• Brinjal\n• Potato\n\nFamous dish of Bihar!";
-db["litchi"] = "LITCHI - BIHAR FRUIT\n\n━━━━━━━━━━━━━━━━\n\nFamous in: Muzaffarpur\nSeason: May-June\nWorld's best litchi!";
-
-// ========================================
-// COUNTRIES
-// ========================================
-db["countries"] = "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━\n\nASIA:\nIndia - New Delhi\nChina - Beijing\nJapan - Tokyo\nPakistan - Islamabad\nBangladesh - Dhaka\nSri Lanka - Colombo\nNepal - Kathmandu\nThailand - Bangkok\n\nEUROPE:\nUK - London\nFrance - Paris\nGermany - Berlin\nItaly - Rome\nSpain - Madrid\n\nAMERICAS:\nUSA - Washington DC\nCanada - Ottawa\nBrazil - Brasilia\n\nAFRICA:\nEgypt - Cairo\nNigeria - Abuja\n\nAUSTRALIA:\nCanberra";
-db["capital"] = "CAPITALS\n\nIndia - New Delhi\nUSA - Washington\nUK - London\nFrance - Paris\nJapan - Tokyo\nChina - Beijing";
-
-// ========================================
-// LANGUAGES
-// ========================================
-db["english"] = "ENGLISH\n\n━━━━━━━━━━━━━━━━\n\n• World's most spoken language\n• 1.5 billion speakers\n• Business language\n• Official in many countries";
-db["learn english"] = "LEARN ENGLISH\n\n━━━━━━━━━━━━━━━━\n\n• Read books\n• Watch movies\n• Practice daily\n• Don't be afraid";
-db["hindi"] = "HINDI BHASHA\n\n━━━━━━━━━━━━━━━━\n\n• India's most spoken\n• 600 million speakers\n• Devanagari script\n• Bollywood language";
-db["hindi song"] = "HINDI SONGS\n\nBollywood songs are famous!";
-db["urdu"] = "URDU ZABAN\n\n━━━━━━━━━━━━━━━━\n\n• Poetical language\n• Nastaliq script\n• Used in India, Pakistan\n• Famous ghazals";
-db["urdu poetry"] = "URDU POETRY\n\n━━━━━━━━━━━━━━━━\n\n• Mirza Ghalib\n•
+db["bihar"] = "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nGovernor: Arif Mohammad Khan\n\nPopulation: 12.4 Crore\nArea: 94,163 sq km\n\nMajor Cities: Patna, Gaya, Bhagalpur, Muzaffarpur, Darbhanga\n\nFamous Places:\n1. Mahabodhi Temple (Gaya)\n2. Nalanda University\n3. Vishwa Shanti Stupa\n4. Takht Sri Patna Sahib\n\nFamous Food: Litti Chokha, Sattu\nFamous Fruit: Litchi (World famous!)\n\nSpecial: Lord Buddha born in Gaya!";
+db["patna"] = "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nPopulation: 20 lakh+\n\nFamous Places:\n• Takht Sri Patna Sahib\n• Bihar Museum\n• Golghar\n• Ferozeshah Kotli";
+db["gaya"] = "GAYA - BIHAR\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nFamous:\n• Mahabodhi Temple (UNESCO World Heritage)\n• Vishwa Shanti Stupa\n\nSpecial: Lord Buddha attained enlightenment here!";
+db["litti chokha"] = "LITTI CHOKHA - BIHAR FAMOUS FOOD\n\n━━━━━━━━━━━━━━━━━━━━━━\n\nMain Ingredients:\n• Wheat flour (atta)\n• Sattu (roasted gram flour)\n• Brinjal (baingan)\n• Potato\n\nRecipe:\n1. Make dough from wheat flour\n2. Fill with s
