@@ -51,23 +51,30 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <aside class="sidebar">
 <div class="logo"><i class="fa-solid fa-robot"></i> Faizul AI</div>
 <button class="btn" onclick="ask('who is faizul')"><i class="fa-solid fa-user"></i> About Creator</button>
-<button class="btn" onclick="ask('india')"><i class="fa-solid fa-flag"></i> India States</button>
+<button class="btn" onclick="ask('india')"><i class="fa-solid fa-flag"></i> India</button>
 <button class="btn" onclick="ask('bihar')"><i class="fa-solid fa-map"></i> Bihar</button>
 <button class="btn" onclick="ask('countries')"><i class="fa-solid fa-globe"></i> Countries</button>
+<button class="btn" onclick="ask('urdu')"><i class="fa-solid fa-language"></i> Urdu</button>
+<button class="btn" onclick="ask('hindi')"><i class="fa-solid fa-language"></i> Hindi</button>
 <div class="head">Cricket</div>
-<button class="btn" onclick="ask('virat')">Virat Kohli</button>
-<button class="btn" onclick="ask('dhoni')">MS Dhoni</button>
-<button class="btn" onclick="ask('rohit')">Rohit Sharma</button>
+<button class="btn" onclick="ask('virat')">Virat</button>
+<button class="btn" onclick="ask('dhoni')">Dhoni</button>
+<button class="btn" onclick="ask('rohit')">Rohit</button>
 <div class="head">Education</div>
 <button class="btn" onclick="ask('math')">Math</button>
 <button class="btn" onclick="ask('science')">Science</button>
 <button class="btn" onclick="ask('history')">History</button>
+<div class="head">Mobile</div>
+<button class="btn" onclick="ask('mobile')">Mobile</button>
+<button class="btn" onclick="ask('whatsapp')">WhatsApp</button>
+<button class="btn" onclick="ask('instagram')">Instagram</button>
 <div class="head">Lifestyle</div>
 <button class="btn" onclick="ask('food')">Food</button>
 <button class="btn" onclick="ask('health')">Health</button>
 <div class="head">Islamic</div>
 <button class="btn" onclick="ask('islam')">Islam</button>
 <button class="btn" onclick="ask('quran')">Quran</button>
+<button class="btn" onclick="ask('dua')">Dua</button>
 <div class="head">Fun</div>
 <button class="btn" onclick="ask('jokes')">Jokes</button>
 <button class="btn" onclick="ask('facts')">Facts</button>
@@ -87,6 +94,7 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <button onclick="ask('hello')">Hello</button>
 <button onclick="ask('who is faizul')">Creator</button>
 <button onclick="ask('bihar')">Bihar</button>
+<button onclick="ask('urdu')">Urdu</button>
 <button onclick="ask('virat')">Virat</button>
 <button onclick="ask('jokes')">Jokes</button>
 </div>
@@ -105,93 +113,42 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 
 <script>
 // ========================================
-// FAIZUL AI - FIXED SCRIPT
+// FAIZUL AI - COMPLETE DATA
 // ========================================
 
 (function() {
-    // Database
+    // === COMPLETE DATABASE ===
     var db = {
-"hello": "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul\n- India States & Bihar\n- Countries\n- Cricket Players\n- Education\n- Food & Health\n- Islam, Quran\n- Jokes & Facts\n\nWhat would you like to know?",
-"hi": "Hi! Welcome to Faizul AI!",
-"hey": "Hey! What's up!",
-"who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Duas & Prayers\n• Motivational clips\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator",
-"faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos",
-"india": "INDIA - 28 STATES + 8 UT\n\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWest: Rajasthan, Gujarat, Goa, Maharashtra\n\nEast: WB, Odisha, Bihar, Jharkhand\n\nSouth: Karnataka, TN, Kerala\n\nCentral: MP, UP\n\nNE: Assam, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
-"bihar": "BIHAR\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nCities: Patna, Gaya, Bhagalpur, Muzaffarpur\n\nFamous: Litti Chokha, Litchi\n\nLord Buddha born in Gaya!",
-"patna": "PATNA - CAPITAL OF BIHAR\n\nPopulation: 20 lakh+\n\nFamous: Takht Sri Patna Sahib, Bihar Museum",
-"litti chokha": "BITTER CHOKHA - BIHAR FOOD\n\nWheat flour, Sattu, Brinjal, Potato\n\nFamous dish of Bihar!",
-"countries": "COUNTRIES\n\nAsia: India-Delhi, China-Beijing, Japan-Tokyo, Pakistan-Islamabad\n\nEurope: UK-London, France-Paris, Germany-Berlin\n\nAmericas: USA-Washington, Canada-Ottawa\n\nAfrica: Egypt-Cairo\n\nAustralia: Canberra",
-"virat": "VIRAT KOHLI\n\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!\nRuns: 25000+",
-"dhoni": "MS DHONI\n\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011!",
-"rohit": "ROHIT SHARMA\n\nJersey: 45\nBorn: 30 April 1987\nHighest: 264",
-"math": "MATH\n(a+b)² = a²+2ab+b²\na²-b² = (a+b)(a-b)\nCircle = πr²\na²+b² = c²",
-"science": "SCIENCE\nWater = H₂O\nLight = 3×10⁸ m/s\nGravity = 9.8 m/s²",
-"history": "HISTORY\n\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nModern: British 1757-1947",
-"food": "FOOD\n\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nBihar: Litti Chokha",
-"health": "HEALTH\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies\n5. No junk",
-"fruit": "FRUITS\n\nApple, Mango, Banana, Orange, Papaya, Litchi",
-"islam": "ISLAM\n\nPillars:\n1. Shahada\n2. Salat (5 times)\n3. Zakat (2.5%)\n4. Sawm (Ramadan)\n5. Hajj",
-"quran": "QURAN\n\nVerses: 6236\nSurahs: 114\nLanguage: Arabic",
-"mobile": "MOBILE\n\nBrands: Apple, Samsung, OnePlus, Realme, Redmi\nOS: iOS, Android",
-"jokes": "JOKES\n\n1. Why chicken? Other side!\n2. 2+2=4!\n3. Ball comes, out!",
-"facts": "FACTS\n\nSun 330000x Earth\nWater = H₂O\nDiamond hardest",
-"thanks": "Welcome!",
-"bye": "Goodbye!"
-    };
-
-    // Get elements
-    var msgDiv = document.getElementById("msg");
-    var welDiv = document.getElementById("welcome");
-    var txtBox = document.getElementById("txt");
-
-    // Send message
-    window.send = function() {
-        var text = txtBox.value.trim().toLowerCase();
-        if (!text) return;
-        welDiv.style.display = "none";
-        addMessage(text, "user");
-        txtBox.value = "";
-        setTimeout(function() { addMessage(getReply(text), "bot"); }, 300);
-    };
-
-    // Get reply
-    function getReply(input) {
-        for (var key in db) {
-            if (input.indexOf(key) !== -1) return db[key];
-        }
-        return "Ask about Faizul, India, Bihar, cricket, food!";
-    }
-
-    // Add message
-    function addMessage(text, sender) {
-        var div = document.createElement("div");
-        div.className = "m " + sender;
-        div.innerHTML = "<div class='av'>" + (sender === "user" ? "You" : "AI") + "</div><div class='ct'>" + text + "</div>";
-        msgDiv.appendChild(div);
-        document.getElementById("chatArea").scrollTop = 100000;
-    }
-
-    // Ask from button
-    window.ask = function(topic) {
-        txtBox.value = topic;
-        send();
-    };
-
-    // Clear chat
-    window.clearChat = function() {
-        if (msgDiv) msgDiv.innerHTML = "";
-        if (welDiv) welDiv.style.display = "flex";
-    };
-
-    // Enter key
-    if (txtBox) {
-        txtBox.onkeypress = function(e) {
-            if (e.key === "Enter") send();
-        };
-    }
-
-    console.log("Faizul AI Ready!");
-})();
-</script>
-</body>
-</html>
+        // === GREETINGS ===
+        "hello": "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul (Creator)\n- India, Bihar, Countries\n- Cricket Players\n- Education, Science, Math\n- Mobile, WhatsApp, Instagram\n- Urdu, Hindi, English\n- Islam, Quran, Duas\n- Food, Health\n- Jokes & Facts\n\nWhat would you like to know?",
+        "hi": "Hi! Welcome to Faizul AI!",
+        "hey": "Hey! What's up!",
+        "namaste": "Namaste! Welcome to Faizul AI!",
+        "salam": "Salam! Welcome! Asalamu Alaikum!",
+        
+        // === FAIUL MARAM ===
+        "who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Duas & Prayers\n• Motivational clips\n• Islamic shorts\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n• Video Editor\n\nHe creates Islamic content and develops tech solutions!",
+        "faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos, Religious quotes\nDeveloper: Websites, AI",
+        
+        // === INDIA & BIHAR ===
+        "india": "INDIA - 28 STATES + 8 UT\n\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWest: Rajasthan, Gujarat, Goa, Maharashtra\n\nEast: WB, Odisha, Bihar, Jharkhand\n\nSouth: Karnataka, TN, Kerala, Telangana\n\nCentral: MP, Chhattisgarh, UP\n\nNE: Assam, Meghalaya, Manipur, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
+        "bihar": "BIHAR - THE SACRED LAND\n\n━━━━━━━━━━━━━━━━━━━━\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\nArea: 94,163 sq km\n\nMajor Cities:\n1. Patna\n2. Gaya\n3. Bhagalpur\n4. Muzaffarpur\n5. Darbhanga\n\nFamous Places:\n• Mahabodhi Temple (Gaya)\n• Nalanda University\n• Takht Sri Patna Sahib\n\nFamous Food: Litti Chokha, Sattu\n\nFamous Fruit: Litchi (World famous!)\n\nSpecial: Lord Buddha born in Gaya!",
+        "patna": "PATNA - CAPITAL OF BIHAR\n\n━━━━━━━━━━━━━━━━━━━━\n\nPopulation: 20 lakh+\nFamous Places:\n• Takht Sri Patna Sahib\n• Bihar Museum\n• Golghar\n• Ferozeshah Kotli",
+        "litti chokha": "BITTER CHOKHA - BIHAR FAMOUS FOOD\n\n━━━━━━━━━━━━━━━━━━━━\n\nIngredients:\n• Wheat flour\n• Sattu (roasted gram)\n• Brinjal (baingan)\n• Potato\n\nServe with:\n• Chhha (mashed)\n• Ghee\n\nFamous dish of Bihar!",
+        "litchi": "LITCHI - BIHAR FAMOUS FRUIT\n\n━━━━━━━━━━━━━━━━━━━━\n\nFamous in: Muzaffarpur\nSeason: May-June\n\nVarieties:\n• Shahi\n• China\n• Bedana\n\nWorld's best litchi from Bihar!",
+        
+        // === COUNTRIES ===
+        "countries": "COUNTRIES OF THE WORLD\n\n━━━━━━━━━━━━━━━━━━━━\n\nASIA:\nIndia - New Delhi\nChina - Beijing\nJapan - Tokyo\nPakistan - Islamabad\nBangladesh - Dhaka\nSri Lanka - Colombo\nNepal - Kathmandu\nThailand - Bangkok\nIndonesia - Jakarta\nMalaysia - Kuala Lumpur\nSingapore - Singapore\n\nEUROPE:\nUK - London\nFrance - Paris\nGermany - Berlin\nItaly - Rome\nSpain - Madrid\nRussia - Moscow\n\nAMERICAS:\nUSA - Washington DC\nCanada - Ottawa\nBrazil - Brasilia\nMexico - Mexico City\n\nAFRICA:\nEgypt - Cairo\nNigeria - Abuja\nSouth Africa - Pretoria\n\nAUSTRALIA:\nAustralia - Canberra\nNew Zealand - Wellington",
+        "capital": "CAPITALS\n\nIndia - New Delhi\nUSA - Washington\nUK - London\nFrance - Paris\nJapan - Tokyo\nChina - Beijing\nRussia - Moscow\nAustralia - Canberra\nCanada - Ottawa",
+        
+        // === CRICKET ===
+        "virat": "VIRAT KOHLI - KING KOHLI\n\n━━━━━━━━━━━━━━━━━━━━\n\nJersey: 18\nBorn: 5 Nov 1988\nPlace: Delhi\nAge: 36\n\nRole: Batsman\nRuns: 25000+\nCenturies: 80+\n\nAchievements:\n✅ ICC World Cup: 2011\n✅ ICC Champions Trophy: 2013\n✅ ICC Cricketer of Year: 2017, 2018\n✅ Fastest to 10000 ODI runs\n\nNickname: King Kohli",
+        "kohli": "VIRAT KOHLI\nKing of Cricket! Jersey 18!",
+        "dhoni": "MS DHONI - CAPTAIN COOL\n\n━━━━━━━━━━━━━━━━━━━━\n\nJersey: 7\nBorn: 7 July 1981\nPlace: Ranchi, Jharkhand\nAge: 43\n\nRole: Wicket Keeper\n\nRuns: 10000+\n\nAchievements:\n✅ ICC World T20: 2007 (CAPTAIN!)\n✅ ICC World Cup: 2011 (CAPTAIN! 🏆)\n✅ IPL: 3 times\n\nNickname: Captain Cool!",
+        "rohit": "ROHIT SHARMA - THE HITMAN\n\n━━━━━━━━━━━━━━━━━━━━\n\nJersey: 45\nBorn: 30 April 1987\nPlace: Nagpur\nAge: 37\n\nRole: Opening Batsman\nRuns: 10000+\nHighest: 264 (World Record!)\n\nAchievements:\n✅ World Cup: 2019\n✅ 2 Double Centuries in ODIs",
+        "cricket": "CRICKET IN INDIA\n\n━━━━━━━━━━━━━━━━━━━━\n\nFormats: Test, ODI, T20\n\nTeam: Indian Cricket Team\nCaptain: Rohit Sharma\n\nTop Players:\n• Virat Kohli\n• MS Dhoni\n• Rohit Sharma",
+        
+        // === EDUCATION ===
+        "math": "MATH FORMULAS\n\n━━━━━━━━━━━━━━━━━━━━\n\nAlgebra:\n(a+b)² = a² + 2ab + b²\n(a-b)² = a² - 2ab + b²\na² - b² = (a+b)(a-b)\n(a+b)³ = a³ + 3a²b + 3ab² + b³\n\nGeometry:\nCircle = πr²\nTriangle = ½bh\nRectangle = lw\n\nPythagoras:\na² + b² = c²",
+        "science": "SCIENCE FACTS\n\n━━━━━━━━━━━━━━━━━━━━\n\nPhysics:\n• Light: 3×10⁸ m/s\n• Sound: 343 m/s\n• Gravity: 9.8 m/s²\n• Newton's 3 Laws\n\nChemistry:\n• Water: H₂O\n• Oxygen: O₂\n• CO₂\n• Periodic: 118 elements\n\nBiology:\n• Human: 60% water\n• Cell: Basic unit\n• DNA: Genetic code",
+        "physics": "PHYSICS\n\n━━━━━━━━━━━━━━━━━━━━\n\n• Force: F = ma\n• Velocity
