@@ -65,6 +65,9 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 <div class="head">Lifestyle</div>
 <button class="btn" onclick="ask('food')">Food</button>
 <button class="btn" onclick="ask('health')">Health</button>
+<div class="head">Islamic</div>
+<button class="btn" onclick="ask('islam')">Islam</button>
+<button class="btn" onclick="ask('quran')">Quran</button>
 <div class="head">Fun</div>
 <button class="btn" onclick="ask('jokes')">Jokes</button>
 <button class="btn" onclick="ask('facts')">Facts</button>
@@ -102,99 +105,93 @@ body { font-family: 'Poppins', sans-serif; background: #0a0a0f; color: #fff; hei
 
 <script>
 // ========================================
-// FAIZUL AI - COMPLETE SCRIPT
+// FAIZUL AI - FIXED SCRIPT
 // ========================================
 
-var data = {};
-var msgDiv, welDiv, txtBox;
-var loaded = false;
-
-// Database
-function initData() {
-    data = {
-"hello": "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul (Creator)\n- India States & Bihar\n- Countries & Capitals\n- Cricket Players\n- Education (Math, Science)\n- Food & Health\n- Jokes & Facts\n\nWhat would you like to know?",
+(function() {
+    // Database
+    var db = {
+"hello": "Hello! Welcome to Faizul AI!\n\nI can answer about:\n- Who is Faizul\n- India States & Bihar\n- Countries\n- Cricket Players\n- Education\n- Food & Health\n- Islam, Quran\n- Jokes & Facts\n\nWhat would you like to know?",
 "hi": "Hi! Welcome to Faizul AI!",
 "hey": "Hey! What's up!",
-"who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Short status updates\n• Prayers (Duas)\n• Motivational clips\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator\n• App Developer\n\nFollow:\nYouTube: @faizulmaram17",
+"who is faizul": "FAIZUL MARAM - CREATOR\n\nYouTube: @faizulmaram17\n\nContent:\n• Islamic status videos\n• Religious quotes\n• Duas & Prayers\n• Motivational clips\n\nDeveloper:\n• Website Developer\n• AI Chatbot Creator",
 "faizul": "FAIZUL MARAM\n\nYouTube: @faizulmaram17\nContent: Islamic videos",
-"your creator": "FAIZUL MARAM created me!",
-"india": "INDIA - 28 STATES + 8 UT\n\nNORTH: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWEST: Rajasthan, Gujarat, Goa, Maharashtra\n\nEAST: WB, Odisha, Bihar, Jharkhand\n\nSOUTH: Karnataka, TN, Kerala, Telangana\n\nCENTRAL: MP, Chhattisgarh, UP\n\nNE: Assam, Meghalaya, Manipur, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
+"india": "INDIA - 28 STATES + 8 UT\n\nNorth: Delhi, Haryana, Punjab, HP, Uttarakhand, J&K\n\nWest: Rajasthan, Gujarat, Goa, Maharashtra\n\nEast: WB, Odisha, Bihar, Jharkhand\n\nSouth: Karnataka, TN, Kerala\n\nCentral: MP, UP\n\nNE: Assam, Sikkim\n\nCapital: New Delhi\nPop: 140 Crore+",
 "bihar": "BIHAR\n\nCapital: Patna\nCM: Nitish Kumar\nPop: 12.4 Crore\n\nCities: Patna, Gaya, Bhagalpur, Muzaffarpur\n\nFamous: Litti Chokha, Litchi\n\nLord Buddha born in Gaya!",
-"countries": "COUNTRIES\n\nAsia: India-Delhi, China-Beijing, Japan-Tokyo, Pakistan-Islamabad, Bangladesh-Dhaka, Nepal-Kathmandu\n\nEurope: UK-London, France-Paris, Germany-Berlin, Italy-Rome\n\nAmericas: USA-Washington, Canada-Ottawa, Brazil-Brasilia\n\nAfrica: Egypt-Cairo, Nigeria-Abuja\n\nAustralia: Canberra",
-"virat": "VIRAT KOHLI\n\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!\nRuns: 25000+\nWorld Cup 2011!",
-"dhoni": "MS DHONI\n\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011 (Captain)!",
-"rohit": "ROHIT SHARMA\n\nJersey: 45\nBorn: 30 April 1987\nHighest: 264 (World Record!)",
+"patna": "PATNA - CAPITAL OF BIHAR\n\nPopulation: 20 lakh+\n\nFamous: Takht Sri Patna Sahib, Bihar Museum",
+"litti chokha": "BITTER CHOKHA - BIHAR FOOD\n\nWheat flour, Sattu, Brinjal, Potato\n\nFamous dish of Bihar!",
+"countries": "COUNTRIES\n\nAsia: India-Delhi, China-Beijing, Japan-Tokyo, Pakistan-Islamabad\n\nEurope: UK-London, France-Paris, Germany-Berlin\n\nAmericas: USA-Washington, Canada-Ottawa\n\nAfrica: Egypt-Cairo\n\nAustralia: Canberra",
+"virat": "VIRAT KOHLI\n\nJersey: 18\nBorn: 5 Nov 1988\nKing Kohli!\nRuns: 25000+",
+"dhoni": "MS DHONI\n\nJersey: 7\nBorn: 7 July 1981\nCaptain Cool!\nWorld Cup 2011!",
+"rohit": "ROHIT SHARMA\n\nJersey: 45\nBorn: 30 April 1987\nHighest: 264",
 "math": "MATH\n(a+b)² = a²+2ab+b²\na²-b² = (a+b)(a-b)\nCircle = πr²\na²+b² = c²",
-"science": "SCIENCE\n\nWater = H₂O\nLight = 3×10⁸ m/s\nGravity = 9.8 m/s²\nHuman = 60% water",
-"history": "HISTORY\n\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nModern: British 1757-1947\nIndependence: 15 Aug 1947",
-"food": "INDIAN FOOD\n\nNorth: Paneer, Naan, Biryani\nSouth: Dosa, Idli, Sambar\nWest: Dhokla, Pav Bhaji\nEast: Rasgulla, Litti Chokha",
-"health": "HEALTH\n\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies\n5. No junk",
-"fruit": "FRUITS\n\nApple, Mango, Banana, Orange, Papaya, Pomegranate, Grapes, Litchi",
+"science": "SCIENCE\nWater = H₂O\nLight = 3×10⁸ m/s\nGravity = 9.8 m/s²",
+"history": "HISTORY\n\nAncient: Indus Valley, Maurya, Gupta\nMedieval: Delhi Sultanate, Mughal\nModern: British 1757-1947",
+"food": "FOOD\n\nNorth: Paneer, Naan\nSouth: Dosa, Idli\nBihar: Litti Chokha",
+"health": "HEALTH\n1. Water 8 glasses\n2. Sleep 8 hours\n3. Exercise\n4. Veggies\n5. No junk",
+"fruit": "FRUITS\n\nApple, Mango, Banana, Orange, Papaya, Litchi",
+"islam": "ISLAM\n\nPillars:\n1. Shahada\n2. Salat (5 times)\n3. Zakat (2.5%)\n4. Sawm (Ramadan)\n5. Hajj",
+"quran": "QURAN\n\nVerses: 6236\nSurahs: 114\nLanguage: Arabic",
+"mobile": "MOBILE\n\nBrands: Apple, Samsung, OnePlus, Realme, Redmi\nOS: iOS, Android",
 "jokes": "JOKES\n\n1. Why chicken? Other side!\n2. 2+2=4!\n3. Ball comes, out!",
-"facts": "FACTS\n\nSun 330000x Earth\nWater = H₂O\nDiamond hardest\nOctopus 3 hearts",
-"islam": "ISLAM\n\nPillars:\n1. Shahada\n2. Salat (5 times)\n3. Zakat (2.5%)\n4. Sawm (Ramadan)\n5. Hajj\n\nHoly: Quran\nProphet: Muhammad (PBUH)",
-"quran": "QURAN\n\nVerses: 6236\nSurahs: 114\nLanguage: Arabic\n\nBismillah in start!",
-"mobile": "MOBILE\n\nBrands: Apple, Samsung, OnePlus, Realme, Redmi, Oppo, Vivo\n\nOS: iOS, Android",
+"facts": "FACTS\n\nSun 330000x Earth\nWater = H₂O\nDiamond hardest",
 "thanks": "Welcome!",
 "bye": "Goodbye!"
     };
-    loaded = true;
-    console.log("Faizul AI Data Loaded!");
-}
 
-// Send function
-function send() {
-    var text = txtBox.value.trim().toLowerCase();
-    if (!text) return;
-    welDiv.style.display = "none";
-    addMessage(text, "user");
-    txtBox.value = "";
-    setTimeout(function() { addMessage(getReply(text), "bot"); }, 300);
-}
+    // Get elements
+    var msgDiv = document.getElementById("msg");
+    var welDiv = document.getElementById("welcome");
+    var txtBox = document.getElementById("txt");
 
-// Get reply
-function getReply(input) {
-    for (var key in data) {
-        if (input.indexOf(key) !== -1) return data[key];
-    }
-    return "Ask about Faizul, India, Bihar, countries, cricket, food, health, jokes!";
-}
-
-// Add message
-function addMessage(text, sender) {
-    var div = document.createElement("div");
-    div.className = "m " + sender;
-    div.innerHTML = "<div class='av'>" + (sender === "user" ? "You" : "AI") + "</div><div class='ct'>" + text + "</div>";
-    msgDiv.appendChild(div);
-    document.getElementById("chatArea").scrollTop = 100000;
-}
-
-// Ask from button
-function ask(topic) {
-    txtBox.value = topic;
-    send();
-}
-
-// Clear chat
-function clearChat() {
-    msgDiv.innerHTML = "";
-    welDiv.style.display = "flex";
-}
-
-// Initialize
-window.onload = function() {
-    msgDiv = document.getElementById("msg");
-    welDiv = document.getElementById("welcome");
-    txtBox = document.getElementById("txt");
-    
-    initData();
-    
-    txtBox.onkeypress = function(e) {
-        if (e.key === "Enter") send();
+    // Send message
+    window.send = function() {
+        var text = txtBox.value.trim().toLowerCase();
+        if (!text) return;
+        welDiv.style.display = "none";
+        addMessage(text, "user");
+        txtBox.value = "";
+        setTimeout(function() { addMessage(getReply(text), "bot"); }, 300);
     };
-    
+
+    // Get reply
+    function getReply(input) {
+        for (var key in db) {
+            if (input.indexOf(key) !== -1) return db[key];
+        }
+        return "Ask about Faizul, India, Bihar, cricket, food!";
+    }
+
+    // Add message
+    function addMessage(text, sender) {
+        var div = document.createElement("div");
+        div.className = "m " + sender;
+        div.innerHTML = "<div class='av'>" + (sender === "user" ? "You" : "AI") + "</div><div class='ct'>" + text + "</div>";
+        msgDiv.appendChild(div);
+        document.getElementById("chatArea").scrollTop = 100000;
+    }
+
+    // Ask from button
+    window.ask = function(topic) {
+        txtBox.value = topic;
+        send();
+    };
+
+    // Clear chat
+    window.clearChat = function() {
+        if (msgDiv) msgDiv.innerHTML = "";
+        if (welDiv) welDiv.style.display = "flex";
+    };
+
+    // Enter key
+    if (txtBox) {
+        txtBox.onkeypress = function(e) {
+            if (e.key === "Enter") send();
+        };
+    }
+
     console.log("Faizul AI Ready!");
-};
+})();
 </script>
 </body>
 </html>
