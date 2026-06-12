@@ -1,0 +1,112 @@
+{
+    "mammals": {
+        "tiger": {
+            "name": "Bengal Tiger",
+            "national_animal": true,
+            "habitat": "Forests",
+            "diet": "Carnivore",
+            "speed": "65 km/h",
+            "population": "India: 3000+"
+        },
+        "lion": {
+            "name": "Asiatic Lion",
+            "location": "Gir Forest",
+            "diet": "Carnivore",
+            "population": "600+"
+        },
+        "elephant": {
+            "name": "Asian Elephant",
+            "habitat": "Forests",
+            "diet": "Herbivore",
+            "weight": "5000 kg",
+            "fact": "Largest land animal in Asia"
+        },
+        "deer": {
+            "types": ["Spotted", "Barking", "Sambhar"],
+            "diet": "Herbivore"
+        },
+        "monkey": {
+            "types": ["Rhesus", "Langur"],
+            "diet": "Omnivore"
+        },
+        "bear": {
+            "types": ["Sloth Bear", "Himalayan Black Bear"],
+            "diet": "Omnivore"
+        },
+        "wolf": {"diet": "Carnivore", "location": "Himalayas"},
+        "fox": {"diet": "Carnivore", "types": ["Desert", "Red"]},
+        "rabbit": {"diet": "Herbivore", "speed": "50 km/h"},
+        "squirrel": {"diet": "Herbivore", "fact": "Can jump 20 feet"}
+    },
+    
+    "birds": {
+        "peacock": {
+            "national_bird": true,
+            "name": "Indian Peafowl",
+            "location": "All India",
+            "diet": "Omnivore",
+            "flower": "Indian Pipe"
+        },
+        "parrot": {
+            "types": ["Rose ringed", "Alexandrine"],
+            "diet": "Herbivore",
+            "speech": "Can speak"
+        },
+        "crow": {
+            "name": "House Crow",
+            "location": "All India",
+            "diet": "Omnivore",
+            "fact": "Very intelligent"
+        },
+        "pigeon": {"diet": "Herbivore", "speed": "180 km/h"},
+        "eagle": {"diet": "Carnivore", "vision": "5km"},
+        "owl": {"diet": "Carnivore", "night": true},
+        "kingfisher": {"diet": "Fish eater", "speed": "Dive 25 mph"},
+        "vulture": {"diet": "Scavenger", "role": "Cleaner"},
+        "sparrow": {"diet": "Herbivore", "size": "Small"}
+    },
+    
+    "reptiles": {
+        "cobra": {
+            "name": "Indian Cobra",
+            "poison": true,
+            "length": "6 feet"
+        },
+        "viper": {"poison": true, "types": ["Russell's", "Saw-scaled"]},
+        "python": {"poison": false, "types": ["Python molurus"]},
+        "krait": {"poison": true, "night": true},
+        "iguana": {"poison": false, "diet": "Herbivore"},
+        "monitor": {"name": "Monitor Lizard", "size": "6 feet"}
+    },
+    
+    "aquatic": {
+        "dolphin": {
+            "name": "Ganges Dolphin",
+            "location": "Ganga, Brahmaputra",
+            "intelligence": "Very high",
+            "blind": true
+        },
+        "whale": {"size": "Largest", "species": ["Blue", "Sperm"]},
+        "shark": {"types": ["Whale shark", "Hammerhead"]},
+        "fish": {"types": ["Rohu", "Katli", "Hilsa"]},
+        "crocodile": {"location": "Sunderbans", "size": "Largest reptile"}
+    },
+    
+    "insects": {
+        "butterfly": {"species": "15000+", "diet": "Nectar"},
+        "bee": {"honey": true, "pollination": true},
+        "ant": {"muscles": "2500", "strength": "Can lift 50x weight"},
+        "mosquito": {"disease": "Malaria, Dengue"},
+        "spider": {"webs": true, "types": "1000+"},
+        "cockroach": {"survival": "Can live without head for weeks"}
+    },
+    
+    "fun_facts": [
+        "Octopus has 3 hearts and blue blood!",
+        "Sharks are older than trees!",
+        "Butterflies taste with their feet!",
+        "A snail can sleep for 3 years!",
+        "Elephants are the only animals that can't jump!",
+        "Cats sleep for 70% of their lives!"
+    ]
+}
