@@ -1,0 +1,50 @@
+{
+    "football": {
+        "famous_players": [
+            {"name": "Lionel Messi", "country": "Argentina", "club": "Inter Miami", "goals": "800+", "ballon_dor": 8},
+            {"name": "Cristiano Ronaldo", "country": "Portugal", "club": "Al Nassr", "goals": "850+", "ballon_dor": 5},
+            {"name": "Kylian Mbappe", "country": "France", "club": "Real Madrid", "goals": "300+"},
+            {"name": "Erling Haaland", "country": "Norway", "club": "Manchester City", "goals": "200+"},
+            {"name": "Neymar Jr", "country": "Brazil", "club": "Al Hilal", "goals": "400+"}
+        ],
+        
+        "indian_players": [
+            {"name": "Sunil Chhetri", "country": "India", "goals": 100, "captain": true},
+            {"name": "Climax", "country": "India"},
+            {"name": "Sandesh Jhingan", "country": "India"}
+        ],
+        
+        "clubs_india": [
+            {"name": "Mumbai City FC", "city": "Mumbai"},
+            {"name": "Bengaluru FC", "city": "Bangalore"},
+            {"name": "ATK Mohun Bagan", "city": "Kolkata"},
+            {"name": "Hyderabad FC", "city": "Hyderabad"},
+            {"name": "FC Goa", "city": "Goa"}
+        ],
+        
+        "leagues": [
+            {"name": "English Premier League", "teams": 20},
+            {"name": "La Liga", "teams": 20},
+            {"name": "Serie A", "teams": 20},
+            {"name": "Bundesliga", "teams": 18},
+            {"name": "Ligue 1", "teams": 20},
+            {"name": "ISL", "teams": 12}
+        ]
+    },
+    
+    "world_cup": {
+        "2022": {"winner": "Argentina", "host": "Qatar"},
+        "2018": {"winner": "France", "host": "Russia"},
+        "2014": {"winner": "Germany", "host": "Brazil"},
+        "2026": {"host": "USA, Canada, Mexico"}
+    },
+    
+    "terms": {
+        "goal": "Scoring in opponent's net",
+        "assist": "Pass leading to goal",
+        "hat_trick": "3 goals by one player",
+        "clean_sheet": "No goals conceded",
+        "penalty": "Free kick from spot",
+        "offside": "closer to goal than ball and second-last defender"
+    }
+}
