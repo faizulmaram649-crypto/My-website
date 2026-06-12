@@ -1,39 +1,68 @@
 // Formatter Module
 const formatter = {
-    // Format message for display
+
     format(text) {
-        // Escape HTML
+
+        if (
+            text === null ||
+            text === undefined
+        ) {
+            return "";
+        }
+
+        text = String(text);
+
         text = this.escapeHtml(text);
-        
-        // Format newlines
-        text = text.replace(/\n/g, '<br>');
-        
+
+        text = text.replace(
+            /\n/g,
+            "<br>"
+        );
+
         return text;
+
     },
-    
-    // Escape HTML special characters
+
     escapeHtml(text) {
+
         const map = {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&#039;"
         };
-        return text.replace(/[&<>"']/g, m => map[m]);
+
+        return text.replace(
+            /[&<>"']/g,
+            m => map[m]
+        );
+
     },
-    
-    // Format user input
+
     formatInput(text) {
-        return text.trim().toLowerCase();
+
+        if (!text) return "";
+
+        return text
+            .trim()
+            .toLowerCase();
+
     },
-    
-    // Get timestamp
+
     getTime() {
-        const now = new Date();
-        return now.toLocaleTimeString('en-US', { 
-            hour: '2-digit', 
-            minute: '2-digit' 
-        });
+
+        const now =
+            new Date();
+
+        return now.toLocaleTimeString(
+            "en-US",
+            {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
     }
+
 };
