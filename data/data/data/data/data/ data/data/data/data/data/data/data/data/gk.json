@@ -1,0 +1,77 @@
+{
+    "india_gk": {
+        "country": "India (Bharat)",
+        "capital": "New Delhi",
+        "currency": "Indian Rupee (₹)",
+        "language": ["Hindi", "English"],
+        "script": "Devanagari",
+        "national_anthem": "Jana Gana Mana",
+        "national_song": "Vande Matram",
+        "national_bird": "Peacock",
+        "national_animal": "Bengal Tiger",
+        "national_flower": "Lotus",
+        "national_tree": "Banyan",
+        "flag": "Tricolor (Saffron, White, Green)",
+        "emblem": "State Seal",
+        "constitution": "26 January 1950",
+        "independence": "15 August 1947"
+    },
+    
+    "firsts": {
+        "prime_minister": "Jawaharlal Nehru",
+        "president": "Dr. Rajendra Prasad",
+        "woman_prime_minister": "Indira Gandhi",
+        "woman_president": "Pratibha Patil",
+        "miss_india": "Sushmita Sen"
+    },
+    
+    "mahaan": {
+        "highest_civilian": "Bharat Ratna",
+        "army_chief": "General",
+        "supreme_court": "Chief Justice",
+        "high_courts": "25"
+    },
+    
+    "inventions": {
+        "zero": "Aryabhata",
+        "chess": "India",
+        "cotton": "India",
+        "buttons": "India",
+        "diamond": "India"
+    },
+    
+    "records": {
+        "most_pop democracy": true,
+        "postal_code": "6 digits",
+        "diverse_religions": true,
+        "spices": "World's largest producer"
+    }
+},
+    
+    "world_gk": {
+        "countries": 195,
+        "languages": 7000,
+        "continents": 7,
+        "oceans": 5,
+        "largest": "Russia",
+        "smallest": "Vatican City",
+        "highest_pop": "China",
+        "oldest_country": "Egypt"
+    },
+    
+    "space": {
+        "solar_system": "Sun + 8 planets",
+        "earth": "3rd from Sun",
+        "moon": "1st satellite",
+        "satellite": "Chandrayaan-3 (India)",
+        "galaxy": "Milky Way"
+    },
+    
+    "bodies": {
+        "un": "United Nations",
+        "who": "World Health Organization",
+        "imf": "International Monetary Fund",
+        "wb": "World Bank",
+        "nato": "North Atlantic Treaty Organization"
+    }
+}
