@@ -1,3 +1,10 @@
+window.addEventListener("load", async () => {
+
+    await response.load();
+
+    console.log("Faizul AI Ready");
+
+});
 // FAIZUL AI - COMPLETE DATABASE
 var db = {};
 
