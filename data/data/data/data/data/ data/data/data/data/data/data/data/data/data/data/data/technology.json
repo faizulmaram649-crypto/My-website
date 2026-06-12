@@ -1,0 +1,94 @@
+{
+    "basics": {
+        "computer_parts": {
+            "cpu": "Central Processing Unit - Brain of computer",
+            "ram": "Random Access Memory - Short term memory",
+            "hard_drive": "Storage - Long term memory",
+            "motherboard": "Connects all parts",
+            "gpu": "Graphics Processing Unit - Display"
+        },
+        "software": {
+            "os": ["Windows", "Mac", "Linux", "Android", "iOS"],
+            "office": ["Microsoft Office", "Google Docs"],
+            "browsers": ["Chrome", "Firefox", "Edge", "Safari"],
+            "media": ["VLC", "Winamp", "Spotify"]
+        }
+    },
+    
+    "programming": {
+        "languages": {
+            "python": {
+                "year": 1991,
+                "creator": "Guido van Rossum",
+                "use": ["AI", "Web", "Data Science"],
+                "difficulty": "Easy"
+            },
+            "javascript": {
+                "year": 1995,
+                "creator": "Brendan Eich",
+                "use": ["Web", "Apps", "Games"],
+                "difficulty": "Easy"
+            },
+            "java": {
+                "year": 1995,
+                "creator": "James Gosling",
+                "use": ["Apps", "Android", "Web"],
+                "difficulty": "Medium"
+            },
+            "c_plus_plus": {
+                "year": 1985,
+                "creator": "Bjarne Stroustrup",
+                "use": ["Games", "System", "Apps"],
+                "difficulty": "Hard"
+            },
+            "html": {
+                "year": 1993,
+                "creator": "Tim Berners-Lee",
+                "use": "Web pages",
+                "difficulty": "Very Easy"
+            },
+            "css": {
+                "year": 1994,
+                "creator": "Håkon Wium Lie",
+                "use": "Web styling",
+                "difficulty": "Easy"
+            }
+        }
+    },
+    
+    "ai_ml": {
+        "ai": "Artificial Intelligence - Smart machines",
+        "ml": "Machine Learning - Machines that learn",
+        "dl": "Deep Learning - Neural networks",
+        "chatgpt": "AI chatbot by OpenAI",
+        "gemini": "AI by Google",
+        "applications": ["Voice assistant", "Self driving", "Recommendation", "Translation"]
+    },
+    
+    "internet": {
+        "www": "World Wide Web - Tim Berners-Lee 1989",
+        "http": "HyperText Transfer Protocol",
+        "https": "Secure HTTP",
+        "dns": "Domain Name System",
+        "wifi": "Wireless Fidelity",
+        "5g": "5th generation mobile network",
+        "fiber": "Fiber optic - Fastest internet"
+    },
+    
+    "apps": {
+        "social": ["WhatsApp", "Instagram", "Facebook", "Twitter", "LinkedIn"],
+        "video": ["YouTube", "Netflix", "Disney+", "Hotstar"],
+        "music": ["Spotify", "Gaana", "JioSaavn"],
+        "payment": ["GPay", "PhonePe", "Paytm"],
+        "education": ["Byju's", "Unacademy", "Duolingo"]
+    },
+    
+    "trending": {
+        "web3": "Decentralized internet",
+        "metaverse": "Virtual reality world",
+        "nft": "Non-Fungible Token",
+        "crypto": "Cryptocurrency",
+        "blockchain": "Distributed ledger technology",
+        "iot": "Internet of Things"
+    }
+}
