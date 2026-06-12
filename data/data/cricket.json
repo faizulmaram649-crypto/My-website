@@ -1,0 +1,454 @@
+{
+    "cricket_general": {
+        "format": ["Test", "ODI", "T20I", "IPL"],
+        "roles": ["Batsman", "Bowler", "All-rounder", "Wicket Keeper"],
+        "batting": ["Right Handed", "Left Handed"],
+        "bowling": ["Right Arm Fast", "Right Arm Medium", "Right Arm Spin", "Left Arm Fast", "Left Arm Spin"]
+    },
+    
+    "indian_players": {
+        "virat_kohli": {
+            "name": "Virat Kohli",
+            "full_name": "Virat Anushka Kohli",
+            "born": "5 November 1988",
+            "place": "Delhi",
+            "age": 36,
+            "height": "5'6\" (168 cm)",
+            "role": "Batsman",
+            "batting": "Right Handed",
+            "bowling": "Right Arm Medium",
+            "jersey": 18,
+            "debut": {
+                "test": "2011 vs West Indies",
+                "odi": "2008 vs Sri Lanka",
+                "t20": "2010 vs Zimbabwe",
+                "ipl": "2008"
+            },
+            "stats": {
+                "test": {
+                    "matches": 113,
+                    "runs": 8848,
+                    "average": 49.16,
+                    "centuries": 29,
+                    "fifties": 29,
+                    "highest": "254*"
+                },
+                "odi": {
+                    "matches": 295,
+                    "runs": 13893,
+                    "average": 57.64,
+                    "centuries": 50,
+                    "fifties": 72,
+                    "highest": 166
+                },
+                "t20i": {
+                    "matches": 125,
+                    "runs": 4189,
+                    "average": 52.36,
+                    "centuries": 1,
+                    "fifties": 37,
+                    "highest": "122*"
+                },
+                "ipl": {
+                    "matches": 237,
+                    "runs": 7411,
+                    "average": 37.79,
+                    "centuries": 7,
+                    "fifties": 50,
+                    "highest": 113
+                }
+            },
+            "achievements": [
+                "ICC Cricket World Cup: 2011",
+                "ICC Champions Trophy: 2013",
+                "ICC Test Mace: 4 times (2014, 2015, 2017, 2018)",
+                "ICC Cricketer of the Year: 2017, 2018",
+                "ICC Test Player of the Year: 2018",
+                "Man of the Tournament: 2014 T20 World Cup"
+            ],
+            "records": [
+                "Fastest to 8000 ODI runs",
+                "Fastest to 9000 ODI runs",
+                "Fastest to 10000 ODI runs",
+                "Fastest to 12000 ODI runs",
+                "Most runs in calendar year (2017, 2018)",
+                "Most centuries while chasing in ODIs",
+                "50+ average in all formats (first Indian)"
+            ],
+            "nicknames": ["King Kohli", "Chase Master", "Run Machine", "King"],
+            "family": {
+                "father": "Prem Kohli (passed away 2022)",
+                "mother": "Saroj Kohli",
+                "brother": "Vikas Kohli",
+                "wife": "Anushka Sharma",
+                "daughter": "Vamika (born 2021)",
+                "son": "Akaay (born 2023)"
+            },
+            "teams": ["India", "Delhi", "Royal Challengers Bangalore", "India A"],
+            "captaincy": {
+                "test": {"matches": 68, "wins": 40},
+                "odi": {"matches": 62, "wins": 34},
+                "t20i": {"matches": 50, "wins": 33}
+            }
+        },
+        
+        "ms_dhoni": {
+            "name": "MS Dhoni",
+            "full_name": "Mahendra Singh Dhoni",
+            "born": "7 July 1981",
+            "place": "Ranchi, Jharkhand",
+            "age": 43,
+            "height": "6'0\" (183 cm)",
+            "role": "Wicket Keeper & Batsman",
+            "batting": "Right Handed",
+            "jersey": 7,
+            "debut": {
+                "odi": "2004 vs Sri Lanka",
+                "test": "2008 vs India",
+                "t20": "2006 vs South Africa"
+            },
+            "stats": {
+                "odi": {
+                    "matches": 350,
+                    "runs": 10768,
+                    "average": 50.23,
+                    "centuries": 10,
+                    "fifties": 73,
+                    "highest": "183*",
+                    "not_outs": 74
+                },
+                "test": {
+                    "matches": 90,
+                    "runs": 4876,
+                    "average": 38.09,
+                    "centuries": 6,
+                    "fifties": 33,
+                    "highest": 224
+                },
+                "t20i": {
+                    "matches": 98,
+                    "runs": 1612,
+                    "average": 37.93,
+                    "fifties": 2,
+                    "highest": 86
+                }
+            },
+            "achievements": [
+                "ICC World T20: 2007 (Captain)",
+                "ICC Cricket World Cup: 2011 (CAPTAIN - WINNER!)",
+                "ICC Champions Trophy: 2013 (Captain)",
+                "IPL: 3 times (2010, 2011, 2018)",
+                "Padma Bhushan: 2018",
+                "Padma Shri: 2009",
+                "Major Dhyan Chand Khel Ratna: 2009"
+            ],
+            "captaincy": {
+                "test": {"matches": 60, "wins": 29},
+                "odi": {"matches": 199, "wins": 110},
+                "t20i": {"matches": 72, "wins": 41}
+            },
+            "nicknames": ["Captain Cool", "Thala", "MSD"],
+            "famous_for": ["Helicopter shot", "Calm demeanor", "Keep hair short", "Love for bikes"],
+            "family": {
+                "father": "Shailender Dhoni",
+                "mother": "Devaki Dhoni",
+                "sister": "Jayanti",
+                "wife": "Sakshi Dhoni",
+                "daughter": "Ziva (born 2015)"
+            },
+            "teams": ["India", "Jharkhand", "Chennai Super Kings"]
+        },
+        
+        "rohit_sharma": {
+            "name": "Rohit Sharma",
+            "full_name": "Rohit Gurunath Sharma",
+            "born": "30 April 1987",
+            "place": "Nagpur, Maharashtra",
+            "age": 37,
+            "height": "5'11\" (180 cm)",
+            "role": "Opening Batsman",
+            "batting": "Right Handed",
+            "bowling": "Right Arm Off Spin",
+            "jersey": 45,
+            "debut": {
+                "test": "2013 vs West Indies",
+                "odi": "2007 vs South Africa",
+                "t20": "2007 vs Sri Lanka"
+            },
+            "stats": {
+                "test": {
+                    "matches": 59,
+                    "runs": 3974,
+                    "average": 45.68,
+                    "centuries": 10,
+                    "highest": 212
+                },
+                "odi": {
+                    "matches": 271,
+                    "runs": 10256,
+                    "average": 48.83,
+                    "centuries": 31,
+                    "highest": 264
+                },
+                "t20i": {
+                    "matches": 159,
+                    "runs": 4024,
+                    "average": 32.03,
+                    "centuries": 5,
+                    "highest": 121
+                }
+            },
+            "achievements": [
+                "Cricket World Cup: 2019",
+                "ICC Champions Trophy: 2013",
+                "2 Double Centuries in ODIs (World Record!)",
+                "Most runs in calendar year (2013, 2014)",
+                "First Indian to score triple century in Tests"
+            ],
+            "nicknames": ["The Hitman", "Hitman"],
+            "records": [
+                "Highest ODI Score: 264 (World Record!)",
+                "Most 200+ scores in ODIs",
+                "First Indian to score 264 in ODIs"
+            ],
+            "family": {
+                "father": "Gurunath Sharma",
+                "mother": "Suman Sharma",
+                "wife": "Ritika Sajdeh",
+                "daughter": "Vridhi, Risha"
+            },
+            "teams": ["India", "Mumbai", "Mumbai Indians", "Deccan Chargers"]
+        },
+        
+        "hardik_pandya": {
+            "name": "Hardik Pandya",
+            "born": "11 October 1993",
+            "place": "Baroda, Gujarat",
+            "age": 31,
+            "height": "6'0\" (183 cm)",
+            "role": "All-rounder",
+            "batting": "Right Handed",
+            "bowling": "Right Arm Fast",
+            "jersey": 11,
+            "stats": {
+                "odi": {
+                    "matches": 89,
+                    "runs": 1572,
+                    "average": 34.00,
+                    "wickets": 88,
+                    "centuries": 2
+                },
+                "t20i": {
+                    "matches": 87,
+                    "runs": 776,
+                    "average": 22.00,
+                    "wickets": 70,
+                    "highest": 76
+                }
+            },
+            "achievements": [
+                "ICC Champions Trophy: 2017",
+                "Asia Cup: 2018",
+                "World Cup: 2023"
+            ],
+            "family": {
+                "father": "Nalinkant Pandya",
+                "mother": "Shobhaba Pandya",
+                "brother": "Krutik (cricketer)"
+            },
+            "teams": ["India", "Baroda", "Mumbai Indians", "Gujarat Titans"]
+        },
+        
+        "jasprit_bumrah": {
+            "name": "Jasprit Bumrah",
+            "born": "6 December 1993",
+            "place": "Ahmedabad, Gujarat",
+            "age": 31,
+            "height": "5'10\" (178 cm)",
+            "role": "Bowler",
+            "batting": "Right Handed",
+            "bowling": "Right Arm Fast",
+            "jersey": 93,
+            "stats": {
+                "test": {
+                    "matches": 33,
+                    "wickets": 128,
+                    "average": 24.56,
+                    "best": "6/57"
+                },
+                "odi": {
+                    "matches": 89,
+                    "wickets": 149,
+                    "average": 25.15,
+                    "best": "6/19"
+                },
+                "t20i": {
+                    "matches": 70,
+                    "wickets": 82,
+                    "average": 26.43,
+                    "best": "3/12"
+                }
+            },
+            "achievements": [
+                "ICC Test Player of Year: 2022",
+                "T20 World Cup: 2022",
+                "Asia Cup: 2022"
+            ],
+            "nickname": "Yorker King",
+            "famous_ball": "Perfect toe-crushing yorker",
+            "teams": ["India", "Gujarat", "Mumbai Indians", "Gujarat Titans"]
+        },
+        
+        "ravindra_jadeja": {
+            "name": "Ravindra Jadeja",
+            "born": "6 December 1988",
+            "place": "Jamnagar, Gujarat",
+            "age": 36,
+            "role": "All-rounder",
+            "batting": "Left Handed",
+            "bowling": "Left Arm Spin",
+            "jersey": 8,
+            "stats": {
+                "test": {
+                    "matches": 69,
+                    "runs": 2874,
+                    "average": 33.07,
+                    "wickets": 287
+                },
+                "odi": {
+                    "matches": 209,
+                    "runs": 2749,
+                    "average": 24.54,
+                    " wickets": 189
+                }
+            },
+            "nickname": "Sir Jadeja",
+            "teams": ["India", "Saurashtra", "Chennai Super Kings", "Rajasthan Royals"]
+        },
+        
+        "ravichandran_ashwin": {
+            "name": "Ravichandran Ashwin",
+            "born": "17 September 1986",
+            "place": "Chennai, Tamil Nadu",
+            "age": 38,
+            "role": "Spinner",
+            "batting": "Right Handed",
+            "bowling": "Right Arm Off Spin",
+            "jersey": 99,
+            "stats": {
+                "test": {
+                    "matches": 91,
+                    "wickets": 516,
+                    "average": 24.00,
+                    "best": "7/59"
+                },
+                "odi": {
+                    "matches": 113,
+                    "wickets": 134,
+                    "average": 33.14
+                }
+            },
+            "achievements": [
+                "ICC Test Player of Year: 2016",
+                "World Cup: 2011"
+            ],
+            "famous_for": ["Carrom ball", "Doosra"],
+            "teams": ["India", "Tamil Nadu", "Chennai Super Kings", "Rising Pune Supergiant"]
+        },
+        
+        "kl_rahul": {
+            "name": "KL Rahul",
+            "born": "18 April 1992",
+            "place": "Bangalore, Karnataka",
+            "age": 32,
+            "role": "Batsman / Wicket Keeper",
+            "batting": "Right Handed",
+            "jersey": 1,
+            "stats": {
+                "test": {
+                    "matches": 46,
+                    "runs": 2335,
+                    "average": 41.69,
+                    "centuries": 6
+                },
+                "odi": {
+                    "matches": 74,
+                    "runs": 2357,
+                    "average": 41.00,
+                    "centuries": 5
+                }
+            },
+            "teams": ["India", "Karnataka", "Lucknow Super Giants", "Royal Challengers Bangalore"]
+        },
+        
+        "shubman_gill": {
+            "name": "Shubman Gill",
+            "born": "8 September 1999",
+            "place": "Chandigarh",
+            "age": 25,
+            "role": "Batsman",
+            "batting": "Right Handed",
+            "jersey": 77,
+            "stats": {
+                "test": {
+                    "matches": 31,
+                    "runs": 2352,
+                    "average": 49.00,
+                    "centuries": 6
+                },
+                "odi": {
+                    "matches": 35,
+                    "runs": 1586,
+                    "average": 53.00,
+                    "centuries": 5,
+                    "highest": 208
+                }
+            },
+            "achievements": [
+                "ICC Emerging Player: 2023",
+                "World Cup: 2023"
+            ],
+            "nickname": "Prince",
+            "teams": ["India", "Punjab", "Gujarat Titans", "Kolkata Knight Riders"]
+        }
+    },
+    
+    "famous_shots": [
+        {"name": "Helicopter Shot", "player": "MS Dhoni"},
+        {"name": "Cover Drive", "player": "Virat Kohli"},
+        {"name": "Pull Shot", "player": "Rohit Sharma"},
+        {"name": "Square Cut", "player": "Virat Kohli"},
+        {"name": "Flick", "player": "Virat Kohli"}
+    ],
+    
+    "cricket_terms": {
+        "run": "Score by running between wickets",
+        "wicket": "Dismissal of batsman",
+        "over": "6 legal deliveries",
+        "inning": "Team's turn to bat",
+        "boundary": "4 runs (touching ground) or 6 runs (in air)",
+        "not_out": "Batsman still batting",
+        "duck": "Score of 0",
+        "century": "100 runs",
+        "double_century": "200 runs",
+        "triple_century": "300 runs",
+        "hat_trick": "3 wickets in 3 balls",
+        "maiden": "Over with 0 runs",
+        "googly": "Wrong'un - spinner's trick ball",
+        "doosra": "Ball that turns opposite",
+        "yorker": "Ball pitched at toes"
+    },
+    
+    "icc_trophies": [
+        "World Cup (ODI)",
+        "World T20",
+        "Champions Trophy",
+        "World Test Championship"
+    ],
+    
+    "indian_cricket_boards": {
+        "bci": "Board of Control for Cricket in India",
+        "captain": "Test, ODI, T20 - Rohit Sharma",
+        "coach": "Gautam Gambhir"
+    }
+}
