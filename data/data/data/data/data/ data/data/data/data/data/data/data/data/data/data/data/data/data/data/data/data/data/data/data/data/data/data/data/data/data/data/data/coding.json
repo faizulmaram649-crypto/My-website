@@ -1,0 +1,92 @@
+{
+    "languages": {
+        "python": {
+            "created": 1991,
+            "creator": "Guido van Rossum",
+            "difficulty": "Easy",
+            "use": ["AI", "Web", "Data Science", "Automation"],
+            "syntax": "Minimal, English-like",
+            "example": "print('Hello')"
+        },
+        
+        "javascript": {
+            "created": 1995,
+            "creator": "Brendan Eich",
+            "difficulty": "Easy-Medium",
+            "use": ["Web", "Apps", "Games"],
+            "syntax": "C-style",
+            "example": "console.log('Hello')"
+        },
+        
+        "c": {
+            "created": 1972,
+            "creator": "Dennis Ritchie",
+            "difficulty": "Medium-Hard",
+            "use": ["System", "Embedded", "OS"],
+            "syntax": "Complex",
+            "example": "printf('Hello')"
+        },
+        
+        "cpp": {
+            "created": 1985,
+            "creator": "Bjarne Stroustrup",
+            "difficulty": "Hard",
+            "use": ["Games", "System", "Apps"],
+            "syntax": "Complex",
+            "example": "cout<<'Hello'"
+        },
+        
+        "java": {
+            "created": 1995,
+            "creator": "James Gosling",
+            "difficulty": "Medium",
+            "use": ["Android", "Enterprise"],
+            "syntax": "Verbose",
+            "example": "System.out.println('Hello')"
+        },
+        
+        "html": {
+            "created": 1993,
+            "creator": "Tim Berners-Lee",
+            "difficulty": "Very Easy",
+            "use": "Web pages",
+            "syntax": "Tags",
+            "example": "<h1>Hello</h1>"
+        },
+        
+        "css": {
+            "created": 1994,
+            "creator": "Håkon Lie",
+            "difficulty": "Easy",
+            "use": "Web styling",
+            "syntax": "Properties",
+            "example": "color: blue;"
+        }
+    },
+    
+    "concepts": {
+        "variables": "Containers for storing data",
+        "functions": "Reusable code blocks",
+        "loops": "Repeat actions",
+        "conditions": "If-else decisions",
+        "classes": "Blueprint for objects",
+        "objects": "Instance of class",
+        "arrays": "List of items",
+        "strings": "Text data"
+    },
+    
+    "projects": {
+        "beginner": ["Todo App", "Calculator", "Quiz Game"],
+        "intermediate": ["Weather App", "Blog", "Chat App"],
+        "advanced": ["AI Chatbot", "E-commerce", "Social Media"]
+    },
+    
+    "tips": [
+        "Practice daily",
+        "Build projects",
+        "Read documentation",
+        "Debug errors",
+        "Join communities",
+        "Contribute to open source"
+    ]
+}
